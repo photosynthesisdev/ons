@@ -13,7 +13,7 @@ struct bpf_map_def SEC("maps") xsks_map = {
     .max_entries = 64,
 };
 
-// Helper function to handle UDP packets
+// Helper function to handle incoming UDP packets.
 static __always_inline int handle_udp_packet(struct xdp_md *ctx, void *data, void *data_end) {
     struct ethhdr *eth = data;
     struct iphdr *ip = (data + sizeof(*eth));

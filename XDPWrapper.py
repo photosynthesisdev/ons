@@ -1,6 +1,7 @@
 import ctypes
 import socket
 import asyncio
+import os
 from ctypes.util import find_library
 
 # Define sockaddr_xdp structure
@@ -112,5 +113,4 @@ async def main():
 
 # Run the asyncio event loop
 if __name__ == "__main__":
-    import os  # Import os for error logging
     asyncio.run(main())
