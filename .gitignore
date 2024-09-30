@@ -1,2 +1,3 @@
 /certs/
 /xdp_ebpf.o
+/__pycache__/
