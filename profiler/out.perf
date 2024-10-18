@@ -1,0 +1,2677 @@
+pypy3.10 86324 1562358.891170:          1 cycles: 
+	ffffffff8ca10d5a __perf_event_task_sched_in+0x6a ([kernel.kallsyms])
+	ffffffff8c8d3e4d finish_task_switch+0xfd ([kernel.kallsyms])
+	ffffffff8d2d0b4b __schedule+0x2eb ([kernel.kallsyms])
+	ffffffff8d2d0fe2 schedule+0x42 ([kernel.kallsyms])
+	ffffffff8d2d4d27 schedule_hrtimeout_range_clock+0x97 ([kernel.kallsyms])
+	ffffffff8d2d4db3 schedule_hrtimeout_range+0x13 ([kernel.kallsyms])
+	ffffffff8cb34880 ep_poll+0x3d0 ([kernel.kallsyms])
+	ffffffff8cb34988 do_epoll_wait+0xb8 ([kernel.kallsyms])
+	ffffffff8cb349be __x64_sys_epoll_wait+0x1e ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f3f12fa364a epoll_wait+0x1a (/usr/lib/x86_64-linux-gnu/libc-2.31.so)
+	               0 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+
+pypy3.10 86324 1562358.891185:          1 cycles: 
+	ffffffff8ca10d5a __perf_event_task_sched_in+0x6a ([kernel.kallsyms])
+	ffffffff8c8d3e4d finish_task_switch+0xfd ([kernel.kallsyms])
+	ffffffff8d2d0b4b __schedule+0x2eb ([kernel.kallsyms])
+	ffffffff8d2d0fe2 schedule+0x42 ([kernel.kallsyms])
+	ffffffff8d2d4d27 schedule_hrtimeout_range_clock+0x97 ([kernel.kallsyms])
+	ffffffff8d2d4db3 schedule_hrtimeout_range+0x13 ([kernel.kallsyms])
+	ffffffff8cb34880 ep_poll+0x3d0 ([kernel.kallsyms])
+	ffffffff8cb34988 do_epoll_wait+0xb8 ([kernel.kallsyms])
+	ffffffff8cb349be __x64_sys_epoll_wait+0x1e ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f3f12fa364a epoll_wait+0x1a (/usr/lib/x86_64-linux-gnu/libc-2.31.so)
+	               0 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+
+pypy3.10 86324 1562358.891192:         83 cycles: 
+	ffffffff8ca10d5a __perf_event_task_sched_in+0x6a ([kernel.kallsyms])
+	ffffffff8c8d3e4d finish_task_switch+0xfd ([kernel.kallsyms])
+	ffffffff8d2d0b4b __schedule+0x2eb ([kernel.kallsyms])
+	ffffffff8d2d0fe2 schedule+0x42 ([kernel.kallsyms])
+	ffffffff8d2d4d27 schedule_hrtimeout_range_clock+0x97 ([kernel.kallsyms])
+	ffffffff8d2d4db3 schedule_hrtimeout_range+0x13 ([kernel.kallsyms])
+	ffffffff8cb34880 ep_poll+0x3d0 ([kernel.kallsyms])
+	ffffffff8cb34988 do_epoll_wait+0xb8 ([kernel.kallsyms])
+	ffffffff8cb349be __x64_sys_epoll_wait+0x1e ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f3f12fa364a epoll_wait+0x1a (/usr/lib/x86_64-linux-gnu/libc-2.31.so)
+	               0 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+
+pypy3.10 86324 1562358.891199:      14285 cycles: 
+	ffffffff8ca10d5a __perf_event_task_sched_in+0x6a ([kernel.kallsyms])
+	ffffffff8c8d3e4d finish_task_switch+0xfd ([kernel.kallsyms])
+	ffffffff8d2d0b4b __schedule+0x2eb ([kernel.kallsyms])
+	ffffffff8d2d0fe2 schedule+0x42 ([kernel.kallsyms])
+	ffffffff8d2d4d27 schedule_hrtimeout_range_clock+0x97 ([kernel.kallsyms])
+	ffffffff8d2d4db3 schedule_hrtimeout_range+0x13 ([kernel.kallsyms])
+	ffffffff8cb34880 ep_poll+0x3d0 ([kernel.kallsyms])
+	ffffffff8cb34988 do_epoll_wait+0xb8 ([kernel.kallsyms])
+	ffffffff8cb349be __x64_sys_epoll_wait+0x1e ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f3f12fa364a epoll_wait+0x1a (/usr/lib/x86_64-linux-gnu/libc-2.31.so)
+	               0 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+
+pypy3.10 86324 1562358.891210:    2558965 cycles: 
+	    7f3f14ba5d08 pypy_g_W_Epoll_descr_poll+0x578 (/opt/pypy3.10/bin/libpypy3.10-c.so)
+
+pypy3.10 86324 1562358.896081:  314716504 cycles: 
+	    7f3f14be8571 pypy_g__check_len_result+0x1 (/opt/pypy3.10/bin/libpypy3.10-c.so)
+	    7f3f16a4ee60 [unknown] ([unknown])
+
+pypy3.10 86324 1562359.331048:   13660781 cycles: 
+	    7f3f115dd9f6 [unknown] (/tmp/perf-86324.map)
+	    7f3f115bb1d8 [unknown] (/tmp/perf-86324.map)
+
+pypy3.10 86324 1562359.363658:   14541929 cycles: 
+	    7f3f14fd9c0b pypy_g_dispatch_loop+0x6b (/opt/pypy3.10/bin/libpypy3.10-c.so)
+	               0 [unknown] ([unknown])
+
+pypy3.10 86324 1562359.406890:   11555377 cycles: 
+	    7f3f14c392ac pypy_g_AbstractAttribute_find_map_attr+0x22c (/opt/pypy3.10/bin/libpypy3.10-c.so)
+	               0 [unknown] ([unknown])
+
+pypy3.10 86324 1562359.435087:   10689896 cycles: 
+	    7f3f152687a5 pypy_g_thread_run+0x35 (/opt/pypy3.10/bin/libpypy3.10-c.so)
+
+pypy3.10 86324 1562359.469400:   10222433 cycles: 
+	    7ffffbdb46a0 [unknown] ([vdso])
+	    7ffffbdb4918 __vdso_clock_gettime+0x38 ([vdso])
+	    7f3f12f610b5 clock_gettime+0x25 (/usr/lib/x86_64-linux-gnu/libc-2.31.so)
+
+pypy3.10 86324 1562359.491388:   10520592 cycles: 
+	ffffffff8d133a12 netif_skb_features+0x52 ([kernel.kallsyms])
+	ffffffff8d133ca4 validate_xmit_skb+0x24 ([kernel.kallsyms])
+	ffffffff8d13400d validate_xmit_skb_list+0x4d ([kernel.kallsyms])
+	ffffffff8d18e8f0 sch_direct_xmit+0x150 ([kernel.kallsyms])
+	ffffffff8d134a1b __dev_queue_xmit+0x57b ([kernel.kallsyms])
+	ffffffff8d134d90 dev_queue_xmit+0x10 ([kernel.kallsyms])
+	ffffffff8d1b38de ip_finish_output2+0x2ce ([kernel.kallsyms])
+	ffffffff8d1b3c5f __ip_finish_output+0xbf ([kernel.kallsyms])
+	ffffffff8d1b3d9d ip_finish_output+0x2d ([kernel.kallsyms])
+	ffffffff8d1b5655 ip_output+0x75 ([kernel.kallsyms])
+	ffffffff8d1b4d2d ip_local_out+0x3d ([kernel.kallsyms])
+	ffffffff8d1b508a __ip_queue_xmit+0x17a ([kernel.kallsyms])
+	ffffffff8d1d8300 ip_queue_xmit+0x10 ([kernel.kallsyms])
+	ffffffff8d1d243c __tcp_transmit_skb+0x53c ([kernel.kallsyms])
+	ffffffff8d1d3ff2 tcp_write_xmit+0x3c2 ([kernel.kallsyms])
+	ffffffff8d1d4807 __tcp_push_pending_frames+0x37 ([kernel.kallsyms])
+	ffffffff8d1bdaad tcp_push+0xfd ([kernel.kallsyms])
+	ffffffff8d1c3685 tcp_sendmsg_locked+0xc75 ([kernel.kallsyms])
+	ffffffff8d1c381d tcp_sendmsg+0x2d ([kernel.kallsyms])
+	ffffffff8d1f66f3 inet_sendmsg+0x43 ([kernel.kallsyms])
+	ffffffff8d10eefe sock_sendmsg+0x5e ([kernel.kallsyms])
+	ffffffff8d110e93 __sys_sendto+0x113 ([kernel.kallsyms])
+	ffffffff8d110f39 __x64_sys_sendto+0x29 ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f3f13089790 __libc_send+0x20 (/usr/lib/x86_64-linux-gnu/libpthread-2.31.so)
+	    7f3f125f4a48 [unknown] ([unknown])
+
+pypy3.10 86324 1562359.530679:   11831963 cycles: 
+	    7f3f149119fa pypy_g_WeakrefLifeline_get_or_make_weakref+0x5a (/opt/pypy3.10/bin/libpypy3.10-c.so)
+	    7f3f115f2108 [unknown] (/tmp/perf-86324.map)
+
+pypy3.10 86324 1562359.552183:   11761711 cycles: 
+	    7f3f14f605bb pypy_g_ResumeDataDirectReader_decode_ref+0xfb (/opt/pypy3.10/bin/libpypy3.10-c.so)
+	               0 [unknown] ([unknown])
+
+pypy3.10 86324 1562359.577560:    9611371 cycles: 
+	ffffffff8ca07e84 ctx_sched_in+0x4 ([kernel.kallsyms])
+	ffffffff8ca0802b perf_event_sched_in+0x3b ([kernel.kallsyms])
+	ffffffff8ca10e5c __perf_event_task_sched_in+0x16c ([kernel.kallsyms])
+	ffffffff8c8d3e4d finish_task_switch+0xfd ([kernel.kallsyms])
+	ffffffff8d2d0b4b __schedule+0x2eb ([kernel.kallsyms])
+	ffffffff8d2d0fe2 schedule+0x42 ([kernel.kallsyms])
+	ffffffff8d2d4d27 schedule_hrtimeout_range_clock+0x97 ([kernel.kallsyms])
+	ffffffff8d2d4db3 schedule_hrtimeout_range+0x13 ([kernel.kallsyms])
+	ffffffff8cb34880 ep_poll+0x3d0 ([kernel.kallsyms])
+	ffffffff8cb34988 do_epoll_wait+0xb8 ([kernel.kallsyms])
+	ffffffff8cb349be __x64_sys_epoll_wait+0x1e ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f3f12fa364a epoll_wait+0x1a (/usr/lib/x86_64-linux-gnu/libc-2.31.so)
+	               0 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+
+pypy3.10 86324 1562359.595076:    8820585 cycles: 
+	    7f3f12b12c9a [unknown] (/usr/lib/x86_64-linux-gnu/libz.so.1.2.11)
+	               0 [unknown] ([unknown])
+
+pypy3.10 86324 1562359.611749:    9470493 cycles: 
+	    7f3f1162a118 [unknown] (/tmp/perf-86324.map)
+	    7f3f115cd2b8 [unknown] (/tmp/perf-86324.map)
+
+pypy3.10 86324 1562359.629263:   10303636 cycles: 
+	    7f3f14476328 pypy_g_dispatch_bytecode__AccessDirect_None+0xb8 (/opt/pypy3.10/bin/libpypy3.10-c.so)
+	               8 [unknown] ([unknown])
+	              10 [unknown] ([unknown])
+
+pypy3.10 86324 1562359.649701:    9922339 cycles: 
+	    7f3f12b0de10 inflate+0x1080 (/usr/lib/x86_64-linux-gnu/libz.so.1.2.11)
+	    7f3f125e28ff [unknown] ([unknown])
+
+pypy3.10 86324 1562359.668637:    8896159 cycles: 
+	ffffffff8ca3258b __lru_cache_add+0x2b ([kernel.kallsyms])
+	ffffffff8ca5e93d do_anonymous_page+0x2cd ([kernel.kallsyms])
+	ffffffff8ca63590 __handle_mm_fault+0x760 ([kernel.kallsyms])
+	ffffffff8ca6369a handle_mm_fault+0xca ([kernel.kallsyms])
+	ffffffff8c880a89 do_user_addr_fault+0x1f9 ([kernel.kallsyms])
+	ffffffff8c881018 __do_page_fault+0x58 ([kernel.kallsyms])
+	ffffffff8c88107c do_page_fault+0x2c ([kernel.kallsyms])
+	ffffffff8d401284 page_fault+0x34 ([kernel.kallsyms])
+	    7f3f12f1b37a [unknown] (/usr/lib/x86_64-linux-gnu/libc-2.31.so)
+
+pypy3.10 86324 1562359.685276:    8004061 cycles: 
+	    7f3f12fa3652 epoll_wait+0x22 (/usr/lib/x86_64-linux-gnu/libc-2.31.so)
+	               0 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+
+pypy3.10 86324 1562359.699945:    8004061 cycles: 
+	ffffffff8c8e4f0c reweight_entity+0x12c ([kernel.kallsyms])
+	ffffffff8c8e511a update_cfs_group+0xea ([kernel.kallsyms])
+	ffffffff8c8e691b dequeue_entity+0x10b ([kernel.kallsyms])
+	ffffffff8c8e6ef8 dequeue_task_fair+0x58 ([kernel.kallsyms])
+	ffffffff8c8d8b03 deactivate_task+0x103 ([kernel.kallsyms])
+	ffffffff8d2d0968 __schedule+0x108 ([kernel.kallsyms])
+	ffffffff8d2d0fe2 schedule+0x42 ([kernel.kallsyms])
+	ffffffff8d2d4d27 schedule_hrtimeout_range_clock+0x97 ([kernel.kallsyms])
+	ffffffff8d2d4db3 schedule_hrtimeout_range+0x13 ([kernel.kallsyms])
+	ffffffff8cb34880 ep_poll+0x3d0 ([kernel.kallsyms])
+	ffffffff8cb34988 do_epoll_wait+0xb8 ([kernel.kallsyms])
+	ffffffff8cb349be __x64_sys_epoll_wait+0x1e ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f3f12fa364a epoll_wait+0x1a (/usr/lib/x86_64-linux-gnu/libc-2.31.so)
+	               0 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+
+pypy3.10 86324 1562359.714124:    8004061 cycles: 
+	    7f3f14f76994 pypy_g_ResumeDataDirectReader_setfield+0x14 (/opt/pypy3.10/bin/libpypy3.10-c.so)
+	        59210001 [unknown] ([unknown])
+
+pypy3.10 86324 1562359.727563:   12601434 cycles: 
+	    7f3f1161668a [unknown] (/tmp/perf-86324.map)
+	    7f3f115cd2b8 [unknown] (/tmp/perf-86324.map)
+
+pypy3.10 86324 1562359.750414:   12601434 cycles: 
+	ffffffff8d1a5ce8 nf_hook_slow+0x8 ([kernel.kallsyms])
+	ffffffff8d1b4d0d ip_local_out+0x1d ([kernel.kallsyms])
+	ffffffff8d1b508a __ip_queue_xmit+0x17a ([kernel.kallsyms])
+	ffffffff8d1d8300 ip_queue_xmit+0x10 ([kernel.kallsyms])
+	ffffffff8d1d243c __tcp_transmit_skb+0x53c ([kernel.kallsyms])
+	ffffffff8d1d3ff2 tcp_write_xmit+0x3c2 ([kernel.kallsyms])
+	ffffffff8d1d4807 __tcp_push_pending_frames+0x37 ([kernel.kallsyms])
+	ffffffff8d1bdaad tcp_push+0xfd ([kernel.kallsyms])
+	ffffffff8d1c3685 tcp_sendmsg_locked+0xc75 ([kernel.kallsyms])
+	ffffffff8d1c381d tcp_sendmsg+0x2d ([kernel.kallsyms])
+	ffffffff8d1f66f3 inet_sendmsg+0x43 ([kernel.kallsyms])
+	ffffffff8d10eefe sock_sendmsg+0x5e ([kernel.kallsyms])
+	ffffffff8d110e93 __sys_sendto+0x113 ([kernel.kallsyms])
+	ffffffff8d110f39 __x64_sys_sendto+0x29 ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f3f13089790 __libc_send+0x20 (/usr/lib/x86_64-linux-gnu/libpthread-2.31.so)
+	               0 [unknown] ([unknown])
+
+pypy3.10 86324 1562359.773946:   13203561 cycles: 
+	    7f3f14f561c2 pypy_g_ResumeDataDirectReader__prepare_virtuals.part.0+0x2f2 (/opt/pypy3.10/bin/libpypy3.10-c.so)
+	              1f [unknown] ([unknown])
+
+pypy3.10 86324 1562359.797323:   11784438 cycles: 
+	    7f3f149a9265 pypy_g_from_ref+0x15 (/opt/pypy3.10/bin/libpypy3.10-c.so)
+	    7f3f1280ee00 [unknown] ([unknown])
+
+pypy3.10 86324 1562359.817939:   11824896 cycles: 
+	ffffffff8caffec5 __fdget+0x5 ([kernel.kallsyms])
+	ffffffff8cb349be __x64_sys_epoll_wait+0x1e ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f3f12fa364a epoll_wait+0x1a (/usr/lib/x86_64-linux-gnu/libc-2.31.so)
+	               0 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+
+pypy3.10 86324 1562359.840514:   13580654 cycles: 
+	    7f3f116028e3 [unknown] (/tmp/perf-86324.map)
+	    7f3f115ad288 [unknown] (/tmp/perf-86324.map)
+
+pypy3.10 86324 1562359.865208:   11774265 cycles: 
+	    7f3f15035770 pypy_g_handler_rvmprof_code+0x0 (/opt/pypy3.10/bin/libpypy3.10-c.so)
+	               0 [unknown] ([unknown])
+
+pypy3.10 86324 1562359.887757:   11774265 cycles: 
+	    7f3f1541f5a9 pypy_g__ll_dict_setitem_lookup_done__v1669___simple_cal+0x9 (/opt/pypy3.10/bin/libpypy3.10-c.so)
+	    7f3f115f2108 [unknown] (/tmp/perf-86324.map)
+
+pypy3.10 86324 1562359.908714:   12839586 cycles: 
+	ffffffff8d1c2a78 tcp_sendmsg_locked+0x68 ([kernel.kallsyms])
+	ffffffff8d1c381d tcp_sendmsg+0x2d ([kernel.kallsyms])
+	ffffffff8d1f66f3 inet_sendmsg+0x43 ([kernel.kallsyms])
+	ffffffff8d10eefe sock_sendmsg+0x5e ([kernel.kallsyms])
+	ffffffff8d110e93 __sys_sendto+0x113 ([kernel.kallsyms])
+	ffffffff8d110f39 __x64_sys_sendto+0x29 ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f3f13089790 __libc_send+0x20 (/usr/lib/x86_64-linux-gnu/libpthread-2.31.so)
+	               8 [unknown] ([unknown])
+
+pypy3.10 86324 1562359.929921:   11214093 cycles: 
+	    7f3f15250ba1 pypy_g_remember_young_pointer+0x1 (/opt/pypy3.10/bin/libpypy3.10-c.so)
+	    7f3f115a9348 [unknown] (/tmp/perf-86324.map)
+
+pypy3.10 86324 1562359.950246:   11364344 cycles: 
+	    7f3f14f60397 pypy_g_ResumeDataDirectReader_getvirtual_ptr+0x67 (/opt/pypy3.10/bin/libpypy3.10-c.so)
+
+pypy3.10 86324 1562359.970342:   12847987 cycles: 
+	    7f3f14f788e3 pypy_g_BlackholeInterpreter_run+0x43 (/opt/pypy3.10/bin/libpypy3.10-c.so)
+	               0 [unknown] ([unknown])
+	    7f3f1555bbb0 [unknown] ([unknown])
+	6174656d5f74696a [unknown] ([unknown])
+
+pypy3.10 86324 1562359.994222:   12376002 cycles: 
+	    7f3f1448bafa pypy_g__match_keywords__v1018___simple_call__function_+0xaa (/opt/pypy3.10/bin/libpypy3.10-c.so)
+
+pypy3.10 86324 1562360.016522:   12376002 cycles: 
+	ffffffff8ccb05ba aa_sk_perm+0x3a ([kernel.kallsyms])
+	ffffffff8cca55c9 apparmor_socket_recvmsg+0x29 ([kernel.kallsyms])
+	ffffffff8cc596fd security_socket_recvmsg+0x3d ([kernel.kallsyms])
+	ffffffff8d10fd32 sock_recvmsg+0x22 ([kernel.kallsyms])
+	ffffffff8d1110b5 __sys_recvfrom+0xe5 ([kernel.kallsyms])
+	ffffffff8d1111c9 __x64_sys_recvfrom+0x29 ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f3f13089610 __libc_recv+0x20 (/usr/lib/x86_64-linux-gnu/libpthread-2.31.so)
+
+pypy3.10 86324 1562360.038737:   16201594 cycles: 
+	ffffffff8d2b6203 rb_erase+0x103 ([kernel.kallsyms])
+	ffffffff8c937b0c __remove_hrtimer+0x3c ([kernel.kallsyms])
+	ffffffff8c937f47 hrtimer_try_to_cancel+0xb7 ([kernel.kallsyms])
+	ffffffff8d2d4d30 schedule_hrtimeout_range_clock+0xa0 ([kernel.kallsyms])
+	ffffffff8d2d4db3 schedule_hrtimeout_range+0x13 ([kernel.kallsyms])
+	ffffffff8cb34880 ep_poll+0x3d0 ([kernel.kallsyms])
+	ffffffff8cb34988 do_epoll_wait+0xb8 ([kernel.kallsyms])
+	ffffffff8cb349be __x64_sys_epoll_wait+0x1e ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f3f12fa364a epoll_wait+0x1a (/usr/lib/x86_64-linux-gnu/libc-2.31.so)
+	               0 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+
+pypy3.10 86324 1562360.064152:   18515941 cycles: 
+	    7f3f14b9d217 pypy_g_portal_11+0xf7 (/opt/pypy3.10/bin/libpypy3.10-c.so)
+	             127 [unknown] ([unknown])
+
+pypy3.10 86324 1562360.098737:   17749187 cycles: 
+	ffffffff8ccb05be aa_sk_perm+0x3e ([kernel.kallsyms])
+	ffffffff8cca55c9 apparmor_socket_recvmsg+0x29 ([kernel.kallsyms])
+	ffffffff8cc596fd security_socket_recvmsg+0x3d ([kernel.kallsyms])
+	ffffffff8d10fd32 sock_recvmsg+0x22 ([kernel.kallsyms])
+	ffffffff8d1110b5 __sys_recvfrom+0xe5 ([kernel.kallsyms])
+	ffffffff8d1111c9 __x64_sys_recvfrom+0x29 ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f3f13089610 __libc_recv+0x20 (/usr/lib/x86_64-linux-gnu/libpthread-2.31.so)
+
+pypy3.10 86324 1562360.132093:   15872502 cycles: 
+	    7f3f1159ed48 [unknown] (/tmp/perf-86324.map)
+	    7f3f1159b800 [unknown] (/tmp/perf-86324.map)
+
+pypy3.10 86324 1562360.158685:   18184942 cycles: 
+	ffffffff8c8e4ec0 reweight_entity+0xe0 ([kernel.kallsyms])
+	ffffffff8c8e511a update_cfs_group+0xea ([kernel.kallsyms])
+	ffffffff8c8e691b dequeue_entity+0x10b ([kernel.kallsyms])
+	ffffffff8c8e6ef8 dequeue_task_fair+0x58 ([kernel.kallsyms])
+	ffffffff8c8d8b03 deactivate_task+0x103 ([kernel.kallsyms])
+	ffffffff8d2d0968 __schedule+0x108 ([kernel.kallsyms])
+	ffffffff8d2d0fe2 schedule+0x42 ([kernel.kallsyms])
+	ffffffff8d2d4d27 schedule_hrtimeout_range_clock+0x97 ([kernel.kallsyms])
+	ffffffff8d2d4db3 schedule_hrtimeout_range+0x13 ([kernel.kallsyms])
+	ffffffff8cb34880 ep_poll+0x3d0 ([kernel.kallsyms])
+	ffffffff8cb34988 do_epoll_wait+0xb8 ([kernel.kallsyms])
+	ffffffff8cb349be __x64_sys_epoll_wait+0x1e ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f3f12fa364a epoll_wait+0x1a (/usr/lib/x86_64-linux-gnu/libc-2.31.so)
+	               0 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+
+pypy3.10 86324 1562360.192849:   15126348 cycles: 
+	ffffffff8c902b22 psi_task_change+0xb2 ([kernel.kallsyms])
+	ffffffff8c8d8bcc deactivate_task+0x1cc ([kernel.kallsyms])
+	ffffffff8d2d0968 __schedule+0x108 ([kernel.kallsyms])
+	ffffffff8d2d0fe2 schedule+0x42 ([kernel.kallsyms])
+	ffffffff8d2d4d27 schedule_hrtimeout_range_clock+0x97 ([kernel.kallsyms])
+	ffffffff8d2d4db3 schedule_hrtimeout_range+0x13 ([kernel.kallsyms])
+	ffffffff8cb34880 ep_poll+0x3d0 ([kernel.kallsyms])
+	ffffffff8cb34988 do_epoll_wait+0xb8 ([kernel.kallsyms])
+	ffffffff8cb349be __x64_sys_epoll_wait+0x1e ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f3f12fa364a epoll_wait+0x1a (/usr/lib/x86_64-linux-gnu/libc-2.31.so)
+	               0 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+
+pypy3.10 86324 1562360.219397:   14192201 cycles: 
+	ffffffff8cd25d0b _copy_from_iter_full+0xb ([kernel.kallsyms])
+	ffffffff8d1c2f7d tcp_sendmsg_locked+0x56d ([kernel.kallsyms])
+	ffffffff8d1c381d tcp_sendmsg+0x2d ([kernel.kallsyms])
+	ffffffff8d1f66f3 inet_sendmsg+0x43 ([kernel.kallsyms])
+	ffffffff8d10eefe sock_sendmsg+0x5e ([kernel.kallsyms])
+	ffffffff8d110e93 __sys_sendto+0x113 ([kernel.kallsyms])
+	ffffffff8d110f39 __x64_sys_sendto+0x29 ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f3f13089790 __libc_send+0x20 (/usr/lib/x86_64-linux-gnu/libpthread-2.31.so)
+	               0 [unknown] ([unknown])
+
+pypy3.10 86324 1562360.244200:   14324316 cycles: 
+	    7f3f12b1177d [unknown] (/usr/lib/x86_64-linux-gnu/libz.so.1.2.11)
+	               0 [unknown] ([unknown])
+
+pypy3.10 86324 1562360.272728:   13890765 cycles: 
+	    7f3f14be80c8 pypy_g_comparison_lt_impl+0xe8 (/opt/pypy3.10/bin/libpypy3.10-c.so)
+	    7f3f16a4dae0 [unknown] ([unknown])
+
+pypy3.10 86324 1562360.294854:   14701912 cycles: 
+	    7f3f14385842 pypy_g_ll_join_chars_trampoline__v1237___simple_call__f+0x2b2 (/opt/pypy3.10/bin/libpypy3.10-c.so)
+
+pypy3.10 86324 1562360.350077:   11599738 cycles: 
+	ffffffff8d1b2615 ip_send_check+0x5 ([kernel.kallsyms])
+	ffffffff8d1b4d0d ip_local_out+0x1d ([kernel.kallsyms])
+	ffffffff8d1b508a __ip_queue_xmit+0x17a ([kernel.kallsyms])
+	ffffffff8d1d8300 ip_queue_xmit+0x10 ([kernel.kallsyms])
+	ffffffff8d1d243c __tcp_transmit_skb+0x53c ([kernel.kallsyms])
+	ffffffff8d1d3ff2 tcp_write_xmit+0x3c2 ([kernel.kallsyms])
+	ffffffff8d1d4807 __tcp_push_pending_frames+0x37 ([kernel.kallsyms])
+	ffffffff8d1bdaad tcp_push+0xfd ([kernel.kallsyms])
+	ffffffff8d1c3685 tcp_sendmsg_locked+0xc75 ([kernel.kallsyms])
+	ffffffff8d1c381d tcp_sendmsg+0x2d ([kernel.kallsyms])
+	ffffffff8d1f66f3 inet_sendmsg+0x43 ([kernel.kallsyms])
+	ffffffff8d10eefe sock_sendmsg+0x5e ([kernel.kallsyms])
+	ffffffff8d110e93 __sys_sendto+0x113 ([kernel.kallsyms])
+	ffffffff8d110f39 __x64_sys_sendto+0x29 ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f3f13089790 __libc_send+0x20 (/usr/lib/x86_64-linux-gnu/libpthread-2.31.so)
+	               0 [unknown] ([unknown])
+
+pypy3.10 86324 1562360.372302:   13205221 cycles: 
+	    7f3f115ac5cc [unknown] (/tmp/perf-86324.map)
+	    7f3f115a3110 [unknown] (/tmp/perf-86324.map)
+
+pypy3.10 86324 1562360.395309:   13205221 cycles: 
+	ffffffff8d1a952c ipv4_mtu+0xc ([kernel.kallsyms])
+	ffffffff8d1bdbec tcp_send_mss+0x1c ([kernel.kallsyms])
+	ffffffff8d1c2b31 tcp_sendmsg_locked+0x121 ([kernel.kallsyms])
+	ffffffff8d1c381d tcp_sendmsg+0x2d ([kernel.kallsyms])
+	ffffffff8d1f66f3 inet_sendmsg+0x43 ([kernel.kallsyms])
+	ffffffff8d10eefe sock_sendmsg+0x5e ([kernel.kallsyms])
+	ffffffff8d110e93 __sys_sendto+0x113 ([kernel.kallsyms])
+	ffffffff8d110f39 __x64_sys_sendto+0x29 ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f3f13089790 __libc_send+0x20 (/usr/lib/x86_64-linux-gnu/libpthread-2.31.so)
+	               0 [unknown] ([unknown])
+
+pypy3.10 86324 1562360.419848:   13459625 cycles: 
+	    7f3f14f607d2 pypy_g_ResumeDataDirectReader_consume_virtualref_info+0x142 (/opt/pypy3.10/bin/libpypy3.10-c.so)
+
+pypy3.10 86324 1562360.442616:   12677554 cycles: 
+	    7f3f1442ea3a pypy_g_Signature_find_w_argname+0x4a (/opt/pypy3.10/bin/libpypy3.10-c.so)
+
+pypy3.10 86324 1562360.467243:   15201959 cycles: 
+	    7f3f14f78b78 pypy_g_BlackholeInterpreter__resume_mainloop+0xf8 (/opt/pypy3.10/bin/libpypy3.10-c.so)
+	    7f3f1134a928 [unknown] ([unknown])
+
+pypy3.10 86324 1562360.496171:   14765577 cycles: 
+	    7f3f12f1e6d0 cfree+0x0 (/usr/lib/x86_64-linux-gnu/libc-2.31.so)
+	               0 [unknown] ([unknown])
+
+pypy3.10 86324 1562360.522008:   12827611 cycles: 
+	    7f3f14f776ea pypy_g_force_now_1+0x4a (/opt/pypy3.10/bin/libpypy3.10-c.so)
+	    7f3f115ad288 [unknown] (/tmp/perf-86324.map)
+
+pypy3.10 86324 1562360.545745:   10984279 cycles: 
+	    7f3f1526879f pypy_g_thread_run+0x2f (/opt/pypy3.10/bin/libpypy3.10-c.so)
+
+pypy3.10 86324 1562360.564113:   11156739 cycles: 
+	ffffffff8caf595c select_estimate_accuracy+0x5c ([kernel.kallsyms])
+	ffffffff8cb345da ep_poll+0x12a ([kernel.kallsyms])
+	ffffffff8cb34988 do_epoll_wait+0xb8 ([kernel.kallsyms])
+	ffffffff8cb349be __x64_sys_epoll_wait+0x1e ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f3f12fa364a epoll_wait+0x1a (/usr/lib/x86_64-linux-gnu/libc-2.31.so)
+	               0 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+
+pypy3.10 86324 1562360.582081:   13262844 cycles: 
+	    7f3f115c2344 [unknown] (/tmp/perf-86324.map)
+	    7f3f115a9348 [unknown] (/tmp/perf-86324.map)
+
+pypy3.10 86324 1562360.604879:   13917936 cycles: 
+	    7f3f1160efa8 [unknown] (/tmp/perf-86324.map)
+	    7f3f115bb1d8 [unknown] (/tmp/perf-86324.map)
+
+pypy3.10 86324 1562360.631710:   15613911 cycles: 
+	    7f3f153ba060 pypy_g_ll_get__DICTPtr_Address_Address+0x10 (/opt/pypy3.10/bin/libpypy3.10-c.so)
+	    7f3f12276ac8 [unknown] ([unknown])
+
+pypy3.10 86324 1562360.659716:   15015935 cycles: 
+	ffffffffc02de045 iptable_filter_hook+0x5 ([kernel.kallsyms])
+	ffffffff8d1b4c87 __ip_local_out+0xd7 ([kernel.kallsyms])
+	ffffffff8d1b4d0d ip_local_out+0x1d ([kernel.kallsyms])
+	ffffffff8d1b508a __ip_queue_xmit+0x17a ([kernel.kallsyms])
+	ffffffff8d1d8300 ip_queue_xmit+0x10 ([kernel.kallsyms])
+	ffffffff8d1d243c __tcp_transmit_skb+0x53c ([kernel.kallsyms])
+	ffffffff8d1d3ff2 tcp_write_xmit+0x3c2 ([kernel.kallsyms])
+	ffffffff8d1d4807 __tcp_push_pending_frames+0x37 ([kernel.kallsyms])
+	ffffffff8d1bdaad tcp_push+0xfd ([kernel.kallsyms])
+	ffffffff8d1c3685 tcp_sendmsg_locked+0xc75 ([kernel.kallsyms])
+	ffffffff8d1c381d tcp_sendmsg+0x2d ([kernel.kallsyms])
+	ffffffff8d1f66f3 inet_sendmsg+0x43 ([kernel.kallsyms])
+	ffffffff8d10eefe sock_sendmsg+0x5e ([kernel.kallsyms])
+	ffffffff8d110e93 __sys_sendto+0x113 ([kernel.kallsyms])
+	ffffffff8d110f39 __x64_sys_sendto+0x29 ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f3f13089790 __libc_send+0x20 (/usr/lib/x86_64-linux-gnu/libpthread-2.31.so)
+	               0 [unknown] ([unknown])
+
+pypy3.10 86324 1562360.685534:   14484926 cycles: 
+	    7f3f153b78a1 pypy_g__ll_strhash__rpy_stringPtr+0x1 (/opt/pypy3.10/bin/libpypy3.10-c.so)
+	    7f3f12751928 [unknown] ([unknown])
+
+pypy3.10 86324 1562360.709246:   18641909 cycles: 
+	    7f3f12f610ae clock_gettime+0x1e (/usr/lib/x86_64-linux-gnu/libc-2.31.so)
+
+pypy3.10 86324 1562360.742067:   15521559 cycles: 
+	    7f3f14fd9bf0 pypy_g_dispatch_loop+0x50 (/opt/pypy3.10/bin/libpypy3.10-c.so)
+	               0 [unknown] ([unknown])
+
+pypy3.10 86324 1562360.795404:   16850385 cycles: 
+	    7f3f12b074ea [unknown] (/usr/lib/x86_64-linux-gnu/libz.so.1.2.11)
+
+pypy3.10 86324 1562360.824275:   16850385 cycles: 
+	    7f3f15255e60 pypy_g_IncrementalMiniMarkGC__allocate_shadow+0x20 (/opt/pypy3.10/bin/libpypy3.10-c.so)
+	    7f3f103d0758 [unknown] ([unknown])
+
+pypy3.10 86324 1562360.852014:   19644374 cycles: 
+	ffffffff8d2c3ec0 memcpy_erms+0x0 ([kernel.kallsyms])
+	ffffffff8d11b6d1 skb_copy+0x81 ([kernel.kallsyms])
+	ffffffffc0220895 rpc_pipe_fs_type+0x4b ([kernel.kallsyms])
+	ffffffff8d134291 dev_hard_start_xmit+0x91 ([kernel.kallsyms])
+	ffffffff8d18e8b3 sch_direct_xmit+0x113 ([kernel.kallsyms])
+	ffffffff8d134a1b __dev_queue_xmit+0x57b ([kernel.kallsyms])
+	ffffffff8d134d90 dev_queue_xmit+0x10 ([kernel.kallsyms])
+	ffffffff8d1b38de ip_finish_output2+0x2ce ([kernel.kallsyms])
+	ffffffff8d1b3c5f __ip_finish_output+0xbf ([kernel.kallsyms])
+	ffffffff8d1b3d9d ip_finish_output+0x2d ([kernel.kallsyms])
+	ffffffff8d1b5655 ip_output+0x75 ([kernel.kallsyms])
+	ffffffff8d1b4d2d ip_local_out+0x3d ([kernel.kallsyms])
+	ffffffff8d1b508a __ip_queue_xmit+0x17a ([kernel.kallsyms])
+	ffffffff8d1d8300 ip_queue_xmit+0x10 ([kernel.kallsyms])
+	ffffffff8d1d243c __tcp_transmit_skb+0x53c ([kernel.kallsyms])
+	ffffffff8d1d3ff2 tcp_write_xmit+0x3c2 ([kernel.kallsyms])
+	ffffffff8d1d4807 __tcp_push_pending_frames+0x37 ([kernel.kallsyms])
+	ffffffff8d1bdaad tcp_push+0xfd ([kernel.kallsyms])
+	ffffffff8d1c3685 tcp_sendmsg_locked+0xc75 ([kernel.kallsyms])
+	ffffffff8d1c381d tcp_sendmsg+0x2d ([kernel.kallsyms])
+	ffffffff8d1f66f3 inet_sendmsg+0x43 ([kernel.kallsyms])
+	ffffffff8d10eefe sock_sendmsg+0x5e ([kernel.kallsyms])
+	ffffffff8d110e93 __sys_sendto+0x113 ([kernel.kallsyms])
+	ffffffff8d110f39 __x64_sys_sendto+0x29 ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f3f13089790 __libc_send+0x20 (/usr/lib/x86_64-linux-gnu/libpthread-2.31.so)
+	    7f3f11de8160 [unknown] ([unknown])
+
+pypy3.10 86324 1562360.887723:   20726264 cycles: 
+	ffffffff8c8e4c25 update_curr+0x45 ([kernel.kallsyms])
+	ffffffff8c8e6833 dequeue_entity+0x23 ([kernel.kallsyms])
+	ffffffff8c8e6ef8 dequeue_task_fair+0x58 ([kernel.kallsyms])
+	ffffffff8c8d8b03 deactivate_task+0x103 ([kernel.kallsyms])
+	ffffffff8d2d0968 __schedule+0x108 ([kernel.kallsyms])
+	ffffffff8d2d0fe2 schedule+0x42 ([kernel.kallsyms])
+	ffffffff8d2d4d27 schedule_hrtimeout_range_clock+0x97 ([kernel.kallsyms])
+	ffffffff8d2d4db3 schedule_hrtimeout_range+0x13 ([kernel.kallsyms])
+	ffffffff8cb34880 ep_poll+0x3d0 ([kernel.kallsyms])
+	ffffffff8cb34988 do_epoll_wait+0xb8 ([kernel.kallsyms])
+	ffffffff8cb349be __x64_sys_epoll_wait+0x1e ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f3f12fa364a epoll_wait+0x1a (/usr/lib/x86_64-linux-gnu/libc-2.31.so)
+	               0 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+
+pypy3.10 86324 1562360.925063:   17697320 cycles: 
+	ffffffff8d1bdd1b tcp_cleanup_rbuf+0x9b ([kernel.kallsyms])
+	ffffffff8d1c1796 tcp_recvmsg+0x256 ([kernel.kallsyms])
+	ffffffff8d1f69ce inet_recvmsg+0x5e ([kernel.kallsyms])
+	ffffffff8d10fd79 sock_recvmsg+0x69 ([kernel.kallsyms])
+	ffffffff8d1110b5 __sys_recvfrom+0xe5 ([kernel.kallsyms])
+	ffffffff8d1111c9 __x64_sys_recvfrom+0x29 ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f3f13089610 __libc_recv+0x20 (/usr/lib/x86_64-linux-gnu/libpthread-2.31.so)
+
+pypy3.10 86324 1562360.954640:   18751540 cycles: 
+	    7f3f115dc716 [unknown] (/tmp/perf-86324.map)
+	    7f3f115bb1d8 [unknown] (/tmp/perf-86324.map)
+
+pypy3.10 86324 1562360.986650:   15688557 cycles: 
+	    7f3f14f85cad pypy_g_maybe_compile_and_run__star_5_2.part.0+0x86d (/opt/pypy3.10/bin/libpypy3.10-c.so)
+	               8 [unknown] ([unknown])
+
+pypy3.10 86324 1562361.019695:   11706102 cycles: 
+	ffffffff8d2302b3 validate_xmit_xfrm+0xd3 ([kernel.kallsyms])
+	ffffffff8d133e1a validate_xmit_skb+0x19a ([kernel.kallsyms])
+	ffffffff8d13400d validate_xmit_skb_list+0x4d ([kernel.kallsyms])
+	ffffffff8d18e8f0 sch_direct_xmit+0x150 ([kernel.kallsyms])
+	ffffffff8d134a1b __dev_queue_xmit+0x57b ([kernel.kallsyms])
+	ffffffff8d134d90 dev_queue_xmit+0x10 ([kernel.kallsyms])
+	ffffffff8d1b38de ip_finish_output2+0x2ce ([kernel.kallsyms])
+	ffffffff8d1b3c5f __ip_finish_output+0xbf ([kernel.kallsyms])
+	ffffffff8d1b3d9d ip_finish_output+0x2d ([kernel.kallsyms])
+	ffffffff8d1b5655 ip_output+0x75 ([kernel.kallsyms])
+	ffffffff8d1b4d2d ip_local_out+0x3d ([kernel.kallsyms])
+	ffffffff8d1b508a __ip_queue_xmit+0x17a ([kernel.kallsyms])
+	ffffffff8d1d8300 ip_queue_xmit+0x10 ([kernel.kallsyms])
+	ffffffff8d1d243c __tcp_transmit_skb+0x53c ([kernel.kallsyms])
+	ffffffff8d1d3ff2 tcp_write_xmit+0x3c2 ([kernel.kallsyms])
+	ffffffff8d1d4807 __tcp_push_pending_frames+0x37 ([kernel.kallsyms])
+	ffffffff8d1bdaad tcp_push+0xfd ([kernel.kallsyms])
+	ffffffff8d1c3685 tcp_sendmsg_locked+0xc75 ([kernel.kallsyms])
+	ffffffff8d1c381d tcp_sendmsg+0x2d ([kernel.kallsyms])
+	ffffffff8d1f66f3 inet_sendmsg+0x43 ([kernel.kallsyms])
+	ffffffff8d10eefe sock_sendmsg+0x5e ([kernel.kallsyms])
+	ffffffff8d110e93 __sys_sendto+0x113 ([kernel.kallsyms])
+	ffffffff8d110f39 __x64_sys_sendto+0x29 ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f3f13089790 __libc_send+0x20 (/usr/lib/x86_64-linux-gnu/libpthread-2.31.so)
+	               0 [unknown] ([unknown])
+
+pypy3.10 86324 1562361.040154:   13124287 cycles: 
+	    7f3f115dbf99 [unknown] (/tmp/perf-86324.map)
+	    7f3f115bb1d8 [unknown] (/tmp/perf-86324.map)
+
+pypy3.10 86324 1562361.063561:   11892938 cycles: 
+	    7f3f15154cf2 pypy_g_allocate__rpython_jit_metainterp_resume_ResumeDa+0x2 (/opt/pypy3.10/bin/libpypy3.10-c.so)
+
+pypy3.10 86324 1562361.082111:   11143480 cycles: 
+	ffffffffc023b0d2 ipt_do_table+0xb2 ([kernel.kallsyms])
+	ffffffffc02de05f iptable_filter_hook+0x1f ([kernel.kallsyms])
+	ffffffff8d1a5d25 nf_hook_slow+0x45 ([kernel.kallsyms])
+	ffffffff8d1b4c87 __ip_local_out+0xd7 ([kernel.kallsyms])
+	ffffffff8d1b4d0d ip_local_out+0x1d ([kernel.kallsyms])
+	ffffffff8d1b508a __ip_queue_xmit+0x17a ([kernel.kallsyms])
+	ffffffff8d1d8300 ip_queue_xmit+0x10 ([kernel.kallsyms])
+	ffffffff8d1d243c __tcp_transmit_skb+0x53c ([kernel.kallsyms])
+	ffffffff8d1d3ff2 tcp_write_xmit+0x3c2 ([kernel.kallsyms])
+	ffffffff8d1d4807 __tcp_push_pending_frames+0x37 ([kernel.kallsyms])
+	ffffffff8d1bdaad tcp_push+0xfd ([kernel.kallsyms])
+	ffffffff8d1c3685 tcp_sendmsg_locked+0xc75 ([kernel.kallsyms])
+	ffffffff8d1c381d tcp_sendmsg+0x2d ([kernel.kallsyms])
+	ffffffff8d1f66f3 inet_sendmsg+0x43 ([kernel.kallsyms])
+	ffffffff8d10eefe sock_sendmsg+0x5e ([kernel.kallsyms])
+	ffffffff8d110e93 __sys_sendto+0x113 ([kernel.kallsyms])
+	ffffffff8d110f39 __x64_sys_sendto+0x29 ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f3f13089790 __libc_send+0x20 (/usr/lib/x86_64-linux-gnu/libpthread-2.31.so)
+	    7f3f1586f810 [unknown] ([unknown])
+
+pypy3.10 86324 1562361.100799:   11143480 cycles: 
+	    7f3f115d3b84 [unknown] (/tmp/perf-86324.map)
+	    7f3f115f13b8 [unknown] (/tmp/perf-86324.map)
+
+pypy3.10 86324 1562361.123101:   12355877 cycles: 
+	    7f3f1159c060 [unknown] (/tmp/perf-86324.map)
+	    7f3f1159b800 [unknown] (/tmp/perf-86324.map)
+
+pypy3.10 86324 1562361.145136:   13301214 cycles: 
+	ffffffff8d40001c entry_SYSCALL_64+0xc ([kernel.kallsyms])
+	    7f3f12f680cb __getpid+0xb (/usr/lib/x86_64-linux-gnu/libc-2.31.so)
+	    7f3f115f2108 [unknown] (/tmp/perf-86324.map)
+
+pypy3.10 86324 1562361.168230:   13600452 cycles: 
+	    7f3f115c24d3 [unknown] (/tmp/perf-86324.map)
+	    7f3f115a9348 [unknown] (/tmp/perf-86324.map)
+
+pypy3.10 86324 1562361.192035:   10955137 cycles: 
+	ffffffff8c80453a do_syscall_64+0xca ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f3f12fa364a epoll_wait+0x1a (/usr/lib/x86_64-linux-gnu/libc-2.31.so)
+	               0 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+
+pypy3.10 86324 1562361.209360:   12559764 cycles: 
+	    7f3f14f78012 pypy_g_blackhole_from_resumedata+0x462 (/opt/pypy3.10/bin/libpypy3.10-c.so)
+	    7f3f1134a9b0 [unknown] ([unknown])
+
+pypy3.10 86324 1562361.231205:   15030660 cycles: 
+	ffffffff8d1f66d5 inet_sendmsg+0x25 ([kernel.kallsyms])
+	ffffffff8d10eefe sock_sendmsg+0x5e ([kernel.kallsyms])
+	ffffffff8d110e93 __sys_sendto+0x113 ([kernel.kallsyms])
+	ffffffff8d110f39 __x64_sys_sendto+0x29 ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f3f13089790 __libc_send+0x20 (/usr/lib/x86_64-linux-gnu/libpthread-2.31.so)
+	               0 [unknown] ([unknown])
+
+pypy3.10 86324 1562361.261304:   16250027 cycles: 
+	ffffffff8d2301e6 validate_xmit_xfrm+0x6 ([kernel.kallsyms])
+	ffffffff8d13400d validate_xmit_skb_list+0x4d ([kernel.kallsyms])
+	ffffffff8d18e8f0 sch_direct_xmit+0x150 ([kernel.kallsyms])
+	ffffffff8d134a1b __dev_queue_xmit+0x57b ([kernel.kallsyms])
+	ffffffff8d134d90 dev_queue_xmit+0x10 ([kernel.kallsyms])
+	ffffffff8d1b38de ip_finish_output2+0x2ce ([kernel.kallsyms])
+	ffffffff8d1b3c5f __ip_finish_output+0xbf ([kernel.kallsyms])
+	ffffffff8d1b3d9d ip_finish_output+0x2d ([kernel.kallsyms])
+	ffffffff8d1b5655 ip_output+0x75 ([kernel.kallsyms])
+	ffffffff8d1b4d2d ip_local_out+0x3d ([kernel.kallsyms])
+	ffffffff8d1b508a __ip_queue_xmit+0x17a ([kernel.kallsyms])
+	ffffffff8d1d8300 ip_queue_xmit+0x10 ([kernel.kallsyms])
+	ffffffff8d1d243c __tcp_transmit_skb+0x53c ([kernel.kallsyms])
+	ffffffff8d1d3ff2 tcp_write_xmit+0x3c2 ([kernel.kallsyms])
+	ffffffff8d1d4807 __tcp_push_pending_frames+0x37 ([kernel.kallsyms])
+	ffffffff8d1bdaad tcp_push+0xfd ([kernel.kallsyms])
+	ffffffff8d1c3685 tcp_sendmsg_locked+0xc75 ([kernel.kallsyms])
+	ffffffff8d1c381d tcp_sendmsg+0x2d ([kernel.kallsyms])
+	ffffffff8d1f66f3 inet_sendmsg+0x43 ([kernel.kallsyms])
+	ffffffff8d10eefe sock_sendmsg+0x5e ([kernel.kallsyms])
+	ffffffff8d110e93 __sys_sendto+0x113 ([kernel.kallsyms])
+	ffffffff8d110f39 __x64_sys_sendto+0x29 ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f3f13089790 __libc_send+0x20 (/usr/lib/x86_64-linux-gnu/libpthread-2.31.so)
+	               0 [unknown] ([unknown])
+
+pypy3.10 86324 1562361.290356:   12787929 cycles: 
+	ffffffff8c8f5701 __wake_up_common+0xc1 ([kernel.kallsyms])
+	ffffffff8c8f57fc __wake_up_common_lock+0x7c ([kernel.kallsyms])
+	ffffffff8c8f5853 __wake_up+0x13 ([kernel.kallsyms])
+	ffffffff8cb33b8c ep_scan_ready_list.constprop.0+0x17c ([kernel.kallsyms])
+	ffffffff8cb34538 ep_poll+0x88 ([kernel.kallsyms])
+	ffffffff8cb34988 do_epoll_wait+0xb8 ([kernel.kallsyms])
+	ffffffff8cb349be __x64_sys_epoll_wait+0x1e ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f3f12fa364a epoll_wait+0x1a (/usr/lib/x86_64-linux-gnu/libc-2.31.so)
+	               0 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+
+pypy3.10 86324 1562361.312902:   10985215 cycles: 
+	    7f3f15257a0d pypy_g_trace__gc_callback__trace_drag_out+0x43d (/opt/pypy3.10/bin/libpypy3.10-c.so)
+	               2 [unknown] ([unknown])
+
+pypy3.10 86324 1562361.331708:   13746711 cycles: 
+	    7f3f14bf6d2a pypy_g_len_w+0x1a (/opt/pypy3.10/bin/libpypy3.10-c.so)
+	    7f3f11e29690 [unknown] ([unknown])
+
+pypy3.10 86324 1562361.355607:   13128500 cycles: 
+	    7f3f12b06356 [unknown] (/usr/lib/x86_64-linux-gnu/libz.so.1.2.11)
+
+pypy3.10 86324 1562361.383519:   10259179 cycles: 
+	ffffffff8d10d02d sock_poll+0x1d ([kernel.kallsyms])
+	ffffffff8cb33c53 ep_item_poll.isra.0+0x43 ([kernel.kallsyms])
+	ffffffff8cb33e84 ep_send_events_proc+0xe4 ([kernel.kallsyms])
+	ffffffff8cb33ac1 ep_scan_ready_list.constprop.0+0xb1 ([kernel.kallsyms])
+	ffffffff8cb34538 ep_poll+0x88 ([kernel.kallsyms])
+	ffffffff8cb34988 do_epoll_wait+0xb8 ([kernel.kallsyms])
+	ffffffff8cb349be __x64_sys_epoll_wait+0x1e ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f3f12fa364a epoll_wait+0x1a (/usr/lib/x86_64-linux-gnu/libc-2.31.so)
+	               0 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+
+pypy3.10 86324 1562361.401445:   11297238 cycles: 
+	    7f3f115f572c [unknown] (/tmp/perf-86324.map)
+	    7f3f115f2108 [unknown] (/tmp/perf-86324.map)
+
+pypy3.10 86324 1562361.420990:   14363082 cycles: 
+	    7f3f115c7e55 [unknown] (/tmp/perf-86324.map)
+	    7f3f115ad288 [unknown] (/tmp/perf-86324.map)
+
+pypy3.10 86324 1562361.445213:   11897727 cycles: 
+	ffffffff8d40015e syscall_return_via_sysret+0x6d ([kernel.kallsyms])
+	    7f3f12fa364a epoll_wait+0x1a (/usr/lib/x86_64-linux-gnu/libc-2.31.so)
+	               0 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+
+pypy3.10 86324 1562361.466046:   10799633 cycles: 
+	ffffffff8d1d7dc6 tcp_stream_memory_free+0x6 ([kernel.kallsyms])
+	ffffffff8d10d08c sock_poll+0x7c ([kernel.kallsyms])
+	ffffffff8cb33c53 ep_item_poll.isra.0+0x43 ([kernel.kallsyms])
+	ffffffff8cb33e84 ep_send_events_proc+0xe4 ([kernel.kallsyms])
+	ffffffff8cb33ac1 ep_scan_ready_list.constprop.0+0xb1 ([kernel.kallsyms])
+	ffffffff8cb34538 ep_poll+0x88 ([kernel.kallsyms])
+	ffffffff8cb34988 do_epoll_wait+0xb8 ([kernel.kallsyms])
+	ffffffff8cb349be __x64_sys_epoll_wait+0x1e ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f3f12fa364a epoll_wait+0x1a (/usr/lib/x86_64-linux-gnu/libc-2.31.so)
+	               0 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+
+pypy3.10 86324 1562361.485205:   10186092 cycles: 
+	    7f3f14f855a8 pypy_g_maybe_compile_and_run__star_5_2.part.0+0x168 (/opt/pypy3.10/bin/libpypy3.10-c.so)
+	               8 [unknown] ([unknown])
+
+pypy3.10 86324 1562361.504882:   10319024 cycles: 
+	    7f3f1443cd58 pypy_g_ExecutionContext_return_trace+0x8 (/opt/pypy3.10/bin/libpypy3.10-c.so)
+	               0 [unknown] ([unknown])
+
+pypy3.10 86324 1562361.523080:   11082276 cycles: 
+	    7f3f1447792f pypy_g_dispatch_bytecode__AccessDirect_None+0x16bf (/opt/pypy3.10/bin/libpypy3.10-c.so)
+	               8 [unknown] ([unknown])
+	              10 [unknown] ([unknown])
+
+pypy3.10 86324 1562361.542418:   13183291 cycles: 
+	    7f3f14f65168 pypy_g_BlackholeInterpreter_setposition+0x18 (/opt/pypy3.10/bin/libpypy3.10-c.so)
+	    7f3f15f36360 [unknown] ([unknown])
+
+pypy3.10 86324 1562361.565564:   11369086 cycles: 
+	    7f3f1158d2e6 [unknown] (/tmp/perf-86324.map)
+	    7f3f115bb1d8 [unknown] (/tmp/perf-86324.map)
+
+pypy3.10 86324 1562361.585327:   12754699 cycles: 
+	    7f3f14f85ca0 pypy_g_maybe_compile_and_run__star_5_2.part.0+0x860 (/opt/pypy3.10/bin/libpypy3.10-c.so)
+	               8 [unknown] ([unknown])
+
+pypy3.10 86324 1562361.607699:   13237286 cycles: 
+	    7f3f1162c405 [unknown] (/tmp/perf-86324.map)
+	    7f3f115a3110 [unknown] (/tmp/perf-86324.map)
+
+pypy3.10 86324 1562361.633017:   12847160 cycles: 
+	ffffffff8d1ca368 tcp_rcv_space_adjust+0x28 ([kernel.kallsyms])
+	ffffffff8d1c1877 tcp_recvmsg+0x337 ([kernel.kallsyms])
+	ffffffff8d1f69ce inet_recvmsg+0x5e ([kernel.kallsyms])
+	ffffffff8d10fd79 sock_recvmsg+0x69 ([kernel.kallsyms])
+	ffffffff8d1110b5 __sys_recvfrom+0xe5 ([kernel.kallsyms])
+	ffffffff8d1111c9 __x64_sys_recvfrom+0x29 ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f3f13089610 __libc_recv+0x20 (/usr/lib/x86_64-linux-gnu/libpthread-2.31.so)
+
+pypy3.10 86324 1562361.656240:   10371990 cycles: 
+	ffffffff8d134249 dev_hard_start_xmit+0x49 ([kernel.kallsyms])
+	ffffffff8d18e8b3 sch_direct_xmit+0x113 ([kernel.kallsyms])
+	ffffffff8d134a1b __dev_queue_xmit+0x57b ([kernel.kallsyms])
+	ffffffff8d134d90 dev_queue_xmit+0x10 ([kernel.kallsyms])
+	ffffffff8d1b38de ip_finish_output2+0x2ce ([kernel.kallsyms])
+	ffffffff8d1b3c5f __ip_finish_output+0xbf ([kernel.kallsyms])
+	ffffffff8d1b3d9d ip_finish_output+0x2d ([kernel.kallsyms])
+	ffffffff8d1b5655 ip_output+0x75 ([kernel.kallsyms])
+	ffffffff8d1b4d2d ip_local_out+0x3d ([kernel.kallsyms])
+	ffffffff8d1b508a __ip_queue_xmit+0x17a ([kernel.kallsyms])
+	ffffffff8d1d8300 ip_queue_xmit+0x10 ([kernel.kallsyms])
+	ffffffff8d1d243c __tcp_transmit_skb+0x53c ([kernel.kallsyms])
+	ffffffff8d1d3ff2 tcp_write_xmit+0x3c2 ([kernel.kallsyms])
+	ffffffff8d1d4807 __tcp_push_pending_frames+0x37 ([kernel.kallsyms])
+	ffffffff8d1bdaad tcp_push+0xfd ([kernel.kallsyms])
+	ffffffff8d1c3685 tcp_sendmsg_locked+0xc75 ([kernel.kallsyms])
+	ffffffff8d1c381d tcp_sendmsg+0x2d ([kernel.kallsyms])
+	ffffffff8d1f66f3 inet_sendmsg+0x43 ([kernel.kallsyms])
+	ffffffff8d10eefe sock_sendmsg+0x5e ([kernel.kallsyms])
+	ffffffff8d110e93 __sys_sendto+0x113 ([kernel.kallsyms])
+	ffffffff8d110f39 __x64_sys_sendto+0x29 ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f3f13089790 __libc_send+0x20 (/usr/lib/x86_64-linux-gnu/libpthread-2.31.so)
+	               0 [unknown] ([unknown])
+
+pypy3.10 86324 1562361.672984:   11222681 cycles: 
+	    7f3f12fa3652 epoll_wait+0x22 (/usr/lib/x86_64-linux-gnu/libc-2.31.so)
+	               0 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+
+pypy3.10 86324 1562361.693411:   13352885 cycles: 
+	    7f3f153ba053 pypy_g_ll_get__DICTPtr_Address_Address+0x3 (/opt/pypy3.10/bin/libpypy3.10-c.so)
+	    7f3f11f39778 [unknown] ([unknown])
+
+pypy3.10 86324 1562361.717510:   12972537 cycles: 
+	    7f3f14baa1e5 pypy_g__after_thread_switch+0x25 (/opt/pypy3.10/bin/libpypy3.10-c.so)
+
+pypy3.10 86324 1562361.739698:   12544815 cycles: 
+	    7f3f153ef9b1 pypy_g_ll_dict_lookup__v1525___simple_call__function_+0x1a1 (/opt/pypy3.10/bin/libpypy3.10-c.so)
+
+pypy3.10 86324 1562361.764108:   11684625 cycles: 
+	    7f3f14462bb8 pypy_g_dropvalues__AccessDirect_None+0x38 (/opt/pypy3.10/bin/libpypy3.10-c.so)
+
+pypy3.10 86324 1562361.783235:   11570464 cycles: 
+	ffffffff8caa9861 kmem_cache_free+0x271 ([kernel.kallsyms])
+	ffffffff8d11856e kfree_skbmem+0x4e ([kernel.kallsyms])
+	ffffffff8d11bfab __kfree_skb+0x1b ([kernel.kallsyms])
+	ffffffff8d1c1d8b tcp_recvmsg+0x84b ([kernel.kallsyms])
+	ffffffff8d1f69ce inet_recvmsg+0x5e ([kernel.kallsyms])
+	ffffffff8d10fd79 sock_recvmsg+0x69 ([kernel.kallsyms])
+	ffffffff8d1110b5 __sys_recvfrom+0xe5 ([kernel.kallsyms])
+	ffffffff8d1111c9 __x64_sys_recvfrom+0x29 ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f3f13089610 __libc_recv+0x20 (/usr/lib/x86_64-linux-gnu/libpthread-2.31.so)
+
+pypy3.10 86324 1562361.802760:   13668514 cycles: 
+	ffffffffc02200f9 tg3_start_xmit+0xf9 ([kernel.kallsyms])
+	ffffffff8d134291 dev_hard_start_xmit+0x91 ([kernel.kallsyms])
+	ffffffff8d18e8b3 sch_direct_xmit+0x113 ([kernel.kallsyms])
+	ffffffff8d134a1b __dev_queue_xmit+0x57b ([kernel.kallsyms])
+	ffffffff8d134d90 dev_queue_xmit+0x10 ([kernel.kallsyms])
+	ffffffff8d1b38de ip_finish_output2+0x2ce ([kernel.kallsyms])
+	ffffffff8d1b3c5f __ip_finish_output+0xbf ([kernel.kallsyms])
+	ffffffff8d1b3d9d ip_finish_output+0x2d ([kernel.kallsyms])
+	ffffffff8d1b5655 ip_output+0x75 ([kernel.kallsyms])
+	ffffffff8d1b4d2d ip_local_out+0x3d ([kernel.kallsyms])
+	ffffffff8d1b508a __ip_queue_xmit+0x17a ([kernel.kallsyms])
+	ffffffff8d1d8300 ip_queue_xmit+0x10 ([kernel.kallsyms])
+	ffffffff8d1d243c __tcp_transmit_skb+0x53c ([kernel.kallsyms])
+	ffffffff8d1d3ff2 tcp_write_xmit+0x3c2 ([kernel.kallsyms])
+	ffffffff8d1d4807 __tcp_push_pending_frames+0x37 ([kernel.kallsyms])
+	ffffffff8d1bdaad tcp_push+0xfd ([kernel.kallsyms])
+	ffffffff8d1c3685 tcp_sendmsg_locked+0xc75 ([kernel.kallsyms])
+	ffffffff8d1c381d tcp_sendmsg+0x2d ([kernel.kallsyms])
+	ffffffff8d1f66f3 inet_sendmsg+0x43 ([kernel.kallsyms])
+	ffffffff8d10eefe sock_sendmsg+0x5e ([kernel.kallsyms])
+	ffffffff8d110e93 __sys_sendto+0x113 ([kernel.kallsyms])
+	ffffffff8d110f39 __x64_sys_sendto+0x29 ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f3f13089790 __libc_send+0x20 (/usr/lib/x86_64-linux-gnu/libpthread-2.31.so)
+	               0 [unknown] ([unknown])
+
+pypy3.10 86324 1562361.827403:   14501552 cycles: 
+	    7f3f12b1177d [unknown] (/usr/lib/x86_64-linux-gnu/libz.so.1.2.11)
+	               0 [unknown] ([unknown])
+
+pypy3.10 86324 1562361.853214:   17625270 cycles: 
+	    7f3f115eae28 [unknown] (/tmp/perf-86324.map)
+	    7f3f115e5410 [unknown] (/tmp/perf-86324.map)
+
+pypy3.10 86324 1562361.883853:   18079248 cycles: 
+	    7f3f115eae7d [unknown] (/tmp/perf-86324.map)
+	    7f3f115e5410 [unknown] (/tmp/perf-86324.map)
+
+pypy3.10 86324 1562361.915474:   18696470 cycles: 
+	ffffffff8d110dc0 __sys_sendto+0x40 ([kernel.kallsyms])
+	ffffffff8d110f39 __x64_sys_sendto+0x29 ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f3f13089790 __libc_send+0x20 (/usr/lib/x86_64-linux-gnu/libpthread-2.31.so)
+	               0 [unknown] ([unknown])
+
+pypy3.10 86324 1562361.948780:   18591035 cycles: 
+	ffffffff8d40015d syscall_return_via_sysret+0x6c ([kernel.kallsyms])
+	    7f3f13089610 __libc_recv+0x20 (/usr/lib/x86_64-linux-gnu/libpthread-2.31.so)
+
+pypy3.10 86324 1562361.980916:   19874436 cycles: 
+	    7f3f11611836 [unknown] (/tmp/perf-86324.map)
+	    7f3f115bb1d8 [unknown] (/tmp/perf-86324.map)
+
+pypy3.10 86324 1562362.012012:   18290258 cycles: 
+	    7f3f14462b9c pypy_g_dropvalues__AccessDirect_None+0x1c (/opt/pypy3.10/bin/libpypy3.10-c.so)
+
+pypy3.10 86324 1562362.050063:   11808523 cycles: 
+	    7f3f153ff75b pypy_g_ll_streq__rpy_stringPtr_rpy_stringPtr+0x1b (/opt/pypy3.10/bin/libpypy3.10-c.so)
+	    7f3f115e5410 [unknown] (/tmp/perf-86324.map)
+
+pypy3.10 86324 1562362.070295:   11808523 cycles: 
+	    7f3f15066c36 pypy_g_BlackholeInterpreter_bhimpl_getfield_vable_i+0x6 (/opt/pypy3.10/bin/libpypy3.10-c.so)
+
+pypy3.10 86324 1562362.090453:   17827447 cycles: 
+	    7f3f14f76a44 pypy_g_ResumeDataDirectReader_setfield+0xc4 (/opt/pypy3.10/bin/libpypy3.10-c.so)
+	        59210001 [unknown] ([unknown])
+
+pypy3.10 86324 1562362.120550:   15108016 cycles: 
+	    7f3f15396098 pypy_g__ll_alloc_and_set_nojit__GcStruct_listLlT_Signed+0x1c8 (/opt/pypy3.10/bin/libpypy3.10-c.so)
+	    7f3f126a4190 [unknown] ([unknown])
+
+pypy3.10 86324 1562362.147847:   14693248 cycles: 
+	    7f3f14f6669d pypy_g_write_from_resume_data_partial+0x5dd (/opt/pypy3.10/bin/libpypy3.10-c.so)
+
+pypy3.10 86324 1562362.172621:   14797039 cycles: 
+	    7f3f14f5250b pypy_g_enumerate_vars__unique_id+0xcb (/opt/pypy3.10/bin/libpypy3.10-c.so)
+
+pypy3.10 86324 1562362.199451:   14072615 cycles: 
+	    7f3f14f76992 pypy_g_ResumeDataDirectReader_setfield+0x12 (/opt/pypy3.10/bin/libpypy3.10-c.so)
+	        59210001 [unknown] ([unknown])
+
+pypy3.10 86324 1562362.224659:   14072615 cycles: 
+	ffffffff8d2b607d rb_next+0x1d ([kernel.kallsyms])
+	ffffffff8c937b0c __remove_hrtimer+0x3c ([kernel.kallsyms])
+	ffffffff8c938092 __hrtimer_run_queues+0xd2 ([kernel.kallsyms])
+	ffffffff8c938939 hrtimer_interrupt+0x109 ([kernel.kallsyms])
+	ffffffff8d4027d1 smp_apic_timer_interrupt+0x71 ([kernel.kallsyms])
+	ffffffff8d401c6f apic_timer_interrupt+0xf ([kernel.kallsyms])
+	ffffffff8c8809e6 do_user_addr_fault+0x156 ([kernel.kallsyms])
+	ffffffff8c881018 __do_page_fault+0x58 ([kernel.kallsyms])
+	ffffffff8c88107c do_page_fault+0x2c ([kernel.kallsyms])
+	ffffffff8d401284 page_fault+0x34 ([kernel.kallsyms])
+	    7f3f12f1b37a [unknown] (/usr/lib/x86_64-linux-gnu/libc-2.31.so)
+
+pypy3.10 86324 1562362.247448:   15193797 cycles: 
+	    7f3f14f776db pypy_g_force_now_1+0x3b (/opt/pypy3.10/bin/libpypy3.10-c.so)
+	    7f3f115a9348 [unknown] (/tmp/perf-86324.map)
+
+pypy3.10 86324 1562362.277475:   13819610 cycles: 
+	    7f3f14f791a0 pypy_g_resume_in_blackhole+0x0 (/opt/pypy3.10/bin/libpypy3.10-c.so)
+	    7f3f14fd31b0 pypy_g_handle_jitexception_from_blackhole_57+0x0 (/opt/pypy3.10/bin/libpypy3.10-c.so)
+	840fed8548106f8b [unknown] ([unknown])
+
+pypy3.10 86324 1562362.302962:   14119024 cycles: 
+	    7f3f115a5a63 [unknown] (/tmp/perf-86324.map)
+	    7f3f115a3110 [unknown] (/tmp/perf-86324.map)
+
+pypy3.10 86324 1562362.329405:   11858677 cycles: 
+	ffffffff8cc596c5 security_socket_recvmsg+0x5 ([kernel.kallsyms])
+	ffffffff8d1110b5 __sys_recvfrom+0xe5 ([kernel.kallsyms])
+	ffffffff8d1111c9 __x64_sys_recvfrom+0x29 ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f3f13089610 __libc_recv+0x20 (/usr/lib/x86_64-linux-gnu/libpthread-2.31.so)
+
+pypy3.10 86324 1562362.349081:   13210615 cycles: 
+	    7f3f153b8562 pypy_g_ll_dict_lookup__v3654___simple_call__function_+0x22 (/opt/pypy3.10/bin/libpypy3.10-c.so)
+	    7f3f105d0480 [unknown] ([unknown])
+
+pypy3.10 86324 1562362.370742:   17690017 cycles: 
+	    7f3f15401f34 pypy_g_ll_append_0_9__stringbuilderPtr_rpy_stringPtr+0x4 (/opt/pypy3.10/bin/libpypy3.10-c.so)
+	    7f3f115fc580 [unknown] (/tmp/perf-86324.map)
+
+pypy3.10 86324 1562362.405880:   16957413 cycles: 
+	    7f3f154caa34 get_errno+0x4 (/opt/pypy3.10/bin/libpypy3.10-c.so)
+
+pypy3.10 86324 1562362.435728:   15583199 cycles: 
+	    7f3f14c0d64a pypy_g_W_TypeObject__pure_lookup_where_with_method_cach+0xfa (/opt/pypy3.10/bin/libpypy3.10-c.so)
+	    7f3f1159b800 [unknown] (/tmp/perf-86324.map)
+
+pypy3.10 86324 1562362.460230:   14552615 cycles: 
+	    7f3f15257ae3 pypy_g_trace__gc_callback__trace_drag_out+0x513 (/opt/pypy3.10/bin/libpypy3.10-c.so)
+	         1637778 [unknown] ([unknown])
+
+pypy3.10 86324 1562362.485777:   12872934 cycles: 
+	    7f3f1524e600 pypy_g_IncrementalMiniMarkGC_pin+0x0 (/opt/pypy3.10/bin/libpypy3.10-c.so)
+	               0 [unknown] ([unknown])
+
+pypy3.10 86324 1562362.508719:   13709197 cycles: 
+	    7f3f15031b82 pypy_g_handler_setarrayitem_vable_r+0x2 (/opt/pypy3.10/bin/libpypy3.10-c.so)
+	               0 [unknown] ([unknown])
+
+pypy3.10 86324 1562362.534899:   13665350 cycles: 
+	    7f3f15066040 pypy_g_BlackholeInterpreter_bhimpl_setarrayitem_vable_r+0x10 (/opt/pypy3.10/bin/libpypy3.10-c.so)
+	    7f3f16a55bd0 [unknown] ([unknown])
+
+pypy3.10 86324 1562362.556482:   14925185 cycles: 
+	    7f3f1439abe4 pypy_g_ccall_pypy_epoll_wait__INT_arrayPtr_arrayPtr_INT+0x44 (/opt/pypy3.10/bin/libpypy3.10-c.so)
+
+pypy3.10 86324 1562362.599986:   16866775 cycles: 
+	    7f3f14f65168 pypy_g_BlackholeInterpreter_setposition+0x18 (/opt/pypy3.10/bin/libpypy3.10-c.so)
+	    7f3f15f36360 [unknown] ([unknown])
+
+pypy3.10 86324 1562362.628798:   18500160 cycles: 
+	    7f3f115f9fc2 [unknown] (/tmp/perf-86324.map)
+	    7f3f115f9c48 [unknown] (/tmp/perf-86324.map)
+
+pypy3.10 86324 1562362.660045:   17110049 cycles: 
+	ffffffff8ccb05c8 aa_sk_perm+0x48 ([kernel.kallsyms])
+	ffffffff8cca55c9 apparmor_socket_recvmsg+0x29 ([kernel.kallsyms])
+	ffffffff8cc596fd security_socket_recvmsg+0x3d ([kernel.kallsyms])
+	ffffffff8d10fd32 sock_recvmsg+0x22 ([kernel.kallsyms])
+	ffffffff8d1110b5 __sys_recvfrom+0xe5 ([kernel.kallsyms])
+	ffffffff8d1111c9 __x64_sys_recvfrom+0x29 ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f3f13089610 __libc_recv+0x20 (/usr/lib/x86_64-linux-gnu/libpthread-2.31.so)
+
+pypy3.10 86324 1562362.688511:   16184568 cycles: 
+	    7f3f115a4b26 [unknown] (/tmp/perf-86324.map)
+	    7f3f115a3110 [unknown] (/tmp/perf-86324.map)
+
+pypy3.10 86324 1562362.716282:   17276335 cycles: 
+	    7f3f14f66574 pypy_g_write_from_resume_data_partial+0x4b4 (/opt/pypy3.10/bin/libpypy3.10-c.so)
+	               0 [unknown] ([unknown])
+
+pypy3.10 86324 1562362.746302:   16625806 cycles: 
+	    7f3f11624b8c [unknown] (/tmp/perf-86324.map)
+	    7f3f115bb1d8 [unknown] (/tmp/perf-86324.map)
+
+pypy3.10 86324 1562362.775316:   17487707 cycles: 
+	    7f3f12f1a842 [unknown] (/usr/lib/x86_64-linux-gnu/libc-2.31.so)
+	               0 [unknown] ([unknown])
+
+pypy3.10 86324 1562362.808123:   12463542 cycles: 
+	    7f3f1300f910 [unknown] (/usr/lib/x86_64-linux-gnu/libc-2.31.so)
+	               0 [unknown] ([unknown])
+
+pypy3.10 86324 1562362.830479:   10093335 cycles: 
+	    7f3f12f198b9 [unknown] (/usr/lib/x86_64-linux-gnu/libc-2.31.so)
+
+pypy3.10 86324 1562362.849708:   10028239 cycles: 
+	    7f3f14dcfb82 pypy_g_LOAD_GLOBAL_cached__AccessDirect_None+0x2 (/opt/pypy3.10/bin/libpypy3.10-c.so)
+	               8 [unknown] ([unknown])
+	              10 [unknown] ([unknown])
+
+pypy3.10 86324 1562362.867035:   12186105 cycles: 
+	ffffffff8d40015e syscall_return_via_sysret+0x6d ([kernel.kallsyms])
+	    7f3f12fa364a epoll_wait+0x1a (/usr/lib/x86_64-linux-gnu/libc-2.31.so)
+	               0 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+
+pypy3.10 86324 1562362.887466:   10853582 cycles: 
+	    7f3f14f86208 pypy_g_maybe_compile_and_run__star_5_2+0x8 (/opt/pypy3.10/bin/libpypy3.10-c.so)
+	             1c9 [unknown] ([unknown])
+
+pypy3.10 86324 1562362.907442:   10853582 cycles: 
+	    7f3f15471e50 _PyPyArg_ParseTupleAndKeywords_SizeT+0x0 (/opt/pypy3.10/bin/libpypy3.10-c.so)
+	    7f3f115ad288 [unknown] (/tmp/perf-86324.map)
+
+pypy3.10 86324 1562362.927440:   14504706 cycles: 
+	ffffffff8c804554 do_syscall_64+0xe4 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f3f13089610 __libc_recv+0x20 (/usr/lib/x86_64-linux-gnu/libpthread-2.31.so)
+
+pypy3.10 86324 1562362.954248:   15476441 cycles: 
+	    7f3f14911a2a pypy_g_WeakrefLifeline_get_or_make_weakref+0x8a (/opt/pypy3.10/bin/libpypy3.10-c.so)
+	    7f3f115f2108 [unknown] (/tmp/perf-86324.map)
+
+pypy3.10 86324 1562363.006248:   14731639 cycles: 
+	    7f3f14f65470 pypy_g_BlackholeInterpreter_setposition+0x320 (/opt/pypy3.10/bin/libpypy3.10-c.so)
+	    7f3f15f36360 [unknown] ([unknown])
+
+pypy3.10 86324 1562363.031485:   13639564 cycles: 
+	    7f3f14f855a8 pypy_g_maybe_compile_and_run__star_5_2.part.0+0x168 (/opt/pypy3.10/bin/libpypy3.10-c.so)
+	               8 [unknown] ([unknown])
+
+pypy3.10 86324 1562363.057250:   15974057 cycles: 
+	    7f3f115bdce6 [unknown] (/tmp/perf-86324.map)
+	    7f3f115bb1d8 [unknown] (/tmp/perf-86324.map)
+
+pypy3.10 86324 1562363.091681:   11264378 cycles: 
+	ffffffff8ca07d5d visit_groups_merge+0x4d ([kernel.kallsyms])
+	ffffffff8ca07f38 ctx_sched_in+0xb8 ([kernel.kallsyms])
+	ffffffff8ca08051 perf_event_sched_in+0x61 ([kernel.kallsyms])
+	ffffffff8ca10e5c __perf_event_task_sched_in+0x16c ([kernel.kallsyms])
+	ffffffff8c8d3e4d finish_task_switch+0xfd ([kernel.kallsyms])
+	ffffffff8d2d0b4b __schedule+0x2eb ([kernel.kallsyms])
+	ffffffff8d2d0fe2 schedule+0x42 ([kernel.kallsyms])
+	ffffffff8d2d4d27 schedule_hrtimeout_range_clock+0x97 ([kernel.kallsyms])
+	ffffffff8d2d4db3 schedule_hrtimeout_range+0x13 ([kernel.kallsyms])
+	ffffffff8cb34880 ep_poll+0x3d0 ([kernel.kallsyms])
+	ffffffff8cb34988 do_epoll_wait+0xb8 ([kernel.kallsyms])
+	ffffffff8cb349be __x64_sys_epoll_wait+0x1e ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f3f12fa364a epoll_wait+0x1a (/usr/lib/x86_64-linux-gnu/libc-2.31.so)
+	               0 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+
+pypy3.10 86324 1562363.114244:   10989166 cycles: 
+	    7f3f12f1bea1 [unknown] (/usr/lib/x86_64-linux-gnu/libc-2.31.so)
+
+pypy3.10 86324 1562363.134013:   10495441 cycles: 
+	    7f3f14fd9be0 pypy_g_dispatch_loop+0x40 (/opt/pypy3.10/bin/libpypy3.10-c.so)
+	               0 [unknown] ([unknown])
+
+pypy3.10 86324 1562363.151802:    9582302 cycles: 
+	ffffffff8c8e682e dequeue_entity+0x1e ([kernel.kallsyms])
+	ffffffff8c8e6ef8 dequeue_task_fair+0x58 ([kernel.kallsyms])
+	ffffffff8c8d8b03 deactivate_task+0x103 ([kernel.kallsyms])
+	ffffffff8d2d0968 __schedule+0x108 ([kernel.kallsyms])
+	ffffffff8d2d0fe2 schedule+0x42 ([kernel.kallsyms])
+	ffffffff8d2d4d27 schedule_hrtimeout_range_clock+0x97 ([kernel.kallsyms])
+	ffffffff8d2d4db3 schedule_hrtimeout_range+0x13 ([kernel.kallsyms])
+	ffffffff8cb34880 ep_poll+0x3d0 ([kernel.kallsyms])
+	ffffffff8cb34988 do_epoll_wait+0xb8 ([kernel.kallsyms])
+	ffffffff8cb349be __x64_sys_epoll_wait+0x1e ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f3f12fa364a epoll_wait+0x1a (/usr/lib/x86_64-linux-gnu/libc-2.31.so)
+	               0 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+
+pypy3.10 86324 1562363.171291:   10437869 cycles: 
+	    7f3f14981ab0 PyPyBytes_AS_STRING+0x0 (/opt/pypy3.10/bin/libpypy3.10-c.so)
+	    7f3f1200ead8 [unknown] ([unknown])
+
+pypy3.10 86324 1562363.190899:   10437869 cycles: 
+	    7f3f1161fedc [unknown] (/tmp/perf-86324.map)
+	    7f3f115f8738 [unknown] (/tmp/perf-86324.map)
+
+pypy3.10 86324 1562363.210583:   13289045 cycles: 
+	ffffffff8c804553 do_syscall_64+0xe3 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f3f12fa364a epoll_wait+0x1a (/usr/lib/x86_64-linux-gnu/libc-2.31.so)
+	               0 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+
+pypy3.10 86324 1562363.233388:   14159306 cycles: 
+	    7f3f14e03338 pypy_g__getitem_correct_indirection__v940___simple_call+0x38 (/opt/pypy3.10/bin/libpypy3.10-c.so)
+	    7f3f1159b800 [unknown] (/tmp/perf-86324.map)
+
+pypy3.10 86324 1562363.259115:   15575637 cycles: 
+	    7f3f153ba8a2 pypy_g_ll_grow_and_append__stringbuilderPtr_rpy_stringP+0x2 (/opt/pypy3.10/bin/libpypy3.10-c.so)
+	    7f3f115fc580 [unknown] (/tmp/perf-86324.map)
+
+pypy3.10 86324 1562363.299145:   15575637 cycles: 
+	    7f3f115f3ac5 [unknown] (/tmp/perf-86324.map)
+	    7f3f115f2108 [unknown] (/tmp/perf-86324.map)
+
+pypy3.10 86324 1562363.329164:   21731424 cycles: 
+	    7f3f115a49bb [unknown] (/tmp/perf-86324.map)
+	    7f3f115a3110 [unknown] (/tmp/perf-86324.map)
+
+pypy3.10 86324 1562363.366439:   15586314 cycles: 
+	    7f3f152545cd pypy_g_ArenaCollection_malloc+0x3d (/opt/pypy3.10/bin/libpypy3.10-c.so)
+
+pypy3.10 86324 1562363.395376:   14998657 cycles: 
+	    7f3f15267f44 pypy_g_raw_malloc_memory_pressure_varsize+0x4 (/opt/pypy3.10/bin/libpypy3.10-c.so)
+
+pypy3.10 86324 1562363.422879:   13976593 cycles: 
+	    7f3f14467190 pypy_g_STORE_ATTR__AccessDirect_None+0xb0 (/opt/pypy3.10/bin/libpypy3.10-c.so)
+	    7f3f102d71d8 [unknown] ([unknown])
+
+pypy3.10 86324 1562363.448401:   13976593 cycles: 
+	    7f3f11602010 [unknown] (/tmp/perf-86324.map)
+	    7f3f115ad288 [unknown] (/tmp/perf-86324.map)
+
+pypy3.10 86324 1562363.473581:   15612096 cycles: 
+	    7f3f14ba5a8c pypy_g_W_Epoll_descr_poll+0x2fc (/opt/pypy3.10/bin/libpypy3.10-c.so)
+	    7f3f115a3110 [unknown] (/tmp/perf-86324.map)
+
+pypy3.10 86324 1562363.500506:   12244332 cycles: 
+	    7f3f115d7f17 [unknown] (/tmp/perf-86324.map)
+	    7f3f115cc320 [unknown] (/tmp/perf-86324.map)
+
+pypy3.10 86324 1562363.523137:   12385575 cycles: 
+	    7f3f14f76a40 pypy_g_ResumeDataDirectReader_setfield+0xc0 (/opt/pypy3.10/bin/libpypy3.10-c.so)
+	        59210001 [unknown] ([unknown])
+
+pypy3.10 86324 1562363.545723:   13453490 cycles: 
+	    7f3f115f5ddc [unknown] (/tmp/perf-86324.map)
+	    7f3f115f2108 [unknown] (/tmp/perf-86324.map)
+
+pypy3.10 86324 1562363.571923:   15592107 cycles: 
+	    7f3f152fb764 pypy_g_endswith__str_str+0x4 (/opt/pypy3.10/bin/libpypy3.10-c.so)
+	    7f3f115cd2b8 [unknown] (/tmp/perf-86324.map)
+
+pypy3.10 86324 1562363.597332:   15472576 cycles: 
+	ffffffff8c902bd7 psi_task_change+0x167 ([kernel.kallsyms])
+	ffffffff8c8d8bcc deactivate_task+0x1cc ([kernel.kallsyms])
+	ffffffff8d2d0968 __schedule+0x108 ([kernel.kallsyms])
+	ffffffff8d2d0fe2 schedule+0x42 ([kernel.kallsyms])
+	ffffffff8d2d4d27 schedule_hrtimeout_range_clock+0x97 ([kernel.kallsyms])
+	ffffffff8d2d4db3 schedule_hrtimeout_range+0x13 ([kernel.kallsyms])
+	ffffffff8cb34880 ep_poll+0x3d0 ([kernel.kallsyms])
+	ffffffff8cb34988 do_epoll_wait+0xb8 ([kernel.kallsyms])
+	ffffffff8cb349be __x64_sys_epoll_wait+0x1e ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f3f12fa364a epoll_wait+0x1a (/usr/lib/x86_64-linux-gnu/libc-2.31.so)
+	               0 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+
+pypy3.10 86324 1562363.630513:   12115591 cycles: 
+	ffffffffc023b2a7 ipt_do_table+0x287 ([kernel.kallsyms])
+	ffffffffc02de05f iptable_filter_hook+0x1f ([kernel.kallsyms])
+	ffffffff8d1a5d25 nf_hook_slow+0x45 ([kernel.kallsyms])
+	ffffffff8d1b4c87 __ip_local_out+0xd7 ([kernel.kallsyms])
+	ffffffff8d1b4d0d ip_local_out+0x1d ([kernel.kallsyms])
+	ffffffff8d1b508a __ip_queue_xmit+0x17a ([kernel.kallsyms])
+	ffffffff8d1d8300 ip_queue_xmit+0x10 ([kernel.kallsyms])
+	ffffffff8d1d243c __tcp_transmit_skb+0x53c ([kernel.kallsyms])
+	ffffffff8d1d3ff2 tcp_write_xmit+0x3c2 ([kernel.kallsyms])
+	ffffffff8d1d4807 __tcp_push_pending_frames+0x37 ([kernel.kallsyms])
+	ffffffff8d1bdaad tcp_push+0xfd ([kernel.kallsyms])
+	ffffffff8d1c3685 tcp_sendmsg_locked+0xc75 ([kernel.kallsyms])
+	ffffffff8d1c381d tcp_sendmsg+0x2d ([kernel.kallsyms])
+	ffffffff8d1f66f3 inet_sendmsg+0x43 ([kernel.kallsyms])
+	ffffffff8d10eefe sock_sendmsg+0x5e ([kernel.kallsyms])
+	ffffffff8d110e93 __sys_sendto+0x113 ([kernel.kallsyms])
+	ffffffff8d110f39 __x64_sys_sendto+0x29 ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f3f13089790 __libc_send+0x20 (/usr/lib/x86_64-linux-gnu/libpthread-2.31.so)
+	    7f3f12096e28 [unknown] ([unknown])
+
+pypy3.10 86324 1562363.652238:   12549789 cycles: 
+	ffffffff8ca11b61 perf_swevent_add+0xa1 ([kernel.kallsyms])
+	ffffffff8ca0bbee group_sched_in+0x5e ([kernel.kallsyms])
+	ffffffff8ca0d77c flexible_sched_in+0x11c ([kernel.kallsyms])
+	ffffffff8ca07e39 visit_groups_merge+0x129 ([kernel.kallsyms])
+	ffffffff8ca07f38 ctx_sched_in+0xb8 ([kernel.kallsyms])
+	ffffffff8ca08051 perf_event_sched_in+0x61 ([kernel.kallsyms])
+	ffffffff8ca10e5c __perf_event_task_sched_in+0x16c ([kernel.kallsyms])
+	ffffffff8c8d3e4d finish_task_switch+0xfd ([kernel.kallsyms])
+	ffffffff8d2d0b4b __schedule+0x2eb ([kernel.kallsyms])
+	ffffffff8d2d0fe2 schedule+0x42 ([kernel.kallsyms])
+	ffffffff8d2d4d27 schedule_hrtimeout_range_clock+0x97 ([kernel.kallsyms])
+	ffffffff8d2d4db3 schedule_hrtimeout_range+0x13 ([kernel.kallsyms])
+	ffffffff8cb34880 ep_poll+0x3d0 ([kernel.kallsyms])
+	ffffffff8cb34988 do_epoll_wait+0xb8 ([kernel.kallsyms])
+	ffffffff8cb349be __x64_sys_epoll_wait+0x1e ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f3f12fa364a epoll_wait+0x1a (/usr/lib/x86_64-linux-gnu/libc-2.31.so)
+	               0 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+
+pypy3.10 86324 1562363.675228:   14634974 cycles: 
+	    7f3f13087164 pthread_testcancel+0x4 (/usr/lib/x86_64-linux-gnu/libpthread-2.31.so)
+	               0 [unknown] ([unknown])
+
+pypy3.10 86324 1562363.700895:   14897051 cycles: 
+	    7f3f12f1e1e7 malloc+0x107 (/usr/lib/x86_64-linux-gnu/libc-2.31.so)
+
+pypy3.10 86324 1562363.727900:   17348873 cycles: 
+	    7f3f1447a2ea pypy_g_dispatch_bytecode__AccessDirect_None+0x407a (/opt/pypy3.10/bin/libpypy3.10-c.so)
+	               8 [unknown] ([unknown])
+	              10 [unknown] ([unknown])
+
+pypy3.10 86324 1562363.763180:   12870109 cycles: 
+	    7f3f14f60332 pypy_g_ResumeDataDirectReader_getvirtual_ptr+0x2 (/opt/pypy3.10/bin/libpypy3.10-c.so)
+
+pypy3.10 86324 1562363.785656:   15939317 cycles: 
+	    7f3f11626f7a [unknown] (/tmp/perf-86324.map)
+	    7f3f115a3110 [unknown] (/tmp/perf-86324.map)
+
+pypy3.10 86324 1562363.813274:   11966702 cycles: 
+	    7f3f153b627a pypy_g_ll_dict_lookup__v1637___simple_call__function_+0x8a (/opt/pypy3.10/bin/libpypy3.10-c.so)
+
+pypy3.10 86324 1562363.835655:   11966702 cycles: 
+	ffffffff8d1bec82 tcp_poll+0x162 ([kernel.kallsyms])
+	ffffffff8d10d08c sock_poll+0x7c ([kernel.kallsyms])
+	ffffffff8cb33c53 ep_item_poll.isra.0+0x43 ([kernel.kallsyms])
+	ffffffff8cb33e84 ep_send_events_proc+0xe4 ([kernel.kallsyms])
+	ffffffff8cb33ac1 ep_scan_ready_list.constprop.0+0xb1 ([kernel.kallsyms])
+	ffffffff8cb34538 ep_poll+0x88 ([kernel.kallsyms])
+	ffffffff8cb34988 do_epoll_wait+0xb8 ([kernel.kallsyms])
+	ffffffff8cb349be __x64_sys_epoll_wait+0x1e ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f3f12fa364a epoll_wait+0x1a (/usr/lib/x86_64-linux-gnu/libc-2.31.so)
+	               0 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+
+pypy3.10 86324 1562363.856833:   13603063 cycles: 
+	    7f3f15422002 pypy_g_ll_build__v1269___simple_call__function_+0x2 (/opt/pypy3.10/bin/libpypy3.10-c.so)
+	    7f3f115fc580 [unknown] (/tmp/perf-86324.map)
+
+pypy3.10 86324 1562363.881249:   16258539 cycles: 
+	ffffffffc023b2da ipt_do_table+0x2ba ([kernel.kallsyms])
+	ffffffffc02de05f iptable_filter_hook+0x1f ([kernel.kallsyms])
+	ffffffff8d1a5d25 nf_hook_slow+0x45 ([kernel.kallsyms])
+	ffffffff8d1b4c87 __ip_local_out+0xd7 ([kernel.kallsyms])
+	ffffffff8d1b4d0d ip_local_out+0x1d ([kernel.kallsyms])
+	ffffffff8d1b508a __ip_queue_xmit+0x17a ([kernel.kallsyms])
+	ffffffff8d1d8300 ip_queue_xmit+0x10 ([kernel.kallsyms])
+	ffffffff8d1d243c __tcp_transmit_skb+0x53c ([kernel.kallsyms])
+	ffffffff8d1d3ff2 tcp_write_xmit+0x3c2 ([kernel.kallsyms])
+	ffffffff8d1d4807 __tcp_push_pending_frames+0x37 ([kernel.kallsyms])
+	ffffffff8d1bdaad tcp_push+0xfd ([kernel.kallsyms])
+	ffffffff8d1c3685 tcp_sendmsg_locked+0xc75 ([kernel.kallsyms])
+	ffffffff8d1c381d tcp_sendmsg+0x2d ([kernel.kallsyms])
+	ffffffff8d1f66f3 inet_sendmsg+0x43 ([kernel.kallsyms])
+	ffffffff8d10eefe sock_sendmsg+0x5e ([kernel.kallsyms])
+	ffffffff8d110e93 __sys_sendto+0x113 ([kernel.kallsyms])
+	ffffffff8d110f39 __x64_sys_sendto+0x29 ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f3f13089790 __libc_send+0x20 (/usr/lib/x86_64-linux-gnu/libpthread-2.31.so)
+	              14 [unknown] ([unknown])
+
+pypy3.10 86324 1562363.908501:   15126193 cycles: 
+	    7f3f12f1e6d0 cfree+0x0 (/usr/lib/x86_64-linux-gnu/libc-2.31.so)
+	               0 [unknown] ([unknown])
+
+pypy3.10 86324 1562363.935360:   15567912 cycles: 
+	ffffffff8caffe95 __fget_light+0x45 ([kernel.kallsyms])
+	ffffffff8cb34927 do_epoll_wait+0x57 ([kernel.kallsyms])
+	ffffffff8cb349be __x64_sys_epoll_wait+0x1e ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f3f12fa364a epoll_wait+0x1a (/usr/lib/x86_64-linux-gnu/libc-2.31.so)
+	               0 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+
+pypy3.10 86324 1562363.963705:   14081111 cycles: 
+	    7f3f14f7928c pypy_g_resume_in_blackhole+0xec (/opt/pypy3.10/bin/libpypy3.10-c.so)
+	    7f3f14fd31b0 pypy_g_handle_jitexception_from_blackhole_57+0x0 (/opt/pypy3.10/bin/libpypy3.10-c.so)
+	840fed8548106f8b [unknown] ([unknown])
+
+pypy3.10 86324 1562363.989108:   13508826 cycles: 
+	    7f3f14c06807 pypy_g_newlist+0x7 (/opt/pypy3.10/bin/libpypy3.10-c.so)
+
+pypy3.10 86324 1562364.012169:   13508826 cycles: 
+	    7f3f13089790 __libc_send+0x20 (/usr/lib/x86_64-linux-gnu/libpthread-2.31.so)
+	               0 [unknown] ([unknown])
+
+pypy3.10 86324 1562364.034243:   18082054 cycles: 
+	    7f3f152c091b pypy_g__operate+0x5eb (/opt/pypy3.10/bin/libpypy3.10-c.so)
+
+pypy3.10 86324 1562364.067311:   17273517 cycles: 
+	    7f3f14372104 pypy_g_call_stub_562+0x4 (/opt/pypy3.10/bin/libpypy3.10-c.so)
+	               0 [unknown] ([unknown])
+
+pypy3.10 86324 1562364.144130:   16361745 cycles: 
+	    7f3f115bd5dc [unknown] (/tmp/perf-86324.map)
+	    7f3f115bb1d8 [unknown] (/tmp/perf-86324.map)
+
+pypy3.10 86324 1562364.170890:   11877152 cycles: 
+	    7f3f14ab7049 pypy_g_bytes_realize+0x239 (/opt/pypy3.10/bin/libpypy3.10-c.so)
+	               0 [unknown] ([unknown])
+
+pypy3.10 86324 1562364.194879:   11842997 cycles: 
+	    7f3f12b0bd62 [unknown] (/usr/lib/x86_64-linux-gnu/libz.so.1.2.11)
+	 764800000000000 [unknown] ([unknown])
+
+pypy3.10 86324 1562364.218331:   13313867 cycles: 
+	    7f3f1443cf43 pypy_g_ExecutionContext_leave+0x1c3 (/opt/pypy3.10/bin/libpypy3.10-c.so)
+	               0 [unknown] ([unknown])
+
+pypy3.10 86324 1562364.243154:   13301211 cycles: 
+	ffffffff8d1c2e74 tcp_sendmsg_locked+0x464 ([kernel.kallsyms])
+	ffffffff8d1c381d tcp_sendmsg+0x2d ([kernel.kallsyms])
+	ffffffff8d1f66f3 inet_sendmsg+0x43 ([kernel.kallsyms])
+	ffffffff8d10eefe sock_sendmsg+0x5e ([kernel.kallsyms])
+	ffffffff8d110e93 __sys_sendto+0x113 ([kernel.kallsyms])
+	ffffffff8d110f39 __x64_sys_sendto+0x29 ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f3f13089790 __libc_send+0x20 (/usr/lib/x86_64-linux-gnu/libpthread-2.31.so)
+	    7f3f1235d898 [unknown] ([unknown])
+
+pypy3.10 86324 1562364.267329:   12401374 cycles: 
+	    7f3f115c4512 [unknown] (/tmp/perf-86324.map)
+	    7f3f115c3b50 [unknown] (/tmp/perf-86324.map)
+
+pypy3.10 86324 1562364.287861:   12401374 cycles: 
+	    7f3f14467161 pypy_g_STORE_ATTR__AccessDirect_None+0x81 (/opt/pypy3.10/bin/libpypy3.10-c.so)
+	    7f3f102d71d8 [unknown] ([unknown])
+
+pypy3.10 86324 1562364.313298:   14619639 cycles: 
+	    7f3f14f665cd pypy_g_write_from_resume_data_partial+0x50d (/opt/pypy3.10/bin/libpypy3.10-c.so)
+	               0 [unknown] ([unknown])
+
+pypy3.10 86324 1562364.339442:   14619639 cycles: 
+	    7f3f14f605bb pypy_g_ResumeDataDirectReader_decode_ref+0xfb (/opt/pypy3.10/bin/libpypy3.10-c.so)
+
+pypy3.10 86324 1562364.364960:   21567812 cycles: 
+	    7f3f115ac90c [unknown] (/tmp/perf-86324.map)
+	    7f3f115a3110 [unknown] (/tmp/perf-86324.map)
+
+pypy3.10 86324 1562364.401720:   16305626 cycles: 
+	    7f3f12b11f22 [unknown] (/usr/lib/x86_64-linux-gnu/libz.so.1.2.11)
+
+pypy3.10 86324 1562364.431547:   16305626 cycles: 
+	ffffffff8c8ec66c newidle_balance+0x22c ([kernel.kallsyms])
+	ffffffff8c8ec891 pick_next_task_fair+0x41 ([kernel.kallsyms])
+	ffffffff8d2d09c7 __schedule+0x167 ([kernel.kallsyms])
+	ffffffff8d2d0fe2 schedule+0x42 ([kernel.kallsyms])
+	ffffffff8d2d4d27 schedule_hrtimeout_range_clock+0x97 ([kernel.kallsyms])
+	ffffffff8d2d4db3 schedule_hrtimeout_range+0x13 ([kernel.kallsyms])
+	ffffffff8cb34880 ep_poll+0x3d0 ([kernel.kallsyms])
+	ffffffff8cb34988 do_epoll_wait+0xb8 ([kernel.kallsyms])
+	ffffffff8cb349be __x64_sys_epoll_wait+0x1e ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f3f12fa364a epoll_wait+0x1a (/usr/lib/x86_64-linux-gnu/libc-2.31.so)
+	               0 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+
+pypy3.10 86324 1562364.461422:   16305626 cycles: 
+	ffffffff8ca8150d __alloc_pages_nodemask+0xd ([kernel.kallsyms])
+	ffffffff8ca9ba8f alloc_pages_vma+0x7f ([kernel.kallsyms])
+	ffffffff8ca5e788 do_anonymous_page+0x118 ([kernel.kallsyms])
+	ffffffff8ca63590 __handle_mm_fault+0x760 ([kernel.kallsyms])
+	ffffffff8ca6369a handle_mm_fault+0xca ([kernel.kallsyms])
+	ffffffff8c880a89 do_user_addr_fault+0x1f9 ([kernel.kallsyms])
+	ffffffff8c881018 __do_page_fault+0x58 ([kernel.kallsyms])
+	ffffffff8c88107c do_page_fault+0x2c ([kernel.kallsyms])
+	ffffffff8d401284 page_fault+0x34 ([kernel.kallsyms])
+	    7f3f12f1b37a [unknown] (/usr/lib/x86_64-linux-gnu/libc-2.31.so)
+
+pypy3.10 86324 1562364.487393:   27688833 cycles: 
+	    7f3f149dd6e2 pypy_g_create_ref+0x32 (/opt/pypy3.10/bin/libpypy3.10-c.so)
+	    7f3f16a4ee60 [unknown] ([unknown])
+
+pypy3.10 86324 1562364.537456:   17476289 cycles: 
+	    7f3f12f61090 clock_gettime+0x0 (/usr/lib/x86_64-linux-gnu/libc-2.31.so)
+	    7f3f115a3110 [unknown] (/tmp/perf-86324.map)
+
+pypy3.10 86324 1562364.570271:   17023838 cycles: 
+	    7f3f14f604c0 pypy_g_ResumeDataDirectReader_decode_ref+0x0 (/opt/pypy3.10/bin/libpypy3.10-c.so)
+
+pypy3.10 86324 1562364.601213:   14885502 cycles: 
+	    7f3f143d399d pypy_g_funccall__star_1+0x1d (/opt/pypy3.10/bin/libpypy3.10-c.so)
+	    7f3f11eb74d8 [unknown] ([unknown])
+
+pypy3.10 86324 1562364.630508:   13054889 cycles: 
+	ffffffff8c8fa20b __update_load_avg_cfs_rq+0xbb ([kernel.kallsyms])
+	ffffffff8c8e5f1c update_load_avg+0x7c ([kernel.kallsyms])
+	ffffffff8c8e6843 dequeue_entity+0x33 ([kernel.kallsyms])
+	ffffffff8c8e6ef8 dequeue_task_fair+0x58 ([kernel.kallsyms])
+	ffffffff8c8d8b03 deactivate_task+0x103 ([kernel.kallsyms])
+	ffffffff8d2d0968 __schedule+0x108 ([kernel.kallsyms])
+	ffffffff8d2d0fe2 schedule+0x42 ([kernel.kallsyms])
+	ffffffff8d2d4d27 schedule_hrtimeout_range_clock+0x97 ([kernel.kallsyms])
+	ffffffff8d2d4db3 schedule_hrtimeout_range+0x13 ([kernel.kallsyms])
+	ffffffff8cb34880 ep_poll+0x3d0 ([kernel.kallsyms])
+	ffffffff8cb34988 do_epoll_wait+0xb8 ([kernel.kallsyms])
+	ffffffff8cb349be __x64_sys_epoll_wait+0x1e ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f3f12fa364a epoll_wait+0x1a (/usr/lib/x86_64-linux-gnu/libc-2.31.so)
+	               0 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+
+pypy3.10 86324 1562364.653775:   12804418 cycles: 
+	    7f3f14f66912 pypy_g_ResumeDataDirectReader_consume_vref_and_vable+0xc2 (/opt/pypy3.10/bin/libpypy3.10-c.so)
+	               0 [unknown] ([unknown])
+
+pypy3.10 86324 1562364.676652:   15180777 cycles: 
+	    7f3f152ac6cc pypy_g_RSocket_send_raw+0x17c (/opt/pypy3.10/bin/libpypy3.10-c.so)
+	               0 [unknown] ([unknown])
+
+pypy3.10 86324 1562364.702759:   15071495 cycles: 
+	ffffffff8d2c4210 memset_erms+0x0 ([kernel.kallsyms])
+	ffffffff8d119e7a __alloc_skb+0x5a ([kernel.kallsyms])
+	ffffffff8d11b691 skb_copy+0x41 ([kernel.kallsyms])
+	ffffffffc0220895 rpc_pipe_fs_type+0x4b ([kernel.kallsyms])
+	ffffffff8d134291 dev_hard_start_xmit+0x91 ([kernel.kallsyms])
+	ffffffff8d18e8b3 sch_direct_xmit+0x113 ([kernel.kallsyms])
+	ffffffff8d134a1b __dev_queue_xmit+0x57b ([kernel.kallsyms])
+	ffffffff8d134d90 dev_queue_xmit+0x10 ([kernel.kallsyms])
+	ffffffff8d1b38de ip_finish_output2+0x2ce ([kernel.kallsyms])
+	ffffffff8d1b3c5f __ip_finish_output+0xbf ([kernel.kallsyms])
+	ffffffff8d1b3d9d ip_finish_output+0x2d ([kernel.kallsyms])
+	ffffffff8d1b5655 ip_output+0x75 ([kernel.kallsyms])
+	ffffffff8d1b4d2d ip_local_out+0x3d ([kernel.kallsyms])
+	ffffffff8d1b508a __ip_queue_xmit+0x17a ([kernel.kallsyms])
+	ffffffff8d1d8300 ip_queue_xmit+0x10 ([kernel.kallsyms])
+	ffffffff8d1d243c __tcp_transmit_skb+0x53c ([kernel.kallsyms])
+	ffffffff8d1d3ff2 tcp_write_xmit+0x3c2 ([kernel.kallsyms])
+	ffffffff8d1d4807 __tcp_push_pending_frames+0x37 ([kernel.kallsyms])
+	ffffffff8d1bdaad tcp_push+0xfd ([kernel.kallsyms])
+	ffffffff8d1c3685 tcp_sendmsg_locked+0xc75 ([kernel.kallsyms])
+	ffffffff8d1c381d tcp_sendmsg+0x2d ([kernel.kallsyms])
+	ffffffff8d1f66f3 inet_sendmsg+0x43 ([kernel.kallsyms])
+	ffffffff8d10eefe sock_sendmsg+0x5e ([kernel.kallsyms])
+	ffffffff8d110e93 __sys_sendto+0x113 ([kernel.kallsyms])
+	ffffffff8d110f39 __x64_sys_sendto+0x29 ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f3f13089790 __libc_send+0x20 (/usr/lib/x86_64-linux-gnu/libpthread-2.31.so)
+	    7f3f11eb1720 [unknown] ([unknown])
+
+pypy3.10 86324 1562364.734277:   14115549 cycles: 
+	    7f3f115a528e [unknown] (/tmp/perf-86324.map)
+	    7f3f115a3110 [unknown] (/tmp/perf-86324.map)
+
+pypy3.10 86324 1562364.760204:   12469843 cycles: 
+	    7f3f1442ea4d pypy_g_Signature_find_w_argname+0x5d (/opt/pypy3.10/bin/libpypy3.10-c.so)
+
+pypy3.10 86324 1562364.781324:   11495058 cycles: 
+	    7f3f152545b9 pypy_g_ArenaCollection_malloc+0x29 (/opt/pypy3.10/bin/libpypy3.10-c.so)
+
+pypy3.10 86324 1562364.801296:   11495058 cycles: 
+	    7f3f1159c0a7 [unknown] (/tmp/perf-86324.map)
+	    7f3f1159b800 [unknown] (/tmp/perf-86324.map)
+
+pypy3.10 86324 1562364.821301:   15929420 cycles: 
+	ffffffff8c8e508e update_cfs_group+0x5e ([kernel.kallsyms])
+	ffffffff8c8e691b dequeue_entity+0x10b ([kernel.kallsyms])
+	ffffffff8c8e6ef8 dequeue_task_fair+0x58 ([kernel.kallsyms])
+	ffffffff8c8d8b03 deactivate_task+0x103 ([kernel.kallsyms])
+	ffffffff8d2d0968 __schedule+0x108 ([kernel.kallsyms])
+	ffffffff8d2d0fe2 schedule+0x42 ([kernel.kallsyms])
+	ffffffff8d2d4d27 schedule_hrtimeout_range_clock+0x97 ([kernel.kallsyms])
+	ffffffff8d2d4db3 schedule_hrtimeout_range+0x13 ([kernel.kallsyms])
+	ffffffff8cb34880 ep_poll+0x3d0 ([kernel.kallsyms])
+	ffffffff8cb34988 do_epoll_wait+0xb8 ([kernel.kallsyms])
+	ffffffff8cb349be __x64_sys_epoll_wait+0x1e ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f3f12fa364a epoll_wait+0x1a (/usr/lib/x86_64-linux-gnu/libc-2.31.so)
+	               0 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+
+pypy3.10 86324 1562364.849772:   17432118 cycles: 
+	    7f3f1160e6e8 [unknown] (/tmp/perf-86324.map)
+	    7f3f115bb1d8 [unknown] (/tmp/perf-86324.map)
+
+pypy3.10 86324 1562364.880148:   22351406 cycles: 
+	    7f3f1161c7b1 [unknown] (/tmp/perf-86324.map)
+	    7f3f115eb980 [unknown] (/tmp/perf-86324.map)
+
+pypy3.10 86324 1562364.921495:   21215840 cycles: 
+	    7f3f115dd2ed [unknown] (/tmp/perf-86324.map)
+	    7f3f115bb1d8 [unknown] (/tmp/perf-86324.map)
+
+pypy3.10 86324 1562364.959930:   23429177 cycles: 
+	    7f3f14f6517a pypy_g_BlackholeInterpreter_setposition+0x2a (/opt/pypy3.10/bin/libpypy3.10-c.so)
+	    7f3f15996560 [unknown] ([unknown])
+
+pypy3.10 86324 1562364.999507:   22425038 cycles: 
+	    7f3f115f9fe6 [unknown] (/tmp/perf-86324.map)
+	    7f3f115f9c48 [unknown] (/tmp/perf-86324.map)
+
+pypy3.10 86324 1562365.040445:   21521017 cycles: 
+	    7f3f14f776db pypy_g_force_now_1+0x3b (/opt/pypy3.10/bin/libpypy3.10-c.so)
+	    7f3f115eb980 [unknown] (/tmp/perf-86324.map)
+
+pypy3.10 86324 1562365.078510:   19573986 cycles: 
+	ffffffff8d2d5dcb _raw_write_lock_irq+0x1b ([kernel.kallsyms])
+	ffffffff8cb34740 ep_poll+0x290 ([kernel.kallsyms])
+	ffffffff8cb34988 do_epoll_wait+0xb8 ([kernel.kallsyms])
+	ffffffff8cb349be __x64_sys_epoll_wait+0x1e ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f3f12fa364a epoll_wait+0x1a (/usr/lib/x86_64-linux-gnu/libc-2.31.so)
+	               0 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+
+pypy3.10 86324 1562365.112883:   21153073 cycles: 
+	    7f3f1159c572 [unknown] (/tmp/perf-86324.map)
+	    7f3f1159b800 [unknown] (/tmp/perf-86324.map)
+
+pypy3.10 86324 1562365.151699:   16099219 cycles: 
+	    7f3f115aa66c [unknown] (/tmp/perf-86324.map)
+	    7f3f115a9348 [unknown] (/tmp/perf-86324.map)
+
+pypy3.10 86324 1562365.178880:   14594720 cycles: 
+	    7f3f12f19a2a [unknown] (/usr/lib/x86_64-linux-gnu/libc-2.31.so)
+
+pypy3.10 86324 1562365.204869:   14382330 cycles: 
+	    7f3f14dcfc77 pypy_g_LOAD_GLOBAL_cached__AccessDirect_None+0xf7 (/opt/pypy3.10/bin/libpypy3.10-c.so)
+	               0 [unknown] ([unknown])
+
+pypy3.10 86324 1562365.229372:   16184741 cycles: 
+	    7f3f15255e42 pypy_g_IncrementalMiniMarkGC__allocate_shadow+0x2 (/opt/pypy3.10/bin/libpypy3.10-c.so)
+	    7f3f115e4608 [unknown] (/tmp/perf-86324.map)
+
+pypy3.10 86324 1562365.260276:   17889374 cycles: 
+	ffffffff8d2d5db6 _raw_write_lock_irq+0x6 ([kernel.kallsyms])
+	ffffffff8cb34988 do_epoll_wait+0xb8 ([kernel.kallsyms])
+	ffffffff8cb349be __x64_sys_epoll_wait+0x1e ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f3f12fa364a epoll_wait+0x1a (/usr/lib/x86_64-linux-gnu/libc-2.31.so)
+	               0 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+
+pypy3.10 86324 1562365.292614:   16482397 cycles: 
+	ffffffff8d1bdb8f skb_entail+0xdf ([kernel.kallsyms])
+	ffffffff8d1c2dec tcp_sendmsg_locked+0x3dc ([kernel.kallsyms])
+	ffffffff8d1c381d tcp_sendmsg+0x2d ([kernel.kallsyms])
+	ffffffff8d1f66f3 inet_sendmsg+0x43 ([kernel.kallsyms])
+	ffffffff8d10eefe sock_sendmsg+0x5e ([kernel.kallsyms])
+	ffffffff8d110e93 __sys_sendto+0x113 ([kernel.kallsyms])
+	ffffffff8d110f39 __x64_sys_sendto+0x29 ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f3f13089790 __libc_send+0x20 (/usr/lib/x86_64-linux-gnu/libpthread-2.31.so)
+	               0 [unknown] ([unknown])
+
+pypy3.10 86324 1562365.322894:   16481327 cycles: 
+	    7f3f12b117f0 [unknown] (/usr/lib/x86_64-linux-gnu/libz.so.1.2.11)
+	               0 [unknown] ([unknown])
+
+pypy3.10 86324 1562365.352336:   14553912 cycles: 
+	ffffffff8c8f9eb6 __update_load_avg_se+0x86 ([kernel.kallsyms])
+	ffffffff8c8e620f update_load_avg+0x36f ([kernel.kallsyms])
+	ffffffff8c8e6843 dequeue_entity+0x33 ([kernel.kallsyms])
+	ffffffff8c8e6ef8 dequeue_task_fair+0x58 ([kernel.kallsyms])
+	ffffffff8c8d8b03 deactivate_task+0x103 ([kernel.kallsyms])
+	ffffffff8d2d0968 __schedule+0x108 ([kernel.kallsyms])
+	ffffffff8d2d0fe2 schedule+0x42 ([kernel.kallsyms])
+	ffffffff8d2d4d27 schedule_hrtimeout_range_clock+0x97 ([kernel.kallsyms])
+	ffffffff8d2d4db3 schedule_hrtimeout_range+0x13 ([kernel.kallsyms])
+	ffffffff8cb34880 ep_poll+0x3d0 ([kernel.kallsyms])
+	ffffffff8cb34988 do_epoll_wait+0xb8 ([kernel.kallsyms])
+	ffffffff8cb349be __x64_sys_epoll_wait+0x1e ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f3f12fa364a epoll_wait+0x1a (/usr/lib/x86_64-linux-gnu/libc-2.31.so)
+	               0 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+
+pypy3.10 86324 1562365.375232:   14500246 cycles: 
+	ffffffff8c8e2cad account_entity_dequeue+0x2d ([kernel.kallsyms])
+	ffffffff8c8e6902 dequeue_entity+0xf2 ([kernel.kallsyms])
+	ffffffff8c8e6ef8 dequeue_task_fair+0x58 ([kernel.kallsyms])
+	ffffffff8c8d8b03 deactivate_task+0x103 ([kernel.kallsyms])
+	ffffffff8d2d0968 __schedule+0x108 ([kernel.kallsyms])
+	ffffffff8d2d0fe2 schedule+0x42 ([kernel.kallsyms])
+	ffffffff8d2d4d27 schedule_hrtimeout_range_clock+0x97 ([kernel.kallsyms])
+	ffffffff8d2d4db3 schedule_hrtimeout_range+0x13 ([kernel.kallsyms])
+	ffffffff8cb34880 ep_poll+0x3d0 ([kernel.kallsyms])
+	ffffffff8cb34988 do_epoll_wait+0xb8 ([kernel.kallsyms])
+	ffffffff8cb349be __x64_sys_epoll_wait+0x1e ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f3f12fa364a epoll_wait+0x1a (/usr/lib/x86_64-linux-gnu/libc-2.31.so)
+	               0 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+
+pypy3.10 86324 1562365.401113:   15700388 cycles: 
+	    7f3f1439abba pypy_g_ccall_pypy_epoll_wait__INT_arrayPtr_arrayPtr_INT+0x1a (/opt/pypy3.10/bin/libpypy3.10-c.so)
+
+pypy3.10 86324 1562365.427976:   14179118 cycles: 
+	    7f3f12b10a6b [unknown] (/usr/lib/x86_64-linux-gnu/libz.so.1.2.11)
+	               0 [unknown] ([unknown])
+
+pypy3.10 86324 1562365.454525:   12746386 cycles: 
+	    7f3f15061f8c pypy_g__get_list_of_values__R+0xec (/opt/pypy3.10/bin/libpypy3.10-c.so)
+	               0 [unknown] ([unknown])
+
+pypy3.10 86324 1562365.476284:   16170575 cycles: 
+	    7f3f12f1c688 [unknown] (/usr/lib/x86_64-linux-gnu/libc-2.31.so)
+
+pypy3.10 86324 1562365.504875:   16908193 cycles: 
+	ffffffff8c8dfe20 pick_next_task_idle+0x30 ([kernel.kallsyms])
+	ffffffff8d2d0edb __schedule+0x67b ([kernel.kallsyms])
+	ffffffff8d2d0fe2 schedule+0x42 ([kernel.kallsyms])
+	ffffffff8d2d4d27 schedule_hrtimeout_range_clock+0x97 ([kernel.kallsyms])
+	ffffffff8d2d4db3 schedule_hrtimeout_range+0x13 ([kernel.kallsyms])
+	ffffffff8cb34880 ep_poll+0x3d0 ([kernel.kallsyms])
+	ffffffff8cb34988 do_epoll_wait+0xb8 ([kernel.kallsyms])
+	ffffffff8cb349be __x64_sys_epoll_wait+0x1e ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f3f12fa364a epoll_wait+0x1a (/usr/lib/x86_64-linux-gnu/libc-2.31.so)
+	               0 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+
+pypy3.10 86324 1562365.537674:   13218118 cycles: 
+	    7f3f115e68d5 [unknown] (/tmp/perf-86324.map)
+	    7f3f115c1d90 [unknown] (/tmp/perf-86324.map)
+
+pypy3.10 86324 1562365.560650:   14186153 cycles: 
+	    7f3f14be93d3 pypy_g_comparison_eq_impl+0x33 (/opt/pypy3.10/bin/libpypy3.10-c.so)
+	               0 [unknown] ([unknown])
+
+pypy3.10 86324 1562365.585767:   12559582 cycles: 
+	    7f3f14f6670f pypy_g_write_from_resume_data_partial+0x64f (/opt/pypy3.10/bin/libpypy3.10-c.so)
+
+pypy3.10 86324 1562365.611280:    9500064 cycles: 
+	    7f3f152ac138 pypy_g_RSocket_recvinto+0x198 (/opt/pypy3.10/bin/libpypy3.10-c.so)
+
+pypy3.10 86324 1562365.628041:    9500064 cycles: 
+	    7f3f115b03c3 [unknown] (/tmp/perf-86324.map)
+	    7f3f115ad288 [unknown] (/tmp/perf-86324.map)
+
+pypy3.10 86324 1562365.644643:   11956740 cycles: 
+	    7f3f15250dcb pypy_g_IncrementalMiniMarkGC_register_finalizer+0x6b (/opt/pypy3.10/bin/libpypy3.10-c.so)
+	             3a4 [unknown] ([unknown])
+	            1957 [unknown] ([unknown])
+
+pypy3.10 86324 1562365.665720:   12117897 cycles: 
+	    7f3f14151caa pypy_g_dispatcher_Py_14+0xa (/opt/pypy3.10/bin/libpypy3.10-c.so)
+
+pypy3.10 86324 1562365.688023:   11294964 cycles: 
+	ffffffff8d10d02d sock_poll+0x1d ([kernel.kallsyms])
+	ffffffff8cb33c53 ep_item_poll.isra.0+0x43 ([kernel.kallsyms])
+	ffffffff8cb33e84 ep_send_events_proc+0xe4 ([kernel.kallsyms])
+	ffffffff8cb33ac1 ep_scan_ready_list.constprop.0+0xb1 ([kernel.kallsyms])
+	ffffffff8cb34538 ep_poll+0x88 ([kernel.kallsyms])
+	ffffffff8cb34988 do_epoll_wait+0xb8 ([kernel.kallsyms])
+	ffffffff8cb349be __x64_sys_epoll_wait+0x1e ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f3f12fa364a epoll_wait+0x1a (/usr/lib/x86_64-linux-gnu/libc-2.31.so)
+	               0 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+
+pypy3.10 86324 1562365.707534:   12863915 cycles: 
+	    7f3f12b117e7 [unknown] (/usr/lib/x86_64-linux-gnu/libz.so.1.2.11)
+	               0 [unknown] ([unknown])
+
+pypy3.10 86324 1562365.730425:   13876873 cycles: 
+	ffffffff8c8b7af5 __x64_sys_getpid+0x5 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f3f12f680cb __getpid+0xb (/usr/lib/x86_64-linux-gnu/libc-2.31.so)
+	    7f3f115f2108 [unknown] (/tmp/perf-86324.map)
+
+pypy3.10 86324 1562365.753339:   13658662 cycles: 
+	ffffffffc023b11f ipt_do_table+0xff ([kernel.kallsyms])
+	ffffffffc02de05f iptable_filter_hook+0x1f ([kernel.kallsyms])
+	ffffffff8d1a5d25 nf_hook_slow+0x45 ([kernel.kallsyms])
+	ffffffff8d1b4c87 __ip_local_out+0xd7 ([kernel.kallsyms])
+	ffffffff8d1b4d0d ip_local_out+0x1d ([kernel.kallsyms])
+	ffffffff8d1b508a __ip_queue_xmit+0x17a ([kernel.kallsyms])
+	ffffffff8d1d8300 ip_queue_xmit+0x10 ([kernel.kallsyms])
+	ffffffff8d1d243c __tcp_transmit_skb+0x53c ([kernel.kallsyms])
+	ffffffff8d1d3ff2 tcp_write_xmit+0x3c2 ([kernel.kallsyms])
+	ffffffff8d1d4807 __tcp_push_pending_frames+0x37 ([kernel.kallsyms])
+	ffffffff8d1bdaad tcp_push+0xfd ([kernel.kallsyms])
+	ffffffff8d1c3685 tcp_sendmsg_locked+0xc75 ([kernel.kallsyms])
+	ffffffff8d1c381d tcp_sendmsg+0x2d ([kernel.kallsyms])
+	ffffffff8d1f66f3 inet_sendmsg+0x43 ([kernel.kallsyms])
+	ffffffff8d10eefe sock_sendmsg+0x5e ([kernel.kallsyms])
+	ffffffff8d110e93 __sys_sendto+0x113 ([kernel.kallsyms])
+	ffffffff8d110f39 __x64_sys_sendto+0x29 ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f3f13089790 __libc_send+0x20 (/usr/lib/x86_64-linux-gnu/libpthread-2.31.so)
+	               0 [unknown] ([unknown])
+
+pypy3.10 86324 1562365.783905:   17197428 cycles: 
+	    7f3f1419ef01 pypy_g_W_BytesObject_shortcut___len__+0x1 (/opt/pypy3.10/bin/libpypy3.10-c.so)
+	    7f3f11fc77b0 [unknown] ([unknown])
+
+pypy3.10 86324 1562365.818374:   13291723 cycles: 
+	ffffffff8c902b22 psi_task_change+0xb2 ([kernel.kallsyms])
+	ffffffff8c8d8bcc deactivate_task+0x1cc ([kernel.kallsyms])
+	ffffffff8d2d0968 __schedule+0x108 ([kernel.kallsyms])
+	ffffffff8d2d0fe2 schedule+0x42 ([kernel.kallsyms])
+	ffffffff8d2d4d27 schedule_hrtimeout_range_clock+0x97 ([kernel.kallsyms])
+	ffffffff8d2d4db3 schedule_hrtimeout_range+0x13 ([kernel.kallsyms])
+	ffffffff8cb34880 ep_poll+0x3d0 ([kernel.kallsyms])
+	ffffffff8cb34988 do_epoll_wait+0xb8 ([kernel.kallsyms])
+	ffffffff8cb349be __x64_sys_epoll_wait+0x1e ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f3f12fa364a epoll_wait+0x1a (/usr/lib/x86_64-linux-gnu/libc-2.31.so)
+	               0 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+
+pypy3.10 86324 1562365.841272:   14286303 cycles: 
+	ffffffff8d1beb9e tcp_poll+0x7e ([kernel.kallsyms])
+	ffffffff8d10d08c sock_poll+0x7c ([kernel.kallsyms])
+	ffffffff8cb33c53 ep_item_poll.isra.0+0x43 ([kernel.kallsyms])
+	ffffffff8cb33e84 ep_send_events_proc+0xe4 ([kernel.kallsyms])
+	ffffffff8cb33ac1 ep_scan_ready_list.constprop.0+0xb1 ([kernel.kallsyms])
+	ffffffff8cb34538 ep_poll+0x88 ([kernel.kallsyms])
+	ffffffff8cb34988 do_epoll_wait+0xb8 ([kernel.kallsyms])
+	ffffffff8cb349be __x64_sys_epoll_wait+0x1e ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f3f12fa364a epoll_wait+0x1a (/usr/lib/x86_64-linux-gnu/libc-2.31.so)
+	               0 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+
+pypy3.10 86324 1562365.866273:   14327772 cycles: 
+	    7f3f116250cb [unknown] (/tmp/perf-86324.map)
+	    7f3f115bb1d8 [unknown] (/tmp/perf-86324.map)
+
+pypy3.10 86324 1562365.893012:   13209800 cycles: 
+	    7f3f14c392ac pypy_g_AbstractAttribute_find_map_attr+0x22c (/opt/pypy3.10/bin/libpypy3.10-c.so)
+	               0 [unknown] ([unknown])
+
+pypy3.10 86324 1562365.916518:   14639677 cycles: 
+	    7f3f14f77884 pypy_g_force_now+0x14 (/opt/pypy3.10/bin/libpypy3.10-c.so)
+	    7f3f115fab68 [unknown] (/tmp/perf-86324.map)
+
+pypy3.10 86324 1562365.941291:   18128838 cycles: 
+	    7f3f154caa30 get_errno+0x0 (/opt/pypy3.10/bin/libpypy3.10-c.so)
+	    7f3f115a3110 [unknown] (/tmp/perf-86324.map)
+
+pypy3.10 86324 1562365.973829:   17194855 cycles: 
+	    7f3f1496c702 pypy_g_wrapper_second_level__star_1_13+0x2 (/opt/pypy3.10/bin/libpypy3.10-c.so)
+	    7f3f120b45f8 [unknown] ([unknown])
+
+pypy3.10 86324 1562366.005437:   13744360 cycles: 
+	    7f3f154caa3b get_errno+0xb (/opt/pypy3.10/bin/libpypy3.10-c.so)
+	    7f3f115a3110 [unknown] (/tmp/perf-86324.map)
+
+pypy3.10 86324 1562366.027204:   14265783 cycles: 
+	    7f3f15410973 pypy_g_ll_call_lookup_function__v1459___simple_call__fu+0x23 (/opt/pypy3.10/bin/libpypy3.10-c.so)
+	    7f3f115bb1d8 [unknown] (/tmp/perf-86324.map)
+
+pypy3.10 86324 1562366.055738:   12257509 cycles: 
+	    7f3f153c0133 pypy_g_ll_dict_setitem__DICTPtr_Address_Address+0x23 (/opt/pypy3.10/bin/libpypy3.10-c.so)
+
+pypy3.10 86324 1562366.077762:   13228804 cycles: 
+	    7f3f115a55e2 [unknown] (/tmp/perf-86324.map)
+	    7f3f115a3110 [unknown] (/tmp/perf-86324.map)
+
+pypy3.10 86324 1562366.101928:   12344573 cycles: 
+	    7f3f115a5aa7 [unknown] (/tmp/perf-86324.map)
+	    7f3f115a3110 [unknown] (/tmp/perf-86324.map)
+
+pypy3.10 86324 1562366.124075:   10144016 cycles: 
+	ffffffff8c902ca7 psi_task_change+0x237 ([kernel.kallsyms])
+	ffffffff8c8d8bcc deactivate_task+0x1cc ([kernel.kallsyms])
+	ffffffff8d2d0968 __schedule+0x108 ([kernel.kallsyms])
+	ffffffff8d2d0fe2 schedule+0x42 ([kernel.kallsyms])
+	ffffffff8d2d4d27 schedule_hrtimeout_range_clock+0x97 ([kernel.kallsyms])
+	ffffffff8d2d4db3 schedule_hrtimeout_range+0x13 ([kernel.kallsyms])
+	ffffffff8cb34880 ep_poll+0x3d0 ([kernel.kallsyms])
+	ffffffff8cb34988 do_epoll_wait+0xb8 ([kernel.kallsyms])
+	ffffffff8cb349be __x64_sys_epoll_wait+0x1e ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f3f12fa364a epoll_wait+0x1a (/usr/lib/x86_64-linux-gnu/libc-2.31.so)
+	               0 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+
+pypy3.10 86324 1562366.141852:   10144016 cycles: 
+	    7f3f14f6524e pypy_g_BlackholeInterpreter_setposition+0xfe (/opt/pypy3.10/bin/libpypy3.10-c.so)
+	    7f3f15996560 [unknown] ([unknown])
+
+pypy3.10 86324 1562366.161321:   15754980 cycles: 
+	    7f3f14fda39e pypy_g_dispatch_loop+0x7fe (/opt/pypy3.10/bin/libpypy3.10-c.so)
+	               0 [unknown] ([unknown])
+
+pypy3.10 86324 1562366.189145:   16033176 cycles: 
+	    7f3f153c0133 pypy_g_ll_dict_setitem__DICTPtr_Address_Address+0x23 (/opt/pypy3.10/bin/libpypy3.10-c.so)
+
+pypy3.10 86324 1562366.216416:   16249396 cycles: 
+	ffffffffc023b0d2 ipt_do_table+0xb2 ([kernel.kallsyms])
+	ffffffffc02de05f iptable_filter_hook+0x1f ([kernel.kallsyms])
+	ffffffff8d1a5d25 nf_hook_slow+0x45 ([kernel.kallsyms])
+	ffffffff8d1b4c87 __ip_local_out+0xd7 ([kernel.kallsyms])
+	ffffffff8d1b4d0d ip_local_out+0x1d ([kernel.kallsyms])
+	ffffffff8d1b508a __ip_queue_xmit+0x17a ([kernel.kallsyms])
+	ffffffff8d1d8300 ip_queue_xmit+0x10 ([kernel.kallsyms])
+	ffffffff8d1d243c __tcp_transmit_skb+0x53c ([kernel.kallsyms])
+	ffffffff8d1d3ff2 tcp_write_xmit+0x3c2 ([kernel.kallsyms])
+	ffffffff8d1d4807 __tcp_push_pending_frames+0x37 ([kernel.kallsyms])
+	ffffffff8d1bdaad tcp_push+0xfd ([kernel.kallsyms])
+	ffffffff8d1c3685 tcp_sendmsg_locked+0xc75 ([kernel.kallsyms])
+	ffffffff8d1c381d tcp_sendmsg+0x2d ([kernel.kallsyms])
+	ffffffff8d1f66f3 inet_sendmsg+0x43 ([kernel.kallsyms])
+	ffffffff8d10eefe sock_sendmsg+0x5e ([kernel.kallsyms])
+	ffffffff8d110e93 __sys_sendto+0x113 ([kernel.kallsyms])
+	ffffffff8d110f39 __x64_sys_sendto+0x29 ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f3f13089790 __libc_send+0x20 (/usr/lib/x86_64-linux-gnu/libpthread-2.31.so)
+	               0 [unknown] ([unknown])
+
+pypy3.10 86324 1562366.246274:   15908247 cycles: 
+	    7f3f14be62b2 pypy_g_get_and_call_function__star_0+0x12 (/opt/pypy3.10/bin/libpypy3.10-c.so)
+	               0 [unknown] ([unknown])
+
+pypy3.10 86324 1562366.275094:   13721190 cycles: 
+	    7f3f115a48ab [unknown] (/tmp/perf-86324.map)
+	    7f3f115a3110 [unknown] (/tmp/perf-86324.map)
+
+pypy3.10 86324 1562366.299151:   14126575 cycles: 
+	    7f3f1490fc07 pypy_g_W_Weakref_compare+0x7 (/opt/pypy3.10/bin/libpypy3.10-c.so)
+	               0 [unknown] ([unknown])
+
+pypy3.10 86324 1562366.323350:   19725996 cycles: 
+	    7f3f14f6053c pypy_g_ResumeDataDirectReader_decode_ref+0x7c (/opt/pypy3.10/bin/libpypy3.10-c.so)
+
+pypy3.10 86324 1562366.358834:   19391322 cycles: 
+	ffffffff8d1c1e45 tcp_recvmsg+0x905 ([kernel.kallsyms])
+	ffffffff8d1f69ce inet_recvmsg+0x5e ([kernel.kallsyms])
+	ffffffff8d10fd79 sock_recvmsg+0x69 ([kernel.kallsyms])
+	ffffffff8d1110b5 __sys_recvfrom+0xe5 ([kernel.kallsyms])
+	ffffffff8d1111c9 __x64_sys_recvfrom+0x29 ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f3f13089610 __libc_recv+0x20 (/usr/lib/x86_64-linux-gnu/libpthread-2.31.so)
+
+pypy3.10 86324 1562366.392801:   20421400 cycles: 
+	    7f3f115a5e01 [unknown] (/tmp/perf-86324.map)
+	    7f3f115a3110 [unknown] (/tmp/perf-86324.map)
+
+pypy3.10 86324 1562366.457970:   20656701 cycles: 
+	    7f3f143c57be pypy_g_BuiltinCode2_fastcall_2.part.0+0x2e (/opt/pypy3.10/bin/libpypy3.10-c.so)
+	               5 [unknown] ([unknown])
+
+pypy3.10 86324 1562366.493971:   17675602 cycles: 
+	ffffffff8d2d0fac schedule+0xc ([kernel.kallsyms])
+	ffffffff8d2d4d27 schedule_hrtimeout_range_clock+0x97 ([kernel.kallsyms])
+	ffffffff8d2d4db3 schedule_hrtimeout_range+0x13 ([kernel.kallsyms])
+	ffffffff8cb34880 ep_poll+0x3d0 ([kernel.kallsyms])
+	ffffffff8cb34988 do_epoll_wait+0xb8 ([kernel.kallsyms])
+	ffffffff8cb349be __x64_sys_epoll_wait+0x1e ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f3f12fa364a epoll_wait+0x1a (/usr/lib/x86_64-linux-gnu/libc-2.31.so)
+	               0 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+
+pypy3.10 86324 1562366.527967:   14698153 cycles: 
+	    7f3f11610589 [unknown] (/tmp/perf-86324.map)
+	    7f3f115bb1d8 [unknown] (/tmp/perf-86324.map)
+
+pypy3.10 86324 1562366.554477:   17503484 cycles: 
+	    7f3f12b11f00 [unknown] (/usr/lib/x86_64-linux-gnu/libz.so.1.2.11)
+
+pypy3.10 86324 1562366.584011:   14760005 cycles: 
+	    7f3f14be9657 pypy_g_comparison_eq_impl+0x2b7 (/opt/pypy3.10/bin/libpypy3.10-c.so)
+	               0 [unknown] ([unknown])
+
+pypy3.10 86324 1562366.610569:   14659546 cycles: 
+	    7f3f152ad410 pypy_g_RSocket_recv+0x1a0 (/opt/pypy3.10/bin/libpypy3.10-c.so)
+	               0 [unknown] ([unknown])
+
+pypy3.10 86324 1562366.636887:   15146726 cycles: 
+	    7f3f115dc349 [unknown] (/tmp/perf-86324.map)
+	    7f3f115bb1d8 [unknown] (/tmp/perf-86324.map)
+
+pypy3.10 86324 1562366.662119:   19860617 cycles: 
+	ffffffff8c92f3e6 dma_direct_unmap_page+0x6 ([kernel.kallsyms])
+	ffffffffc02204a9 auth_flavors+0x3f ([kernel.kallsyms])
+	ffffffff8d134291 dev_hard_start_xmit+0x91 ([kernel.kallsyms])
+	ffffffff8d18e8b3 sch_direct_xmit+0x113 ([kernel.kallsyms])
+	ffffffff8d134a1b __dev_queue_xmit+0x57b ([kernel.kallsyms])
+	ffffffff8d134d90 dev_queue_xmit+0x10 ([kernel.kallsyms])
+	ffffffff8d1b38de ip_finish_output2+0x2ce ([kernel.kallsyms])
+	ffffffff8d1b3c5f __ip_finish_output+0xbf ([kernel.kallsyms])
+	ffffffff8d1b3d9d ip_finish_output+0x2d ([kernel.kallsyms])
+	ffffffff8d1b5655 ip_output+0x75 ([kernel.kallsyms])
+	ffffffff8d1b4d2d ip_local_out+0x3d ([kernel.kallsyms])
+	ffffffff8d1b508a __ip_queue_xmit+0x17a ([kernel.kallsyms])
+	ffffffff8d1d8300 ip_queue_xmit+0x10 ([kernel.kallsyms])
+	ffffffff8d1d243c __tcp_transmit_skb+0x53c ([kernel.kallsyms])
+	ffffffff8d1d3ff2 tcp_write_xmit+0x3c2 ([kernel.kallsyms])
+	ffffffff8d1d4807 __tcp_push_pending_frames+0x37 ([kernel.kallsyms])
+	ffffffff8d1bdaad tcp_push+0xfd ([kernel.kallsyms])
+	ffffffff8d1c3685 tcp_sendmsg_locked+0xc75 ([kernel.kallsyms])
+	ffffffff8d1c381d tcp_sendmsg+0x2d ([kernel.kallsyms])
+	ffffffff8d1f66f3 inet_sendmsg+0x43 ([kernel.kallsyms])
+	ffffffff8d10eefe sock_sendmsg+0x5e ([kernel.kallsyms])
+	ffffffff8d110e93 __sys_sendto+0x113 ([kernel.kallsyms])
+	ffffffff8d110f39 __x64_sys_sendto+0x29 ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f3f13089790 __libc_send+0x20 (/usr/lib/x86_64-linux-gnu/libpthread-2.31.so)
+	               0 [unknown] ([unknown])
+
+pypy3.10 86324 1562366.699639:   15045934 cycles: 
+	    7f3f115f4200 [unknown] (/tmp/perf-86324.map)
+	    7f3f115f2108 [unknown] (/tmp/perf-86324.map)
+
+pypy3.10 86324 1562366.745628:   14371091 cycles: 
+	ffffffff8d40001c entry_SYSCALL_64+0xc ([kernel.kallsyms])
+	    7f3f12fa364a epoll_wait+0x1a (/usr/lib/x86_64-linux-gnu/libc-2.31.so)
+	          a2c010 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+
+pypy3.10 86324 1562366.769936:   16173952 cycles: 
+	    7f3f1527aca5 pypy_g_ll_arraycopy__arrayPtr_arrayPtr_Signed_Signed_Si+0x15 (/opt/pypy3.10/bin/libpypy3.10-c.so)
+	               5 [unknown] ([unknown])
+
+pypy3.10 86324 1562366.806493:   13553462 cycles: 
+	ffffffff8d1a5ce8 nf_hook_slow+0x8 ([kernel.kallsyms])
+	ffffffff8d1b4d2d ip_local_out+0x3d ([kernel.kallsyms])
+	ffffffff8d1b508a __ip_queue_xmit+0x17a ([kernel.kallsyms])
+	ffffffff8d1d8300 ip_queue_xmit+0x10 ([kernel.kallsyms])
+	ffffffff8d1d243c __tcp_transmit_skb+0x53c ([kernel.kallsyms])
+	ffffffff8d1d3ff2 tcp_write_xmit+0x3c2 ([kernel.kallsyms])
+	ffffffff8d1d4807 __tcp_push_pending_frames+0x37 ([kernel.kallsyms])
+	ffffffff8d1bdaad tcp_push+0xfd ([kernel.kallsyms])
+	ffffffff8d1c3685 tcp_sendmsg_locked+0xc75 ([kernel.kallsyms])
+	ffffffff8d1c381d tcp_sendmsg+0x2d ([kernel.kallsyms])
+	ffffffff8d1f66f3 inet_sendmsg+0x43 ([kernel.kallsyms])
+	ffffffff8d10eefe sock_sendmsg+0x5e ([kernel.kallsyms])
+	ffffffff8d110e93 __sys_sendto+0x113 ([kernel.kallsyms])
+	ffffffff8d110f39 __x64_sys_sendto+0x29 ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f3f13089790 __libc_send+0x20 (/usr/lib/x86_64-linux-gnu/libpthread-2.31.so)
+	               0 [unknown] ([unknown])
+
+pypy3.10 86324 1562366.830476:   13263969 cycles: 
+	    7f3f14f65427 pypy_g_BlackholeInterpreter_setposition+0x2d7 (/opt/pypy3.10/bin/libpypy3.10-c.so)
+	    7f3f15996560 [unknown] ([unknown])
+
+pypy3.10 86324 1562366.855438:   12915984 cycles: 
+	    7f3f115c8e46 [unknown] (/tmp/perf-86324.map)
+	    7f3f115ad288 [unknown] (/tmp/perf-86324.map)
+
+pypy3.10 86324 1562366.882524:   13047727 cycles: 
+	    7f3f1442ea15 pypy_g_Signature_find_w_argname+0x25 (/opt/pypy3.10/bin/libpypy3.10-c.so)
+
+pypy3.10 86324 1562366.905140:   12502894 cycles: 
+	    7f3f14f605bb pypy_g_ResumeDataDirectReader_decode_ref+0xfb (/opt/pypy3.10/bin/libpypy3.10-c.so)
+
+pypy3.10 86324 1562366.927362:   12934024 cycles: 
+	    7f3f14c39167 pypy_g_AbstractAttribute_find_map_attr+0xe7 (/opt/pypy3.10/bin/libpypy3.10-c.so)
+	    7f3f1159b800 [unknown] (/tmp/perf-86324.map)
+
+pypy3.10 86324 1562366.949299:   12650920 cycles: 
+	ffffffff8c804553 do_syscall_64+0xe3 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f3f13089790 __libc_send+0x20 (/usr/lib/x86_64-linux-gnu/libpthread-2.31.so)
+	               0 [unknown] ([unknown])
+
+pypy3.10 86324 1562366.972056:   12284166 cycles: 
+	    7f3f115f17e7 [unknown] (/tmp/perf-86324.map)
+	    7f3f115f13b8 [unknown] (/tmp/perf-86324.map)
+
+pypy3.10 86324 1562366.994177:   15602373 cycles: 
+	    7f3f153c1562 pypy_g_ll_dict_reindex__dicttablePtr_Signed_1+0x2 (/opt/pypy3.10/bin/libpypy3.10-c.so)
+	               0 [unknown] ([unknown])
+
+pypy3.10 86324 1562367.022305:   12172461 cycles: 
+	    7f3f14f66587 pypy_g_write_from_resume_data_partial+0x4c7 (/opt/pypy3.10/bin/libpypy3.10-c.so)
+	               0 [unknown] ([unknown])
+
+pypy3.10 86324 1562367.044715:   12217774 cycles: 
+	ffffffff8ca11b38 perf_swevent_add+0x78 ([kernel.kallsyms])
+	ffffffff8ca0bbee group_sched_in+0x5e ([kernel.kallsyms])
+	ffffffff8ca0d77c flexible_sched_in+0x11c ([kernel.kallsyms])
+	ffffffff8ca07e39 visit_groups_merge+0x129 ([kernel.kallsyms])
+	ffffffff8ca07f38 ctx_sched_in+0xb8 ([kernel.kallsyms])
+	ffffffff8ca08051 perf_event_sched_in+0x61 ([kernel.kallsyms])
+	ffffffff8ca10e5c __perf_event_task_sched_in+0x16c ([kernel.kallsyms])
+	ffffffff8c8d3e4d finish_task_switch+0xfd ([kernel.kallsyms])
+	ffffffff8d2d0b4b __schedule+0x2eb ([kernel.kallsyms])
+	ffffffff8d2d0fe2 schedule+0x42 ([kernel.kallsyms])
+	ffffffff8d2d4d27 schedule_hrtimeout_range_clock+0x97 ([kernel.kallsyms])
+	ffffffff8d2d4db3 schedule_hrtimeout_range+0x13 ([kernel.kallsyms])
+	ffffffff8cb34880 ep_poll+0x3d0 ([kernel.kallsyms])
+	ffffffff8cb34988 do_epoll_wait+0xb8 ([kernel.kallsyms])
+	ffffffff8cb349be __x64_sys_epoll_wait+0x1e ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f3f12fa364a epoll_wait+0x1a (/usr/lib/x86_64-linux-gnu/libc-2.31.so)
+	               0 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+
+pypy3.10 86324 1562367.067068:   11601696 cycles: 
+	    7f3f115d5226 [unknown] (/tmp/perf-86324.map)
+	    7f3f115a28d0 [unknown] (/tmp/perf-86324.map)
+
+pypy3.10 86324 1562367.089481:   12506354 cycles: 
+	    7f3f152545a5 pypy_g_ArenaCollection_malloc+0x15 (/opt/pypy3.10/bin/libpypy3.10-c.so)
+
+pypy3.10 86324 1562367.113029:   12560913 cycles: 
+	    7f3f14e3c76f pypy_g_bh_getfield_gc_i___ptr+0x2f (/opt/pypy3.10/bin/libpypy3.10-c.so)
+
+pypy3.10 86324 1562367.140407:   12185979 cycles: 
+	    7f3f1159c5da [unknown] (/tmp/perf-86324.map)
+	    7f3f1159b800 [unknown] (/tmp/perf-86324.map)
+
+pypy3.10 86324 1562367.161341:   13803023 cycles: 
+	    7f3f14f769a5 pypy_g_ResumeDataDirectReader_setfield+0x25 (/opt/pypy3.10/bin/libpypy3.10-c.so)
+	        59210001 [unknown] ([unknown])
+
+pypy3.10 86324 1562367.183425:   13579740 cycles: 
+	ffffffff8d21826c bictcp_cwnd_event+0x1c ([kernel.kallsyms])
+	ffffffff8d1d2598 __tcp_transmit_skb+0x698 ([kernel.kallsyms])
+	ffffffff8d1d3ff2 tcp_write_xmit+0x3c2 ([kernel.kallsyms])
+	ffffffff8d1d4807 __tcp_push_pending_frames+0x37 ([kernel.kallsyms])
+	ffffffff8d1bdaad tcp_push+0xfd ([kernel.kallsyms])
+	ffffffff8d1c3685 tcp_sendmsg_locked+0xc75 ([kernel.kallsyms])
+	ffffffff8d1c381d tcp_sendmsg+0x2d ([kernel.kallsyms])
+	ffffffff8d1f66f3 inet_sendmsg+0x43 ([kernel.kallsyms])
+	ffffffff8d10eefe sock_sendmsg+0x5e ([kernel.kallsyms])
+	ffffffff8d110e93 __sys_sendto+0x113 ([kernel.kallsyms])
+	ffffffff8d110f39 __x64_sys_sendto+0x29 ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f3f13089790 __libc_send+0x20 (/usr/lib/x86_64-linux-gnu/libpthread-2.31.so)
+	               0 [unknown] ([unknown])
+
+pypy3.10 86324 1562367.209410:   14880602 cycles: 
+	ffffffff8d1cfb65 tcp_update_skb_after_send+0x5 ([kernel.kallsyms])
+	ffffffff8d1d3ff2 tcp_write_xmit+0x3c2 ([kernel.kallsyms])
+	ffffffff8d1d4807 __tcp_push_pending_frames+0x37 ([kernel.kallsyms])
+	ffffffff8d1bdaad tcp_push+0xfd ([kernel.kallsyms])
+	ffffffff8d1c3685 tcp_sendmsg_locked+0xc75 ([kernel.kallsyms])
+	ffffffff8d1c381d tcp_sendmsg+0x2d ([kernel.kallsyms])
+	ffffffff8d1f66f3 inet_sendmsg+0x43 ([kernel.kallsyms])
+	ffffffff8d10eefe sock_sendmsg+0x5e ([kernel.kallsyms])
+	ffffffff8d110e93 __sys_sendto+0x113 ([kernel.kallsyms])
+	ffffffff8d110f39 __x64_sys_sendto+0x29 ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f3f13089790 __libc_send+0x20 (/usr/lib/x86_64-linux-gnu/libpthread-2.31.so)
+	               0 [unknown] ([unknown])
+
+pypy3.10 86324 1562367.236174:   16625150 cycles: 
+	    7f3f115a2072 [unknown] (/tmp/perf-86324.map)
+	    7f3f1159b800 [unknown] (/tmp/perf-86324.map)
+
+pypy3.10 86324 1562367.265100:   14009597 cycles: 
+	    7f3f14f669dd pypy_g_ResumeDataDirectReader_consume_vref_and_vable+0x18d (/opt/pypy3.10/bin/libpypy3.10-c.so)
+	               0 [unknown] ([unknown])
+
+pypy3.10 86324 1562367.290368:   12660653 cycles: 
+	ffffffff8d1c2087 sk_stream_alloc_skb+0x47 ([kernel.kallsyms])
+	ffffffff8d1c2dce tcp_sendmsg_locked+0x3be ([kernel.kallsyms])
+	ffffffff8d1c381d tcp_sendmsg+0x2d ([kernel.kallsyms])
+	ffffffff8d1f66f3 inet_sendmsg+0x43 ([kernel.kallsyms])
+	ffffffff8d10eefe sock_sendmsg+0x5e ([kernel.kallsyms])
+	ffffffff8d110e93 __sys_sendto+0x113 ([kernel.kallsyms])
+	ffffffff8d110f39 __x64_sys_sendto+0x29 ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f3f13089790 __libc_send+0x20 (/usr/lib/x86_64-linux-gnu/libpthread-2.31.so)
+	               0 [unknown] ([unknown])
+
+pypy3.10 86324 1562367.312695:   15457864 cycles: 
+	ffffffff8cac217f get_mem_cgroup_from_mm+0x4f ([kernel.kallsyms])
+	ffffffff8cac8330 mem_cgroup_try_charge+0x60 ([kernel.kallsyms])
+	ffffffff8cac8482 mem_cgroup_try_charge_delay+0x22 ([kernel.kallsyms])
+	ffffffff8ca5e7ac do_anonymous_page+0x13c ([kernel.kallsyms])
+	ffffffff8ca63590 __handle_mm_fault+0x760 ([kernel.kallsyms])
+	ffffffff8ca6369a handle_mm_fault+0xca ([kernel.kallsyms])
+	ffffffff8c880a89 do_user_addr_fault+0x1f9 ([kernel.kallsyms])
+	ffffffff8c881018 __do_page_fault+0x58 ([kernel.kallsyms])
+	ffffffff8c88107c do_page_fault+0x2c ([kernel.kallsyms])
+	ffffffff8d401284 page_fault+0x34 ([kernel.kallsyms])
+	    7f3f12f1b37a [unknown] (/usr/lib/x86_64-linux-gnu/libc-2.31.so)
+
+pypy3.10 86324 1562367.343140:   14963940 cycles: 
+	    7f3f14fbd602 pypy_g_execute_assembler__star_2_2+0x2f2 (/opt/pypy3.10/bin/libpypy3.10-c.so)
+	             1c9 [unknown] ([unknown])
+
+pypy3.10 86324 1562367.369324:   12321062 cycles: 
+	ffffffff8c902b4e psi_task_change+0xde ([kernel.kallsyms])
+	ffffffff8c8d8bcc deactivate_task+0x1cc ([kernel.kallsyms])
+	ffffffff8d2d0968 __schedule+0x108 ([kernel.kallsyms])
+	ffffffff8d2d0fe2 schedule+0x42 ([kernel.kallsyms])
+	ffffffff8d2d4d27 schedule_hrtimeout_range_clock+0x97 ([kernel.kallsyms])
+	ffffffff8d2d4db3 schedule_hrtimeout_range+0x13 ([kernel.kallsyms])
+	ffffffff8cb34880 ep_poll+0x3d0 ([kernel.kallsyms])
+	ffffffff8cb34988 do_epoll_wait+0xb8 ([kernel.kallsyms])
+	ffffffff8cb349be __x64_sys_epoll_wait+0x1e ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f3f12fa364a epoll_wait+0x1a (/usr/lib/x86_64-linux-gnu/libc-2.31.so)
+	               0 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+
+pypy3.10 86324 1562367.391314:   11398621 cycles: 
+	ffffffffc0393085 drm_connector_init_panel_orientation_property+0x4f ([kernel.kallsyms])
+	ffffffff8d1b4c87 __ip_local_out+0xd7 ([kernel.kallsyms])
+	ffffffff8d1b4d0d ip_local_out+0x1d ([kernel.kallsyms])
+	ffffffff8d1b508a __ip_queue_xmit+0x17a ([kernel.kallsyms])
+	ffffffff8d1d8300 ip_queue_xmit+0x10 ([kernel.kallsyms])
+	ffffffff8d1d243c __tcp_transmit_skb+0x53c ([kernel.kallsyms])
+	ffffffff8d1d3ff2 tcp_write_xmit+0x3c2 ([kernel.kallsyms])
+	ffffffff8d1d4807 __tcp_push_pending_frames+0x37 ([kernel.kallsyms])
+	ffffffff8d1bdaad tcp_push+0xfd ([kernel.kallsyms])
+	ffffffff8d1c3685 tcp_sendmsg_locked+0xc75 ([kernel.kallsyms])
+	ffffffff8d1c381d tcp_sendmsg+0x2d ([kernel.kallsyms])
+	ffffffff8d1f66f3 inet_sendmsg+0x43 ([kernel.kallsyms])
+	ffffffff8d10eefe sock_sendmsg+0x5e ([kernel.kallsyms])
+	ffffffff8d110e93 __sys_sendto+0x113 ([kernel.kallsyms])
+	ffffffff8d110f39 __x64_sys_sendto+0x29 ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f3f13089790 __libc_send+0x20 (/usr/lib/x86_64-linux-gnu/libpthread-2.31.so)
+	               0 [unknown] ([unknown])
+
+pypy3.10 86324 1562367.409785:   11553749 cycles: 
+	    7f3f152c093e pypy_g__operate+0x60e (/opt/pypy3.10/bin/libpypy3.10-c.so)
+
+pypy3.10 86324 1562367.429151:   12914217 cycles: 
+	ffffffff8c8da490 try_to_wake_up+0x10 ([kernel.kallsyms])
+	ffffffff8c8dabc2 default_wake_function+0x12 ([kernel.kallsyms])
+	ffffffff8c8f56be __wake_up_common+0x7e ([kernel.kallsyms])
+	ffffffff8c8f57fc __wake_up_common_lock+0x7c ([kernel.kallsyms])
+	ffffffff8c8f5853 __wake_up+0x13 ([kernel.kallsyms])
+	ffffffff8cb33b8c ep_scan_ready_list.constprop.0+0x17c ([kernel.kallsyms])
+	ffffffff8cb34538 ep_poll+0x88 ([kernel.kallsyms])
+	ffffffff8cb34988 do_epoll_wait+0xb8 ([kernel.kallsyms])
+	ffffffff8cb349be __x64_sys_epoll_wait+0x1e ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f3f12fa364a epoll_wait+0x1a (/usr/lib/x86_64-linux-gnu/libc-2.31.so)
+	               0 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+
+pypy3.10 86324 1562367.451590:   11906160 cycles: 
+	    7f3f14f65168 pypy_g_BlackholeInterpreter_setposition+0x18 (/opt/pypy3.10/bin/libpypy3.10-c.so)
+	    7f3f15eb1540 [unknown] ([unknown])
+
+pypy3.10 86324 1562367.470935:   11321260 cycles: 
+	    7f3f1162986e [unknown] (/tmp/perf-86324.map)
+	    7f3f115cd2b8 [unknown] (/tmp/perf-86324.map)
+
+pypy3.10 86324 1562367.491509:   10548621 cycles: 
+	    7f3f14f602a8 pypy_g_Reader_next_item+0x48 (/opt/pypy3.10/bin/libpypy3.10-c.so)
+
+pypy3.10 86324 1562367.509875:    9924728 cycles: 
+	    7f3f14f60590 pypy_g_ResumeDataDirectReader_decode_ref+0xd0 (/opt/pypy3.10/bin/libpypy3.10-c.so)
+
+pypy3.10 86324 1562367.527134:   10373940 cycles: 
+	ffffffff8cb34950 do_epoll_wait+0x80 ([kernel.kallsyms])
+	ffffffff8cb349be __x64_sys_epoll_wait+0x1e ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f3f12fa364a epoll_wait+0x1a (/usr/lib/x86_64-linux-gnu/libc-2.31.so)
+	               0 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+
+pypy3.10 86324 1562367.544592:    8778811 cycles: 
+	    7f3f1547a504 PyPyTuple_New+0x24 (/opt/pypy3.10/bin/libpypy3.10-c.so)
+	               2 [unknown] ([unknown])
+
+pypy3.10 86324 1562367.560895:    8946224 cycles: 
+	    7f3f14477fba pypy_g_dispatch_bytecode__AccessDirect_None+0x1d4a (/opt/pypy3.10/bin/libpypy3.10-c.so)
+	               8 [unknown] ([unknown])
+	              10 [unknown] ([unknown])
+
+pypy3.10 86324 1562367.577247:   11183551 cycles: 
+	ffffffff8d2d5ea0 _raw_spin_lock+0x10 ([kernel.kallsyms])
+	ffffffff8d134a1b __dev_queue_xmit+0x57b ([kernel.kallsyms])
+	ffffffff8d134d90 dev_queue_xmit+0x10 ([kernel.kallsyms])
+	ffffffff8d1b38de ip_finish_output2+0x2ce ([kernel.kallsyms])
+	ffffffff8d1b3c5f __ip_finish_output+0xbf ([kernel.kallsyms])
+	ffffffff8d1b3d9d ip_finish_output+0x2d ([kernel.kallsyms])
+	ffffffff8d1b5655 ip_output+0x75 ([kernel.kallsyms])
+	ffffffff8d1b4d2d ip_local_out+0x3d ([kernel.kallsyms])
+	ffffffff8d1b508a __ip_queue_xmit+0x17a ([kernel.kallsyms])
+	ffffffff8d1d8300 ip_queue_xmit+0x10 ([kernel.kallsyms])
+	ffffffff8d1d243c __tcp_transmit_skb+0x53c ([kernel.kallsyms])
+	ffffffff8d1d3ff2 tcp_write_xmit+0x3c2 ([kernel.kallsyms])
+	ffffffff8d1d4807 __tcp_push_pending_frames+0x37 ([kernel.kallsyms])
+	ffffffff8d1bdaad tcp_push+0xfd ([kernel.kallsyms])
+	ffffffff8d1c3685 tcp_sendmsg_locked+0xc75 ([kernel.kallsyms])
+	ffffffff8d1c381d tcp_sendmsg+0x2d ([kernel.kallsyms])
+	ffffffff8d1f66f3 inet_sendmsg+0x43 ([kernel.kallsyms])
+	ffffffff8d10eefe sock_sendmsg+0x5e ([kernel.kallsyms])
+	ffffffff8d110e93 __sys_sendto+0x113 ([kernel.kallsyms])
+	ffffffff8d110f39 __x64_sys_sendto+0x29 ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f3f13089790 __libc_send+0x20 (/usr/lib/x86_64-linux-gnu/libpthread-2.31.so)
+	             100 [unknown] ([unknown])
+
+pypy3.10 86324 1562367.596323:   11338197 cycles: 
+	    7f3f11622ab9 [unknown] (/tmp/perf-86324.map)
+	    7f3f115fc580 [unknown] (/tmp/perf-86324.map)
+
+pypy3.10 86324 1562367.616641:   13133647 cycles: 
+	    7f3f115c9084 [unknown] (/tmp/perf-86324.map)
+	    7f3f115ad288 [unknown] (/tmp/perf-86324.map)
+
+pypy3.10 86324 1562367.639992:   12964551 cycles: 
+	    7f3f1159edc3 [unknown] (/tmp/perf-86324.map)
+	    7f3f1159b800 [unknown] (/tmp/perf-86324.map)
+
+pypy3.10 86324 1562367.663203:   13565110 cycles: 
+	    7f3f1527ac9c pypy_g_ll_arraycopy__arrayPtr_arrayPtr_Signed_Signed_Si+0xc (/opt/pypy3.10/bin/libpypy3.10-c.so)
+	    7f3f115a9348 [unknown] (/tmp/perf-86324.map)
+
+pypy3.10 86324 1562367.684816:   13325111 cycles: 
+	    7f3f12b11664 [unknown] (/usr/lib/x86_64-linux-gnu/libz.so.1.2.11)
+
+pypy3.10 86324 1562367.726558:   17207807 cycles: 
+	    7f3f14e28bde pypy_g_bh_setfield_gc_i___ptr+0x9e (/opt/pypy3.10/bin/libpypy3.10-c.so)
+
+pypy3.10 86324 1562367.789326:   15090850 cycles: 
+	ffffffff8d400133 syscall_return_via_sysret+0x42 ([kernel.kallsyms])
+	    7f3f13089790 __libc_send+0x20 (/usr/lib/x86_64-linux-gnu/libpthread-2.31.so)
+	    7f3f121ca918 [unknown] ([unknown])
+
+pypy3.10 86324 1562367.815916:   18444581 cycles: 
+	    7f3f14f776db pypy_g_force_now_1+0x3b (/opt/pypy3.10/bin/libpypy3.10-c.so)
+	    7f3f115fab68 [unknown] (/tmp/perf-86324.map)
+
+pypy3.10 86324 1562367.850860:   14054214 cycles: 
+	    7f3f15261562 pypy_g_IncrementalMiniMarkGC_external_malloc+0x2 (/opt/pypy3.10/bin/libpypy3.10-c.so)
+
+pypy3.10 86324 1562367.872584:   17350080 cycles: 
+	    7f3f14f7720c pypy_g_ResumeDataDirectReader___init__+0xbc (/opt/pypy3.10/bin/libpypy3.10-c.so)
+	               0 [unknown] ([unknown])
+
+pypy3.10 86324 1562367.902842:   18353049 cycles: 
+	    7f3f149be2d0 pypy_g_as_pyobj+0x10 (/opt/pypy3.10/bin/libpypy3.10-c.so)
+	    7f3f115ad288 [unknown] (/tmp/perf-86324.map)
+
+pypy3.10 86324 1562367.935812:   17209069 cycles: 
+	    7f3f14e0ac06 pypy_g__extend_from_tuple__v354___simple_call__function+0x156 (/opt/pypy3.10/bin/libpypy3.10-c.so)
+	    7f3f121cf108 [unknown] ([unknown])
+
+pypy3.10 86324 1562367.966068:   13137773 cycles: 
+	    7f3f14fd2fcc pypy_g_assembler_call_helper_57+0x2c (/opt/pypy3.10/bin/libpypy3.10-c.so)
+	    7f3f115e6a48 [unknown] (/tmp/perf-86324.map)
+
+pypy3.10 86324 1562367.988907:   13137773 cycles: 
+	ffffffffc03aa754 lockd_up+0x266 ([kernel.kallsyms])
+	ffffffffc03aa98b nf_conntrack_tcp_packet+0x1bb ([kernel.kallsyms])
+	ffffffffc03a4ee6 drm_connector_attach_content_protection_property+0x0 ([kernel.kallsyms])
+	ffffffffc03a8a78 drm_crtc_add_crc_entry+0x32 ([kernel.kallsyms])
+	ffffffff8d1a5d25 nf_hook_slow+0x45 ([kernel.kallsyms])
+	ffffffff8d1b4c87 __ip_local_out+0xd7 ([kernel.kallsyms])
+	ffffffff8d1b4d0d ip_local_out+0x1d ([kernel.kallsyms])
+	ffffffff8d1b508a __ip_queue_xmit+0x17a ([kernel.kallsyms])
+	ffffffff8d1d8300 ip_queue_xmit+0x10 ([kernel.kallsyms])
+	ffffffff8d1d243c __tcp_transmit_skb+0x53c ([kernel.kallsyms])
+	ffffffff8d1d3ff2 tcp_write_xmit+0x3c2 ([kernel.kallsyms])
+	ffffffff8d1d4807 __tcp_push_pending_frames+0x37 ([kernel.kallsyms])
+	ffffffff8d1bdaad tcp_push+0xfd ([kernel.kallsyms])
+	ffffffff8d1c3685 tcp_sendmsg_locked+0xc75 ([kernel.kallsyms])
+	ffffffff8d1c381d tcp_sendmsg+0x2d ([kernel.kallsyms])
+	ffffffff8d1f66f3 inet_sendmsg+0x43 ([kernel.kallsyms])
+	ffffffff8d10eefe sock_sendmsg+0x5e ([kernel.kallsyms])
+	ffffffff8d110e93 __sys_sendto+0x113 ([kernel.kallsyms])
+	ffffffff8d110f39 __x64_sys_sendto+0x29 ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f3f13089790 __libc_send+0x20 (/usr/lib/x86_64-linux-gnu/libpthread-2.31.so)
+	               0 [unknown] ([unknown])
+
+pypy3.10 86324 1562368.010887:   18778655 cycles: 
+	ffffffff8c804553 do_syscall_64+0xe3 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f3f12f984ab brk+0xb (/usr/lib/x86_64-linux-gnu/libc-2.31.so)
+	               0 [unknown] ([unknown])
+
+pypy3.10 86324 1562368.041316:   18392370 cycles: 
+	    7f3f115c3f0e [unknown] (/tmp/perf-86324.map)
+	    7f3f115c3b50 [unknown] (/tmp/perf-86324.map)
+
+pypy3.10 86324 1562368.074334:   16861170 cycles: 
+	    7f3f12b089ad deflate+0x26d (/usr/lib/x86_64-linux-gnu/libz.so.1.2.11)
+	               0 [unknown] ([unknown])
+	       100056bf0 [unknown] ([unknown])
+
+pypy3.10 86324 1562368.102966:   16861170 cycles: 
+	    7f3f115e5212 [unknown] (/tmp/perf-86324.map)
+	    7f3f115a28d0 [unknown] (/tmp/perf-86324.map)
+
+pypy3.10 86324 1562368.133789:   16624333 cycles: 
+	    7ffffbdb46cb [unknown] ([vdso])
+	    7ffffbdb4918 __vdso_clock_gettime+0x38 ([vdso])
+	    7f3f12f610b5 clock_gettime+0x25 (/usr/lib/x86_64-linux-gnu/libc-2.31.so)
+
+pypy3.10 86324 1562368.164777:   12375851 cycles: 
+	    7f3f12f1c1f1 [unknown] (/usr/lib/x86_64-linux-gnu/libc-2.31.so)
+
+pypy3.10 86324 1562368.185409:   12375851 cycles: 
+	    7f3f115ac969 [unknown] (/tmp/perf-86324.map)
+	    7f3f115a3110 [unknown] (/tmp/perf-86324.map)
+
+pypy3.10 86324 1562368.205902:   18221270 cycles: 
+	    7f3f1161b003 [unknown] (/tmp/perf-86324.map)
+	    7f3f115eb980 [unknown] (/tmp/perf-86324.map)
+
+pypy3.10 86324 1562368.236800:   16193170 cycles: 
+	    7f3f14e28b7f pypy_g_bh_setfield_gc_i___ptr+0x3f (/opt/pypy3.10/bin/libpypy3.10-c.so)
+
+pypy3.10 86324 1562368.266448:   20538822 cycles: 
+	    7f3f115ffe8a [unknown] (/tmp/perf-86324.map)
+	    7f3f115a28d0 [unknown] (/tmp/perf-86324.map)
+
+pypy3.10 86324 1562368.304364:   20437732 cycles: 
+	    7f3f1300f9b4 [unknown] (/usr/lib/x86_64-linux-gnu/libc-2.31.so)
+	    7f3f115ad288 [unknown] (/tmp/perf-86324.map)
+
+pypy3.10 86324 1562368.338660:   19665654 cycles: 
+	    7f3f14141c0f pypy_g_BlackholeInterpreter_setposition.cold+0x51 (/opt/pypy3.10/bin/libpypy3.10-c.so)
+	    7f3f16265f00 [unknown] ([unknown])
+
+pypy3.10 86324 1562368.371341:   20292509 cycles: 
+	    7f3f11629c47 [unknown] (/tmp/perf-86324.map)
+	    7f3f115cd2b8 [unknown] (/tmp/perf-86324.map)
+
+pypy3.10 86324 1562368.404779:   16485337 cycles: 
+	    7f3f116227c4 [unknown] (/tmp/perf-86324.map)
+	    7f3f115fc580 [unknown] (/tmp/perf-86324.map)
+
+pypy3.10 86324 1562368.431766:   15141025 cycles: 
+	    7f3f14c390d9 pypy_g_AbstractAttribute_find_map_attr+0x59 (/opt/pypy3.10/bin/libpypy3.10-c.so)
+	               0 [unknown] ([unknown])
+
+pypy3.10 86324 1562368.459687:   13576819 cycles: 
+	ffffffff8cd26eb4 _copy_to_iter+0x4 ([kernel.kallsyms])
+	ffffffff8d1227b9 simple_copy_to_iter+0x39 ([kernel.kallsyms])
+	ffffffff8d1224a8 __skb_datagram_iter+0x68 ([kernel.kallsyms])
+	ffffffff8d122730 skb_copy_datagram_iter+0x40 ([kernel.kallsyms])
+	ffffffff8d1c1c03 tcp_recvmsg+0x6c3 ([kernel.kallsyms])
+	ffffffff8d1f69ce inet_recvmsg+0x5e ([kernel.kallsyms])
+	ffffffff8d10fd79 sock_recvmsg+0x69 ([kernel.kallsyms])
+	ffffffff8d1110b5 __sys_recvfrom+0xe5 ([kernel.kallsyms])
+	ffffffff8d1111c9 __x64_sys_recvfrom+0x29 ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f3f13089610 __libc_recv+0x20 (/usr/lib/x86_64-linux-gnu/libpthread-2.31.so)
+
+pypy3.10 86324 1562368.483269:   14444929 cycles: 
+	    7f3f14dccbe7 pypy_g_newint__r_int32+0x7 (/opt/pypy3.10/bin/libpypy3.10-c.so)
+
+pypy3.10 86324 1562368.507612:   13557820 cycles: 
+	    7f3f14144bc3 pypy_g_cpy_call_external__funcPtr__objectPtr+0x3 (/opt/pypy3.10/bin/libpypy3.10-c.so)
+	    7f3f115ad288 [unknown] (/tmp/perf-86324.map)
+
+pypy3.10 86324 1562368.532056:   13005930 cycles: 
+	    7f3f115c9892 [unknown] (/tmp/perf-86324.map)
+	    7f3f115ad288 [unknown] (/tmp/perf-86324.map)
+
+pypy3.10 86324 1562368.552434:   12016007 cycles: 
+	    7f3f115aa312 [unknown] (/tmp/perf-86324.map)
+	    7f3f115a9348 [unknown] (/tmp/perf-86324.map)
+
+pypy3.10 86324 1562368.573227:   14748137 cycles: 
+	    7f3f14f77510 pypy_g_ResumeGuardForcedDescr_handle_async_forcing+0x0 (/opt/pypy3.10/bin/libpypy3.10-c.so)
+	    7f3f115fab68 [unknown] (/tmp/perf-86324.map)
+
+pypy3.10 86324 1562368.608151:   17227317 cycles: 
+	ffffffff8ca0d667 flexible_sched_in+0x7 ([kernel.kallsyms])
+	ffffffff8ca07f38 ctx_sched_in+0xb8 ([kernel.kallsyms])
+	ffffffff8ca08051 perf_event_sched_in+0x61 ([kernel.kallsyms])
+	ffffffff8ca10e5c __perf_event_task_sched_in+0x16c ([kernel.kallsyms])
+	ffffffff8c8d3e4d finish_task_switch+0xfd ([kernel.kallsyms])
+	ffffffff8d2d0b4b __schedule+0x2eb ([kernel.kallsyms])
+	ffffffff8d2d0fe2 schedule+0x42 ([kernel.kallsyms])
+	ffffffff8d2d4d27 schedule_hrtimeout_range_clock+0x97 ([kernel.kallsyms])
+	ffffffff8d2d4db3 schedule_hrtimeout_range+0x13 ([kernel.kallsyms])
+	ffffffff8cb34880 ep_poll+0x3d0 ([kernel.kallsyms])
+	ffffffff8cb34988 do_epoll_wait+0xb8 ([kernel.kallsyms])
+	ffffffff8cb349be __x64_sys_epoll_wait+0x1e ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f3f12fa364a epoll_wait+0x1a (/usr/lib/x86_64-linux-gnu/libc-2.31.so)
+	               0 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+
+pypy3.10 86324 1562368.638224:   16485994 cycles: 
+	ffffffff8d2d5dcb _raw_write_lock_irq+0x1b ([kernel.kallsyms])
+	ffffffff8cb346e1 ep_poll+0x231 ([kernel.kallsyms])
+	ffffffff8cb34988 do_epoll_wait+0xb8 ([kernel.kallsyms])
+	ffffffff8cb349be __x64_sys_epoll_wait+0x1e ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f3f12fa364a epoll_wait+0x1a (/usr/lib/x86_64-linux-gnu/libc-2.31.so)
+	               0 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+	          a2c010 [unknown] ([unknown])
+
+pypy3.10 86324 1562368.666664:   17048017 cycles: 
+	    7f3f14f60557 pypy_g_ResumeDataDirectReader_decode_ref+0x97 (/opt/pypy3.10/bin/libpypy3.10-c.so)
+	               0 [unknown] ([unknown])
+
+pypy3.10 86324 1562368.694862:   15731473 cycles: 
+	    7f3f14f78985 pypy_g_BlackholeInterpreter_run+0xe5 (/opt/pypy3.10/bin/libpypy3.10-c.so)
+	               0 [unknown] ([unknown])
+	    7f3f1555bd5c [unknown] ([unknown])
+	6174656d5f74696a [unknown] ([unknown])
+
+pypy3.10 86324 1562368.724475:   17919617 cycles: 
+	    7f3f149119a2 pypy_g_WeakrefLifeline_get_or_make_weakref+0x2 (/opt/pypy3.10/bin/libpypy3.10-c.so)
+	    7f3f115f2108 [unknown] (/tmp/perf-86324.map)
+
+pypy3.10 86324 1562368.756246:   15954469 cycles: 
+	    7f3f1160e7fe [unknown] (/tmp/perf-86324.map)
+	    7f3f115bb1d8 [unknown] (/tmp/perf-86324.map)
+
+pypy3.10 86324 1562368.783634:   15954469 cycles: 
+	ffffffff8d1b39c3 ip_finish_output2+0x3b3 ([kernel.kallsyms])
+	ffffffff8d1b3c5f __ip_finish_output+0xbf ([kernel.kallsyms])
+	ffffffff8d1b3d9d ip_finish_output+0x2d ([kernel.kallsyms])
+	ffffffff8d1b5655 ip_output+0x75 ([kernel.kallsyms])
+	ffffffff8d1b4d2d ip_local_out+0x3d ([kernel.kallsyms])
+	ffffffff8d1b508a __ip_queue_xmit+0x17a ([kernel.kallsyms])
+	ffffffff8d1d8300 ip_queue_xmit+0x10 ([kernel.kallsyms])
+	ffffffff8d1d243c __tcp_transmit_skb+0x53c ([kernel.kallsyms])
+	ffffffff8d1d3ff2 tcp_write_xmit+0x3c2 ([kernel.kallsyms])
+	ffffffff8d1d4807 __tcp_push_pending_frames+0x37 ([kernel.kallsyms])
+	ffffffff8d1bdaad tcp_push+0xfd ([kernel.kallsyms])
+	ffffffff8d1c3685 tcp_sendmsg_locked+0xc75 ([kernel.kallsyms])
+	ffffffff8d1c381d tcp_sendmsg+0x2d ([kernel.kallsyms])
+	ffffffff8d1f66f3 inet_sendmsg+0x43 ([kernel.kallsyms])
+	ffffffff8d10eefe sock_sendmsg+0x5e ([kernel.kallsyms])
+	ffffffff8d110e93 __sys_sendto+0x113 ([kernel.kallsyms])
+	ffffffff8d110f39 __x64_sys_sendto+0x29 ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f3f13089790 __libc_send+0x20 (/usr/lib/x86_64-linux-gnu/libpthread-2.31.so)
+	               0 [unknown] ([unknown])
+
+pypy3.10 86324 1562368.810674:   21822498 cycles: 
+	    7f3f115c45da [unknown] (/tmp/perf-86324.map)
+	    7f3f115c3b50 [unknown] (/tmp/perf-86324.map)
+
+pypy3.10 86324 1562368.847745:   20935690 cycles: 
+	    7f3f150319e2 pypy_g_handler_setfield_vable_i+0x2 (/opt/pypy3.10/bin/libpypy3.10-c.so)
+	               0 [unknown] ([unknown])
+
+pypy3.10 86324 1562368.884407:   19943560 cycles: 
+	    7f3f12f1e6d0 cfree+0x0 (/usr/lib/x86_64-linux-gnu/libc-2.31.so)
+	               0 [unknown] ([unknown])
+	7f3f1016f4600000 [unknown] ([unknown])
+

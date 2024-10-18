@@ -1,0 +1,2121 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" width="1200" height="502" onload="init(evt)" viewBox="0 0 1200 502" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<!-- Flame graph stack visualization. See https://github.com/brendangregg/FlameGraph for latest version, and http://www.brendangregg.com/flamegraphs.html for examples. -->
+<!-- NOTES:  -->
+<defs>
+	<linearGradient id="background" y1="0" y2="1" x1="0" x2="0" >
+		<stop stop-color="#eeeeee" offset="5%" />
+		<stop stop-color="#eeeeb0" offset="95%" />
+	</linearGradient>
+</defs>
+<style type="text/css">
+	text { font-family:Verdana; font-size:12px; fill:rgb(0,0,0); }
+	#search, #ignorecase { opacity:0.1; cursor:pointer; }
+	#search:hover, #search.show, #ignorecase:hover, #ignorecase.show { opacity:1; }
+	#subtitle { text-anchor:middle; font-color:rgb(160,160,160); }
+	#title { text-anchor:middle; font-size:17px}
+	#unzoom { cursor:pointer; }
+	#frames > *:hover { stroke:black; stroke-width:0.5; cursor:pointer; }
+	.hide { display:none; }
+	.parent { opacity:0.5; }
+</style>
+<script type="text/ecmascript">
+<![CDATA[
+	"use strict";
+	var details, searchbtn, unzoombtn, matchedtxt, svg, searching, currentSearchTerm, ignorecase, ignorecaseBtn;
+	function init(evt) {
+		details = document.getElementById("details").firstChild;
+		searchbtn = document.getElementById("search");
+		ignorecaseBtn = document.getElementById("ignorecase");
+		unzoombtn = document.getElementById("unzoom");
+		matchedtxt = document.getElementById("matched");
+		svg = document.getElementsByTagName("svg")[0];
+		searching = 0;
+		currentSearchTerm = null;
+
+		// use GET parameters to restore a flamegraphs state.
+		var params = get_params();
+		if (params.x && params.y)
+			zoom(find_group(document.querySelector('[x="' + params.x + '"][y="' + params.y + '"]')));
+                if (params.s) search(params.s);
+	}
+
+	// event listeners
+	window.addEventListener("click", function(e) {
+		var target = find_group(e.target);
+		if (target) {
+			if (target.nodeName == "a") {
+				if (e.ctrlKey === false) return;
+				e.preventDefault();
+			}
+			if (target.classList.contains("parent")) unzoom(true);
+			zoom(target);
+			if (!document.querySelector('.parent')) {
+				// we have basically done a clearzoom so clear the url
+				var params = get_params();
+				if (params.x) delete params.x;
+				if (params.y) delete params.y;
+				history.replaceState(null, null, parse_params(params));
+				unzoombtn.classList.add("hide");
+				return;
+			}
+
+			// set parameters for zoom state
+			var el = target.querySelector("rect");
+			if (el && el.attributes && el.attributes.y && el.attributes._orig_x) {
+				var params = get_params()
+				params.x = el.attributes._orig_x.value;
+				params.y = el.attributes.y.value;
+				history.replaceState(null, null, parse_params(params));
+			}
+		}
+		else if (e.target.id == "unzoom") clearzoom();
+		else if (e.target.id == "search") search_prompt();
+		else if (e.target.id == "ignorecase") toggle_ignorecase();
+	}, false)
+
+	// mouse-over for info
+	// show
+	window.addEventListener("mouseover", function(e) {
+		var target = find_group(e.target);
+		if (target) details.nodeValue = "Function: " + g_to_text(target);
+	}, false)
+
+	// clear
+	window.addEventListener("mouseout", function(e) {
+		var target = find_group(e.target);
+		if (target) details.nodeValue = ' ';
+	}, false)
+
+	// ctrl-F for search
+	// ctrl-I to toggle case-sensitive search
+	window.addEventListener("keydown",function (e) {
+		if (e.keyCode === 114 || (e.ctrlKey && e.keyCode === 70)) {
+			e.preventDefault();
+			search_prompt();
+		}
+		else if (e.ctrlKey && e.keyCode === 73) {
+			e.preventDefault();
+			toggle_ignorecase();
+		}
+	}, false)
+
+	// functions
+	function get_params() {
+		var params = {};
+		var paramsarr = window.location.search.substr(1).split('&');
+		for (var i = 0; i < paramsarr.length; ++i) {
+			var tmp = paramsarr[i].split("=");
+			if (!tmp[0] || !tmp[1]) continue;
+			params[tmp[0]]  = decodeURIComponent(tmp[1]);
+		}
+		return params;
+	}
+	function parse_params(params) {
+		var uri = "?";
+		for (var key in params) {
+			uri += key + '=' + encodeURIComponent(params[key]) + '&';
+		}
+		if (uri.slice(-1) == "&")
+			uri = uri.substring(0, uri.length - 1);
+		if (uri == '?')
+			uri = window.location.href.split('?')[0];
+		return uri;
+	}
+	function find_child(node, selector) {
+		var children = node.querySelectorAll(selector);
+		if (children.length) return children[0];
+	}
+	function find_group(node) {
+		var parent = node.parentElement;
+		if (!parent) return;
+		if (parent.id == "frames") return node;
+		return find_group(parent);
+	}
+	function orig_save(e, attr, val) {
+		if (e.attributes["_orig_" + attr] != undefined) return;
+		if (e.attributes[attr] == undefined) return;
+		if (val == undefined) val = e.attributes[attr].value;
+		e.setAttribute("_orig_" + attr, val);
+	}
+	function orig_load(e, attr) {
+		if (e.attributes["_orig_"+attr] == undefined) return;
+		e.attributes[attr].value = e.attributes["_orig_" + attr].value;
+		e.removeAttribute("_orig_"+attr);
+	}
+	function g_to_text(e) {
+		var text = find_child(e, "title").firstChild.nodeValue;
+		return (text)
+	}
+	function g_to_func(e) {
+		var func = g_to_text(e);
+		// if there's any manipulation we want to do to the function
+		// name before it's searched, do it here before returning.
+		return (func);
+	}
+	function update_text(e) {
+		var r = find_child(e, "rect");
+		var t = find_child(e, "text");
+		var w = parseFloat(r.attributes.width.value) -3;
+		var txt = find_child(e, "title").textContent.replace(/\([^(]*\)$/,"");
+		t.attributes.x.value = parseFloat(r.attributes.x.value) + 3;
+
+		// Smaller than this size won't fit anything
+		if (w < 2 * 12 * 0.59) {
+			t.textContent = "";
+			return;
+		}
+
+		t.textContent = txt;
+		var sl = t.getSubStringLength(0, txt.length);
+		// check if only whitespace or if we can fit the entire string into width w
+		if (/^ *$/.test(txt) || sl < w)
+			return;
+
+		// this isn't perfect, but gives a good starting point
+		// and avoids calling getSubStringLength too often
+		var start = Math.floor((w/sl) * txt.length);
+		for (var x = start; x > 0; x = x-2) {
+			if (t.getSubStringLength(0, x + 2) <= w) {
+				t.textContent = txt.substring(0, x) + "..";
+				return;
+			}
+		}
+		t.textContent = "";
+	}
+
+	// zoom
+	function zoom_reset(e) {
+		if (e.attributes != undefined) {
+			orig_load(e, "x");
+			orig_load(e, "width");
+		}
+		if (e.childNodes == undefined) return;
+		for (var i = 0, c = e.childNodes; i < c.length; i++) {
+			zoom_reset(c[i]);
+		}
+	}
+	function zoom_child(e, x, ratio) {
+		if (e.attributes != undefined) {
+			if (e.attributes.x != undefined) {
+				orig_save(e, "x");
+				e.attributes.x.value = (parseFloat(e.attributes.x.value) - x - 10) * ratio + 10;
+				if (e.tagName == "text")
+					e.attributes.x.value = find_child(e.parentNode, "rect[x]").attributes.x.value + 3;
+			}
+			if (e.attributes.width != undefined) {
+				orig_save(e, "width");
+				e.attributes.width.value = parseFloat(e.attributes.width.value) * ratio;
+			}
+		}
+
+		if (e.childNodes == undefined) return;
+		for (var i = 0, c = e.childNodes; i < c.length; i++) {
+			zoom_child(c[i], x - 10, ratio);
+		}
+	}
+	function zoom_parent(e) {
+		if (e.attributes) {
+			if (e.attributes.x != undefined) {
+				orig_save(e, "x");
+				e.attributes.x.value = 10;
+			}
+			if (e.attributes.width != undefined) {
+				orig_save(e, "width");
+				e.attributes.width.value = parseInt(svg.width.baseVal.value) - (10 * 2);
+			}
+		}
+		if (e.childNodes == undefined) return;
+		for (var i = 0, c = e.childNodes; i < c.length; i++) {
+			zoom_parent(c[i]);
+		}
+	}
+	function zoom(node) {
+		var attr = find_child(node, "rect").attributes;
+		var width = parseFloat(attr.width.value);
+		var xmin = parseFloat(attr.x.value);
+		var xmax = parseFloat(xmin + width);
+		var ymin = parseFloat(attr.y.value);
+		var ratio = (svg.width.baseVal.value - 2 * 10) / width;
+
+		// XXX: Workaround for JavaScript float issues (fix me)
+		var fudge = 0.0001;
+
+		unzoombtn.classList.remove("hide");
+
+		var el = document.getElementById("frames").children;
+		for (var i = 0; i < el.length; i++) {
+			var e = el[i];
+			var a = find_child(e, "rect").attributes;
+			var ex = parseFloat(a.x.value);
+			var ew = parseFloat(a.width.value);
+			var upstack;
+			// Is it an ancestor
+			if (0 == 0) {
+				upstack = parseFloat(a.y.value) > ymin;
+			} else {
+				upstack = parseFloat(a.y.value) < ymin;
+			}
+			if (upstack) {
+				// Direct ancestor
+				if (ex <= xmin && (ex+ew+fudge) >= xmax) {
+					e.classList.add("parent");
+					zoom_parent(e);
+					update_text(e);
+				}
+				// not in current path
+				else
+					e.classList.add("hide");
+			}
+			// Children maybe
+			else {
+				// no common path
+				if (ex < xmin || ex + fudge >= xmax) {
+					e.classList.add("hide");
+				}
+				else {
+					zoom_child(e, xmin, ratio);
+					update_text(e);
+				}
+			}
+		}
+		search();
+	}
+	function unzoom(dont_update_text) {
+		unzoombtn.classList.add("hide");
+		var el = document.getElementById("frames").children;
+		for(var i = 0; i < el.length; i++) {
+			el[i].classList.remove("parent");
+			el[i].classList.remove("hide");
+			zoom_reset(el[i]);
+			if(!dont_update_text) update_text(el[i]);
+		}
+		search();
+	}
+	function clearzoom() {
+		unzoom();
+
+		// remove zoom state
+		var params = get_params();
+		if (params.x) delete params.x;
+		if (params.y) delete params.y;
+		history.replaceState(null, null, parse_params(params));
+	}
+
+	// search
+	function toggle_ignorecase() {
+		ignorecase = !ignorecase;
+		if (ignorecase) {
+			ignorecaseBtn.classList.add("show");
+		} else {
+			ignorecaseBtn.classList.remove("show");
+		}
+		reset_search();
+		search();
+	}
+	function reset_search() {
+		var el = document.querySelectorAll("#frames rect");
+		for (var i = 0; i < el.length; i++) {
+			orig_load(el[i], "fill")
+		}
+		var params = get_params();
+		delete params.s;
+		history.replaceState(null, null, parse_params(params));
+	}
+	function search_prompt() {
+		if (!searching) {
+			var term = prompt("Enter a search term (regexp " +
+			    "allowed, eg: ^ext4_)"
+			    + (ignorecase ? ", ignoring case" : "")
+			    + "\nPress Ctrl-i to toggle case sensitivity", "");
+			if (term != null) search(term);
+		} else {
+			reset_search();
+			searching = 0;
+			currentSearchTerm = null;
+			searchbtn.classList.remove("show");
+			searchbtn.firstChild.nodeValue = "Search"
+			matchedtxt.classList.add("hide");
+			matchedtxt.firstChild.nodeValue = ""
+		}
+	}
+	function search(term) {
+		if (term) currentSearchTerm = term;
+
+		var re = new RegExp(currentSearchTerm, ignorecase ? 'i' : '');
+		var el = document.getElementById("frames").children;
+		var matches = new Object();
+		var maxwidth = 0;
+		for (var i = 0; i < el.length; i++) {
+			var e = el[i];
+			var func = g_to_func(e);
+			var rect = find_child(e, "rect");
+			if (func == null || rect == null)
+				continue;
+
+			// Save max width. Only works as we have a root frame
+			var w = parseFloat(rect.attributes.width.value);
+			if (w > maxwidth)
+				maxwidth = w;
+
+			if (func.match(re)) {
+				// highlight
+				var x = parseFloat(rect.attributes.x.value);
+				orig_save(rect, "fill");
+				rect.attributes.fill.value = "rgb(230,0,230)";
+
+				// remember matches
+				if (matches[x] == undefined) {
+					matches[x] = w;
+				} else {
+					if (w > matches[x]) {
+						// overwrite with parent
+						matches[x] = w;
+					}
+				}
+				searching = 1;
+			}
+		}
+		if (!searching)
+			return;
+		var params = get_params();
+		params.s = currentSearchTerm;
+		history.replaceState(null, null, parse_params(params));
+
+		searchbtn.classList.add("show");
+		searchbtn.firstChild.nodeValue = "Reset Search";
+
+		// calculate percent matched, excluding vertical overlap
+		var count = 0;
+		var lastx = -1;
+		var lastw = 0;
+		var keys = Array();
+		for (k in matches) {
+			if (matches.hasOwnProperty(k))
+				keys.push(k);
+		}
+		// sort the matched frames by their x location
+		// ascending, then width descending
+		keys.sort(function(a, b){
+			return a - b;
+		});
+		// Step through frames saving only the biggest bottom-up frames
+		// thanks to the sort order. This relies on the tree property
+		// where children are always smaller than their parents.
+		var fudge = 0.0001;	// JavaScript floating point
+		for (var k in keys) {
+			var x = parseFloat(keys[k]);
+			var w = matches[keys[k]];
+			if (x >= lastx + lastw - fudge) {
+				count += w;
+				lastx = x;
+				lastw = w;
+			}
+		}
+		// display matched percent
+		matchedtxt.classList.remove("hide");
+		var pct = 100 * count / maxwidth;
+		if (pct != 100) pct = pct.toFixed(1)
+		matchedtxt.firstChild.nodeValue = "Matched: " + pct + "%";
+	}
+]]>
+</script>
+<rect x="0.0" y="0" width="1200.0" height="502.0" fill="url(#background)"  />
+<text id="title" x="600.00" y="24" >Flame Graph</text>
+<text id="details" x="10.00" y="485" > </text>
+<text id="unzoom" x="10.00" y="24" class="hide">Reset Zoom</text>
+<text id="search" x="1090.00" y="24" >Search</text>
+<text id="ignorecase" x="1174.00" y="24" >ic</text>
+<text id="matched" x="1090.00" y="485" > </text>
+<g id="frames">
+<g >
+<title>pypy_g_W_DictMultiObject_shortcut___setitem__ (17,293,656 samples, 0.23%)</title><rect x="1086.7" y="421" width="2.8" height="15.0" fill="rgb(207,9,2)" rx="2" ry="2" />
+<text  x="1089.71" y="431.5" ></text>
+</g>
+<g >
+<title>pypy_g_wrapper_second_level__star_1_3 (17,185,902 samples, 0.23%)</title><rect x="955.9" y="405" width="2.7" height="15.0" fill="rgb(238,153,36)" rx="2" ry="2" />
+<text  x="958.86" y="415.5" ></text>
+</g>
+<g >
+<title>__x64_sys_brk (56,423,945 samples, 0.76%)</title><rect x="464.2" y="357" width="9.0" height="15.0" fill="rgb(220,72,17)" rx="2" ry="2" />
+<text  x="467.23" y="367.5" ></text>
+</g>
+<g >
+<title>PyPyLong_FromUnsignedLong (10,964,038 samples, 0.15%)</title><rect x="75.6" y="405" width="1.7" height="15.0" fill="rgb(220,69,16)" rx="2" ry="2" />
+<text  x="78.57" y="415.5" ></text>
+</g>
+<g >
+<title>update_process_times (17,882,264 samples, 0.24%)</title><rect x="887.9" y="293" width="2.8" height="15.0" fill="rgb(250,209,50)" rx="2" ry="2" />
+<text  x="890.90" y="303.5" ></text>
+</g>
+<g >
+<title>__x64_sys_recvfrom (58,480,047 samples, 0.79%)</title><rect x="963.1" y="373" width="9.2" height="15.0" fill="rgb(224,88,21)" rx="2" ry="2" />
+<text  x="966.06" y="383.5" ></text>
+</g>
+<g >
+<title>pypy_g_ResumeDataDirectReader_setfield (20,602,547 samples, 0.28%)</title><rect x="1073.1" y="421" width="3.2" height="15.0" fill="rgb(250,209,50)" rx="2" ry="2" />
+<text  x="1076.08" y="431.5" ></text>
+</g>
+<g >
+<title>do_brk_flags (32,660,426 samples, 0.44%)</title><rect x="468.0" y="341" width="5.2" height="15.0" fill="rgb(220,73,17)" rx="2" ry="2" />
+<text  x="471.01" y="351.5" ></text>
+</g>
+<g >
+<title>perf_event_mmap (32,660,426 samples, 0.44%)</title><rect x="468.0" y="325" width="5.2" height="15.0" fill="rgb(229,112,26)" rx="2" ry="2" />
+<text  x="471.01" y="335.5" ></text>
+</g>
+<g >
+<title>do_syscall_64 (30,933,142 samples, 0.42%)</title><rect x="473.2" y="373" width="4.9" height="15.0" fill="rgb(209,20,4)" rx="2" ry="2" />
+<text  x="476.20" y="383.5" ></text>
+</g>
+<g >
+<title>pypy_g_peekvalues__AccessDirect_None (23,959,582 samples, 0.32%)</title><rect x="913.1" y="405" width="3.8" height="15.0" fill="rgb(245,187,44)" rx="2" ry="2" />
+<text  x="916.11" y="415.5" ></text>
+</g>
+<g >
+<title>pypy_g_comparison_lt_impl (13,998,753 samples, 0.19%)</title><rect x="781.0" y="405" width="2.3" height="15.0" fill="rgb(236,144,34)" rx="2" ry="2" />
+<text  x="784.05" y="415.5" ></text>
+</g>
+<g >
+<title>[unknown] (18,338,519 samples, 0.25%)</title><rect x="354.6" y="181" width="2.9" height="15.0" fill="rgb(210,24,5)" rx="2" ry="2" />
+<text  x="357.63" y="191.5" ></text>
+</g>
+<g >
+<title>__calc_delta (20,823,651 samples, 0.28%)</title><rect x="379.1" y="149" width="3.3" height="15.0" fill="rgb(247,193,46)" rx="2" ry="2" />
+<text  x="382.07" y="159.5" ></text>
+</g>
+<g >
+<title>pypy_g_RPyRaiseException (37,198,994 samples, 0.50%)</title><rect x="620.2" y="405" width="5.9" height="15.0" fill="rgb(210,26,6)" rx="2" ry="2" />
+<text  x="623.23" y="415.5" ></text>
+</g>
+<g >
+<title>pypy_g__flat_pycall__AccessDirect_None (15,885,306 samples, 0.21%)</title><rect x="431.7" y="389" width="2.5" height="15.0" fill="rgb(226,98,23)" rx="2" ry="2" />
+<text  x="434.68" y="399.5" ></text>
+</g>
+<g >
+<title>pick_next_task_fair (25,457,269 samples, 0.34%)</title><rect x="385.2" y="213" width="4.1" height="15.0" fill="rgb(242,170,40)" rx="2" ry="2" />
+<text  x="388.21" y="223.5" ></text>
+</g>
+<g >
+<title>PyPyNumber_Index (13,810,131 samples, 0.19%)</title><rect x="325.3" y="405" width="2.2" height="15.0" fill="rgb(211,29,7)" rx="2" ry="2" />
+<text  x="328.26" y="415.5" ></text>
+</g>
+<g >
+<title>pypy_g_trace__gc_callback__trace_drag_out (77,513,943 samples, 1.04%)</title><rect x="1174.9" y="421" width="12.4" height="15.0" fill="rgb(252,218,52)" rx="2" ry="2" />
+<text  x="1177.94" y="431.5" ></text>
+</g>
+<g >
+<title>pypy_g_do_strgetitem__star_2 (10,918,699 samples, 0.15%)</title><rect x="804.5" y="405" width="1.7" height="15.0" fill="rgb(234,135,32)" rx="2" ry="2" />
+<text  x="807.49" y="415.5" ></text>
+</g>
+<g >
+<title>epoll_wait (2,437,391 samples, 0.03%)</title><rect x="395.8" y="389" width="0.4" height="15.0" fill="rgb(238,154,36)" rx="2" ry="2" />
+<text  x="398.83" y="399.5" ></text>
+</g>
+<g >
+<title>tick_sched_timer (17,882,264 samples, 0.24%)</title><rect x="887.9" y="325" width="2.8" height="15.0" fill="rgb(254,227,54)" rx="2" ry="2" />
+<text  x="890.90" y="335.5" ></text>
+</g>
+<g >
+<title>pypy_g_ResumeDataDirectReader_setfield (38,937,875 samples, 0.52%)</title><rect x="638.9" y="405" width="6.2" height="15.0" fill="rgb(250,209,50)" rx="2" ry="2" />
+<text  x="641.94" y="415.5" ></text>
+</g>
+<g >
+<title>sock_sendmsg (260,345,799 samples, 3.50%)</title><rect x="978.0" y="341" width="41.3" height="15.0" fill="rgb(244,183,43)" rx="2" ry="2" />
+<text  x="980.95" y="351.5" >soc..</text>
+</g>
+<g >
+<title>pypy_g_wrapper_second_level__star_3_45 (12,122,379 samples, 0.16%)</title><rect x="958.6" y="405" width="1.9" height="15.0" fill="rgb(226,99,23)" rx="2" ry="2" />
+<text  x="961.59" y="415.5" ></text>
+</g>
+<g >
+<title>pypy_g__x_int_add (14,969,161 samples, 0.20%)</title><rect x="751.4" y="405" width="2.4" height="15.0" fill="rgb(237,149,35)" rx="2" ry="2" />
+<text  x="754.42" y="415.5" ></text>
+</g>
+<g >
+<title>pypy_g_raw_malloc_memory_pressure_varsize (19,310,286 samples, 0.26%)</title><rect x="1163.6" y="421" width="3.1" height="15.0" fill="rgb(215,48,11)" rx="2" ry="2" />
+<text  x="1166.63" y="431.5" ></text>
+</g>
+<g >
+<title>entry_SYSCALL_64_after_hwframe (56,423,945 samples, 0.76%)</title><rect x="464.2" y="389" width="9.0" height="15.0" fill="rgb(218,63,15)" rx="2" ry="2" />
+<text  x="467.23" y="399.5" ></text>
+</g>
+<g >
+<title>pypy_g_ll_call_lookup_function__v1438___simple_call__fu (21,713,642 samples, 0.29%)</title><rect x="846.2" y="405" width="3.5" height="15.0" fill="rgb(249,205,49)" rx="2" ry="2" />
+<text  x="849.24" y="415.5" ></text>
+</g>
+<g >
+<title>[unknown] (18,338,519 samples, 0.25%)</title><rect x="354.6" y="261" width="2.9" height="15.0" fill="rgb(210,24,5)" rx="2" ry="2" />
+<text  x="357.63" y="271.5" ></text>
+</g>
+<g >
+<title>dev_queue_xmit (12,823,047 samples, 0.17%)</title><rect x="1015.0" y="165" width="2.0" height="15.0" fill="rgb(222,78,18)" rx="2" ry="2" />
+<text  x="1017.98" y="175.5" ></text>
+</g>
+<g >
+<title>pypy_g_SnapshotIterator___init__ (23,621,119 samples, 0.32%)</title><rect x="650.7" y="405" width="3.7" height="15.0" fill="rgb(208,15,3)" rx="2" ry="2" />
+<text  x="653.70" y="415.5" ></text>
+</g>
+<g >
+<title>pypy_g_ResumeDataLoopMemo__number_boxes (17,439,167 samples, 0.23%)</title><rect x="1076.3" y="421" width="2.8" height="15.0" fill="rgb(207,11,2)" rx="2" ry="2" />
+<text  x="1079.35" y="431.5" ></text>
+</g>
+<g >
+<title>brk (56,423,945 samples, 0.76%)</title><rect x="464.2" y="405" width="9.0" height="15.0" fill="rgb(252,220,52)" rx="2" ry="2" />
+<text  x="467.23" y="415.5" ></text>
+</g>
+<g >
+<title>do_syscall_64 (97,860,791 samples, 1.32%)</title><rect x="373.7" y="341" width="15.6" height="15.0" fill="rgb(209,20,4)" rx="2" ry="2" />
+<text  x="376.71" y="351.5" ></text>
+</g>
+<g >
+<title>dequeue_task_fair (20,823,651 samples, 0.28%)</title><rect x="379.1" y="197" width="3.3" height="15.0" fill="rgb(230,119,28)" rx="2" ry="2" />
+<text  x="382.07" y="207.5" ></text>
+</g>
+<g >
+<title>check_stack_object (18,737,386 samples, 0.25%)</title><rect x="975.0" y="309" width="3.0" height="15.0" fill="rgb(215,49,11)" rx="2" ry="2" />
+<text  x="977.97" y="319.5" ></text>
+</g>
+<g >
+<title>clock_gettime (11,140,977 samples, 0.15%)</title><rect x="233.8" y="405" width="1.7" height="15.0" fill="rgb(213,39,9)" rx="2" ry="2" />
+<text  x="236.76" y="415.5" ></text>
+</g>
+<g >
+<title>dequeue_task_fair (21,582,755 samples, 0.29%)</title><rect x="367.2" y="165" width="3.4" height="15.0" fill="rgb(230,119,28)" rx="2" ry="2" />
+<text  x="370.20" y="175.5" ></text>
+</g>
+<g >
+<title>ksize (11,561,732 samples, 0.16%)</title><rect x="981.0" y="197" width="1.8" height="15.0" fill="rgb(210,25,6)" rx="2" ry="2" />
+<text  x="983.99" y="207.5" ></text>
+</g>
+<g >
+<title>apic_timer_interrupt (15,230,677 samples, 0.21%)</title><rect x="461.8" y="389" width="2.4" height="15.0" fill="rgb(205,1,0)" rx="2" ry="2" />
+<text  x="464.81" y="399.5" ></text>
+</g>
+<g >
+<title>pypy_g__PyDict_GetItemStringWithError (17,522,641 samples, 0.24%)</title><rect x="1099.3" y="421" width="2.8" height="15.0" fill="rgb(230,117,28)" rx="2" ry="2" />
+<text  x="1102.32" y="431.5" ></text>
+</g>
+<g >
+<title>ep_send_events_proc (14,511,102 samples, 0.20%)</title><rect x="357.5" y="213" width="2.4" height="15.0" fill="rgb(208,14,3)" rx="2" ry="2" />
+<text  x="360.55" y="223.5" ></text>
+</g>
+<g >
+<title>ip_make_skb (71,288,493 samples, 0.96%)</title><rect x="981.0" y="293" width="11.3" height="15.0" fill="rgb(242,173,41)" rx="2" ry="2" />
+<text  x="983.99" y="303.5" ></text>
+</g>
+<g >
+<title>pypy_g__run_forever (16,223,054 samples, 0.22%)</title><rect x="738.8" y="405" width="2.6" height="15.0" fill="rgb(214,42,10)" rx="2" ry="2" />
+<text  x="741.82" y="415.5" ></text>
+</g>
+<g >
+<title>pypy_g_index (38,632,352 samples, 0.52%)</title><rect x="833.8" y="405" width="6.1" height="15.0" fill="rgb(247,197,47)" rx="2" ry="2" />
+<text  x="836.79" y="415.5" ></text>
+</g>
+<g >
+<title>ep_poll (30,933,142 samples, 0.42%)</title><rect x="473.2" y="325" width="4.9" height="15.0" fill="rgb(238,151,36)" rx="2" ry="2" />
+<text  x="476.20" y="335.5" ></text>
+</g>
+<g >
+<title>pypy_epoll_wait (12,731,735 samples, 0.17%)</title><rect x="1039.2" y="421" width="2.0" height="15.0" fill="rgb(214,43,10)" rx="2" ry="2" />
+<text  x="1042.20" y="431.5" ></text>
+</g>
+<g >
+<title>do_epoll_wait (18,338,519 samples, 0.25%)</title><rect x="354.6" y="101" width="2.9" height="15.0" fill="rgb(211,31,7)" rx="2" ry="2" />
+<text  x="357.63" y="111.5" ></text>
+</g>
+<g >
+<title>pypy_g_PyErr_Occurred (47,565,086 samples, 0.64%)</title><rect x="235.5" y="405" width="7.6" height="15.0" fill="rgb(213,38,9)" rx="2" ry="2" />
+<text  x="238.53" y="415.5" ></text>
+</g>
+<g >
+<title>ep_poll (2,437,391 samples, 0.03%)</title><rect x="395.8" y="309" width="0.4" height="15.0" fill="rgb(238,151,36)" rx="2" ry="2" />
+<text  x="398.83" y="319.5" ></text>
+</g>
+<g >
+<title>PyPyBuffer_IsContiguous (12,987,770 samples, 0.17%)</title><rect x="321.4" y="405" width="2.0" height="15.0" fill="rgb(224,90,21)" rx="2" ry="2" />
+<text  x="324.38" y="415.5" ></text>
+</g>
+<g >
+<title>pypy_epoll_wait (2,580,355 samples, 0.03%)</title><rect x="397.9" y="389" width="0.5" height="15.0" fill="rgb(214,43,10)" rx="2" ry="2" />
+<text  x="400.95" y="399.5" ></text>
+</g>
+<g >
+<title>pypy_g_jitframe_trace__gc_callback__trace_drag_out (17,374,474 samples, 0.23%)</title><rect x="1126.5" y="421" width="2.7" height="15.0" fill="rgb(247,197,47)" rx="2" ry="2" />
+<text  x="1129.47" y="431.5" ></text>
+</g>
+<g >
+<title>pypy_g_PyObject_Size (15,530,123 samples, 0.21%)</title><rect x="617.8" y="405" width="2.4" height="15.0" fill="rgb(223,86,20)" rx="2" ry="2" />
+<text  x="620.76" y="415.5" ></text>
+</g>
+<g >
+<title>pypy_g_W_TypeObject_lookup_where_with_method_cache (86,545,979 samples, 1.17%)</title><rect x="706.8" y="405" width="13.8" height="15.0" fill="rgb(223,85,20)" rx="2" ry="2" />
+<text  x="709.81" y="415.5" ></text>
+</g>
+<g >
+<title>[unknown] (18,338,519 samples, 0.25%)</title><rect x="354.6" y="309" width="2.9" height="15.0" fill="rgb(210,24,5)" rx="2" ry="2" />
+<text  x="357.63" y="319.5" ></text>
+</g>
+<g >
+<title>pypy_g_make_arguments__AccessDirect_None (11,777,299 samples, 0.16%)</title><rect x="896.6" y="405" width="1.8" height="15.0" fill="rgb(221,74,17)" rx="2" ry="2" />
+<text  x="899.55" y="415.5" ></text>
+</g>
+<g >
+<title>schedule_hrtimeout_range (11,719,505 samples, 0.16%)</title><rect x="476.2" y="309" width="1.9" height="15.0" fill="rgb(221,75,18)" rx="2" ry="2" />
+<text  x="479.25" y="319.5" ></text>
+</g>
+<g >
+<title>sock_alloc_send_skb (30,882,242 samples, 0.42%)</title><rect x="981.0" y="261" width="4.9" height="15.0" fill="rgb(234,134,32)" rx="2" ry="2" />
+<text  x="983.99" y="271.5" ></text>
+</g>
+<g >
+<title>ip_output (39,609,763 samples, 0.53%)</title><rect x="1013.0" y="245" width="6.3" height="15.0" fill="rgb(247,194,46)" rx="2" ry="2" />
+<text  x="1016.01" y="255.5" ></text>
+</g>
+<g >
+<title>pypy_g_make_ref (41,035,532 samples, 0.55%)</title><rect x="1154.5" y="421" width="6.5" height="15.0" fill="rgb(224,90,21)" rx="2" ry="2" />
+<text  x="1157.49" y="431.5" ></text>
+</g>
+<g >
+<title>aesni_set_encrypt_key (15,230,677 samples, 0.21%)</title><rect x="461.8" y="405" width="2.4" height="15.0" fill="rgb(248,198,47)" rx="2" ry="2" />
+<text  x="464.81" y="415.5" ></text>
+</g>
+<g >
+<title>pypy_g_LOAD_METHOD__AccessDirect_star_1 (13,798,998 samples, 0.19%)</title><rect x="524.1" y="405" width="2.2" height="15.0" fill="rgb(226,100,24)" rx="2" ry="2" />
+<text  x="527.06" y="415.5" ></text>
+</g>
+<g >
+<title>pypy_g_maybe_compile_and_run__star_5_2.part.0 (42,946,948 samples, 0.58%)</title><rect x="906.3" y="405" width="6.8" height="15.0" fill="rgb(207,10,2)" rx="2" ry="2" />
+<text  x="909.29" y="415.5" ></text>
+</g>
+<g >
+<title>pypy_g_tuple_realize (20,266,480 samples, 0.27%)</title><rect x="941.2" y="405" width="3.2" height="15.0" fill="rgb(236,142,34)" rx="2" ry="2" />
+<text  x="944.17" y="415.5" ></text>
+</g>
+<g >
+<title>PyPyLong_FromSsize_t (16,849,150 samples, 0.23%)</title><rect x="72.9" y="405" width="2.7" height="15.0" fill="rgb(248,199,47)" rx="2" ry="2" />
+<text  x="75.89" y="415.5" ></text>
+</g>
+<g >
+<title>ep_scan_ready_list.constprop.0 (14,511,102 samples, 0.20%)</title><rect x="357.5" y="229" width="2.4" height="15.0" fill="rgb(251,213,50)" rx="2" ry="2" />
+<text  x="360.55" y="239.5" ></text>
+</g>
+<g >
+<title>skb_release_data (11,383,017 samples, 0.15%)</title><rect x="862.1" y="213" width="1.8" height="15.0" fill="rgb(209,20,4)" rx="2" ry="2" />
+<text  x="865.09" y="223.5" ></text>
+</g>
+<g >
+<title>do_IRQ (20,266,480 samples, 0.27%)</title><rect x="941.2" y="373" width="3.2" height="15.0" fill="rgb(212,33,8)" rx="2" ry="2" />
+<text  x="944.17" y="383.5" ></text>
+</g>
+<g >
+<title>ip_route_output_flow (51,806,045 samples, 0.70%)</title><rect x="992.3" y="293" width="8.2" height="15.0" fill="rgb(216,52,12)" rx="2" ry="2" />
+<text  x="995.32" y="303.5" ></text>
+</g>
+<g >
+<title>__softirqentry_text_start (11,383,017 samples, 0.15%)</title><rect x="862.1" y="341" width="1.8" height="15.0" fill="rgb(234,135,32)" rx="2" ry="2" />
+<text  x="865.09" y="351.5" ></text>
+</g>
+<g >
+<title>deactivate_task (38,594,961 samples, 0.52%)</title><rect x="379.1" y="213" width="6.1" height="15.0" fill="rgb(206,8,2)" rx="2" ry="2" />
+<text  x="382.07" y="223.5" ></text>
+</g>
+<g >
+<title>schedule_hrtimeout_range_clock (11,719,505 samples, 0.16%)</title><rect x="476.2" y="293" width="1.9" height="15.0" fill="rgb(222,81,19)" rx="2" ry="2" />
+<text  x="479.25" y="303.5" ></text>
+</g>
+<g >
+<title>pypy_g_ll_dict_setitem__dicttablePtr_pypy_objspace_std_ (19,982,476 samples, 0.27%)</title><rect x="871.3" y="405" width="3.1" height="15.0" fill="rgb(220,70,16)" rx="2" ry="2" />
+<text  x="874.26" y="415.5" ></text>
+</g>
+<g >
+<title>pypy_g_IterClassValues___init___2 (14,969,161 samples, 0.20%)</title><rect x="521.7" y="405" width="2.4" height="15.0" fill="rgb(205,1,0)" rx="2" ry="2" />
+<text  x="524.68" y="415.5" ></text>
+</g>
+<g >
+<title>__x64_sys_epoll_wait (40,961,278 samples, 0.55%)</title><rect x="367.2" y="293" width="6.5" height="15.0" fill="rgb(206,6,1)" rx="2" ry="2" />
+<text  x="370.20" y="303.5" ></text>
+</g>
+<g >
+<title>scheduler_tick (17,882,264 samples, 0.24%)</title><rect x="887.9" y="277" width="2.8" height="15.0" fill="rgb(246,190,45)" rx="2" ry="2" />
+<text  x="890.90" y="287.5" ></text>
+</g>
+<g >
+<title>lock_sock_nested (11,413,755 samples, 0.15%)</title><rect x="965.2" y="293" width="1.8" height="15.0" fill="rgb(246,190,45)" rx="2" ry="2" />
+<text  x="968.19" y="303.5" ></text>
+</g>
+<g >
+<title>pypy_g_UnicodeDictStrategy_setitem (15,887,994 samples, 0.21%)</title><rect x="654.4" y="405" width="2.6" height="15.0" fill="rgb(221,74,17)" rx="2" ry="2" />
+<text  x="657.45" y="415.5" ></text>
+</g>
+<g >
+<title>schedule_hrtimeout_range (33,867,277 samples, 0.46%)</title><rect x="361.8" y="229" width="5.4" height="15.0" fill="rgb(221,75,18)" rx="2" ry="2" />
+<text  x="364.82" y="239.5" ></text>
+</g>
+<g >
+<title>_PyPy_tuple_dealloc (49,153,300 samples, 0.66%)</title><rect x="443.5" y="405" width="7.8" height="15.0" fill="rgb(219,68,16)" rx="2" ry="2" />
+<text  x="446.49" y="415.5" ></text>
+</g>
+<g >
+<title>pypy_g_RegAlloc_get_gcmap (19,731,767 samples, 0.27%)</title><rect x="626.1" y="405" width="3.2" height="15.0" fill="rgb(237,149,35)" rx="2" ry="2" />
+<text  x="629.14" y="415.5" ></text>
+</g>
+<g >
+<title>pypy_g_PySequence_Fast_ITEMS (12,080,903 samples, 0.16%)</title><rect x="1061.9" y="421" width="1.9" height="15.0" fill="rgb(240,164,39)" rx="2" ry="2" />
+<text  x="1064.86" y="431.5" ></text>
+</g>
+<g >
+<title>move_addr_to_kernel.part.0 (18,737,386 samples, 0.25%)</title><rect x="975.0" y="341" width="3.0" height="15.0" fill="rgb(234,133,32)" rx="2" ry="2" />
+<text  x="977.97" y="351.5" ></text>
+</g>
+<g >
+<title>[unknown] (590,918,703 samples, 7.95%)</title><rect x="349.6" y="405" width="93.9" height="15.0" fill="rgb(210,24,5)" rx="2" ry="2" />
+<text  x="352.62" y="415.5" >[unknown]</text>
+</g>
+<g >
+<title>ip_route_output_key_hash (51,806,045 samples, 0.70%)</title><rect x="992.3" y="277" width="8.2" height="15.0" fill="rgb(206,7,1)" rx="2" ry="2" />
+<text  x="995.32" y="287.5" ></text>
+</g>
+<g >
+<title>pypy_g_getptrinfo (15,201,636 samples, 0.20%)</title><rect x="825.1" y="405" width="2.4" height="15.0" fill="rgb(219,65,15)" rx="2" ry="2" />
+<text  x="828.10" y="415.5" ></text>
+</g>
+<g >
+<title>__x86_indirect_thunk_rax (16,532,190 samples, 0.22%)</title><rect x="972.3" y="389" width="2.7" height="15.0" fill="rgb(251,213,51)" rx="2" ry="2" />
+<text  x="975.35" y="399.5" ></text>
+</g>
+<g >
+<title>__x64_sys_epoll_wait (18,338,519 samples, 0.25%)</title><rect x="354.6" y="117" width="2.9" height="15.0" fill="rgb(206,6,1)" rx="2" ry="2" />
+<text  x="357.63" y="127.5" ></text>
+</g>
+<g >
+<title>pypy_g__rawrefcount_perform (18,994,366 samples, 0.26%)</title><rect x="735.8" y="405" width="3.0" height="15.0" fill="rgb(252,217,52)" rx="2" ry="2" />
+<text  x="738.80" y="415.5" ></text>
+</g>
+<g >
+<title>perf_iterate_sb (32,660,426 samples, 0.44%)</title><rect x="468.0" y="309" width="5.2" height="15.0" fill="rgb(244,179,42)" rx="2" ry="2" />
+<text  x="471.01" y="319.5" ></text>
+</g>
+<g >
+<title>do_syscall_64 (56,423,945 samples, 0.76%)</title><rect x="464.2" y="373" width="9.0" height="15.0" fill="rgb(209,20,4)" rx="2" ry="2" />
+<text  x="467.23" y="383.5" ></text>
+</g>
+<g >
+<title>__sys_recvfrom (38,605,225 samples, 0.52%)</title><rect x="963.1" y="357" width="6.1" height="15.0" fill="rgb(247,197,47)" rx="2" ry="2" />
+<text  x="966.06" y="367.5" ></text>
+</g>
+<g >
+<title>[libc-2.31.so] (325,279,513 samples, 4.38%)</title><rect x="12.5" y="421" width="51.7" height="15.0" fill="rgb(212,34,8)" rx="2" ry="2" />
+<text  x="15.53" y="431.5" >[libc..</text>
+</g>
+<g >
+<title>__tls_get_addr (21,024,164 samples, 0.28%)</title><rect x="230.4" y="405" width="3.4" height="15.0" fill="rgb(246,191,45)" rx="2" ry="2" />
+<text  x="233.42" y="415.5" ></text>
+</g>
+<g >
+<title>pypy_g_W_TypeObject__lookup_where_all_typeobjects (243,360,748 samples, 3.28%)</title><rect x="665.6" y="405" width="38.7" height="15.0" fill="rgb(214,43,10)" rx="2" ry="2" />
+<text  x="668.61" y="415.5" >pyp..</text>
+</g>
+<g >
+<title>tg3_poll (11,383,017 samples, 0.15%)</title><rect x="862.1" y="309" width="1.8" height="15.0" fill="rgb(219,68,16)" rx="2" ry="2" />
+<text  x="865.09" y="319.5" ></text>
+</g>
+<g >
+<title>enqueue_hrtimer (21,115,430 samples, 0.28%)</title><rect x="375.7" y="229" width="3.4" height="15.0" fill="rgb(211,29,7)" rx="2" ry="2" />
+<text  x="378.72" y="239.5" ></text>
+</g>
+<g >
+<title>tg3_poll_work (11,383,017 samples, 0.15%)</title><rect x="862.1" y="293" width="1.8" height="15.0" fill="rgb(242,173,41)" rx="2" ry="2" />
+<text  x="865.09" y="303.5" ></text>
+</g>
+<g >
+<title>irq_entries_start (15,548,612 samples, 0.21%)</title><rect x="1021.3" y="405" width="2.5" height="15.0" fill="rgb(214,43,10)" rx="2" ry="2" />
+<text  x="1024.31" y="415.5" ></text>
+</g>
+<g >
+<title>move_addr_to_user (19,874,822 samples, 0.27%)</title><rect x="969.2" y="357" width="3.1" height="15.0" fill="rgb(227,104,24)" rx="2" ry="2" />
+<text  x="972.19" y="367.5" ></text>
+</g>
+<g >
+<title>PyPyTuple_New (49,988,275 samples, 0.67%)</title><rect x="329.7" y="405" width="7.9" height="15.0" fill="rgb(205,4,0)" rx="2" ry="2" />
+<text  x="332.66" y="415.5" ></text>
+</g>
+<g >
+<title>pypy_g_W_Root__cpyext_as_pyobj (14,111,235 samples, 0.19%)</title><rect x="660.8" y="405" width="2.2" height="15.0" fill="rgb(235,141,33)" rx="2" ry="2" />
+<text  x="663.79" y="415.5" ></text>
+</g>
+<g >
+<title>ip_finish_output2 (39,609,763 samples, 0.53%)</title><rect x="1013.0" y="197" width="6.3" height="15.0" fill="rgb(219,67,16)" rx="2" ry="2" />
+<text  x="1016.01" y="207.5" ></text>
+</g>
+<g >
+<title>do_syscall_64 (2,437,391 samples, 0.03%)</title><rect x="395.8" y="357" width="0.4" height="15.0" fill="rgb(209,20,4)" rx="2" ry="2" />
+<text  x="398.83" y="367.5" ></text>
+</g>
+<g >
+<title>_raw_spin_lock (12,823,047 samples, 0.17%)</title><rect x="1015.0" y="149" width="2.0" height="15.0" fill="rgb(239,160,38)" rx="2" ry="2" />
+<text  x="1017.98" y="159.5" ></text>
+</g>
+<g >
+<title>pypy_g_handler_int_guard_value (15,685,296 samples, 0.21%)</title><rect x="831.3" y="405" width="2.5" height="15.0" fill="rgb(214,44,10)" rx="2" ry="2" />
+<text  x="834.30" y="415.5" ></text>
+</g>
+<g >
+<title>Buffer_init (23,061,428 samples, 0.31%)</title><rect x="66.6" y="405" width="3.6" height="15.0" fill="rgb(244,181,43)" rx="2" ry="2" />
+<text  x="69.57" y="415.5" ></text>
+</g>
+<g >
+<title>epoll_wait (97,860,791 samples, 1.32%)</title><rect x="373.7" y="373" width="15.6" height="15.0" fill="rgb(238,154,36)" rx="2" ry="2" />
+<text  x="376.71" y="383.5" ></text>
+</g>
+<g >
+<title>pypy_g_IncrementalMiniMarkGC__trace_drag_out1 (11,901,441 samples, 0.16%)</title><rect x="401.4" y="389" width="1.9" height="15.0" fill="rgb(229,111,26)" rx="2" ry="2" />
+<text  x="404.38" y="399.5" ></text>
+</g>
+<g >
+<title>pypy_g_bytes_attach (9,332,756 samples, 0.13%)</title><rect x="773.8" y="405" width="1.5" height="15.0" fill="rgb(224,88,21)" rx="2" ry="2" />
+<text  x="776.82" y="415.5" ></text>
+</g>
+<g >
+<title>__hrtimer_run_queues (17,882,264 samples, 0.24%)</title><rect x="887.9" y="341" width="2.8" height="15.0" fill="rgb(237,150,35)" rx="2" ry="2" />
+<text  x="890.90" y="351.5" ></text>
+</g>
+<g >
+<title>[libc-2.31.so] (14,383,620 samples, 0.19%)</title><rect x="352.3" y="389" width="2.3" height="15.0" fill="rgb(212,34,8)" rx="2" ry="2" />
+<text  x="355.35" y="399.5" ></text>
+</g>
+<g >
+<title>pypy_g__check_utf8 (12,633,856 samples, 0.17%)</title><rect x="1102.1" y="421" width="2.0" height="15.0" fill="rgb(212,35,8)" rx="2" ry="2" />
+<text  x="1105.11" y="431.5" ></text>
+</g>
+<g >
+<title>apparmor_socket_recvmsg (13,784,926 samples, 0.19%)</title><rect x="967.0" y="309" width="2.2" height="15.0" fill="rgb(246,190,45)" rx="2" ry="2" />
+<text  x="970.00" y="319.5" ></text>
+</g>
+<g >
+<title>dequeue_entity (11,719,505 samples, 0.16%)</title><rect x="476.2" y="213" width="1.9" height="15.0" fill="rgb(233,130,31)" rx="2" ry="2" />
+<text  x="479.25" y="223.5" ></text>
+</g>
+<g >
+<title>ep_item_poll.isra.0 (19,213,637 samples, 0.26%)</title><rect x="473.2" y="277" width="3.0" height="15.0" fill="rgb(251,213,51)" rx="2" ry="2" />
+<text  x="476.20" y="287.5" ></text>
+</g>
+<g >
+<title>pypy_g_W_ObjectObjectUserDictWeakrefable_getclass (13,318,736 samples, 0.18%)</title><rect x="658.7" y="405" width="2.1" height="15.0" fill="rgb(238,153,36)" rx="2" ry="2" />
+<text  x="661.67" y="415.5" ></text>
+</g>
+<g >
+<title>pypy_g_ArenaCollection_mass_free_in_pages (19,037,980 samples, 0.26%)</title><rect x="398.4" y="389" width="3.0" height="15.0" fill="rgb(250,211,50)" rx="2" ry="2" />
+<text  x="401.36" y="399.5" ></text>
+</g>
+<g >
+<title>pypy_g_W_TypeObject_issubtype (15,967,400 samples, 0.21%)</title><rect x="704.3" y="405" width="2.5" height="15.0" fill="rgb(241,167,40)" rx="2" ry="2" />
+<text  x="707.27" y="415.5" ></text>
+</g>
+<g >
+<title>update_load_avg (21,582,755 samples, 0.29%)</title><rect x="367.2" y="133" width="3.4" height="15.0" fill="rgb(240,165,39)" rx="2" ry="2" />
+<text  x="370.20" y="143.5" ></text>
+</g>
+<g >
+<title>nf_nat_locks (17,983,175 samples, 0.24%)</title><rect x="1008.2" y="197" width="2.8" height="15.0" fill="rgb(241,169,40)" rx="2" ry="2" />
+<text  x="1011.16" y="207.5" ></text>
+</g>
+<g >
+<title>tick_sched_handle (17,882,264 samples, 0.24%)</title><rect x="887.9" y="309" width="2.8" height="15.0" fill="rgb(219,68,16)" rx="2" ry="2" />
+<text  x="890.90" y="319.5" ></text>
+</g>
+<g >
+<title>pypy_g__PyDict_GetItemStringWithError (19,122,476 samples, 0.26%)</title><rect x="722.8" y="405" width="3.0" height="15.0" fill="rgb(230,117,28)" rx="2" ry="2" />
+<text  x="725.79" y="415.5" ></text>
+</g>
+<g >
+<title>[libc-2.31.so] (12,746,186 samples, 0.17%)</title><rect x="509.6" y="373" width="2.1" height="15.0" fill="rgb(212,34,8)" rx="2" ry="2" />
+<text  x="512.63" y="383.5" ></text>
+</g>
+<g >
+<title>pypy_g_execute_assembler__star_2_2 (13,106,937 samples, 0.18%)</title><rect x="806.2" y="405" width="2.1" height="15.0" fill="rgb(225,92,22)" rx="2" ry="2" />
+<text  x="809.23" y="415.5" ></text>
+</g>
+<g >
+<title>pypy_g_dispatcher_allocate_1 (12,184,554 samples, 0.16%)</title><rect x="802.6" y="405" width="1.9" height="15.0" fill="rgb(242,173,41)" rx="2" ry="2" />
+<text  x="805.56" y="415.5" ></text>
+</g>
+<g >
+<title>pypy_g_BaseCpyTypedescr_allocate (12,251,171 samples, 0.16%)</title><rect x="1041.2" y="421" width="2.0" height="15.0" fill="rgb(236,143,34)" rx="2" ry="2" />
+<text  x="1044.22" y="431.5" ></text>
+</g>
+<g >
+<title>pypy_g_trace__gc_callback__collect_ref_rec (15,508,875 samples, 0.21%)</title><rect x="1172.5" y="421" width="2.4" height="15.0" fill="rgb(234,133,32)" rx="2" ry="2" />
+<text  x="1175.48" y="431.5" ></text>
+</g>
+<g >
+<title>pypy_g_call_method_opt__star_1 (18,331,792 samples, 0.25%)</title><rect x="775.3" y="405" width="2.9" height="15.0" fill="rgb(228,106,25)" rx="2" ry="2" />
+<text  x="778.30" y="415.5" ></text>
+</g>
+<g >
+<title>pypy_g_enumerate_vars__unique_id (20,511,467 samples, 0.28%)</title><rect x="1114.9" y="421" width="3.2" height="15.0" fill="rgb(240,161,38)" rx="2" ry="2" />
+<text  x="1117.89" y="431.5" ></text>
+</g>
+<g >
+<title>malloc (33,815,943 samples, 0.46%)</title><rect x="1033.8" y="421" width="5.4" height="15.0" fill="rgb(230,119,28)" rx="2" ry="2" />
+<text  x="1036.82" y="431.5" ></text>
+</g>
+<g >
+<title>entry_SYSCALL_64_after_hwframe (18,338,519 samples, 0.25%)</title><rect x="354.6" y="149" width="2.9" height="15.0" fill="rgb(218,63,15)" rx="2" ry="2" />
+<text  x="357.63" y="159.5" ></text>
+</g>
+<g >
+<title>perf_iterate_ctx (32,660,426 samples, 0.44%)</title><rect x="468.0" y="293" width="5.2" height="15.0" fill="rgb(205,4,0)" rx="2" ry="2" />
+<text  x="471.01" y="303.5" ></text>
+</g>
+<g >
+<title>pypy_g_handle_jitexception_11 (15,330,381 samples, 0.21%)</title><rect x="262.3" y="405" width="2.5" height="15.0" fill="rgb(234,134,32)" rx="2" ry="2" />
+<text  x="265.32" y="415.5" ></text>
+</g>
+<g >
+<title>eth_header (14,384,883 samples, 0.19%)</title><rect x="1017.0" y="165" width="2.3" height="15.0" fill="rgb(240,163,39)" rx="2" ry="2" />
+<text  x="1020.02" y="175.5" ></text>
+</g>
+<g >
+<title>inet_recvmsg (24,820,299 samples, 0.33%)</title><rect x="963.1" y="325" width="3.9" height="15.0" fill="rgb(206,5,1)" rx="2" ry="2" />
+<text  x="966.06" y="335.5" ></text>
+</g>
+<g >
+<title>__ip_finish_output (39,609,763 samples, 0.53%)</title><rect x="1013.0" y="213" width="6.3" height="15.0" fill="rgb(215,47,11)" rx="2" ry="2" />
+<text  x="1016.01" y="223.5" ></text>
+</g>
+<g >
+<title>ep_poll (97,860,791 samples, 1.32%)</title><rect x="373.7" y="293" width="15.6" height="15.0" fill="rgb(238,151,36)" rx="2" ry="2" />
+<text  x="376.71" y="303.5" ></text>
+</g>
+<g >
+<title>__update_load_avg_cfs_rq (21,582,755 samples, 0.29%)</title><rect x="367.2" y="117" width="3.4" height="15.0" fill="rgb(228,107,25)" rx="2" ry="2" />
+<text  x="370.20" y="127.5" ></text>
+</g>
+<g >
+<title>pypy_g_wrapper_second_level__star_1_2 (27,117,878 samples, 0.37%)</title><rect x="944.4" y="405" width="4.3" height="15.0" fill="rgb(244,183,43)" rx="2" ry="2" />
+<text  x="947.39" y="415.5" ></text>
+</g>
+<g >
+<title>pypy_g_dispatch_loop (47,915,371 samples, 0.65%)</title><rect x="794.9" y="405" width="7.7" height="15.0" fill="rgb(213,39,9)" rx="2" ry="2" />
+<text  x="797.94" y="415.5" ></text>
+</g>
+<g >
+<title>[libc-2.31.so] (30,893,212 samples, 0.42%)</title><rect x="344.7" y="389" width="4.9" height="15.0" fill="rgb(212,34,8)" rx="2" ry="2" />
+<text  x="347.72" y="399.5" ></text>
+</g>
+<g >
+<title>epoll_wait (40,961,278 samples, 0.55%)</title><rect x="367.2" y="341" width="6.5" height="15.0" fill="rgb(238,154,36)" rx="2" ry="2" />
+<text  x="370.20" y="351.5" ></text>
+</g>
+<g >
+<title>pypy_g_ll_hash_string_siphash24__rpy_stringPtr (18,800,111 samples, 0.25%)</title><rect x="893.6" y="405" width="3.0" height="15.0" fill="rgb(243,175,41)" rx="2" ry="2" />
+<text  x="896.57" y="415.5" ></text>
+</g>
+<g >
+<title>drm_connector_pick_cmdline_mode (13,753,586 samples, 0.19%)</title><rect x="1000.5" y="229" width="2.2" height="15.0" fill="rgb(218,64,15)" rx="2" ry="2" />
+<text  x="1003.55" y="239.5" ></text>
+</g>
+<g >
+<title>pypy_g_PyLong_FromLong (11,323,142 samples, 0.15%)</title><rect x="616.0" y="405" width="1.8" height="15.0" fill="rgb(220,72,17)" rx="2" ry="2" />
+<text  x="618.96" y="415.5" ></text>
+</g>
+<g >
+<title>udp_sendmsg (260,345,799 samples, 3.50%)</title><rect x="978.0" y="309" width="41.3" height="15.0" fill="rgb(210,24,5)" rx="2" ry="2" />
+<text  x="980.95" y="319.5" >udp..</text>
+</g>
+<g >
+<title>epoll_wait (60,782,745 samples, 0.82%)</title><rect x="357.5" y="325" width="9.7" height="15.0" fill="rgb(238,154,36)" rx="2" ry="2" />
+<text  x="360.55" y="335.5" ></text>
+</g>
+<g >
+<title>pypy_g_Writer_create_numbering (20,975,403 samples, 0.28%)</title><rect x="1096.0" y="421" width="3.3" height="15.0" fill="rgb(214,44,10)" rx="2" ry="2" />
+<text  x="1098.99" y="431.5" ></text>
+</g>
+<g >
+<title>pypy_g_ll_get__DICTPtr_Address_Address (102,686,495 samples, 1.38%)</title><rect x="874.4" y="405" width="16.3" height="15.0" fill="rgb(217,58,13)" rx="2" ry="2" />
+<text  x="877.43" y="415.5" ></text>
+</g>
+<g >
+<title>pypy_g_dispatch_bytecode__AccessDirect_None (15,769,292 samples, 0.21%)</title><rect x="434.2" y="389" width="2.5" height="15.0" fill="rgb(239,160,38)" rx="2" ry="2" />
+<text  x="437.20" y="399.5" ></text>
+</g>
+<g >
+<title>[libc-2.31.so] (45,110,154 samples, 0.61%)</title><rect x="948.7" y="389" width="7.2" height="15.0" fill="rgb(212,34,8)" rx="2" ry="2" />
+<text  x="951.69" y="399.5" ></text>
+</g>
+<g >
+<title>__schedule (33,867,277 samples, 0.46%)</title><rect x="361.8" y="181" width="5.4" height="15.0" fill="rgb(227,103,24)" rx="2" ry="2" />
+<text  x="364.82" y="191.5" ></text>
+</g>
+<g >
+<title>__fget_light (12,623,967 samples, 0.17%)</title><rect x="1019.3" y="325" width="2.0" height="15.0" fill="rgb(233,132,31)" rx="2" ry="2" />
+<text  x="1022.31" y="335.5" ></text>
+</g>
+<g >
+<title>ip_send_skb (118,091,546 samples, 1.59%)</title><rect x="1000.5" y="277" width="18.8" height="15.0" fill="rgb(215,47,11)" rx="2" ry="2" />
+<text  x="1003.55" y="287.5" ></text>
+</g>
+<g >
+<title>pypy_g_RSocket__addrbuf (19,952,011 samples, 0.27%)</title><rect x="1063.8" y="421" width="3.1" height="15.0" fill="rgb(214,45,10)" rx="2" ry="2" />
+<text  x="1066.78" y="431.5" ></text>
+</g>
+<g >
+<title>pypy_g_RegisterManager_possibly_free_var (19,431,481 samples, 0.26%)</title><rect x="629.3" y="405" width="3.1" height="15.0" fill="rgb(254,227,54)" rx="2" ry="2" />
+<text  x="632.27" y="415.5" ></text>
+</g>
+<g >
+<title>ipt_do_table (12,571,831 samples, 0.17%)</title><rect x="1011.0" y="197" width="2.0" height="15.0" fill="rgb(212,36,8)" rx="2" ry="2" />
+<text  x="1014.02" y="207.5" ></text>
+</g>
+<g >
+<title>__local_bh_enable_ip (11,413,755 samples, 0.15%)</title><rect x="965.2" y="277" width="1.8" height="15.0" fill="rgb(237,147,35)" rx="2" ry="2" />
+<text  x="968.19" y="287.5" ></text>
+</g>
+<g >
+<title>pypy_g_ArrayPtrInfo__visitor_walk_recursive (16,896,976 samples, 0.23%)</title><rect x="491.2" y="405" width="2.7" height="15.0" fill="rgb(238,155,37)" rx="2" ry="2" />
+<text  x="494.21" y="415.5" ></text>
+</g>
+<g >
+<title>pypy_g_ResumeDataLoopMemo_number (20,009,387 samples, 0.27%)</title><rect x="1079.1" y="421" width="3.2" height="15.0" fill="rgb(205,2,0)" rx="2" ry="2" />
+<text  x="1082.12" y="431.5" ></text>
+</g>
+<g >
+<title>ip_local_out (118,091,546 samples, 1.59%)</title><rect x="1000.5" y="261" width="18.8" height="15.0" fill="rgb(233,131,31)" rx="2" ry="2" />
+<text  x="1003.55" y="271.5" ></text>
+</g>
+<g >
+<title>__schedule (64,082,237 samples, 0.86%)</title><rect x="379.1" y="229" width="10.2" height="15.0" fill="rgb(227,103,24)" rx="2" ry="2" />
+<text  x="382.07" y="239.5" ></text>
+</g>
+<g >
+<title>apic_timer_interrupt (17,882,264 samples, 0.24%)</title><rect x="887.9" y="389" width="2.8" height="15.0" fill="rgb(205,1,0)" rx="2" ry="2" />
+<text  x="890.90" y="399.5" ></text>
+</g>
+<g >
+<title>pypy_g_BuiltinCode1_fastcall_1.part.0 (34,677,002 samples, 0.47%)</title><rect x="1046.0" y="421" width="5.5" height="15.0" fill="rgb(225,96,23)" rx="2" ry="2" />
+<text  x="1049.04" y="431.5" ></text>
+</g>
+<g >
+<title>aa_sk_perm (13,784,926 samples, 0.19%)</title><rect x="967.0" y="293" width="2.2" height="15.0" fill="rgb(232,125,30)" rx="2" ry="2" />
+<text  x="970.00" y="303.5" ></text>
+</g>
+<g >
+<title>pypy_g_maybe_compile_and_run__star_3.part.0 (28,706,036 samples, 0.39%)</title><rect x="901.7" y="405" width="4.6" height="15.0" fill="rgb(206,8,2)" rx="2" ry="2" />
+<text  x="904.73" y="415.5" ></text>
+</g>
+<g >
+<title>pypy_g_call_stub_1394 (22,249,645 samples, 0.30%)</title><rect x="1109.4" y="421" width="3.6" height="15.0" fill="rgb(240,162,38)" rx="2" ry="2" />
+<text  x="1112.45" y="431.5" ></text>
+</g>
+<g >
+<title>pypy_g_execute_token__star_2_2 (16,465,595 samples, 0.22%)</title><rect x="254.4" y="405" width="2.6" height="15.0" fill="rgb(242,174,41)" rx="2" ry="2" />
+<text  x="257.43" y="415.5" ></text>
+</g>
+<g >
+<title>ep_item_poll.isra.0 (18,338,519 samples, 0.25%)</title><rect x="354.6" y="37" width="2.9" height="15.0" fill="rgb(251,213,51)" rx="2" ry="2" />
+<text  x="357.63" y="47.5" ></text>
+</g>
+<g >
+<title>ret_from_intr (20,266,480 samples, 0.27%)</title><rect x="941.2" y="389" width="3.2" height="15.0" fill="rgb(206,8,1)" rx="2" ry="2" />
+<text  x="944.17" y="399.5" ></text>
+</g>
+<g >
+<title>sock_poll (19,213,637 samples, 0.26%)</title><rect x="473.2" y="261" width="3.0" height="15.0" fill="rgb(223,84,20)" rx="2" ry="2" />
+<text  x="476.20" y="271.5" ></text>
+</g>
+<g >
+<title>clock_gettime (28,796,912 samples, 0.39%)</title><rect x="1026.9" y="421" width="4.6" height="15.0" fill="rgb(213,39,9)" rx="2" ry="2" />
+<text  x="1029.89" y="431.5" ></text>
+</g>
+<g >
+<title>pypy_g_CALL_METHOD_KW__AccessDirect_star_1 (11,719,505 samples, 0.16%)</title><rect x="1054.4" y="421" width="1.8" height="15.0" fill="rgb(242,172,41)" rx="2" ry="2" />
+<text  x="1057.37" y="431.5" ></text>
+</g>
+<g >
+<title>pypy_g_finditem_str (15,976,280 samples, 0.22%)</title><rect x="436.7" y="389" width="2.5" height="15.0" fill="rgb(240,161,38)" rx="2" ry="2" />
+<text  x="439.71" y="399.5" ></text>
+</g>
+<g >
+<title>ep_send_events_proc (19,213,637 samples, 0.26%)</title><rect x="473.2" y="293" width="3.0" height="15.0" fill="rgb(208,14,3)" rx="2" ry="2" />
+<text  x="476.20" y="303.5" ></text>
+</g>
+<g >
+<title>schedule (40,961,278 samples, 0.55%)</title><rect x="367.2" y="213" width="6.5" height="15.0" fill="rgb(254,229,54)" rx="2" ry="2" />
+<text  x="370.20" y="223.5" ></text>
+</g>
+<g >
+<title>PyPyBuffer_Release (11,481,276 samples, 0.15%)</title><rect x="323.4" y="405" width="1.9" height="15.0" fill="rgb(209,22,5)" rx="2" ry="2" />
+<text  x="326.44" y="415.5" ></text>
+</g>
+<g >
+<title>pypy_g_ll_dict_setitem__DICTPtr_Address_Address (12,616,990 samples, 0.17%)</title><rect x="869.3" y="405" width="2.0" height="15.0" fill="rgb(229,110,26)" rx="2" ry="2" />
+<text  x="872.25" y="415.5" ></text>
+</g>
+<g >
+<title>[unknown] (120,082,542 samples, 1.62%)</title><rect x="354.6" y="357" width="19.1" height="15.0" fill="rgb(210,24,5)" rx="2" ry="2" />
+<text  x="357.63" y="367.5" ></text>
+</g>
+<g >
+<title>[libc-2.31.so] (20,976,525 samples, 0.28%)</title><rect x="77.3" y="405" width="3.3" height="15.0" fill="rgb(212,34,8)" rx="2" ry="2" />
+<text  x="80.31" y="415.5" ></text>
+</g>
+<g >
+<title>pypy_g_ll_dict_lookup__v1846___simple_call__function_ (14,162,603 samples, 0.19%)</title><rect x="316.9" y="405" width="2.2" height="15.0" fill="rgb(243,176,42)" rx="2" ry="2" />
+<text  x="319.87" y="415.5" ></text>
+</g>
+<g >
+<title>__udivmodti4 (17,478,385 samples, 0.24%)</title><rect x="456.0" y="405" width="2.8" height="15.0" fill="rgb(213,37,8)" rx="2" ry="2" />
+<text  x="459.02" y="415.5" ></text>
+</g>
+<g >
+<title>pypy_g_isinstance (13,155,663 samples, 0.18%)</title><rect x="439.2" y="389" width="2.1" height="15.0" fill="rgb(229,110,26)" rx="2" ry="2" />
+<text  x="442.25" y="399.5" ></text>
+</g>
+<g >
+<title>pypy_g_wrapper_second_level__star_1_21 (45,110,154 samples, 0.61%)</title><rect x="948.7" y="405" width="7.2" height="15.0" fill="rgb(228,107,25)" rx="2" ry="2" />
+<text  x="951.69" y="415.5" ></text>
+</g>
+<g >
+<title>nf_hook_slow (49,710,316 samples, 0.67%)</title><rect x="1005.1" y="229" width="7.9" height="15.0" fill="rgb(243,175,42)" rx="2" ry="2" />
+<text  x="1008.12" y="239.5" ></text>
+</g>
+<g >
+<title>schedule (11,719,505 samples, 0.16%)</title><rect x="476.2" y="277" width="1.9" height="15.0" fill="rgb(254,229,54)" rx="2" ry="2" />
+<text  x="479.25" y="287.5" ></text>
+</g>
+<g >
+<title>pypy_g__ensure_parent_resumedata (17,751,490 samples, 0.24%)</title><rect x="1104.1" y="421" width="2.8" height="15.0" fill="rgb(227,102,24)" rx="2" ry="2" />
+<text  x="1107.12" y="431.5" ></text>
+</g>
+<g >
+<title>pypy_g_codepoints_in_utf8 (17,872,177 samples, 0.24%)</title><rect x="778.2" y="405" width="2.8" height="15.0" fill="rgb(241,169,40)" rx="2" ry="2" />
+<text  x="781.21" y="415.5" ></text>
+</g>
+<g >
+<title>pypy_g_bh_getfield_gc_i___ptr (16,741,820 samples, 0.23%)</title><rect x="762.0" y="405" width="2.7" height="15.0" fill="rgb(230,117,28)" rx="2" ry="2" />
+<text  x="765.03" y="415.5" ></text>
+</g>
+<g >
+<title>ossl_gcm_set_ctx_params (19,498,779 samples, 0.26%)</title><rect x="478.1" y="405" width="3.1" height="15.0" fill="rgb(230,116,27)" rx="2" ry="2" />
+<text  x="481.11" y="415.5" ></text>
+</g>
+<g >
+<title>pypy_g_create_ref (73,477,443 samples, 0.99%)</title><rect x="783.3" y="405" width="11.6" height="15.0" fill="rgb(242,171,40)" rx="2" ry="2" />
+<text  x="786.27" y="415.5" ></text>
+</g>
+<g >
+<title>pypy_g_AbstractStructPtrInfo__visitor_walk_recursive (16,228,598 samples, 0.22%)</title><rect x="488.6" y="405" width="2.6" height="15.0" fill="rgb(226,96,23)" rx="2" ry="2" />
+<text  x="491.63" y="415.5" ></text>
+</g>
+<g >
+<title>pypy_g_text_w__pypy_interpreter_baseobjspace_W_Root (27,327,880 samples, 0.37%)</title><rect x="929.4" y="405" width="4.3" height="15.0" fill="rgb(231,122,29)" rx="2" ry="2" />
+<text  x="932.41" y="415.5" ></text>
+</g>
+<g >
+<title>[libc-2.31.so] (32,266,043 samples, 0.43%)</title><rect x="506.5" y="389" width="5.2" height="15.0" fill="rgb(212,34,8)" rx="2" ry="2" />
+<text  x="509.53" y="399.5" ></text>
+</g>
+<g >
+<title>entry_SYSCALL_64_after_hwframe (30,933,142 samples, 0.42%)</title><rect x="473.2" y="389" width="4.9" height="15.0" fill="rgb(218,63,15)" rx="2" ry="2" />
+<text  x="476.20" y="399.5" ></text>
+</g>
+<g >
+<title>do_syscall_64 (58,480,047 samples, 0.79%)</title><rect x="963.1" y="389" width="9.2" height="15.0" fill="rgb(209,20,4)" rx="2" ry="2" />
+<text  x="966.06" y="399.5" ></text>
+</g>
+<g >
+<title>do_epoll_wait (2,437,391 samples, 0.03%)</title><rect x="395.8" y="325" width="0.4" height="15.0" fill="rgb(211,31,7)" rx="2" ry="2" />
+<text  x="398.83" y="335.5" ></text>
+</g>
+<g >
+<title>pypy_g_initialize_frame_scopes__AccessDirect_None (12,861,958 samples, 0.17%)</title><rect x="839.9" y="405" width="2.1" height="15.0" fill="rgb(240,164,39)" rx="2" ry="2" />
+<text  x="842.93" y="415.5" ></text>
+</g>
+<g >
+<title>pypy_g_MIFrame__nonstandard_virtualizable (508,171,957 samples, 6.84%)</title><rect x="526.3" y="405" width="80.7" height="15.0" fill="rgb(223,84,20)" rx="2" ry="2" />
+<text  x="529.25" y="415.5" >pypy_g_MI..</text>
+</g>
+<g >
+<title>smp_apic_timer_interrupt (15,230,677 samples, 0.21%)</title><rect x="461.8" y="373" width="2.4" height="15.0" fill="rgb(221,74,17)" rx="2" ry="2" />
+<text  x="464.81" y="383.5" ></text>
+</g>
+<g >
+<title>pypy_g_ll_dict_lookup__v1708___simple_call__function_ (89,412,469 samples, 1.20%)</title><rect x="849.7" y="405" width="14.2" height="15.0" fill="rgb(212,35,8)" rx="2" ry="2" />
+<text  x="852.69" y="415.5" ></text>
+</g>
+<g >
+<title>EVP_CipherUpdate (16,727,905 samples, 0.23%)</title><rect x="70.2" y="405" width="2.7" height="15.0" fill="rgb(239,158,37)" rx="2" ry="2" />
+<text  x="73.24" y="415.5" ></text>
+</g>
+<g >
+<title>__errno_location (15,914,435 samples, 0.21%)</title><rect x="227.9" y="405" width="2.5" height="15.0" fill="rgb(233,130,31)" rx="2" ry="2" />
+<text  x="230.89" y="415.5" ></text>
+</g>
+<g >
+<title>hrtimer_start_range_ns (21,115,430 samples, 0.28%)</title><rect x="375.7" y="245" width="3.4" height="15.0" fill="rgb(244,179,42)" rx="2" ry="2" />
+<text  x="378.72" y="255.5" ></text>
+</g>
+<g >
+<title>AEAD_decrypt (14,973,086 samples, 0.20%)</title><rect x="64.2" y="405" width="2.4" height="15.0" fill="rgb(246,189,45)" rx="2" ry="2" />
+<text  x="67.20" y="415.5" ></text>
+</g>
+<g >
+<title>schedule_hrtimeout_range_clock (40,961,278 samples, 0.55%)</title><rect x="367.2" y="229" width="6.5" height="15.0" fill="rgb(222,81,19)" rx="2" ry="2" />
+<text  x="370.20" y="239.5" ></text>
+</g>
+<g >
+<title>pypy_g_IncrementalMiniMarkGC_rrc_minor_collection_free (50,533,578 samples, 0.68%)</title><rect x="406.2" y="389" width="8.1" height="15.0" fill="rgb(238,153,36)" rx="2" ry="2" />
+<text  x="409.23" y="399.5" ></text>
+</g>
+<g >
+<title>dequeue_entity (21,582,755 samples, 0.29%)</title><rect x="367.2" y="149" width="3.4" height="15.0" fill="rgb(233,130,31)" rx="2" ry="2" />
+<text  x="370.20" y="159.5" ></text>
+</g>
+<g >
+<title>pypy_g_list_BINARY_SUBSCR__AccessDirect_None (13,568,907 samples, 0.18%)</title><rect x="441.3" y="389" width="2.2" height="15.0" fill="rgb(220,72,17)" rx="2" ry="2" />
+<text  x="444.34" y="399.5" ></text>
+</g>
+<g >
+<title>pypy_g_IncrementalMiniMarkGC_writebarrier_before_copy (15,909,748 samples, 0.21%)</title><rect x="425.8" y="389" width="2.5" height="15.0" fill="rgb(213,38,9)" rx="2" ry="2" />
+<text  x="428.81" y="399.5" ></text>
+</g>
+<g >
+<title>pypy_g_ll_dict_lookup__v1846___simple_call__function_ (17,370,659 samples, 0.23%)</title><rect x="1134.7" y="421" width="2.8" height="15.0" fill="rgb(243,176,42)" rx="2" ry="2" />
+<text  x="1137.71" y="431.5" ></text>
+</g>
+<g >
+<title>udp_send_skb.isra.0 (118,091,546 samples, 1.59%)</title><rect x="1000.5" y="293" width="18.8" height="15.0" fill="rgb(253,221,53)" rx="2" ry="2" />
+<text  x="1003.55" y="303.5" ></text>
+</g>
+<g >
+<title>ep_poll (18,338,519 samples, 0.25%)</title><rect x="354.6" y="85" width="2.9" height="15.0" fill="rgb(238,151,36)" rx="2" ry="2" />
+<text  x="357.63" y="95.5" ></text>
+</g>
+<g >
+<title>ret_from_intr (11,383,017 samples, 0.15%)</title><rect x="862.1" y="389" width="1.8" height="15.0" fill="rgb(206,8,1)" rx="2" ry="2" />
+<text  x="865.09" y="399.5" ></text>
+</g>
+<g >
+<title>pypy_g_EmptyDictStrategy_switch_to_correct_strategy (17,569,960 samples, 0.24%)</title><rect x="1056.2" y="421" width="2.8" height="15.0" fill="rgb(205,3,0)" rx="2" ry="2" />
+<text  x="1059.23" y="431.5" ></text>
+</g>
+<g >
+<title>neigh_resolve_output (39,609,763 samples, 0.53%)</title><rect x="1013.0" y="181" width="6.3" height="15.0" fill="rgb(245,186,44)" rx="2" ry="2" />
+<text  x="1016.01" y="191.5" ></text>
+</g>
+<g >
+<title>[unknown] (259,335,863 samples, 3.49%)</title><rect x="354.6" y="389" width="41.2" height="15.0" fill="rgb(210,24,5)" rx="2" ry="2" />
+<text  x="357.63" y="399.5" >[un..</text>
+</g>
+<g >
+<title>ep_send_events_proc (18,338,519 samples, 0.25%)</title><rect x="354.6" y="53" width="2.9" height="15.0" fill="rgb(208,14,3)" rx="2" ry="2" />
+<text  x="357.63" y="63.5" ></text>
+</g>
+<g >
+<title>pypy_g__ll_dictnext_look_inside_iff__dictiterPtr_8 (21,355,185 samples, 0.29%)</title><rect x="246.4" y="405" width="3.4" height="15.0" fill="rgb(233,130,31)" rx="2" ry="2" />
+<text  x="249.38" y="415.5" ></text>
+</g>
+<g >
+<title>udp_recvmsg (24,820,299 samples, 0.33%)</title><rect x="963.1" y="309" width="3.9" height="15.0" fill="rgb(221,75,18)" rx="2" ry="2" />
+<text  x="966.06" y="319.5" ></text>
+</g>
+<g >
+<title>drm_mode_atomic_ioctl (19,155,310 samples, 0.26%)</title><rect x="1005.1" y="181" width="3.1" height="15.0" fill="rgb(219,66,15)" rx="2" ry="2" />
+<text  x="1008.12" y="191.5" ></text>
+</g>
+<g >
+<title>psi_task_change (17,771,310 samples, 0.24%)</title><rect x="382.4" y="197" width="2.8" height="15.0" fill="rgb(215,46,11)" rx="2" ry="2" />
+<text  x="385.38" y="207.5" ></text>
+</g>
+<g >
+<title>entry_SYSCALL_64_after_hwframe (60,782,745 samples, 0.82%)</title><rect x="357.5" y="309" width="9.7" height="15.0" fill="rgb(218,63,15)" rx="2" ry="2" />
+<text  x="360.55" y="319.5" ></text>
+</g>
+<g >
+<title>alloc_skb_with_frags (30,882,242 samples, 0.42%)</title><rect x="981.0" y="229" width="4.9" height="15.0" fill="rgb(228,107,25)" rx="2" ry="2" />
+<text  x="983.99" y="239.5" ></text>
+</g>
+<g >
+<title>schedule (33,867,277 samples, 0.46%)</title><rect x="361.8" y="197" width="5.4" height="15.0" fill="rgb(254,229,54)" rx="2" ry="2" />
+<text  x="364.82" y="207.5" ></text>
+</g>
+<g >
+<title>[unknown] (18,338,519 samples, 0.25%)</title><rect x="354.6" y="277" width="2.9" height="15.0" fill="rgb(210,24,5)" rx="2" ry="2" />
+<text  x="357.63" y="287.5" ></text>
+</g>
+<g >
+<title>pypy_g_ll_call_lookup_function__v1726___simple_call__fu (16,680,283 samples, 0.22%)</title><rect x="266.4" y="405" width="2.7" height="15.0" fill="rgb(249,205,49)" rx="2" ry="2" />
+<text  x="269.40" y="415.5" ></text>
+</g>
+<g >
+<title>pypy_g_ResumeDataDirectReader_decode_ref (19,066,299 samples, 0.26%)</title><rect x="1070.0" y="421" width="3.1" height="15.0" fill="rgb(213,39,9)" rx="2" ry="2" />
+<text  x="1073.05" y="431.5" ></text>
+</g>
+<g >
+<title>_PyPyArg_ParseTupleAndKeywords_SizeT (12,029,545 samples, 0.16%)</title><rect x="222.6" y="405" width="1.9" height="15.0" fill="rgb(252,220,52)" rx="2" ry="2" />
+<text  x="225.63" y="415.5" ></text>
+</g>
+<g >
+<title>iptable_filter_hook (15,017,881 samples, 0.20%)</title><rect x="1002.7" y="229" width="2.4" height="15.0" fill="rgb(205,0,0)" rx="2" ry="2" />
+<text  x="1005.73" y="239.5" ></text>
+</g>
+<g >
+<title>hrtimer_active (12,663,124 samples, 0.17%)</title><rect x="373.7" y="245" width="2.0" height="15.0" fill="rgb(212,34,8)" rx="2" ry="2" />
+<text  x="376.71" y="255.5" ></text>
+</g>
+<g >
+<title>__ip_append_data.isra.0 (30,882,242 samples, 0.42%)</title><rect x="981.0" y="277" width="4.9" height="15.0" fill="rgb(237,148,35)" rx="2" ry="2" />
+<text  x="983.99" y="287.5" ></text>
+</g>
+<g >
+<title>[unknown] (18,338,519 samples, 0.25%)</title><rect x="354.6" y="213" width="2.9" height="15.0" fill="rgb(210,24,5)" rx="2" ry="2" />
+<text  x="357.63" y="223.5" ></text>
+</g>
+<g >
+<title>pypy_g_from_ref (33,232,908 samples, 0.45%)</title><rect x="257.0" y="405" width="5.3" height="15.0" fill="rgb(232,126,30)" rx="2" ry="2" />
+<text  x="260.04" y="415.5" ></text>
+</g>
+<g >
+<title>pypy_g_digits_from_nonneg_long__r_uint (12,007,941 samples, 0.16%)</title><rect x="1113.0" y="421" width="1.9" height="15.0" fill="rgb(213,41,9)" rx="2" ry="2" />
+<text  x="1115.98" y="431.5" ></text>
+</g>
+<g >
+<title>fib_table_lookup (35,046,042 samples, 0.47%)</title><rect x="995.0" y="245" width="5.5" height="15.0" fill="rgb(254,227,54)" rx="2" ry="2" />
+<text  x="997.98" y="255.5" ></text>
+</g>
+<g >
+<title>pypy_g_ResumeDataVirtualAdder__gettagged (16,554,565 samples, 0.22%)</title><rect x="645.1" y="405" width="2.7" height="15.0" fill="rgb(231,120,28)" rx="2" ry="2" />
+<text  x="648.12" y="415.5" ></text>
+</g>
+<g >
+<title>pypy_g_ll_dict_lookup__v3188___simple_call__function_ (15,952,820 samples, 0.21%)</title><rect x="1137.5" y="421" width="2.5" height="15.0" fill="rgb(236,146,35)" rx="2" ry="2" />
+<text  x="1140.47" y="431.5" ></text>
+</g>
+<g >
+<title>__dev_queue_xmit (12,401,833 samples, 0.17%)</title><rect x="1013.0" y="165" width="2.0" height="15.0" fill="rgb(244,182,43)" rx="2" ry="2" />
+<text  x="1016.01" y="175.5" ></text>
+</g>
+<g >
+<title>ep_poll (40,961,278 samples, 0.55%)</title><rect x="367.2" y="261" width="6.5" height="15.0" fill="rgb(238,151,36)" rx="2" ry="2" />
+<text  x="370.20" y="271.5" ></text>
+</g>
+<g >
+<title>irq_exit (20,266,480 samples, 0.27%)</title><rect x="941.2" y="357" width="3.2" height="15.0" fill="rgb(249,206,49)" rx="2" ry="2" />
+<text  x="944.17" y="367.5" ></text>
+</g>
+<g >
+<title>net_rx_action (11,383,017 samples, 0.15%)</title><rect x="862.1" y="325" width="1.8" height="15.0" fill="rgb(240,164,39)" rx="2" ry="2" />
+<text  x="865.09" y="335.5" ></text>
+</g>
+<g >
+<title>pypy_g_ResumeDataVirtualAdder_register_virtual_fields (18,519,245 samples, 0.25%)</title><rect x="647.8" y="405" width="2.9" height="15.0" fill="rgb(243,177,42)" rx="2" ry="2" />
+<text  x="650.75" y="415.5" ></text>
+</g>
+<g >
+<title>__sys_sendto (291,707,152 samples, 3.93%)</title><rect x="975.0" y="357" width="46.3" height="15.0" fill="rgb(236,146,34)" rx="2" ry="2" />
+<text  x="977.97" y="367.5" >__sy..</text>
+</g>
+<g >
+<title>pypy_g_as_pyobj (51,812,067 samples, 0.70%)</title><rect x="753.8" y="405" width="8.2" height="15.0" fill="rgb(237,148,35)" rx="2" ry="2" />
+<text  x="756.80" y="415.5" ></text>
+</g>
+<g >
+<title>pypy_g_fastfunc_descr_lt_2_4 (16,533,633 samples, 0.22%)</title><rect x="808.3" y="405" width="2.6" height="15.0" fill="rgb(239,160,38)" rx="2" ry="2" />
+<text  x="811.31" y="415.5" ></text>
+</g>
+<g >
+<title>schedule (64,082,237 samples, 0.86%)</title><rect x="379.1" y="245" width="10.2" height="15.0" fill="rgb(254,229,54)" rx="2" ry="2" />
+<text  x="382.07" y="255.5" ></text>
+</g>
+<g >
+<title>skb_put (12,848,762 samples, 0.17%)</title><rect x="990.3" y="277" width="2.0" height="15.0" fill="rgb(254,225,53)" rx="2" ry="2" />
+<text  x="993.28" y="287.5" ></text>
+</g>
+<g >
+<title>do_syscall_64 (18,338,519 samples, 0.25%)</title><rect x="354.6" y="133" width="2.9" height="15.0" fill="rgb(209,20,4)" rx="2" ry="2" />
+<text  x="357.63" y="143.5" ></text>
+</g>
+<g >
+<title>get_errno (14,887,950 samples, 0.20%)</title><rect x="1031.5" y="421" width="2.3" height="15.0" fill="rgb(229,113,27)" rx="2" ry="2" />
+<text  x="1034.46" y="431.5" ></text>
+</g>
+<g >
+<title>ip_setup_cork (15,231,908 samples, 0.21%)</title><rect x="987.9" y="277" width="2.4" height="15.0" fill="rgb(226,97,23)" rx="2" ry="2" />
+<text  x="990.86" y="287.5" ></text>
+</g>
+<g >
+<title>[perf-79760.map] (893,852,850 samples, 12.03%)</title><rect x="80.6" y="405" width="142.0" height="15.0" fill="rgb(223,86,20)" rx="2" ry="2" />
+<text  x="83.64" y="415.5" >[perf-79760.map]</text>
+</g>
+<g >
+<title>__libc_calloc (17,083,006 samples, 0.23%)</title><rect x="451.3" y="405" width="2.7" height="15.0" fill="rgb(205,4,0)" rx="2" ry="2" />
+<text  x="454.30" y="415.5" ></text>
+</g>
+<g >
+<title>pypy_g_W_DictMultiObject_shortcut___len__ (10,712,393 samples, 0.14%)</title><rect x="657.0" y="405" width="1.7" height="15.0" fill="rgb(225,93,22)" rx="2" ry="2" />
+<text  x="659.97" y="415.5" ></text>
+</g>
+<g >
+<title>dequeue_task_fair (11,719,505 samples, 0.16%)</title><rect x="476.2" y="229" width="1.9" height="15.0" fill="rgb(230,119,28)" rx="2" ry="2" />
+<text  x="479.25" y="239.5" ></text>
+</g>
+<g >
+<title>[unknown] (18,338,519 samples, 0.25%)</title><rect x="354.6" y="229" width="2.9" height="15.0" fill="rgb(210,24,5)" rx="2" ry="2" />
+<text  x="357.63" y="239.5" ></text>
+</g>
+<g >
+<title>entry_SYSCALL_64_after_hwframe (97,860,791 samples, 1.32%)</title><rect x="373.7" y="357" width="15.6" height="15.0" fill="rgb(218,63,15)" rx="2" ry="2" />
+<text  x="376.71" y="367.5" ></text>
+</g>
+<g >
+<title>epoll_wait (18,338,519 samples, 0.25%)</title><rect x="354.6" y="165" width="2.9" height="15.0" fill="rgb(238,154,36)" rx="2" ry="2" />
+<text  x="357.63" y="175.5" ></text>
+</g>
+<g >
+<title>pypy_g_finditem_str (20,236,458 samples, 0.27%)</title><rect x="813.3" y="405" width="3.2" height="15.0" fill="rgb(240,161,38)" rx="2" ry="2" />
+<text  x="816.30" y="415.5" ></text>
+</g>
+<g >
+<title>pypy_g_allocate__rpython_jit_metainterp_resume_ResumeDa_16 (15,828,499 samples, 0.21%)</title><rect x="1106.9" y="421" width="2.5" height="15.0" fill="rgb(209,18,4)" rx="2" ry="2" />
+<text  x="1109.94" y="431.5" ></text>
+</g>
+<g >
+<title>ossl_param_find_pidx (15,549,250 samples, 0.21%)</title><rect x="481.2" y="405" width="2.5" height="15.0" fill="rgb(237,151,36)" rx="2" ry="2" />
+<text  x="484.21" y="415.5" ></text>
+</g>
+<g >
+<title>__update_idle_core (19,378,523 samples, 0.26%)</title><rect x="370.6" y="149" width="3.1" height="15.0" fill="rgb(235,139,33)" rx="2" ry="2" />
+<text  x="373.63" y="159.5" ></text>
+</g>
+<g >
+<title>pypy_g_generic_cpy_call__StdObjSpaceConst_funcPtr_SomeI_1 (16,090,366 samples, 0.22%)</title><rect x="822.5" y="405" width="2.6" height="15.0" fill="rgb(217,57,13)" rx="2" ry="2" />
+<text  x="825.54" y="415.5" ></text>
+</g>
+<g >
+<title>do_syscall_64 (291,707,152 samples, 3.93%)</title><rect x="975.0" y="389" width="46.3" height="15.0" fill="rgb(209,20,4)" rx="2" ry="2" />
+<text  x="977.97" y="399.5" >do_s..</text>
+</g>
+<g >
+<title>update_load_avg (11,719,505 samples, 0.16%)</title><rect x="476.2" y="197" width="1.9" height="15.0" fill="rgb(240,165,39)" rx="2" ry="2" />
+<text  x="479.25" y="207.5" ></text>
+</g>
+<g >
+<title>tg3_tx (11,383,017 samples, 0.15%)</title><rect x="862.1" y="277" width="1.8" height="15.0" fill="rgb(231,120,28)" rx="2" ry="2" />
+<text  x="865.09" y="287.5" ></text>
+</g>
+<g >
+<title>pypy_g_ResumeDataDirectReader_getvirtual_ptr (22,988,159 samples, 0.31%)</title><rect x="635.3" y="405" width="3.6" height="15.0" fill="rgb(232,124,29)" rx="2" ry="2" />
+<text  x="638.29" y="415.5" ></text>
+</g>
+<g >
+<title>deactivate_task (11,719,505 samples, 0.16%)</title><rect x="476.2" y="245" width="1.9" height="15.0" fill="rgb(206,8,2)" rx="2" ry="2" />
+<text  x="479.25" y="255.5" ></text>
+</g>
+<g >
+<title>pypy_g_BlackholeInterpreter_setposition (79,508,493 samples, 1.07%)</title><rect x="493.9" y="405" width="12.6" height="15.0" fill="rgb(243,178,42)" rx="2" ry="2" />
+<text  x="496.90" y="415.5" ></text>
+</g>
+<g >
+<title>pypy_g__check_len_result (33,688,319 samples, 0.45%)</title><rect x="725.8" y="405" width="5.4" height="15.0" fill="rgb(229,113,27)" rx="2" ry="2" />
+<text  x="728.82" y="415.5" ></text>
+</g>
+<g >
+<title>pypy_g_blackhole_from_resumedata (18,375,977 samples, 0.25%)</title><rect x="251.5" y="405" width="2.9" height="15.0" fill="rgb(246,192,46)" rx="2" ry="2" />
+<text  x="254.51" y="415.5" ></text>
+</g>
+<g >
+<title>epoll_wait (30,933,142 samples, 0.42%)</title><rect x="473.2" y="405" width="4.9" height="15.0" fill="rgb(238,154,36)" rx="2" ry="2" />
+<text  x="476.20" y="415.5" ></text>
+</g>
+<g >
+<title>pypy_g_ll_dict_lookup__v3356___simple_call__function_ (15,989,634 samples, 0.22%)</title><rect x="863.9" y="405" width="2.5" height="15.0" fill="rgb(206,5,1)" rx="2" ry="2" />
+<text  x="866.90" y="415.5" ></text>
+</g>
+<g >
+<title>pypy_g_make_ref (20,817,765 samples, 0.28%)</title><rect x="898.4" y="405" width="3.3" height="15.0" fill="rgb(224,90,21)" rx="2" ry="2" />
+<text  x="901.42" y="415.5" ></text>
+</g>
+<g >
+<title>smp_apic_timer_interrupt (17,882,264 samples, 0.24%)</title><rect x="887.9" y="373" width="2.8" height="15.0" fill="rgb(221,74,17)" rx="2" ry="2" />
+<text  x="890.90" y="383.5" ></text>
+</g>
+<g >
+<title>[perf-79760.map] (1,604,827,761 samples, 21.60%)</title><rect x="64.2" y="421" width="254.9" height="15.0" fill="rgb(223,86,20)" rx="2" ry="2" />
+<text  x="67.20" y="431.5" >[perf-79760.map]</text>
+</g>
+<g >
+<title>pypy_g_fastfunc_descr_values_1 (14,893,838 samples, 0.20%)</title><rect x="810.9" y="405" width="2.4" height="15.0" fill="rgb(205,1,0)" rx="2" ry="2" />
+<text  x="813.93" y="415.5" ></text>
+</g>
+<g >
+<title>pypy_g_CpyTypedescr_dict_attach (14,256,324 samples, 0.19%)</title><rect x="516.8" y="405" width="2.2" height="15.0" fill="rgb(251,212,50)" rx="2" ry="2" />
+<text  x="519.78" y="415.5" ></text>
+</g>
+<g >
+<title>pypy_g_tuple_from_args_w (46,700,866 samples, 0.63%)</title><rect x="933.7" y="405" width="7.5" height="15.0" fill="rgb(234,133,32)" rx="2" ry="2" />
+<text  x="936.75" y="415.5" ></text>
+</g>
+<g >
+<title>pypy_g_MIFrame_run_one_step (20,573,188 samples, 0.28%)</title><rect x="607.0" y="405" width="3.2" height="15.0" fill="rgb(227,103,24)" rx="2" ry="2" />
+<text  x="609.97" y="415.5" ></text>
+</g>
+<g >
+<title>do_IRQ (11,383,017 samples, 0.15%)</title><rect x="862.1" y="373" width="1.8" height="15.0" fill="rgb(212,33,8)" rx="2" ry="2" />
+<text  x="865.09" y="383.5" ></text>
+</g>
+<g >
+<title>do_syscall_64 (60,782,745 samples, 0.82%)</title><rect x="357.5" y="293" width="9.7" height="15.0" fill="rgb(209,20,4)" rx="2" ry="2" />
+<text  x="360.55" y="303.5" ></text>
+</g>
+<g >
+<title>[unknown] (18,338,519 samples, 0.25%)</title><rect x="354.6" y="197" width="2.9" height="15.0" fill="rgb(210,24,5)" rx="2" ry="2" />
+<text  x="357.63" y="207.5" ></text>
+</g>
+<g >
+<title>pypy_g__siphash24_with_key___1 (18,216,259 samples, 0.25%)</title><rect x="741.4" y="405" width="2.9" height="15.0" fill="rgb(251,214,51)" rx="2" ry="2" />
+<text  x="744.40" y="415.5" ></text>
+</g>
+<g >
+<title>entry_SYSCALL_64_after_hwframe (2,437,391 samples, 0.03%)</title><rect x="395.8" y="373" width="0.4" height="15.0" fill="rgb(218,63,15)" rx="2" ry="2" />
+<text  x="398.83" y="383.5" ></text>
+</g>
+<g >
+<title>EVP_EncryptUpdate (14,195,785 samples, 0.19%)</title><rect x="319.1" y="405" width="2.3" height="15.0" fill="rgb(248,197,47)" rx="2" ry="2" />
+<text  x="322.12" y="415.5" ></text>
+</g>
+<g >
+<title>__ksize (11,561,732 samples, 0.16%)</title><rect x="981.0" y="181" width="1.8" height="15.0" fill="rgb(233,129,31)" rx="2" ry="2" />
+<text  x="983.99" y="191.5" ></text>
+</g>
+<g >
+<title>__check_object_size (18,737,386 samples, 0.25%)</title><rect x="975.0" y="325" width="3.0" height="15.0" fill="rgb(226,98,23)" rx="2" ry="2" />
+<text  x="977.97" y="335.5" ></text>
+</g>
+<g >
+<title>pypy_g_peekvalues__AccessDirect_None (16,501,277 samples, 0.22%)</title><rect x="1161.0" y="421" width="2.6" height="15.0" fill="rgb(245,187,44)" rx="2" ry="2" />
+<text  x="1164.01" y="431.5" ></text>
+</g>
+<g >
+<title>entry_SYSCALL_64_after_hwframe (40,961,278 samples, 0.55%)</title><rect x="367.2" y="325" width="6.5" height="15.0" fill="rgb(218,63,15)" rx="2" ry="2" />
+<text  x="370.20" y="335.5" ></text>
+</g>
+<g >
+<title>newidle_balance (25,457,269 samples, 0.34%)</title><rect x="385.2" y="197" width="4.1" height="15.0" fill="rgb(207,10,2)" rx="2" ry="2" />
+<text  x="388.21" y="207.5" ></text>
+</g>
+<g >
+<title>drm_crtc_add_crc_entry (37,138,485 samples, 0.50%)</title><rect x="1005.1" y="213" width="5.9" height="15.0" fill="rgb(242,174,41)" rx="2" ry="2" />
+<text  x="1008.12" y="223.5" ></text>
+</g>
+<g >
+<title>[unknown] (79,121,264 samples, 1.07%)</title><rect x="354.6" y="341" width="12.6" height="15.0" fill="rgb(210,24,5)" rx="2" ry="2" />
+<text  x="357.63" y="351.5" ></text>
+</g>
+<g >
+<title>deactivate_task (21,582,755 samples, 0.29%)</title><rect x="367.2" y="181" width="3.4" height="15.0" fill="rgb(206,8,2)" rx="2" ry="2" />
+<text  x="370.20" y="191.5" ></text>
+</g>
+<g >
+<title>update_curr (20,823,651 samples, 0.28%)</title><rect x="379.1" y="165" width="3.3" height="15.0" fill="rgb(227,105,25)" rx="2" ry="2" />
+<text  x="382.07" y="175.5" ></text>
+</g>
+<g >
+<title>pypy_g_blackhole_from_resumedata (42,854,095 samples, 0.58%)</title><rect x="767.0" y="405" width="6.8" height="15.0" fill="rgb(246,192,46)" rx="2" ry="2" />
+<text  x="770.01" y="415.5" ></text>
+</g>
+<g >
+<title>ossl_gcm_cipher_final (10,916,011 samples, 0.15%)</title><rect x="396.2" y="389" width="1.7" height="15.0" fill="rgb(238,155,37)" rx="2" ry="2" />
+<text  x="399.22" y="399.5" ></text>
+</g>
+<g >
+<title>pypy_g_BuiltinCode_funcrun_obj (32,298,688 samples, 0.43%)</title><rect x="511.7" y="405" width="5.1" height="15.0" fill="rgb(235,142,34)" rx="2" ry="2" />
+<text  x="514.65" y="415.5" ></text>
+</g>
+<g >
+<title>__ip_local_out (78,481,783 samples, 1.06%)</title><rect x="1000.5" y="245" width="12.5" height="15.0" fill="rgb(206,5,1)" rx="2" ry="2" />
+<text  x="1003.55" y="255.5" ></text>
+</g>
+<g >
+<title>pypy_g_BuiltinCode2_fastcall_2.part.0 (32,266,043 samples, 0.43%)</title><rect x="506.5" y="405" width="5.2" height="15.0" fill="rgb(212,36,8)" rx="2" ry="2" />
+<text  x="509.53" y="415.5" ></text>
+</g>
+<g >
+<title>entry_SYSCALL_64_after_hwframe (58,480,047 samples, 0.79%)</title><rect x="963.1" y="405" width="9.2" height="15.0" fill="rgb(218,63,15)" rx="2" ry="2" />
+<text  x="966.06" y="415.5" ></text>
+</g>
+<g >
+<title>pypy_g_ResumeDataDirectReader__init (21,036,773 samples, 0.28%)</title><rect x="428.3" y="389" width="3.4" height="15.0" fill="rgb(248,199,47)" rx="2" ry="2" />
+<text  x="431.34" y="399.5" ></text>
+</g>
+<g >
+<title>pypy_g_ll_call_lookup_function__v1543___simple_call__fu (10,351,154 samples, 0.14%)</title><rect x="264.8" y="405" width="1.6" height="15.0" fill="rgb(219,64,15)" rx="2" ry="2" />
+<text  x="267.76" y="415.5" ></text>
+</g>
+<g >
+<title>do_syscall_64 (40,961,278 samples, 0.55%)</title><rect x="367.2" y="309" width="6.5" height="15.0" fill="rgb(209,20,4)" rx="2" ry="2" />
+<text  x="370.20" y="319.5" ></text>
+</g>
+<g >
+<title>sock_recvmsg (38,605,225 samples, 0.52%)</title><rect x="963.1" y="341" width="6.1" height="15.0" fill="rgb(206,5,1)" rx="2" ry="2" />
+<text  x="966.06" y="351.5" ></text>
+</g>
+<g >
+<title>pypy_g_IncrementalMiniMarkGC_malloc_fixedsize (18,605,918 samples, 0.25%)</title><rect x="403.3" y="389" width="2.9" height="15.0" fill="rgb(218,63,15)" rx="2" ry="2" />
+<text  x="406.27" y="399.5" ></text>
+</g>
+<g >
+<title>entry_SYSCALL_64_after_hwframe (308,239,342 samples, 4.15%)</title><rect x="972.3" y="405" width="49.0" height="15.0" fill="rgb(218,63,15)" rx="2" ry="2" />
+<text  x="975.35" y="415.5" >entr..</text>
+</g>
+<g >
+<title>security_socket_recvmsg (13,784,926 samples, 0.19%)</title><rect x="967.0" y="325" width="2.2" height="15.0" fill="rgb(254,226,54)" rx="2" ry="2" />
+<text  x="970.00" y="335.5" ></text>
+</g>
+<g >
+<title>ktime_get_update_offsets_now (15,230,677 samples, 0.21%)</title><rect x="461.8" y="341" width="2.4" height="15.0" fill="rgb(243,178,42)" rx="2" ry="2" />
+<text  x="464.81" y="351.5" ></text>
+</g>
+<g >
+<title>schedule_hrtimeout_range (97,860,791 samples, 1.32%)</title><rect x="373.7" y="277" width="15.6" height="15.0" fill="rgb(221,75,18)" rx="2" ry="2" />
+<text  x="376.71" y="287.5" ></text>
+</g>
+<g >
+<title>do_epoll_wait (60,782,745 samples, 0.82%)</title><rect x="357.5" y="261" width="9.7" height="15.0" fill="rgb(211,31,7)" rx="2" ry="2" />
+<text  x="360.55" y="271.5" ></text>
+</g>
+<g >
+<title>pypy_g_handler_jit_merge_point (18,328,677 samples, 0.25%)</title><rect x="1123.6" y="421" width="2.9" height="15.0" fill="rgb(225,96,22)" rx="2" ry="2" />
+<text  x="1126.56" y="431.5" ></text>
+</g>
+<g >
+<title>pypy_g_RegAlloc_locs_for_fail (19,526,678 samples, 0.26%)</title><rect x="1066.9" y="421" width="3.1" height="15.0" fill="rgb(229,110,26)" rx="2" ry="2" />
+<text  x="1069.95" y="431.5" ></text>
+</g>
+<g >
+<title>pypy_g_IncrementalMiniMarkGC_visit_all_objects_step (72,733,509 samples, 0.98%)</title><rect x="414.3" y="389" width="11.5" height="15.0" fill="rgb(226,98,23)" rx="2" ry="2" />
+<text  x="417.26" y="399.5" ></text>
+</g>
+<g >
+<title>rb_insert_color (21,115,430 samples, 0.28%)</title><rect x="375.7" y="213" width="3.4" height="15.0" fill="rgb(238,156,37)" rx="2" ry="2" />
+<text  x="378.72" y="223.5" ></text>
+</g>
+<g >
+<title>pypy_g_OptHeap_force_all_lazy_sets (20,907,373 samples, 0.28%)</title><rect x="610.2" y="405" width="3.4" height="15.0" fill="rgb(246,193,46)" rx="2" ry="2" />
+<text  x="613.24" y="415.5" ></text>
+</g>
+<g >
+<title>ep_scan_ready_list.constprop.0 (19,213,637 samples, 0.26%)</title><rect x="473.2" y="309" width="3.0" height="15.0" fill="rgb(251,213,50)" rx="2" ry="2" />
+<text  x="476.20" y="319.5" ></text>
+</g>
+<g >
+<title>pypy_g_OptRewrite_optimize_INSTANCE_PTR_EQ (15,105,204 samples, 0.20%)</title><rect x="613.6" y="405" width="2.4" height="15.0" fill="rgb(249,203,48)" rx="2" ry="2" />
+<text  x="616.56" y="415.5" ></text>
+</g>
+<g >
+<title>pypy_g_ll_dict_lookup__v3654___simple_call__function_ (46,562,060 samples, 0.63%)</title><rect x="1140.0" y="421" width="7.4" height="15.0" fill="rgb(249,206,49)" rx="2" ry="2" />
+<text  x="1143.01" y="431.5" ></text>
+</g>
+<g >
+<title>[unknown] (18,338,519 samples, 0.25%)</title><rect x="354.6" y="325" width="2.9" height="15.0" fill="rgb(210,24,5)" rx="2" ry="2" />
+<text  x="357.63" y="335.5" ></text>
+</g>
+<g >
+<title>pypy_g_ll_dict_lookup__v3654___simple_call__function_ (17,725,779 samples, 0.24%)</title><rect x="866.4" y="405" width="2.9" height="15.0" fill="rgb(249,206,49)" rx="2" ry="2" />
+<text  x="869.44" y="415.5" ></text>
+</g>
+<g >
+<title>pypy_g_W_Root__cpyext_attach_pyobj (18,202,999 samples, 0.25%)</title><rect x="1089.5" y="421" width="2.9" height="15.0" fill="rgb(241,169,40)" rx="2" ry="2" />
+<text  x="1092.46" y="431.5" ></text>
+</g>
+<g >
+<title>cfree (19,540,552 samples, 0.26%)</title><rect x="1023.8" y="421" width="3.1" height="15.0" fill="rgb(223,86,20)" rx="2" ry="2" />
+<text  x="1026.78" y="431.5" ></text>
+</g>
+<g >
+<title>kfree (11,383,017 samples, 0.15%)</title><rect x="862.1" y="197" width="1.8" height="15.0" fill="rgb(222,78,18)" rx="2" ry="2" />
+<text  x="865.09" y="207.5" ></text>
+</g>
+<g >
+<title>pypy_g_funccall__star_3 (21,038,528 samples, 0.28%)</title><rect x="819.2" y="405" width="3.3" height="15.0" fill="rgb(208,15,3)" rx="2" ry="2" />
+<text  x="822.20" y="415.5" ></text>
+</g>
+<g >
+<title>pypy_g_ll_dict_lookup__v1444___simple_call__function_ (20,088,314 samples, 0.27%)</title><rect x="1129.2" y="421" width="3.2" height="15.0" fill="rgb(232,124,29)" rx="2" ry="2" />
+<text  x="1132.23" y="431.5" ></text>
+</g>
+<g >
+<title>do_epoll_wait (30,933,142 samples, 0.42%)</title><rect x="473.2" y="341" width="4.9" height="15.0" fill="rgb(211,31,7)" rx="2" ry="2" />
+<text  x="476.20" y="351.5" ></text>
+</g>
+<g >
+<title>[unknown] (18,338,519 samples, 0.25%)</title><rect x="354.6" y="293" width="2.9" height="15.0" fill="rgb(210,24,5)" rx="2" ry="2" />
+<text  x="357.63" y="303.5" ></text>
+</g>
+<g >
+<title>__libc_sendto (323,787,954 samples, 4.36%)</title><rect x="972.3" y="421" width="51.5" height="15.0" fill="rgb(205,2,0)" rx="2" ry="2" />
+<text  x="975.35" y="431.5" >__lib..</text>
+</g>
+<g >
+<title>pypy_g_AbstractAttribute_find_map_attr (13,542,397 samples, 0.18%)</title><rect x="483.7" y="405" width="2.1" height="15.0" fill="rgb(238,154,36)" rx="2" ry="2" />
+<text  x="486.68" y="415.5" ></text>
+</g>
+<g >
+<title>pypy3.10 (7,428,430,731 samples, 100.00%)</title><rect x="10.0" y="437" width="1180.0" height="15.0" fill="rgb(250,207,49)" rx="2" ry="2" />
+<text  x="13.00" y="447.5" >pypy3.10</text>
+</g>
+<g >
+<title>__x64_sys_epoll_wait (30,933,142 samples, 0.42%)</title><rect x="473.2" y="357" width="4.9" height="15.0" fill="rgb(206,6,1)" rx="2" ry="2" />
+<text  x="476.20" y="367.5" ></text>
+</g>
+<g >
+<title>schedule_hrtimeout_range_clock (33,867,277 samples, 0.46%)</title><rect x="361.8" y="213" width="5.4" height="15.0" fill="rgb(222,81,19)" rx="2" ry="2" />
+<text  x="364.82" y="223.5" ></text>
+</g>
+<g >
+<title>sockfd_lookup_light (12,623,967 samples, 0.17%)</title><rect x="1019.3" y="341" width="2.0" height="15.0" fill="rgb(225,95,22)" rx="2" ry="2" />
+<text  x="1022.31" y="351.5" ></text>
+</g>
+<g >
+<title>skb_release_all (11,383,017 samples, 0.15%)</title><rect x="862.1" y="229" width="1.8" height="15.0" fill="rgb(236,143,34)" rx="2" ry="2" />
+<text  x="865.09" y="239.5" ></text>
+</g>
+<g >
+<title>all (7,428,430,731 samples, 100%)</title><rect x="10.0" y="453" width="1180.0" height="15.0" fill="rgb(213,39,9)" rx="2" ry="2" />
+<text  x="13.00" y="463.5" ></text>
+</g>
+<g >
+<title>ip_finish_output (39,609,763 samples, 0.53%)</title><rect x="1013.0" y="229" width="6.3" height="15.0" fill="rgb(242,173,41)" rx="2" ry="2" />
+<text  x="1016.01" y="239.5" ></text>
+</g>
+<g >
+<title>[libc-2.31.so] (45,110,154 samples, 0.61%)</title><rect x="948.7" y="373" width="7.2" height="15.0" fill="rgb(212,34,8)" rx="2" ry="2" />
+<text  x="951.69" y="383.5" ></text>
+</g>
+<g >
+<title>inet_sendmsg (260,345,799 samples, 3.50%)</title><rect x="978.0" y="325" width="41.3" height="15.0" fill="rgb(244,183,43)" rx="2" ry="2" />
+<text  x="980.95" y="335.5" >ine..</text>
+</g>
+<g >
+<title>pypy_g_RegisterManager_loc (19,386,229 samples, 0.26%)</title><rect x="392.7" y="373" width="3.1" height="15.0" fill="rgb(220,69,16)" rx="2" ry="2" />
+<text  x="395.75" y="383.5" ></text>
+</g>
+<g >
+<title>[unknown] (18,338,519 samples, 0.25%)</title><rect x="354.6" y="245" width="2.9" height="15.0" fill="rgb(210,24,5)" rx="2" ry="2" />
+<text  x="357.63" y="255.5" ></text>
+</g>
+<g >
+<title>pypy_g_ll_call_insert_clean_function__dicttablePtr_Sign_4 (15,977,260 samples, 0.22%)</title><rect x="843.7" y="405" width="2.5" height="15.0" fill="rgb(226,96,23)" rx="2" ry="2" />
+<text  x="846.71" y="415.5" ></text>
+</g>
+<g >
+<title>__ip_make_skb (12,325,581 samples, 0.17%)</title><rect x="985.9" y="277" width="2.0" height="15.0" fill="rgb(215,48,11)" rx="2" ry="2" />
+<text  x="988.90" y="287.5" ></text>
+</g>
+<g >
+<title>irq_exit (11,383,017 samples, 0.15%)</title><rect x="862.1" y="357" width="1.8" height="15.0" fill="rgb(249,206,49)" rx="2" ry="2" />
+<text  x="865.09" y="367.5" ></text>
+</g>
+<g >
+<title>pypy_g_Trace__encode (27,784,658 samples, 0.37%)</title><rect x="1082.3" y="421" width="4.4" height="15.0" fill="rgb(217,57,13)" rx="2" ry="2" />
+<text  x="1085.30" y="431.5" ></text>
+</g>
+<g >
+<title>pypy_g__ll_1_gc_identityhash__pypy_interpreter_baseobjs (20,728,744 samples, 0.28%)</title><rect x="243.1" y="405" width="3.3" height="15.0" fill="rgb(254,227,54)" rx="2" ry="2" />
+<text  x="246.09" y="415.5" ></text>
+</g>
+<g >
+<title>pypy_g_handle_bytecode__AccessDirect_None (23,852,150 samples, 0.32%)</title><rect x="827.5" y="405" width="3.8" height="15.0" fill="rgb(212,35,8)" rx="2" ry="2" />
+<text  x="830.51" y="415.5" ></text>
+</g>
+<g >
+<title>deactivate_task (33,867,277 samples, 0.46%)</title><rect x="361.8" y="165" width="5.4" height="15.0" fill="rgb(206,8,2)" rx="2" ry="2" />
+<text  x="364.82" y="175.5" ></text>
+</g>
+<g >
+<title>sock_alloc_send_pskb (30,882,242 samples, 0.42%)</title><rect x="981.0" y="245" width="4.9" height="15.0" fill="rgb(210,26,6)" rx="2" ry="2" />
+<text  x="983.99" y="255.5" ></text>
+</g>
+<g >
+<title>aesni_ecb_encrypt (18,988,336 samples, 0.26%)</title><rect x="458.8" y="405" width="3.0" height="15.0" fill="rgb(206,8,1)" rx="2" ry="2" />
+<text  x="461.80" y="415.5" ></text>
+</g>
+<g >
+<title>pypy_g_ll_dict_lookup__v1525___simple_call__function_ (11,719,505 samples, 0.16%)</title><rect x="269.1" y="405" width="1.8" height="15.0" fill="rgb(232,124,29)" rx="2" ry="2" />
+<text  x="272.05" y="415.5" ></text>
+</g>
+<g >
+<title>do_epoll_wait (40,961,278 samples, 0.55%)</title><rect x="367.2" y="277" width="6.5" height="15.0" fill="rgb(211,31,7)" rx="2" ry="2" />
+<text  x="370.20" y="287.5" ></text>
+</g>
+<g >
+<title>pypy_g__emit_operation__rpython_jit_metainterp_optimize (17,293,656 samples, 0.23%)</title><rect x="731.2" y="405" width="2.7" height="15.0" fill="rgb(242,170,40)" rx="2" ry="2" />
+<text  x="734.17" y="415.5" ></text>
+</g>
+<g >
+<title>__x64_sys_epoll_wait (60,782,745 samples, 0.82%)</title><rect x="357.5" y="277" width="9.7" height="15.0" fill="rgb(206,6,1)" rx="2" ry="2" />
+<text  x="360.55" y="287.5" ></text>
+</g>
+<g >
+<title>__tls_get_addr (12,638,425 samples, 0.17%)</title><rect x="454.0" y="405" width="2.0" height="15.0" fill="rgb(246,191,45)" rx="2" ry="2" />
+<text  x="457.01" y="415.5" ></text>
+</g>
+<g >
+<title>net_rx_action (20,266,480 samples, 0.27%)</title><rect x="941.2" y="341" width="3.2" height="15.0" fill="rgb(240,164,39)" rx="2" ry="2" />
+<text  x="944.17" y="351.5" ></text>
+</g>
+<g >
+<title>hrtimer_interrupt (15,230,677 samples, 0.21%)</title><rect x="461.8" y="357" width="2.4" height="15.0" fill="rgb(228,109,26)" rx="2" ry="2" />
+<text  x="464.81" y="367.5" ></text>
+</g>
+<g >
+<title>pypy_g__type_issubtype (44,872,410 samples, 0.60%)</title><rect x="744.3" y="405" width="7.1" height="15.0" fill="rgb(216,51,12)" rx="2" ry="2" />
+<text  x="747.29" y="415.5" ></text>
+</g>
+<g >
+<title>hrtimer_interrupt (17,882,264 samples, 0.24%)</title><rect x="887.9" y="357" width="2.8" height="15.0" fill="rgb(228,109,26)" rx="2" ry="2" />
+<text  x="890.90" y="367.5" ></text>
+</g>
+<g >
+<title>ep_poll (60,782,745 samples, 0.82%)</title><rect x="357.5" y="245" width="9.7" height="15.0" fill="rgb(238,151,36)" rx="2" ry="2" />
+<text  x="360.55" y="255.5" ></text>
+</g>
+<g >
+<title>memcg_kmem_put_cache (19,320,510 samples, 0.26%)</title><rect x="982.8" y="197" width="3.1" height="15.0" fill="rgb(246,190,45)" rx="2" ry="2" />
+<text  x="985.83" y="207.5" ></text>
+</g>
+<g >
+<title>pypy_g_GuardToken_compute_gcmap (17,834,882 samples, 0.24%)</title><rect x="1059.0" y="421" width="2.9" height="15.0" fill="rgb(244,182,43)" rx="2" ry="2" />
+<text  x="1062.02" y="431.5" ></text>
+</g>
+<g >
+<title>pypy_g_from_ref (16,906,593 samples, 0.23%)</title><rect x="816.5" y="405" width="2.7" height="15.0" fill="rgb(232,126,30)" rx="2" ry="2" />
+<text  x="819.51" y="415.5" ></text>
+</g>
+<g >
+<title>ep_scan_ready_list.constprop.0 (18,338,519 samples, 0.25%)</title><rect x="354.6" y="69" width="2.9" height="15.0" fill="rgb(251,213,50)" rx="2" ry="2" />
+<text  x="357.63" y="79.5" ></text>
+</g>
+<g >
+<title>pick_next_task_idle (19,378,523 samples, 0.26%)</title><rect x="370.6" y="181" width="3.1" height="15.0" fill="rgb(217,59,14)" rx="2" ry="2" />
+<text  x="373.63" y="191.5" ></text>
+</g>
+<g >
+<title>__dev_kfree_skb_any (11,383,017 samples, 0.15%)</title><rect x="862.1" y="261" width="1.8" height="15.0" fill="rgb(206,8,2)" rx="2" ry="2" />
+<text  x="865.09" y="271.5" ></text>
+</g>
+<g >
+<title>drm_mode_atomic_ioctl (19,155,310 samples, 0.26%)</title><rect x="1005.1" y="197" width="3.1" height="15.0" fill="rgb(219,66,15)" rx="2" ry="2" />
+<text  x="1008.12" y="207.5" ></text>
+</g>
+<g >
+<title>pypy_g_ll_grow_by__stringbuilderPtr_Signed (17,771,310 samples, 0.24%)</title><rect x="890.7" y="405" width="2.9" height="15.0" fill="rgb(220,70,16)" rx="2" ry="2" />
+<text  x="893.74" y="415.5" ></text>
+</g>
+<g >
+<title>iptable_filter_hook (12,571,831 samples, 0.17%)</title><rect x="1011.0" y="213" width="2.0" height="15.0" fill="rgb(205,0,0)" rx="2" ry="2" />
+<text  x="1014.02" y="223.5" ></text>
+</g>
+<g >
+<title>ip_route_output_key_hash_rcu (51,806,045 samples, 0.70%)</title><rect x="992.3" y="261" width="8.2" height="15.0" fill="rgb(211,28,6)" rx="2" ry="2" />
+<text  x="995.32" y="271.5" ></text>
+</g>
+<g >
+<title>do_epoll_wait (97,860,791 samples, 1.32%)</title><rect x="373.7" y="309" width="15.6" height="15.0" fill="rgb(211,31,7)" rx="2" ry="2" />
+<text  x="376.71" y="319.5" ></text>
+</g>
+<g >
+<title>pypy_g__As_unsigned_mask (14,053,185 samples, 0.19%)</title><rect x="720.6" y="405" width="2.2" height="15.0" fill="rgb(229,114,27)" rx="2" ry="2" />
+<text  x="723.55" y="415.5" ></text>
+</g>
+<g >
+<title>dequeue_entity (20,823,651 samples, 0.28%)</title><rect x="379.1" y="181" width="3.3" height="15.0" fill="rgb(233,130,31)" rx="2" ry="2" />
+<text  x="382.07" y="191.5" ></text>
+</g>
+<g >
+<title>__libc_recvfrom (58,480,047 samples, 0.79%)</title><rect x="963.1" y="421" width="9.2" height="15.0" fill="rgb(216,54,12)" rx="2" ry="2" />
+<text  x="966.06" y="431.5" ></text>
+</g>
+<g >
+<title>pypy_g_W_Root_getclass (16,250,312 samples, 0.22%)</title><rect x="663.0" y="405" width="2.6" height="15.0" fill="rgb(241,166,39)" rx="2" ry="2" />
+<text  x="666.03" y="415.5" ></text>
+</g>
+<g >
+<title>pypy_g_ll_dict_lookup__v1708___simple_call__function_ (289,310,865 samples, 3.89%)</title><rect x="270.9" y="405" width="46.0" height="15.0" fill="rgb(212,35,8)" rx="2" ry="2" />
+<text  x="273.91" y="415.5" >pypy..</text>
+</g>
+<g >
+<title>pypy_g_BlackholeInterpreter__resume_mainloop (18,100,665 samples, 0.24%)</title><rect x="1043.2" y="421" width="2.8" height="15.0" fill="rgb(209,18,4)" rx="2" ry="2" />
+<text  x="1046.16" y="431.5" ></text>
+</g>
+<g >
+<title>PyPyObject_Size (13,899,670 samples, 0.19%)</title><rect x="327.5" y="405" width="2.2" height="15.0" fill="rgb(228,108,25)" rx="2" ry="2" />
+<text  x="330.46" y="415.5" ></text>
+</g>
+<g >
+<title>_PyPy_BuildValue_SizeT (16,007,701 samples, 0.22%)</title><rect x="960.5" y="421" width="2.6" height="15.0" fill="rgb(235,141,33)" rx="2" ry="2" />
+<text  x="963.52" y="431.5" ></text>
+</g>
+<g >
+<title>ktime_get_ts64 (12,404,366 samples, 0.17%)</title><rect x="359.9" y="229" width="1.9" height="15.0" fill="rgb(216,53,12)" rx="2" ry="2" />
+<text  x="362.85" y="239.5" ></text>
+</g>
+<g >
+<title>__schedule (40,961,278 samples, 0.55%)</title><rect x="367.2" y="197" width="6.5" height="15.0" fill="rgb(227,103,24)" rx="2" ry="2" />
+<text  x="370.20" y="207.5" ></text>
+</g>
+<g >
+<title>__x64_sys_epoll_wait (97,860,791 samples, 1.32%)</title><rect x="373.7" y="325" width="15.6" height="15.0" fill="rgb(206,6,1)" rx="2" ry="2" />
+<text  x="376.71" y="335.5" ></text>
+</g>
+<g >
+<title>pypy_g_ll_dict_setitem__DICTPtr_Address_Address (26,366,068 samples, 0.35%)</title><rect x="1147.4" y="421" width="4.2" height="15.0" fill="rgb(229,110,26)" rx="2" ry="2" />
+<text  x="1150.40" y="431.5" ></text>
+</g>
+<g >
+<title>pypy_g_handler_getfield_vable_r (15,907,141 samples, 0.21%)</title><rect x="1121.0" y="421" width="2.6" height="15.0" fill="rgb(218,64,15)" rx="2" ry="2" />
+<text  x="1124.03" y="431.5" ></text>
+</g>
+<g >
+<title>_PyPyArg_ParseTuple_SizeT (21,097,063 samples, 0.28%)</title><rect x="224.5" y="405" width="3.4" height="15.0" fill="rgb(209,18,4)" rx="2" ry="2" />
+<text  x="227.54" y="415.5" ></text>
+</g>
+<g >
+<title>sock_poll (14,511,102 samples, 0.20%)</title><rect x="357.5" y="197" width="2.4" height="15.0" fill="rgb(223,84,20)" rx="2" ry="2" />
+<text  x="360.55" y="207.5" ></text>
+</g>
+<g >
+<title>pypy_g_setfields__rpython_jit_metainterp_resume_ResumeD (36,386,411 samples, 0.49%)</title><rect x="1166.7" y="421" width="5.8" height="15.0" fill="rgb(250,210,50)" rx="2" ry="2" />
+<text  x="1169.70" y="431.5" ></text>
+</g>
+<g >
+<title>[unknown] (4,037,758,217 samples, 54.36%)</title><rect x="319.1" y="421" width="641.4" height="15.0" fill="rgb(210,24,5)" rx="2" ry="2" />
+<text  x="322.12" y="431.5" >[unknown]</text>
+</g>
+<g >
+<title>[libc-2.31.so] (75,662,578 samples, 1.02%)</title><rect x="337.6" y="405" width="12.0" height="15.0" fill="rgb(212,34,8)" rx="2" ry="2" />
+<text  x="340.61" y="415.5" ></text>
+</g>
+<g >
+<title>pypy_g__get_list_of_values__R (11,844,021 samples, 0.16%)</title><rect x="733.9" y="405" width="1.9" height="15.0" fill="rgb(249,205,49)" rx="2" ry="2" />
+<text  x="736.92" y="415.5" ></text>
+</g>
+<g >
+<title>__x64_sys_sendto (291,707,152 samples, 3.93%)</title><rect x="975.0" y="373" width="46.3" height="15.0" fill="rgb(213,37,8)" rx="2" ry="2" />
+<text  x="977.97" y="383.5" >__x6..</text>
+</g>
+<g >
+<title>pypy_g_BUILD_SLICE__AccessDirect_None (22,006,301 samples, 0.30%)</title><rect x="389.3" y="373" width="3.4" height="15.0" fill="rgb(234,137,32)" rx="2" ry="2" />
+<text  x="392.25" y="383.5" ></text>
+</g>
+<g >
+<title>ep_scan_ready_list.constprop.0 (2,437,391 samples, 0.03%)</title><rect x="395.8" y="293" width="0.4" height="15.0" fill="rgb(251,213,50)" rx="2" ry="2" />
+<text  x="398.83" y="303.5" ></text>
+</g>
+<g >
+<title>psi_task_change (33,867,277 samples, 0.46%)</title><rect x="361.8" y="149" width="5.4" height="15.0" fill="rgb(215,46,11)" rx="2" ry="2" />
+<text  x="364.82" y="159.5" ></text>
+</g>
+<g >
+<title>__schedule (11,719,505 samples, 0.16%)</title><rect x="476.2" y="261" width="1.9" height="15.0" fill="rgb(227,103,24)" rx="2" ry="2" />
+<text  x="479.25" y="271.5" ></text>
+</g>
+<g >
+<title>pypy_g_BuiltinCode3_fastcall_3.part.0 (17,777,040 samples, 0.24%)</title><rect x="1051.5" y="421" width="2.9" height="15.0" fill="rgb(250,207,49)" rx="2" ry="2" />
+<text  x="1054.55" y="431.5" ></text>
+</g>
+<g >
+<title>pypy_g_IncrementalMiniMarkGC_rawrefcount_create_link_py (16,580,915 samples, 0.22%)</title><rect x="519.0" y="405" width="2.7" height="15.0" fill="rgb(205,0,0)" rx="2" ry="2" />
+<text  x="522.05" y="415.5" ></text>
+</g>
+<g >
+<title>__skb_recv_udp (13,406,544 samples, 0.18%)</title><rect x="963.1" y="293" width="2.1" height="15.0" fill="rgb(225,94,22)" rx="2" ry="2" />
+<text  x="966.06" y="303.5" ></text>
+</g>
+<g >
+<title>set_next_task_idle (19,378,523 samples, 0.26%)</title><rect x="370.6" y="165" width="3.1" height="15.0" fill="rgb(205,3,0)" rx="2" ry="2" />
+<text  x="373.63" y="175.5" ></text>
+</g>
+<g >
+<title>pypy_g_stack_check (78,629,166 samples, 1.06%)</title><rect x="916.9" y="405" width="12.5" height="15.0" fill="rgb(252,219,52)" rx="2" ry="2" />
+<text  x="919.92" y="415.5" ></text>
+</g>
+<g >
+<title>__x64_sys_epoll_wait (2,437,391 samples, 0.03%)</title><rect x="395.8" y="341" width="0.4" height="15.0" fill="rgb(206,6,1)" rx="2" ry="2" />
+<text  x="398.83" y="351.5" ></text>
+</g>
+<g >
+<title>pypy_g_W_Socket_recvfrom_w (22,931,029 samples, 0.31%)</title><rect x="1092.4" y="421" width="3.6" height="15.0" fill="rgb(245,187,44)" rx="2" ry="2" />
+<text  x="1095.35" y="431.5" ></text>
+</g>
+<g >
+<title>[unknown] (120,082,542 samples, 1.62%)</title><rect x="354.6" y="373" width="19.1" height="15.0" fill="rgb(210,24,5)" rx="2" ry="2" />
+<text  x="357.63" y="383.5" ></text>
+</g>
+<g >
+<title>schedule_hrtimeout_range (40,961,278 samples, 0.55%)</title><rect x="367.2" y="245" width="6.5" height="15.0" fill="rgb(221,75,18)" rx="2" ry="2" />
+<text  x="370.20" y="255.5" ></text>
+</g>
+<g >
+<title>pypy_g_ll_get__DICTPtr_Address_Address (18,253,861 samples, 0.25%)</title><rect x="1151.6" y="421" width="2.9" height="15.0" fill="rgb(217,58,13)" rx="2" ry="2" />
+<text  x="1154.59" y="431.5" ></text>
+</g>
+<g >
+<title>entry_SYSCALL_64 (19,952,011 samples, 0.27%)</title><rect x="1063.8" y="405" width="3.1" height="15.0" fill="rgb(239,156,37)" rx="2" ry="2" />
+<text  x="1066.78" y="415.5" ></text>
+</g>
+<g >
+<title>pypy_g_bh_getfield_gc_i__int (14,610,826 samples, 0.20%)</title><rect x="764.7" y="405" width="2.3" height="15.0" fill="rgb(215,47,11)" rx="2" ry="2" />
+<text  x="767.69" y="415.5" ></text>
+</g>
+<g >
+<title>vgetargs1_impl (17,287,699 samples, 0.23%)</title><rect x="1187.3" y="421" width="2.7" height="15.0" fill="rgb(229,110,26)" rx="2" ry="2" />
+<text  x="1190.25" y="431.5" ></text>
+</g>
+<g >
+<title>pypy_g_ResumeDataDirectReader_decode_ref (18,439,442 samples, 0.25%)</title><rect x="632.4" y="405" width="2.9" height="15.0" fill="rgb(213,39,9)" rx="2" ry="2" />
+<text  x="635.36" y="415.5" ></text>
+</g>
+<g >
+<title>pypy_g_getptrinfo (18,138,459 samples, 0.24%)</title><rect x="1118.1" y="421" width="2.9" height="15.0" fill="rgb(219,65,15)" rx="2" ry="2" />
+<text  x="1121.15" y="431.5" ></text>
+</g>
+<g >
+<title>pypy_g_AbstractCachedEntry_getfield_from_cache (17,674,078 samples, 0.24%)</title><rect x="485.8" y="405" width="2.8" height="15.0" fill="rgb(232,126,30)" rx="2" ry="2" />
+<text  x="488.83" y="415.5" ></text>
+</g>
+<g >
+<title>pypy_g_allocate_instance__W_DictObject (10,938,309 samples, 0.15%)</title><rect x="249.8" y="405" width="1.7" height="15.0" fill="rgb(250,209,50)" rx="2" ry="2" />
+<text  x="252.77" y="415.5" ></text>
+</g>
+<g >
+<title>pypy_g_ll_dict_lookup__v1637___simple_call__function_ (14,433,234 samples, 0.19%)</title><rect x="1132.4" y="421" width="2.3" height="15.0" fill="rgb(206,5,1)" rx="2" ry="2" />
+<text  x="1135.42" y="431.5" ></text>
+</g>
+<g >
+<title>consume_skb (11,383,017 samples, 0.15%)</title><rect x="862.1" y="245" width="1.8" height="15.0" fill="rgb(210,24,5)" rx="2" ry="2" />
+<text  x="865.09" y="255.5" ></text>
+</g>
+<g >
+<title>perf_event_task_tick (17,882,264 samples, 0.24%)</title><rect x="887.9" y="261" width="2.8" height="15.0" fill="rgb(205,3,0)" rx="2" ry="2" />
+<text  x="890.90" y="271.5" ></text>
+</g>
+<g >
+<title>pypy_g_length_hint (10,916,176 samples, 0.15%)</title><rect x="842.0" y="405" width="1.7" height="15.0" fill="rgb(239,158,37)" rx="2" ry="2" />
+<text  x="844.97" y="415.5" ></text>
+</g>
+<g >
+<title>__alloc_skb (30,882,242 samples, 0.42%)</title><rect x="981.0" y="213" width="4.9" height="15.0" fill="rgb(226,100,23)" rx="2" ry="2" />
+<text  x="983.99" y="223.5" ></text>
+</g>
+<g >
+<title>EVP_DecryptFinal_ex (17,151,068 samples, 0.23%)</title><rect x="349.6" y="389" width="2.7" height="15.0" fill="rgb(252,220,52)" rx="2" ry="2" />
+<text  x="352.62" y="399.5" ></text>
+</g>
+<g >
+<title>schedule_hrtimeout_range_clock (97,860,791 samples, 1.32%)</title><rect x="373.7" y="261" width="15.6" height="15.0" fill="rgb(222,81,19)" rx="2" ry="2" />
+<text  x="376.71" y="271.5" ></text>
+</g>
+</g>
+</svg>

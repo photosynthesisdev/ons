@@ -47,7 +47,7 @@ int xdp_filter_prog(struct xdp_md *ctx) {
     // Redirect the packet to the XDP socket
     int index = ctx->rx_queue_index;
     if (bpf_map_lookup_elem(&xsk_map, &index)){
-        return bpf_redirect_map(&xsk_map, index, 0);
+        return bpf_redirect_map(&xsk_map, index, 1);
     }
     // If we can't redirect, just pass to normal kernel networking stack. 
     return XDP_PASS;

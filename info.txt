@@ -1,0 +1,8 @@
+TO RUN WT:
+pypy3.10 server.py --certificate ../certs/cert1.pem --private-key ../certs/privkey1.pem
+pypy3.10 client.py spock.cs.colgate.edu 4433 --count 10000
+
+
+TO RUN WS:
+pypy3.10 websocket_server.py --port 4040
+pypy3.10 websocket_client.py spock.cs.colgate.edu 4040 --no-ssl --count 10000

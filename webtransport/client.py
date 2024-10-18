@@ -10,7 +10,7 @@ from aioquic.h3.connection import H3Connection
 import logging
 import ssl
 import binascii
-
+ 
 class Statistics:
     def __init__(self, ewma_alpha = 0.1):
         self.message_count = 0

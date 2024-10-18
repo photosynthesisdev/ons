@@ -143,6 +143,14 @@ int main(int argc, char **argv) {
     ret = xsk_socket__create(&xsk_info->xsk, ifname, key, umem->umem, &xsk_info->rx_q, &xsk_info->tx_q, &xsk_cfg);
     if (ret) {
         fprintf(stderr, "Failed to create XSK socket: %s\n", strerror(-ret));
+        fprintf(stderr, "Debugging arguments to xsk_socket__create:\n");
+        fprintf(stderr, "xsk_info->xsk (before call): %p\n", (void *)xsk_info->xsk);
+        fprintf(stderr, "ifname: %s\n", ifname);
+        fprintf(stderr, "key: %d\n", key); // adjust format based on actual type if needed
+        fprintf(stderr, "umem->umem: %p\n", (void *)umem->umem);
+        fprintf(stderr, "xsk_info->rx_q: %u\n", xsk_info->rx_q);
+        fprintf(stderr, "xsk_info->tx_q: %u\n", xsk_info->tx_q);
+        fprintf(stderr, "xsk_cfg: %p\n", (void *)&xsk_cfg);
         xsk_umem__delete(umem->umem);
         free(umem_buffer);
         free(umem);

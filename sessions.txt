@@ -1,0 +1,139 @@
+==========================================================================================
+WEBTRANSPORT:
+
+#1
+root@tpol:/users/dorlando/ons/webtransport# pypy3.10 client.py spock.cs.colgate.edu 4433 --count 10000
+WebTransport session established.
+Total messages sent: 10000
+Messages per second: 753.46
+Average RTT: 1.13 ms
+EWMA RTT: 0.71 ms
+
+#2
+root@tpol:/users/dorlando/ons/webtransport# pypy3.10 client.py spock.cs.colgate.edu 4433 --count 10000
+WebTransport session established.
+Total messages sent: 10000
+Messages per second: 995.91
+Average RTT: 0.84 ms
+EWMA RTT: 0.44 ms
+
+#3
+root@tpol:/users/dorlando/ons/webtransport# pypy3.10 client.py spock.cs.colgate.edu 4433 --count 10000
+WebTransport session established.
+Total messages sent: 10000
+Messages per second: 1000.68
+Average RTT: 0.83 ms
+EWMA RTT: 0.87 ms
+
+
+==========================================================================================
+WEBSOCKETS WITH NAGLE, WITH OFFLOAD:
+
+#1
+root@tpol:/users/dorlando/ons/websockets# pypy3.10 websocket_client.py spock.cs.colgate.edu 4040 --no-ssl --count 100000
+Nagle's algorithm enabled (default behavior).
+Total messages sent: 100000
+Messages per second: 2444.88
+Average RTT: 0.41 ms
+EWMA RTT: 0.33 ms
+
+#2
+root@tpol:/users/dorlando/ons/websockets# pypy3.10 websocket_client.py spock.cs.colgate.edu 4040 --no-ssl --count 100000
+Nagle's algorithm enabled (default behavior).
+Total messages sent: 100000
+Messages per second: 2707.22
+Average RTT: 0.37 ms
+EWMA RTT: 0.33 ms
+
+#3
+root@tpol:/users/dorlando/ons/websockets# pypy3.10 websocket_client.py spock.cs.colgate.edu 4040 --no-ssl --count 100000
+Nagle's algorithm enabled (default behavior).
+Total messages sent: 100000
+Messages per second: 2744.76
+Average RTT: 0.36 ms
+EWMA RTT: 0.52 ms
+
+==========================================================================================
+WEBSOCKETS NO NAGLE, WITH OFFLOAD:
+
+#1
+root@tpol:/users/dorlando/ons/websockets# pypy3.10 websocket_client.py spock.cs.colgate.edu 4040 --no-ssl --count 100000 --disable-nagling
+Nagle's algorithm disabled (TCP_NODELAY set).
+Total messages sent: 100000
+Messages per second: 2536.33
+Average RTT: 0.39 ms
+EWMA RTT: 0.39 ms
+
+#2
+root@tpol:/users/dorlando/ons/websockets# pypy3.10 websocket_client.py spock.cs.colgate.edu 4040 --no-ssl --count 100000 --disable-nagling
+Nagle's algorithm disabled (TCP_NODELAY set).
+Total messages sent: 100000
+Messages per second: 2071.85
+Average RTT: 0.48 ms
+EWMA RTT: 0.37 ms
+
+#3
+root@tpol:/users/dorlando/ons/websockets# pypy3.10 websocket_client.py spock.cs.colgate.edu 4040 --no-ssl --count 100000 --disable-nagling
+Nagle's algorithm disabled (TCP_NODELAY set).
+Total messages sent: 100000
+Messages per second: 2408.41
+Average RTT: 0.41 ms
+EWMA RTT: 0.37 ms
+
+==========================================================================================
+WEBSOCKET WITH NAGLE, NO OFFLOAD:
+
+#1
+root@tpol:/users/dorlando/ons/websockets# pypy3.10 websocket_client.py spock.cs.colgate.edu 4040 --no-ssl --count 100000
+Nagle's algorithm enabled (default behavior).
+Total messages sent: 100000
+Messages per second: 2162.51
+Average RTT: 0.46 ms
+EWMA RTT: 0.49 ms
+
+#2
+root@tpol:/users/dorlando/ons/websockets# pypy3.10 websocket_client.py spock.cs.colgate.edu 4040 --no-ssl --count 100000
+Nagle's algorithm enabled (default behavior).
+Total messages sent: 100000
+Messages per second: 2526.42
+Average RTT: 0.39 ms
+EWMA RTT: 0.26 ms
+
+#3
+Nagle's algorithm enabled (default behavior).
+Total messages sent: 100000
+Messages per second: 2113.42
+Average RTT: 0.47 ms
+EWMA RTT: 0.51 ms
+
+
+==========================================================================================
+WEBSOCKET NO NAGLE, NO OFFLOAD:
+
+#1
+root@tpol:/users/dorlando/ons/websockets# pypy3.10 websocket_client.py spock.cs.colgate.edu 4040 --no-ssl --count 100000 --disable-nagling
+Nagle's algorithm disabled (TCP_NODELAY set).
+Total messages sent: 100000
+Messages per second: 2425.76
+Average RTT: 0.41 ms
+EWMA RTT: 0.25 ms
+
+#2
+root@tpol:/users/dorlando/ons/websockets# pypy3.10 websocket_client.py spock.cs.colgate.edu 4040 --no-ssl --count 100000 --disable-nagling
+Nagle's algorithm disabled (TCP_NODELAY set).
+Total messages sent: 100000
+Messages per second: 2274.04
+Average RTT: 0.44 ms
+EWMA RTT: 0.39 ms
+root@tpol:/users/do
+
+#3
+root@tpol:/users/dorlando/ons/websockets# pypy3.10 websocket_client.py spock.cs.colgate.edu 4040 --no-ssl --count 100000 --disable-nagling
+Nagle's algorithm disabled (TCP_NODELAY set).
+Total messages sent: 100000
+Messages per second: 2032.15
+Average RTT: 0.49 ms
+EWMA RTT: 0.51 ms
+
+
+==========================================================================================
