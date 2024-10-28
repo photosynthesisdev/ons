@@ -6,3 +6,8 @@ pypy3.10 client.py spock.cs.colgate.edu 4433 --count 10000
 TO RUN WS:
 pypy3.10 websocket_server.py --port 4040
 pypy3.10 websocket_client.py spock.cs.colgate.edu 4040 --no-ssl --count 10000
+
+
+========
+NAGLING RFC: https://datatracker.ietf.org/doc/html/rfc896
+ConnectX-4 LX

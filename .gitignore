@@ -1,3 +1,4 @@
 /certs/
 /xdp_ebpf.o
 /__pycache__
+/FlameGraph

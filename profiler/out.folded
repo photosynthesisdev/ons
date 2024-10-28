@@ -1,202 +1,256 @@
-pypy3.10;[libc-2.31.so] 64223647
-pypy3.10;[libc-2.31.so];page_fault;do_page_fault;__do_page_fault;do_user_addr_fault;apic_timer_interrupt;smp_apic_timer_interrupt;hrtimer_interrupt;__hrtimer_run_queues;__remove_hrtimer;rb_next 14072615
-pypy3.10;[libc-2.31.so];page_fault;do_page_fault;__do_page_fault;do_user_addr_fault;handle_mm_fault;__handle_mm_fault;do_anonymous_page;__lru_cache_add 8896159
-pypy3.10;[libc-2.31.so];page_fault;do_page_fault;__do_page_fault;do_user_addr_fault;handle_mm_fault;__handle_mm_fault;do_anonymous_page;alloc_pages_vma;__alloc_pages_nodemask 16305626
-pypy3.10;[libc-2.31.so];page_fault;do_page_fault;__do_page_fault;do_user_addr_fault;handle_mm_fault;__handle_mm_fault;do_anonymous_page;mem_cgroup_try_charge_delay;mem_cgroup_try_charge;get_mem_cgroup_from_mm 15457864
-pypy3.10;[libz.so.1.2.11] 77113106
-pypy3.10;[perf-86324.map];[libc-2.31.so] 20437732
-pypy3.10;[perf-86324.map];[perf-86324.map] 1103763253
-pypy3.10;[perf-86324.map];_PyPyArg_ParseTupleAndKeywords_SizeT 10853582
-pypy3.10;[perf-86324.map];__getpid;entry_SYSCALL_64 13301214
-pypy3.10;[perf-86324.map];__getpid;entry_SYSCALL_64_after_hwframe;__x64_sys_getpid 13876873
-pypy3.10;[perf-86324.map];clock_gettime 17476289
-pypy3.10;[perf-86324.map];get_errno 31873198
-pypy3.10;[perf-86324.map];pypy_g_AbstractAttribute_find_map_attr 12934024
-pypy3.10;[perf-86324.map];pypy_g_IncrementalMiniMarkGC__allocate_shadow 16184741
-pypy3.10;[perf-86324.map];pypy_g_ResumeGuardForcedDescr_handle_async_forcing 14748137
-pypy3.10;[perf-86324.map];pypy_g_W_Epoll_descr_poll 15612096
-pypy3.10;[perf-86324.map];pypy_g_W_TypeObject__pure_lookup_where_with_method_cach 15583199
-pypy3.10;[perf-86324.map];pypy_g_WeakrefLifeline_get_or_make_weakref 45228021
-pypy3.10;[perf-86324.map];pypy_g__getitem_correct_indirection__v940___simple_call 14159306
-pypy3.10;[perf-86324.map];pypy_g__ll_dict_setitem_lookup_done__v1669___simple_cal 11774265
-pypy3.10;[perf-86324.map];pypy_g_as_pyobj 18353049
-pypy3.10;[perf-86324.map];pypy_g_assembler_call_helper_57 13137773
-pypy3.10;[perf-86324.map];pypy_g_cpy_call_external__funcPtr__objectPtr 13557820
-pypy3.10;[perf-86324.map];pypy_g_endswith__str_str 15592107
-pypy3.10;[perf-86324.map];pypy_g_force_now 14639677
-pypy3.10;[perf-86324.map];pypy_g_force_now_1 67987006
-pypy3.10;[perf-86324.map];pypy_g_ll_append_0_9__stringbuilderPtr_rpy_stringPtr 17690017
-pypy3.10;[perf-86324.map];pypy_g_ll_arraycopy__arrayPtr_arrayPtr_Signed_Signed_Si 13565110
-pypy3.10;[perf-86324.map];pypy_g_ll_build__v1269___simple_call__function_ 13603063
-pypy3.10;[perf-86324.map];pypy_g_ll_call_lookup_function__v1459___simple_call__fu 14265783
-pypy3.10;[perf-86324.map];pypy_g_ll_grow_and_append__stringbuilderPtr_rpy_stringP 15575637
-pypy3.10;[perf-86324.map];pypy_g_ll_streq__rpy_stringPtr_rpy_stringPtr 11808523
-pypy3.10;[perf-86324.map];pypy_g_remember_young_pointer 11214093
-pypy3.10;[unknown];PyPyBytes_AS_STRING 10437869
-pypy3.10;[unknown];PyPyTuple_New 8778811
-pypy3.10;[unknown];[libc-2.31.so] 29951249
-pypy3.10;[unknown];[libz.so.1.2.11] 93013810
-pypy3.10;[unknown];[unknown];[unknown];[unknown];[unknown];epoll_wait 19226742
-pypy3.10;[unknown];[unknown];[unknown];[unknown];[unknown];epoll_wait;entry_SYSCALL_64 14371091
-pypy3.10;[unknown];[unknown];[unknown];[unknown];[unknown];epoll_wait;entry_SYSCALL_64_after_hwframe;do_syscall_64 24244182
-pypy3.10;[unknown];[unknown];[unknown];[unknown];[unknown];epoll_wait;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_epoll_wait;__fdget 11824896
-pypy3.10;[unknown];[unknown];[unknown];[unknown];[unknown];epoll_wait;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_epoll_wait;do_epoll_wait 10373940
-pypy3.10;[unknown];[unknown];[unknown];[unknown];[unknown];epoll_wait;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_epoll_wait;do_epoll_wait;__fget_light 15567912
-pypy3.10;[unknown];[unknown];[unknown];[unknown];[unknown];epoll_wait;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_epoll_wait;do_epoll_wait;_raw_write_lock_irq 17889374
-pypy3.10;[unknown];[unknown];[unknown];[unknown];[unknown];epoll_wait;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_epoll_wait;do_epoll_wait;ep_poll;_raw_write_lock_irq 36059980
-pypy3.10;[unknown];[unknown];[unknown];[unknown];[unknown];epoll_wait;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_epoll_wait;do_epoll_wait;ep_poll;ep_scan_ready_list.constprop.0;__wake_up;__wake_up_common_lock;__wake_up_common 12787929
-pypy3.10;[unknown];[unknown];[unknown];[unknown];[unknown];epoll_wait;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_epoll_wait;do_epoll_wait;ep_poll;ep_scan_ready_list.constprop.0;__wake_up;__wake_up_common_lock;__wake_up_common;default_wake_function;try_to_wake_up 12914217
-pypy3.10;[unknown];[unknown];[unknown];[unknown];[unknown];epoll_wait;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_epoll_wait;do_epoll_wait;ep_poll;ep_scan_ready_list.constprop.0;ep_send_events_proc;ep_item_poll.isra.0;sock_poll 21554143
-pypy3.10;[unknown];[unknown];[unknown];[unknown];[unknown];epoll_wait;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_epoll_wait;do_epoll_wait;ep_poll;ep_scan_ready_list.constprop.0;ep_send_events_proc;ep_item_poll.isra.0;sock_poll;tcp_poll 26253005
-pypy3.10;[unknown];[unknown];[unknown];[unknown];[unknown];epoll_wait;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_epoll_wait;do_epoll_wait;ep_poll;ep_scan_ready_list.constprop.0;ep_send_events_proc;ep_item_poll.isra.0;sock_poll;tcp_stream_memory_free 10799633
-pypy3.10;[unknown];[unknown];[unknown];[unknown];[unknown];epoll_wait;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_epoll_wait;do_epoll_wait;ep_poll;schedule_hrtimeout_range;schedule_hrtimeout_range_clock;hrtimer_try_to_cancel;__remove_hrtimer;rb_erase 16201594
-pypy3.10;[unknown];[unknown];[unknown];[unknown];[unknown];epoll_wait;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_epoll_wait;do_epoll_wait;ep_poll;schedule_hrtimeout_range;schedule_hrtimeout_range_clock;schedule 17675602
-pypy3.10;[unknown];[unknown];[unknown];[unknown];[unknown];epoll_wait;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_epoll_wait;do_epoll_wait;ep_poll;schedule_hrtimeout_range;schedule_hrtimeout_range_clock;schedule;__schedule;deactivate_task;dequeue_task_fair;dequeue_entity 9582302
-pypy3.10;[unknown];[unknown];[unknown];[unknown];[unknown];epoll_wait;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_epoll_wait;do_epoll_wait;ep_poll;schedule_hrtimeout_range;schedule_hrtimeout_range_clock;schedule;__schedule;deactivate_task;dequeue_task_fair;dequeue_entity;account_entity_dequeue 14500246
-pypy3.10;[unknown];[unknown];[unknown];[unknown];[unknown];epoll_wait;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_epoll_wait;do_epoll_wait;ep_poll;schedule_hrtimeout_range;schedule_hrtimeout_range_clock;schedule;__schedule;deactivate_task;dequeue_task_fair;dequeue_entity;update_cfs_group 15929420
-pypy3.10;[unknown];[unknown];[unknown];[unknown];[unknown];epoll_wait;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_epoll_wait;do_epoll_wait;ep_poll;schedule_hrtimeout_range;schedule_hrtimeout_range_clock;schedule;__schedule;deactivate_task;dequeue_task_fair;dequeue_entity;update_cfs_group;reweight_entity 26189003
-pypy3.10;[unknown];[unknown];[unknown];[unknown];[unknown];epoll_wait;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_epoll_wait;do_epoll_wait;ep_poll;schedule_hrtimeout_range;schedule_hrtimeout_range_clock;schedule;__schedule;deactivate_task;dequeue_task_fair;dequeue_entity;update_curr 20726264
-pypy3.10;[unknown];[unknown];[unknown];[unknown];[unknown];epoll_wait;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_epoll_wait;do_epoll_wait;ep_poll;schedule_hrtimeout_range;schedule_hrtimeout_range_clock;schedule;__schedule;deactivate_task;dequeue_task_fair;dequeue_entity;update_load_avg;__update_load_avg_cfs_rq 13054889
-pypy3.10;[unknown];[unknown];[unknown];[unknown];[unknown];epoll_wait;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_epoll_wait;do_epoll_wait;ep_poll;schedule_hrtimeout_range;schedule_hrtimeout_range_clock;schedule;__schedule;deactivate_task;dequeue_task_fair;dequeue_entity;update_load_avg;__update_load_avg_se 14553912
-pypy3.10;[unknown];[unknown];[unknown];[unknown];[unknown];epoll_wait;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_epoll_wait;do_epoll_wait;ep_poll;schedule_hrtimeout_range;schedule_hrtimeout_range_clock;schedule;__schedule;deactivate_task;psi_task_change 66355725
-pypy3.10;[unknown];[unknown];[unknown];[unknown];[unknown];epoll_wait;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_epoll_wait;do_epoll_wait;ep_poll;schedule_hrtimeout_range;schedule_hrtimeout_range_clock;schedule;__schedule;finish_task_switch;__perf_event_task_sched_in 14370
-pypy3.10;[unknown];[unknown];[unknown];[unknown];[unknown];epoll_wait;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_epoll_wait;do_epoll_wait;ep_poll;schedule_hrtimeout_range;schedule_hrtimeout_range_clock;schedule;__schedule;finish_task_switch;__perf_event_task_sched_in;perf_event_sched_in;ctx_sched_in 9611371
-pypy3.10;[unknown];[unknown];[unknown];[unknown];[unknown];epoll_wait;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_epoll_wait;do_epoll_wait;ep_poll;schedule_hrtimeout_range;schedule_hrtimeout_range_clock;schedule;__schedule;finish_task_switch;__perf_event_task_sched_in;perf_event_sched_in;ctx_sched_in;flexible_sched_in 17227317
-pypy3.10;[unknown];[unknown];[unknown];[unknown];[unknown];epoll_wait;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_epoll_wait;do_epoll_wait;ep_poll;schedule_hrtimeout_range;schedule_hrtimeout_range_clock;schedule;__schedule;finish_task_switch;__perf_event_task_sched_in;perf_event_sched_in;ctx_sched_in;visit_groups_merge 11264378
-pypy3.10;[unknown];[unknown];[unknown];[unknown];[unknown];epoll_wait;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_epoll_wait;do_epoll_wait;ep_poll;schedule_hrtimeout_range;schedule_hrtimeout_range_clock;schedule;__schedule;finish_task_switch;__perf_event_task_sched_in;perf_event_sched_in;ctx_sched_in;visit_groups_merge;flexible_sched_in;group_sched_in;perf_swevent_add 24767563
-pypy3.10;[unknown];[unknown];[unknown];[unknown];[unknown];epoll_wait;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_epoll_wait;do_epoll_wait;ep_poll;schedule_hrtimeout_range;schedule_hrtimeout_range_clock;schedule;__schedule;pick_next_task_fair;newidle_balance 16305626
-pypy3.10;[unknown];[unknown];[unknown];[unknown];[unknown];epoll_wait;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_epoll_wait;do_epoll_wait;ep_poll;schedule_hrtimeout_range;schedule_hrtimeout_range_clock;schedule;__schedule;pick_next_task_idle 16908193
-pypy3.10;[unknown];[unknown];[unknown];[unknown];[unknown];epoll_wait;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_epoll_wait;do_epoll_wait;ep_poll;select_estimate_accuracy 11156739
-pypy3.10;[unknown];[unknown];[unknown];[unknown];[unknown];epoll_wait;syscall_return_via_sysret 24083832
-pypy3.10;[unknown];[unknown];[unknown];pypy_g_BlackholeInterpreter_run 28579460
-pypy3.10;[unknown];[unknown];cfree 19943560
-pypy3.10;[unknown];[unknown];deflate 16861170
-pypy3.10;[unknown];[unknown];pypy_g_IncrementalMiniMarkGC_register_finalizer 11956740
-pypy3.10;[unknown];[unknown];pypy_g_LOAD_GLOBAL_cached__AccessDirect_None 10028239
-pypy3.10;[unknown];[unknown];pypy_g_dispatch_bytecode__AccessDirect_None 47681009
-pypy3.10;[unknown];__libc_send 13508826
-pypy3.10;[unknown];__libc_send;entry_SYSCALL_64_after_hwframe;do_syscall_64 12650920
-pypy3.10;[unknown];__libc_send;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_sendto;__sys_sendto 18696470
-pypy3.10;[unknown];__libc_send;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_sendto;__sys_sendto;sock_sendmsg;inet_sendmsg 15030660
-pypy3.10;[unknown];__libc_send;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_sendto;__sys_sendto;sock_sendmsg;inet_sendmsg;tcp_sendmsg;tcp_sendmsg_locked 26140797
-pypy3.10;[unknown];__libc_send;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_sendto;__sys_sendto;sock_sendmsg;inet_sendmsg;tcp_sendmsg;tcp_sendmsg_locked;_copy_from_iter_full 14192201
-pypy3.10;[unknown];__libc_send;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_sendto;__sys_sendto;sock_sendmsg;inet_sendmsg;tcp_sendmsg;tcp_sendmsg_locked;sk_stream_alloc_skb 12660653
-pypy3.10;[unknown];__libc_send;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_sendto;__sys_sendto;sock_sendmsg;inet_sendmsg;tcp_sendmsg;tcp_sendmsg_locked;skb_entail 16482397
-pypy3.10;[unknown];__libc_send;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_sendto;__sys_sendto;sock_sendmsg;inet_sendmsg;tcp_sendmsg;tcp_sendmsg_locked;tcp_push;__tcp_push_pending_frames;tcp_write_xmit;__tcp_transmit_skb;bictcp_cwnd_event 13579740
-pypy3.10;[unknown];__libc_send;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_sendto;__sys_sendto;sock_sendmsg;inet_sendmsg;tcp_sendmsg;tcp_sendmsg_locked;tcp_push;__tcp_push_pending_frames;tcp_write_xmit;__tcp_transmit_skb;ip_queue_xmit;__ip_queue_xmit;ip_local_out;__ip_local_out;drm_connector_init_panel_orientation_property 11398621
-pypy3.10;[unknown];__libc_send;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_sendto;__sys_sendto;sock_sendmsg;inet_sendmsg;tcp_sendmsg;tcp_sendmsg_locked;tcp_push;__tcp_push_pending_frames;tcp_write_xmit;__tcp_transmit_skb;ip_queue_xmit;__ip_queue_xmit;ip_local_out;__ip_local_out;iptable_filter_hook 15015935
-pypy3.10;[unknown];__libc_send;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_sendto;__sys_sendto;sock_sendmsg;inet_sendmsg;tcp_sendmsg;tcp_sendmsg_locked;tcp_push;__tcp_push_pending_frames;tcp_write_xmit;__tcp_transmit_skb;ip_queue_xmit;__ip_queue_xmit;ip_local_out;__ip_local_out;nf_hook_slow;drm_crtc_add_crc_entry;drm_connector_attach_content_protection_property;nf_conntrack_tcp_packet;lockd_up 13137773
-pypy3.10;[unknown];__libc_send;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_sendto;__sys_sendto;sock_sendmsg;inet_sendmsg;tcp_sendmsg;tcp_sendmsg_locked;tcp_push;__tcp_push_pending_frames;tcp_write_xmit;__tcp_transmit_skb;ip_queue_xmit;__ip_queue_xmit;ip_local_out;__ip_local_out;nf_hook_slow;iptable_filter_hook;ipt_do_table 69425668
-pypy3.10;[unknown];__libc_send;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_sendto;__sys_sendto;sock_sendmsg;inet_sendmsg;tcp_sendmsg;tcp_sendmsg_locked;tcp_push;__tcp_push_pending_frames;tcp_write_xmit;__tcp_transmit_skb;ip_queue_xmit;__ip_queue_xmit;ip_local_out;ip_output;ip_finish_output;__ip_finish_output;ip_finish_output2 15954469
-pypy3.10;[unknown];__libc_send;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_sendto;__sys_sendto;sock_sendmsg;inet_sendmsg;tcp_sendmsg;tcp_sendmsg_locked;tcp_push;__tcp_push_pending_frames;tcp_write_xmit;__tcp_transmit_skb;ip_queue_xmit;__ip_queue_xmit;ip_local_out;ip_output;ip_finish_output;__ip_finish_output;ip_finish_output2;dev_queue_xmit;__dev_queue_xmit;_raw_spin_lock 11183551
-pypy3.10;[unknown];__libc_send;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_sendto;__sys_sendto;sock_sendmsg;inet_sendmsg;tcp_sendmsg;tcp_sendmsg_locked;tcp_push;__tcp_push_pending_frames;tcp_write_xmit;__tcp_transmit_skb;ip_queue_xmit;__ip_queue_xmit;ip_local_out;ip_output;ip_finish_output;__ip_finish_output;ip_finish_output2;dev_queue_xmit;__dev_queue_xmit;sch_direct_xmit;dev_hard_start_xmit 10371990
-pypy3.10;[unknown];__libc_send;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_sendto;__sys_sendto;sock_sendmsg;inet_sendmsg;tcp_sendmsg;tcp_sendmsg_locked;tcp_push;__tcp_push_pending_frames;tcp_write_xmit;__tcp_transmit_skb;ip_queue_xmit;__ip_queue_xmit;ip_local_out;ip_output;ip_finish_output;__ip_finish_output;ip_finish_output2;dev_queue_xmit;__dev_queue_xmit;sch_direct_xmit;dev_hard_start_xmit;auth_flavors;dma_direct_unmap_page 19860617
-pypy3.10;[unknown];__libc_send;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_sendto;__sys_sendto;sock_sendmsg;inet_sendmsg;tcp_sendmsg;tcp_sendmsg_locked;tcp_push;__tcp_push_pending_frames;tcp_write_xmit;__tcp_transmit_skb;ip_queue_xmit;__ip_queue_xmit;ip_local_out;ip_output;ip_finish_output;__ip_finish_output;ip_finish_output2;dev_queue_xmit;__dev_queue_xmit;sch_direct_xmit;dev_hard_start_xmit;rpc_pipe_fs_type;skb_copy;__alloc_skb;memset_erms 15071495
-pypy3.10;[unknown];__libc_send;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_sendto;__sys_sendto;sock_sendmsg;inet_sendmsg;tcp_sendmsg;tcp_sendmsg_locked;tcp_push;__tcp_push_pending_frames;tcp_write_xmit;__tcp_transmit_skb;ip_queue_xmit;__ip_queue_xmit;ip_local_out;ip_output;ip_finish_output;__ip_finish_output;ip_finish_output2;dev_queue_xmit;__dev_queue_xmit;sch_direct_xmit;dev_hard_start_xmit;rpc_pipe_fs_type;skb_copy;memcpy_erms 19644374
-pypy3.10;[unknown];__libc_send;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_sendto;__sys_sendto;sock_sendmsg;inet_sendmsg;tcp_sendmsg;tcp_sendmsg_locked;tcp_push;__tcp_push_pending_frames;tcp_write_xmit;__tcp_transmit_skb;ip_queue_xmit;__ip_queue_xmit;ip_local_out;ip_output;ip_finish_output;__ip_finish_output;ip_finish_output2;dev_queue_xmit;__dev_queue_xmit;sch_direct_xmit;dev_hard_start_xmit;tg3_start_xmit 13668514
-pypy3.10;[unknown];__libc_send;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_sendto;__sys_sendto;sock_sendmsg;inet_sendmsg;tcp_sendmsg;tcp_sendmsg_locked;tcp_push;__tcp_push_pending_frames;tcp_write_xmit;__tcp_transmit_skb;ip_queue_xmit;__ip_queue_xmit;ip_local_out;ip_output;ip_finish_output;__ip_finish_output;ip_finish_output2;dev_queue_xmit;__dev_queue_xmit;sch_direct_xmit;validate_xmit_skb_list;validate_xmit_skb;netif_skb_features 10520592
-pypy3.10;[unknown];__libc_send;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_sendto;__sys_sendto;sock_sendmsg;inet_sendmsg;tcp_sendmsg;tcp_sendmsg_locked;tcp_push;__tcp_push_pending_frames;tcp_write_xmit;__tcp_transmit_skb;ip_queue_xmit;__ip_queue_xmit;ip_local_out;ip_output;ip_finish_output;__ip_finish_output;ip_finish_output2;dev_queue_xmit;__dev_queue_xmit;sch_direct_xmit;validate_xmit_skb_list;validate_xmit_skb;validate_xmit_xfrm 11706102
-pypy3.10;[unknown];__libc_send;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_sendto;__sys_sendto;sock_sendmsg;inet_sendmsg;tcp_sendmsg;tcp_sendmsg_locked;tcp_push;__tcp_push_pending_frames;tcp_write_xmit;__tcp_transmit_skb;ip_queue_xmit;__ip_queue_xmit;ip_local_out;ip_output;ip_finish_output;__ip_finish_output;ip_finish_output2;dev_queue_xmit;__dev_queue_xmit;sch_direct_xmit;validate_xmit_skb_list;validate_xmit_xfrm 16250027
-pypy3.10;[unknown];__libc_send;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_sendto;__sys_sendto;sock_sendmsg;inet_sendmsg;tcp_sendmsg;tcp_sendmsg_locked;tcp_push;__tcp_push_pending_frames;tcp_write_xmit;__tcp_transmit_skb;ip_queue_xmit;__ip_queue_xmit;ip_local_out;ip_send_check 11599738
-pypy3.10;[unknown];__libc_send;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_sendto;__sys_sendto;sock_sendmsg;inet_sendmsg;tcp_sendmsg;tcp_sendmsg_locked;tcp_push;__tcp_push_pending_frames;tcp_write_xmit;__tcp_transmit_skb;ip_queue_xmit;__ip_queue_xmit;ip_local_out;nf_hook_slow 26154896
-pypy3.10;[unknown];__libc_send;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_sendto;__sys_sendto;sock_sendmsg;inet_sendmsg;tcp_sendmsg;tcp_sendmsg_locked;tcp_push;__tcp_push_pending_frames;tcp_write_xmit;tcp_update_skb_after_send 14880602
-pypy3.10;[unknown];__libc_send;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_sendto;__sys_sendto;sock_sendmsg;inet_sendmsg;tcp_sendmsg;tcp_sendmsg_locked;tcp_send_mss;ipv4_mtu 13205221
-pypy3.10;[unknown];__libc_send;syscall_return_via_sysret 15090850
-pypy3.10;[unknown];brk;entry_SYSCALL_64_after_hwframe;do_syscall_64 18778655
-pypy3.10;[unknown];cfree 29891770
-pypy3.10;[unknown];inflate 9922339
-pypy3.10;[unknown];pthread_testcancel 14634974
-pypy3.10;[unknown];pypy_g_AbstractAttribute_find_map_attr 39906202
-pypy3.10;[unknown];pypy_g_BlackholeInterpreter__resume_mainloop 15201959
-pypy3.10;[unknown];pypy_g_BlackholeInterpreter_bhimpl_setarrayitem_vable_r 13665350
-pypy3.10;[unknown];pypy_g_BlackholeInterpreter_setposition 103525027
-pypy3.10;[unknown];pypy_g_BlackholeInterpreter_setposition.cold 19665654
-pypy3.10;[unknown];pypy_g_BuiltinCode2_fastcall_2.part.0 20656701
-pypy3.10;[unknown];pypy_g_ExecutionContext_leave 13313867
-pypy3.10;[unknown];pypy_g_ExecutionContext_return_trace 10319024
-pypy3.10;[unknown];pypy_g_IncrementalMiniMarkGC__allocate_shadow 16850385
-pypy3.10;[unknown];pypy_g_IncrementalMiniMarkGC_pin 12872934
-pypy3.10;[unknown];pypy_g_LOAD_GLOBAL_cached__AccessDirect_None 14382330
-pypy3.10;[unknown];pypy_g_RSocket_recv 14659546
-pypy3.10;[unknown];pypy_g_RSocket_send_raw 15180777
-pypy3.10;[unknown];pypy_g_ResumeDataDirectReader___init__ 17350080
-pypy3.10;[unknown];pypy_g_ResumeDataDirectReader__prepare_virtuals.part.0 13203561
-pypy3.10;[unknown];pypy_g_ResumeDataDirectReader_consume_vref_and_vable 26814015
-pypy3.10;[unknown];pypy_g_ResumeDataDirectReader_decode_ref 28809728
-pypy3.10;[unknown];pypy_g_ResumeDataDirectReader_setfield 66092721
-pypy3.10;[unknown];pypy_g_STORE_ATTR__AccessDirect_None 26377967
-pypy3.10;[unknown];pypy_g_W_BytesObject_shortcut___len__ 17197428
-pypy3.10;[unknown];pypy_g_W_Weakref_compare 14126575
-pypy3.10;[unknown];pypy_g__check_len_result 314716504
-pypy3.10;[unknown];pypy_g__extend_from_tuple__v354___simple_call__function 17209069
-pypy3.10;[unknown];pypy_g__get_list_of_values__R 12746386
-pypy3.10;[unknown];pypy_g__ll_alloc_and_set_nojit__GcStruct_listLlT_Signed 15108016
-pypy3.10;[unknown];pypy_g__ll_strhash__rpy_stringPtr 14484926
-pypy3.10;[unknown];pypy_g_blackhole_from_resumedata 12559764
-pypy3.10;[unknown];pypy_g_bytes_realize 11877152
-pypy3.10;[unknown];pypy_g_call_stub_562 17273517
-pypy3.10;[unknown];pypy_g_comparison_eq_impl 28946158
-pypy3.10;[unknown];pypy_g_comparison_lt_impl 13890765
-pypy3.10;[unknown];pypy_g_create_ref 27688833
-pypy3.10;[unknown];pypy_g_dispatch_loop 56313909
-pypy3.10;[unknown];pypy_g_execute_assembler__star_2_2 14963940
-pypy3.10;[unknown];pypy_g_from_ref 11784438
-pypy3.10;[unknown];pypy_g_funccall__star_1 14885502
-pypy3.10;[unknown];pypy_g_get_and_call_function__star_0 15908247
-pypy3.10;[unknown];pypy_g_handle_jitexception_from_blackhole_57;pypy_g_resume_in_blackhole 27900721
-pypy3.10;[unknown];pypy_g_handler_rvmprof_code 11774265
-pypy3.10;[unknown];pypy_g_handler_setarrayitem_vable_r 13709197
-pypy3.10;[unknown];pypy_g_handler_setfield_vable_i 20935690
-pypy3.10;[unknown];pypy_g_len_w 13746711
-pypy3.10;[unknown];pypy_g_ll_arraycopy__arrayPtr_arrayPtr_Signed_Signed_Si 16173952
-pypy3.10;[unknown];pypy_g_ll_dict_lookup__v3654___simple_call__function_ 13210615
-pypy3.10;[unknown];pypy_g_ll_dict_reindex__dicttablePtr_Signed_1 15602373
-pypy3.10;[unknown];pypy_g_ll_get__DICTPtr_Address_Address 28966796
-pypy3.10;[unknown];pypy_g_maybe_compile_and_run__star_5_2 10853582
-pypy3.10;[unknown];pypy_g_maybe_compile_and_run__star_5_2.part.0 52268912
-pypy3.10;[unknown];pypy_g_portal_11 18515941
-pypy3.10;[unknown];pypy_g_trace__gc_callback__trace_drag_out 25537830
-pypy3.10;[unknown];pypy_g_wrapper_second_level__star_1_13 17194855
-pypy3.10;[unknown];pypy_g_write_from_resume_data_partial 44068435
-pypy3.10;__libc_recv;entry_SYSCALL_64_after_hwframe;do_syscall_64 14504706
-pypy3.10;__libc_recv;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_recvfrom;__sys_recvfrom;security_socket_recvmsg 11858677
-pypy3.10;__libc_recv;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_recvfrom;__sys_recvfrom;sock_recvmsg;inet_recvmsg;tcp_recvmsg 19391322
-pypy3.10;__libc_recv;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_recvfrom;__sys_recvfrom;sock_recvmsg;inet_recvmsg;tcp_recvmsg;__kfree_skb;kfree_skbmem;kmem_cache_free 11570464
-pypy3.10;__libc_recv;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_recvfrom;__sys_recvfrom;sock_recvmsg;inet_recvmsg;tcp_recvmsg;skb_copy_datagram_iter;__skb_datagram_iter;simple_copy_to_iter;_copy_to_iter 13576819
-pypy3.10;__libc_recv;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_recvfrom;__sys_recvfrom;sock_recvmsg;inet_recvmsg;tcp_recvmsg;tcp_cleanup_rbuf 17697320
-pypy3.10;__libc_recv;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_recvfrom;__sys_recvfrom;sock_recvmsg;inet_recvmsg;tcp_recvmsg;tcp_rcv_space_adjust 12847160
-pypy3.10;__libc_recv;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_recvfrom;__sys_recvfrom;sock_recvmsg;security_socket_recvmsg;apparmor_socket_recvmsg;aa_sk_perm 47235238
-pypy3.10;__libc_recv;syscall_return_via_sysret 18591035
-pypy3.10;clock_gettime 18641909
-pypy3.10;clock_gettime;__vdso_clock_gettime;[[vdso]] 26846766
-pypy3.10;get_errno 16957413
-pypy3.10;malloc 14897051
-pypy3.10;pypy_g_ArenaCollection_malloc 39587726
-pypy3.10;pypy_g_BlackholeInterpreter_bhimpl_getfield_vable_i 11808523
-pypy3.10;pypy_g_IncrementalMiniMarkGC_external_malloc 14054214
-pypy3.10;pypy_g_RSocket_recvinto 9500064
-pypy3.10;pypy_g_Reader_next_item 10548621
-pypy3.10;pypy_g_ResumeDataDirectReader_consume_virtualref_info 13459625
-pypy3.10;pypy_g_ResumeDataDirectReader_decode_ref 73797095
-pypy3.10;pypy_g_ResumeDataDirectReader_getvirtual_ptr 24234453
-pypy3.10;pypy_g_Signature_find_w_argname 38195124
-pypy3.10;pypy_g_W_Epoll_descr_poll 2558965
-pypy3.10;pypy_g__after_thread_switch 12972537
-pypy3.10;pypy_g__match_keywords__v1018___simple_call__function_ 12376002
-pypy3.10;pypy_g__operate 29635803
-pypy3.10;pypy_g_allocate__rpython_jit_metainterp_resume_ResumeDa 11892938
-pypy3.10;pypy_g_bh_getfield_gc_i___ptr 12560913
-pypy3.10;pypy_g_bh_setfield_gc_i___ptr 33400977
-pypy3.10;pypy_g_ccall_pypy_epoll_wait__INT_arrayPtr_arrayPtr_INT 30625573
-pypy3.10;pypy_g_dispatcher_Py_14 12117897
-pypy3.10;pypy_g_dropvalues__AccessDirect_None 29974883
-pypy3.10;pypy_g_enumerate_vars__unique_id 14797039
-pypy3.10;pypy_g_ll_dict_lookup__v1525___simple_call__function_ 12544815
-pypy3.10;pypy_g_ll_dict_lookup__v1637___simple_call__function_ 11966702
-pypy3.10;pypy_g_ll_dict_setitem__DICTPtr_Address_Address 28290685
-pypy3.10;pypy_g_ll_join_chars_trampoline__v1237___simple_call__f 14701912
-pypy3.10;pypy_g_newint__r_int32 14444929
-pypy3.10;pypy_g_newlist 13508826
-pypy3.10;pypy_g_raw_malloc_memory_pressure_varsize 14998657
-pypy3.10;pypy_g_thread_run 21674175
-pypy3.10;pypy_g_write_from_resume_data_partial 27252830
+tokio-runtime-w;OPENSSL_init_crypto 48608059
+tokio-runtime-w;[libc-2.31.so] 43229662
+tokio-runtime-w;[libssl.so.1.1] 17334562
+tokio-runtime-w;[unknown];EVP_CIPHER_CTX_cipher 11016526
+tokio-runtime-w;[unknown];EVP_Cipher 20857332
+tokio-runtime-w;[unknown];OPENSSL_cleanse 16980509
+tokio-runtime-w;[unknown];[libc-2.31.so] 14543582
+tokio-runtime-w;[unknown];[libcrypto.so.1.1] 32174641
+tokio-runtime-w;[unknown];[libssl.so.1.1] 269583529
+tokio-runtime-w;[unknown];[unknown];<&mio::net::tcp::stream::TcpStream as std::io::Read>::read::{{closure}};<&std::os::unix::net::stream::UnixStream as std::io::Read>::read 11993757
+tokio-runtime-w;[unknown];[unknown];<&mio::net::tcp::stream::TcpStream as std::io::Write>::write::{{closure}} 13140979
+tokio-runtime-w;[unknown];[unknown];<&mut T as core::ops::deref::Deref>::deref 11626572
+tokio-runtime-w;[unknown];[unknown];<alloc::sync::Arc<T,A> as core::clone::Clone>::clone 16453680
+tokio-runtime-w;[unknown];[unknown];<core::ops::range::RangeFrom<usize> as core::slice::index::SliceIndex<[T]>>::index_mut 27010024
+tokio-runtime-w;[unknown];[unknown];<core::result::Result<T,E> as core::ops::try_trait::Try>::branch 46845563
+tokio-runtime-w;[unknown];[unknown];<std::io::error::repr_bitpacked::Repr as core::ops::drop::Drop>::drop 12114787
+tokio-runtime-w;[unknown];[unknown];<tokio::io::ready::Ready as core::ops::bit::BitOr>::bitor 13361323
+tokio-runtime-w;[unknown];[unknown];<tokio::net::tcp::stream::TcpStream as tokio::io::async_read::AsyncRead>::poll_read 19956442
+tokio-runtime-w;[unknown];[unknown];[libcrypto.so.1.1] 15109623
+tokio-runtime-w;[unknown];[unknown];__rust_try 22258824
+tokio-runtime-w;[unknown];[unknown];alloc::sync::Arc<T,A>::from_raw_in 11520409
+tokio-runtime-w;[unknown];[unknown];core::num::<impl isize>::unchecked_neg::precondition_check 17498272
+tokio-runtime-w;[unknown];[unknown];core::slice::raw::from_raw_parts::precondition_check 14345882
+tokio-runtime-w;[unknown];[unknown];mio::io_source::IoSource<T>::do_io 20778591
+tokio-runtime-w;[unknown];[unknown];openssl::ssl::bio::bread 19009837
+tokio-runtime-w;[unknown];[unknown];openssl::ssl::bio::retriable_error 13746556
+tokio-runtime-w;[unknown];[unknown];std::panic::catch_unwind 14376316
+tokio-runtime-w;[unknown];[unknown];std::panicking::try::do_call 30265497
+tokio-runtime-w;[unknown];[unknown];std::sys::pal::unix::decode_error_kind 17081874
+tokio-runtime-w;[unknown];[unknown];std::thread::local::LocalKey<T>::try_with 10338911
+tokio-runtime-w;[unknown];[unknown];tokio::io::poll_evented::PollEvented<E>::poll_read 12339858
+tokio-runtime-w;[unknown];[unknown];tokio::io::poll_evented::PollEvented<E>::poll_write 36772660
+tokio-runtime-w;[unknown];[unknown];tokio::io::ready::Ready::is_empty 13055787
+tokio-runtime-w;[unknown];[unknown];tokio::runtime::coop::Budget::decrement;apic_timer_interrupt;smp_apic_timer_interrupt;hrtimer_interrupt;__hrtimer_run_queues;tick_sched_timer;tick_sched_do_timer;tick_do_update_jiffies64.part.0;update_wall_time;timekeeping_advance 11058866
+tokio-runtime-w;[unknown];[unknown];tokio::runtime::coop::poll_proceed 13106984
+tokio-runtime-w;[unknown];[unknown];tokio::runtime::io::registration::Registration::poll_ready 19485061
+tokio-runtime-w;[unknown];[unknown];tokio::util::bit::Pack::unpack 21333827
+tokio-runtime-w;[unknown];__errno_location 11016526
+tokio-runtime-w;__libc_recv;entry_SYSCALL_64 16390189
+tokio-runtime-w;__libc_recv;entry_SYSCALL_64_after_hwframe;do_syscall_64 33425824
+tokio-runtime-w;__libc_recv;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_recvfrom;__sys_recvfrom;__fdget 12234674
+tokio-runtime-w;__libc_recv;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_recvfrom;__sys_recvfrom;sock_recvmsg 15423659
+tokio-runtime-w;__libc_recv;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_recvfrom;__sys_recvfrom;sock_recvmsg;inet_recvmsg;tcp_recvmsg 20161120
+tokio-runtime-w;__libc_recv;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_recvfrom;__sys_recvfrom;sock_recvmsg;inet_recvmsg;tcp_recvmsg;skb_copy_datagram_iter;__skb_datagram_iter;simple_copy_to_iter;__check_object_size;__virt_addr_valid 11135048
+tokio-runtime-w;__libc_recv;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_recvfrom;__sys_recvfrom;sock_recvmsg;inet_recvmsg;tcp_recvmsg;skb_copy_datagram_iter;__x86_indirect_thunk_r9 14781661
+tokio-runtime-w;__libc_recv;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_recvfrom;__sys_recvfrom;sock_recvmsg;inet_recvmsg;tcp_recvmsg;tcp_cleanup_rbuf 14215789
+tokio-runtime-w;__libc_recv;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_recvfrom;__sys_recvfrom;sock_recvmsg;inet_recvmsg;tcp_recvmsg;tcp_rcv_space_adjust;tcp_mstamp_refresh;read_tsc 14364391
+tokio-runtime-w;__libc_recv;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_recvfrom;__sys_recvfrom;sock_recvmsg;security_socket_recvmsg 17495428
+tokio-runtime-w;__libc_recv;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_recvfrom;__sys_recvfrom;sockfd_lookup_light;__fget_light 27319946
+tokio-runtime-w;__libc_send;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_sendto;__sys_sendto;sock_sendmsg;inet_sendmsg;tcp_sendmsg;tcp_push 11728837
+tokio-runtime-w;__libc_send;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_sendto;__sys_sendto;sock_sendmsg;inet_sendmsg;tcp_sendmsg;tcp_sendmsg_locked 15258360
+tokio-runtime-w;__libc_send;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_sendto;__sys_sendto;sock_sendmsg;inet_sendmsg;tcp_sendmsg;tcp_sendmsg_locked;_copy_from_iter_full;copy_user_generic_unrolled 15406694
+tokio-runtime-w;__libc_send;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_sendto;__sys_sendto;sock_sendmsg;inet_sendmsg;tcp_sendmsg;tcp_sendmsg_locked;sk_stream_alloc_skb;__alloc_skb 19142027
+tokio-runtime-w;__libc_send;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_sendto;__sys_sendto;sock_sendmsg;inet_sendmsg;tcp_sendmsg;tcp_sendmsg_locked;sk_stream_alloc_skb;__alloc_skb;ksize;__ksize 25187173
+tokio-runtime-w;__libc_send;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_sendto;__sys_sendto;sock_sendmsg;inet_sendmsg;tcp_sendmsg;tcp_sendmsg_locked;skb_entail 12766744
+tokio-runtime-w;__libc_send;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_sendto;__sys_sendto;sock_sendmsg;inet_sendmsg;tcp_sendmsg;tcp_sendmsg_locked;tcp_current_mss 18458354
+tokio-runtime-w;__libc_send;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_sendto;__sys_sendto;sock_sendmsg;inet_sendmsg;tcp_sendmsg;tcp_sendmsg_locked;tcp_push;__tcp_push_pending_frames;tcp_write_xmit 28357833
+tokio-runtime-w;__libc_send;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_sendto;__sys_sendto;sock_sendmsg;inet_sendmsg;tcp_sendmsg;tcp_sendmsg_locked;tcp_push;__tcp_push_pending_frames;tcp_write_xmit;__tcp_transmit_skb;ip_queue_xmit;__ip_queue_xmit;ip_local_out;__ip_local_out 13275001
+tokio-runtime-w;__libc_send;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_sendto;__sys_sendto;sock_sendmsg;inet_sendmsg;tcp_sendmsg;tcp_sendmsg_locked;tcp_push;__tcp_push_pending_frames;tcp_write_xmit;__tcp_transmit_skb;ip_queue_xmit;__ip_queue_xmit;ip_local_out;__ip_local_out;drm_connector_init_panel_orientation_property 14999308
+tokio-runtime-w;__libc_send;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_sendto;__sys_sendto;sock_sendmsg;inet_sendmsg;tcp_sendmsg;tcp_sendmsg_locked;tcp_push;__tcp_push_pending_frames;tcp_write_xmit;__tcp_transmit_skb;ip_queue_xmit;__ip_queue_xmit;ip_local_out;__ip_local_out;iptable_filter_hook 24636629
+tokio-runtime-w;__libc_send;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_sendto;__sys_sendto;sock_sendmsg;inet_sendmsg;tcp_sendmsg;tcp_sendmsg_locked;tcp_push;__tcp_push_pending_frames;tcp_write_xmit;__tcp_transmit_skb;ip_queue_xmit;__ip_queue_xmit;ip_local_out;__ip_local_out;nf_hook_slow;drm_crtc_add_crc_entry;drm_connector_attach_content_protection_property;nf_conntrack_tcp_packet 11745056
+tokio-runtime-w;__libc_send;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_sendto;__sys_sendto;sock_sendmsg;inet_sendmsg;tcp_sendmsg;tcp_sendmsg_locked;tcp_push;__tcp_push_pending_frames;tcp_write_xmit;__tcp_transmit_skb;ip_queue_xmit;__ip_queue_xmit;ip_local_out;__ip_local_out;nf_hook_slow;drm_crtc_add_crc_entry;drm_connector_attach_content_protection_property;nf_conntrack_tcp_packet;tcp_in_window 28903553
+tokio-runtime-w;__libc_send;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_sendto;__sys_sendto;sock_sendmsg;inet_sendmsg;tcp_sendmsg;tcp_sendmsg_locked;tcp_push;__tcp_push_pending_frames;tcp_write_xmit;__tcp_transmit_skb;ip_queue_xmit;__ip_queue_xmit;ip_local_out;__ip_local_out;nf_hook_slow;drm_crtc_add_crc_entry;drm_mode_atomic_ioctl;drm_client_modeset_create 13024013
+tokio-runtime-w;__libc_send;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_sendto;__sys_sendto;sock_sendmsg;inet_sendmsg;tcp_sendmsg;tcp_sendmsg_locked;tcp_push;__tcp_push_pending_frames;tcp_write_xmit;__tcp_transmit_skb;ip_queue_xmit;__ip_queue_xmit;ip_local_out;__ip_local_out;nf_hook_slow;drm_crtc_add_crc_entry;drm_mode_atomic_ioctl;drm_mode_atomic_ioctl 20810888
+tokio-runtime-w;__libc_send;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_sendto;__sys_sendto;sock_sendmsg;inet_sendmsg;tcp_sendmsg;tcp_sendmsg_locked;tcp_push;__tcp_push_pending_frames;tcp_write_xmit;__tcp_transmit_skb;ip_queue_xmit;__ip_queue_xmit;ip_local_out;__ip_local_out;nf_hook_slow;drm_crtc_add_crc_entry;drm_mode_atomic_ioctl;hash_conntrack_raw 18205016
+tokio-runtime-w;__libc_send;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_sendto;__sys_sendto;sock_sendmsg;inet_sendmsg;tcp_sendmsg;tcp_sendmsg_locked;tcp_push;__tcp_push_pending_frames;tcp_write_xmit;__tcp_transmit_skb;ip_queue_xmit;__ip_queue_xmit;ip_local_out;__ip_local_out;nf_hook_slow;iptable_filter_hook;ipt_do_table 17992549
+tokio-runtime-w;__libc_send;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_sendto;__sys_sendto;sock_sendmsg;inet_sendmsg;tcp_sendmsg;tcp_sendmsg_locked;tcp_push;__tcp_push_pending_frames;tcp_write_xmit;__tcp_transmit_skb;ip_queue_xmit;__ip_queue_xmit;ip_local_out;__ip_local_out;nf_hook_slow;nf_nat_ipv4_local_fn;drm_connector_pick_cmdline_mode 17129405
+tokio-runtime-w;__libc_send;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_sendto;__sys_sendto;sock_sendmsg;inet_sendmsg;tcp_sendmsg;tcp_sendmsg_locked;tcp_push;__tcp_push_pending_frames;tcp_write_xmit;__tcp_transmit_skb;ip_queue_xmit;__ip_queue_xmit;ip_local_out;ip_output 20288348
+tokio-runtime-w;__libc_send;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_sendto;__sys_sendto;sock_sendmsg;inet_sendmsg;tcp_sendmsg;tcp_sendmsg_locked;tcp_push;__tcp_push_pending_frames;tcp_write_xmit;__tcp_transmit_skb;ip_queue_xmit;__ip_queue_xmit;ip_local_out;ip_output;ip_finish_output;__ip_finish_output;ip_finish_output2;dev_queue_xmit;__dev_queue_xmit;_raw_spin_lock 23624784
+tokio-runtime-w;__libc_send;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_sendto;__sys_sendto;sock_sendmsg;inet_sendmsg;tcp_sendmsg;tcp_sendmsg_locked;tcp_push;__tcp_push_pending_frames;tcp_write_xmit;__tcp_transmit_skb;ip_queue_xmit;__ip_queue_xmit;ip_local_out;ip_output;ip_finish_output;__ip_finish_output;ip_finish_output2;dev_queue_xmit;__dev_queue_xmit;sch_direct_xmit;dev_hard_start_xmit;rpc_pipefs_notifier_list;tg3_write32 17392313
+tokio-runtime-w;__libc_send;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_sendto;__sys_sendto;sock_sendmsg;inet_sendmsg;tcp_sendmsg;tcp_sendmsg_locked;tcp_push;__tcp_push_pending_frames;tcp_write_xmit;__tcp_transmit_skb;ip_queue_xmit;__ip_queue_xmit;ip_local_out;ip_output;ip_finish_output;__ip_finish_output;ip_finish_output2;dev_queue_xmit;__dev_queue_xmit;sch_direct_xmit;validate_xmit_skb_list;skb_csum_hwoffload_help 14490315
+tokio-runtime-w;__libc_send;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_sendto;__sys_sendto;sock_sendmsg;inet_sendmsg;tcp_sendmsg;tcp_sendmsg_locked;tcp_push;__tcp_push_pending_frames;tcp_write_xmit;__tcp_transmit_skb;ip_queue_xmit;__ip_queue_xmit;ip_local_out;ip_output;kmalloc_array.constprop.0 15527915
+tokio-runtime-w;__libc_send;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_sendto;__sys_sendto;sock_sendmsg;inet_sendmsg;tcp_sendmsg;tcp_sendmsg_locked;tcp_push;__tcp_push_pending_frames;tcp_write_xmit;__tcp_transmit_skb;ip_queue_xmit;ip_copy_addrs 14662042
+tokio-runtime-w;__libc_send;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_sendto;__sys_sendto;sock_sendmsg;inet_sendmsg;tcp_sendmsg;tcp_sendmsg_locked;tcp_push;__tcp_push_pending_frames;tcp_write_xmit;jiffies_to_usecs 19761609
+tokio-runtime-w;__libc_send;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_sendto;__sys_sendto;sock_sendmsg;inet_sendmsg;tcp_sendmsg;tcp_sendmsg_locked;tcp_send_mss;tcp_current_mss 22438135
+tokio-runtime-w;__libc_send;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_sendto;__sys_sendto;sock_sendmsg;inet_sendmsg;tcp_sendmsg;tcp_sendmsg_locked;tcp_send_mss;tcp_current_mss;ipv4_mtu 14663629
+tokio-runtime-w;__pthread_disable_asynccancel 21653825
+tokio-runtime-w;__pthread_once 26210584
+tokio-runtime-w;malloc 15168474
+tokio-runtime-w;start_thread;<I as core::iter::traits::collect::IntoIterator>::into_iter 18988098
+tokio-runtime-w;start_thread;<alloc::sync::Arc<T,A> as core::ops::deref::Deref>::deref 13267825
+tokio-runtime-w;start_thread;<alloc::vec::Vec<T,A> as core::ops::index::Index<I>>::index 16605914
+tokio-runtime-w;start_thread;<alloc::vec::drain::Drain<T,A> as core::ops::drop::Drop>::drop 12967635
+tokio-runtime-w;start_thread;<core::cell::BorrowRefMut as core::ops::drop::Drop>::drop 22470013
+tokio-runtime-w;start_thread;<core::iter::adapters::enumerate::Enumerate<I> as core::iter::traits::iterator::Iterator>::next 188474986
+tokio-runtime-w;start_thread;<core::ops::range::Range<T> as core::iter::range::RangeIteratorImpl>::spec_next 41850830
+tokio-runtime-w;start_thread;<core::option::Option<T> as core::ops::try_trait::FromResidual<core::option::Option<core::convert::Infallible>>>::from_residual 13413428
+tokio-runtime-w;start_thread;<core::option::Option<T> as core::ops::try_trait::Try>::branch 11786719
+tokio-runtime-w;start_thread;<core::result::Result<T,E> as core::ops::try_trait::Try>::branch 11684262
+tokio-runtime-w;start_thread;<core::result::Result<T,tungstenite::error::Error> as tungstenite::protocol::CheckConnectionReset>::check_connection_reset 13284134
+tokio-runtime-w;start_thread;<core::slice::iter::Iter<T> as core::iter::traits::iterator::Iterator>::next 335238919
+tokio-runtime-w;start_thread;<core::slice::iter::IterMut<T> as core::iter::traits::iterator::Iterator>::next 87520469
+tokio-runtime-w;start_thread;<futures_util::sink::feed::Feed<Si,Item> as core::future::future::Future>::poll 17294788
+tokio-runtime-w;start_thread;<futures_util::stream::stream::split::SplitSink<S,Item> as futures_sink::Sink<Item>>::poll_flush 36488963
+tokio-runtime-w;start_thread;<lock_api::mutex::MutexGuard<R,T> as core::ops::drop::Drop>::drop 13680529
+tokio-runtime-w;start_thread;<log::Level as core::cmp::PartialOrd<log::LevelFilter>>::partial_cmp 22664907
+tokio-runtime-w;start_thread;<mio::token::Token as core::cmp::PartialEq>::eq 15904572
+tokio-runtime-w;start_thread;<openssl::ssl::error::ErrorCode as core::cmp::PartialEq>::eq 14755112
+tokio-runtime-w;start_thread;<parking_lot::raw_mutex::RawMutex as lock_api::mutex::RawMutex>::try_lock 18048781
+tokio-runtime-w;start_thread;<std::io::error::ErrorKind as core::cmp::PartialEq>::eq 19136879
+tokio-runtime-w;start_thread;<std::sync::rwlock::RwLockReadGuard<T> as core::ops::deref::Deref>::deref 17509291
+tokio-runtime-w;start_thread;<tokio::loom::std::atomic_u32::AtomicU32 as core::ops::deref::Deref>::deref 21596689
+tokio-runtime-w;start_thread;<tokio::runtime::coop::with_budget::ResetGuard as core::ops::drop::Drop>::drop 19121462
+tokio-runtime-w;start_thread;<tokio_tungstenite::WebSocketStream<T> as futures_core::stream::Stream>::poll_next 16099335
+tokio-runtime-w;start_thread;<tokio_tungstenite::WebSocketStream<T> as futures_sink::Sink<tungstenite::protocol::message::Message>>::start_send::{{closure}} 24388761
+tokio-runtime-w;start_thread;<tokio_tungstenite::compat::AllowStd<S> as std::io::Read>::read 22668693
+tokio-runtime-w;start_thread;<tungstenite::protocol::frame::coding::OpCode as core::convert::From<u8>>::from 16657610
+tokio-runtime-w;start_thread;<tungstenite::protocol::frame::frame::FrameHeader as core::default::Default>::default 15246245
+tokio-runtime-w;start_thread;<usize as core::iter::range::Step>::forward_unchecked 65432929
+tokio-runtime-w;start_thread;<usize as core::slice::index::SliceIndex<[T]>>::get 14093389
+tokio-runtime-w;start_thread;BIO_get_data 14361617
+tokio-runtime-w;start_thread;SSL_get_rbio 20108695
+tokio-runtime-w;start_thread;[libc-2.31.so] 112054162
+tokio-runtime-w;start_thread;[libcrypto.so.1.1] 13444915
+tokio-runtime-w;start_thread;__rust_try 12911469
+tokio-runtime-w;start_thread;alloc::alloc::alloc 12562337
+tokio-runtime-w;start_thread;alloc::collections::vec_deque::VecDeque<T,A>::pop_front 13109013
+tokio-runtime-w;start_thread;alloc::raw_vec::RawVecInner<A>::current_memory 21331060
+tokio-runtime-w;start_thread;alloc::raw_vec::RawVecInner<A>::try_allocate_in 15087278
+tokio-runtime-w;start_thread;alloc::sync::Arc<T,A>::from_raw_in 16548553
+tokio-runtime-w;start_thread;alloc::vec::Vec<T,A>::extend_from_slice 13449122
+tokio-runtime-w;start_thread;alloc::vec::Vec<T,A>::is_empty 18212551
+tokio-runtime-w;start_thread;alloc::vec::Vec<T,A>::reserve 13167392
+tokio-runtime-w;start_thread;core::alloc::layout::Layout::repeat 13547129
+tokio-runtime-w;start_thread;core::cell::Cell<T>::get 17159842
+tokio-runtime-w;start_thread;core::cmp::PartialOrd::le 12709685
+tokio-runtime-w;start_thread;core::intrinsics::copy::precondition_check 15966862
+tokio-runtime-w;start_thread;core::intrinsics::copy_nonoverlapping::precondition_check 13332286
+tokio-runtime-w;start_thread;core::iter::range::<impl core::iter::traits::iterator::Iterator for core::ops::range::Range<A>>::next 41299216
+tokio-runtime-w;start_thread;core::iter::traits::iterator::Iterator::count 16814166
+tokio-runtime-w;start_thread;core::iter::traits::iterator::Iterator::count::{{closure}} 16685355
+tokio-runtime-w;start_thread;core::iter::traits::iterator::Iterator::fold 52256510
+tokio-runtime-w;start_thread;core::iter::traits::iterator::Iterator::try_fold 15394030
+tokio-runtime-w;start_thread;core::ops::function::FnOnce::call_once 10907279
+tokio-runtime-w;start_thread;core::ops::function::impls::<impl core::ops::function::FnMut<A> for &mut F>::call_mut 173950258
+tokio-runtime-w;start_thread;core::option::Option<T>::expect 16043500
+tokio-runtime-w;start_thread;core::option::Option<T>::is_none 31986941
+tokio-runtime-w;start_thread;core::option::Option<T>::is_some 14330188
+tokio-runtime-w;start_thread;core::option::Option<T>::take 14272413
+tokio-runtime-w;start_thread;core::ptr::align_offset 31035273
+tokio-runtime-w;start_thread;core::ptr::const_ptr::<impl *const T>::sub_ptr::precondition_check 15596132
+tokio-runtime-w;start_thread;core::ptr::drop_in_place<[core::task::wake::Waker]> 14486114
+tokio-runtime-w;start_thread;core::ptr::drop_in_place<core::option::Option<core::task::wake::Waker>> 16155456
+tokio-runtime-w;start_thread;core::ptr::drop_in_place<core::option::Option<tokio::runtime::scheduler::multi_thread::park::Parker>> 13027110
+tokio-runtime-w;start_thread;core::ptr::drop_in_place<lock_api::mutex::MutexGuard<parking_lot::raw_mutex::RawMutex,core::option::Option<tokio::sync::watch::Receiver< 13095186
+tokio-runtime-w;start_thread;core::ptr::drop_in_place<lock_api::mutex::MutexGuard<parking_lot::raw_mutex::RawMutex,tokio::runtime::time::wheel::Wheel>> 22060246
+tokio-runtime-w;start_thread;core::ptr::drop_in_place<std::io::error::Error> 14884964
+tokio-runtime-w;start_thread;core::ptr::non_null::NonNull<T>::new_unchecked::precondition_check 18689216
+tokio-runtime-w;start_thread;core::result::Result<T,E>::expect 31865479
+tokio-runtime-w;start_thread;core::result::Result<T,E>::is_err 18980048
+tokio-runtime-w;start_thread;core::slice::<impl [T]>::align_to_mut 292247308
+tokio-runtime-w;start_thread;core::slice::index::range 26958738
+tokio-runtime-w;start_thread;core::slice::iter::<impl core::iter::traits::collect::IntoIterator for &[T]>::into_iter 10789301
+tokio-runtime-w;start_thread;core::slice::raw::from_raw_parts::precondition_check 64398082
+tokio-runtime-w;start_thread;core::sync::atomic::AtomicU64::load 11993757
+tokio-runtime-w;start_thread;core::sync::atomic::AtomicU8::compare_exchange_weak 11223855
+tokio-runtime-w;start_thread;core::sync::atomic::AtomicUsize::compare_exchange 15167683
+tokio-runtime-w;start_thread;core::sync::atomic::AtomicUsize::fetch_sub 15057864
+tokio-runtime-w;start_thread;core::sync::atomic::atomic_compare_exchange 65646887
+tokio-runtime-w;start_thread;core::sync::atomic::atomic_compare_exchange;ret_from_intr;do_IRQ;irq_exit;__softirqentry_text_start;net_rx_action;tg3_poll_msix;tg3_poll_work;tg3_rx;napi_gro_receive;ktime_get_with_offset 12781168
+tokio-runtime-w;start_thread;core::sync::atomic::atomic_load 113289804
+tokio-runtime-w;start_thread;core::task::wake::Waker::will_wake 13833419
+tokio-runtime-w;start_thread;core::ub_checks::is_nonoverlapping::runtime 15618522
+tokio-runtime-w;start_thread;epoll_wait 29150513
+tokio-runtime-w;start_thread;epoll_wait;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_epoll_wait;do_epoll_wait 11534299
+tokio-runtime-w;start_thread;epoll_wait;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_epoll_wait;do_epoll_wait;ep_poll 15421025
+tokio-runtime-w;start_thread;epoll_wait;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_epoll_wait;do_epoll_wait;ep_poll;_raw_write_lock_irq 14536233
+tokio-runtime-w;start_thread;epoll_wait;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_epoll_wait;do_epoll_wait;ep_poll;ep_scan_ready_list.constprop.0 20026754
+tokio-runtime-w;start_thread;epoll_wait;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_epoll_wait;do_epoll_wait;ep_poll;ep_scan_ready_list.constprop.0;ep_send_events_proc 35559457
+tokio-runtime-w;start_thread;epoll_wait;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_epoll_wait;do_epoll_wait;ep_poll;schedule_hrtimeout_range;schedule_hrtimeout_range_clock;schedule;__schedule;__perf_event_task_sched_out;task_ctx_sched_out;ctx_sched_out;perf_pmu_disable.part.0;intel_pmu_disable_all 17793597
+tokio-runtime-w;start_thread;epoll_wait;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_epoll_wait;do_epoll_wait;ep_poll;schedule_hrtimeout_range;schedule_hrtimeout_range_clock;schedule;__schedule;__perf_event_task_sched_out;task_ctx_sched_out;ctx_sched_out;perf_pmu_disable.part.0;x86_pmu_disable;__intel_pmu_disable_all 29688078
+tokio-runtime-w;start_thread;epoll_wait;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_epoll_wait;do_epoll_wait;ep_poll;schedule_hrtimeout_range;schedule_hrtimeout_range_clock;schedule;__schedule;deactivate_task 40746809
+tokio-runtime-w;start_thread;epoll_wait;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_epoll_wait;do_epoll_wait;ep_poll;schedule_hrtimeout_range;schedule_hrtimeout_range_clock;schedule;__schedule;deactivate_task;dequeue_task_fair;dequeue_entity;account_entity_dequeue 12296885
+tokio-runtime-w;start_thread;epoll_wait;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_epoll_wait;do_epoll_wait;ep_poll;schedule_hrtimeout_range;schedule_hrtimeout_range_clock;schedule;__schedule;deactivate_task;dequeue_task_fair;dequeue_entity;update_curr;cpuacct_charge 13461210
+tokio-runtime-w;start_thread;epoll_wait;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_epoll_wait;do_epoll_wait;ep_poll;schedule_hrtimeout_range;schedule_hrtimeout_range_clock;schedule;__schedule;deactivate_task;dequeue_task_fair;update_curr 15493747
+tokio-runtime-w;start_thread;epoll_wait;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_epoll_wait;do_epoll_wait;ep_poll;schedule_hrtimeout_range;schedule_hrtimeout_range_clock;schedule;__schedule;deactivate_task;psi_task_change 44692967
+tokio-runtime-w;start_thread;epoll_wait;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_epoll_wait;do_epoll_wait;ep_poll;schedule_hrtimeout_range;schedule_hrtimeout_range_clock;schedule;__schedule;finish_task_switch;__perf_event_task_sched_in 16234
+tokio-runtime-w;start_thread;epoll_wait;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_epoll_wait;do_epoll_wait;ep_poll;schedule_hrtimeout_range;schedule_hrtimeout_range_clock;schedule;__schedule;finish_task_switch;__perf_event_task_sched_in;perf_event_sched_in 19001032
+tokio-runtime-w;start_thread;epoll_wait;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_epoll_wait;do_epoll_wait;ep_poll;schedule_hrtimeout_range;schedule_hrtimeout_range_clock;schedule;__schedule;finish_task_switch;__perf_event_task_sched_in;perf_event_sched_in;ctx_sched_in;sched_clock_cpu 19928856
+tokio-runtime-w;start_thread;epoll_wait;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_epoll_wait;do_epoll_wait;ep_poll;schedule_hrtimeout_range;schedule_hrtimeout_range_clock;schedule;__schedule;finish_task_switch;__perf_event_task_sched_in;perf_event_sched_in;ctx_sched_in;visit_groups_merge 11684262
+tokio-runtime-w;start_thread;epoll_wait;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_epoll_wait;do_epoll_wait;ep_poll;schedule_hrtimeout_range;schedule_hrtimeout_range_clock;schedule;__schedule;finish_task_switch;__perf_event_task_sched_in;perf_event_sched_in;ctx_sched_in;visit_groups_merge;flexible_sched_in;group_sched_in;event_sched_in.isra.0;perf_swevent_add;perf_event_update_userpage 12406618
+tokio-runtime-w;start_thread;epoll_wait;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_epoll_wait;do_epoll_wait;ep_poll;schedule_hrtimeout_range;schedule_hrtimeout_range_clock;schedule;__schedule;finish_task_switch;__perf_event_task_sched_in;perf_pmu_enable.part.0;x86_pmu_enable 11550
+tokio-runtime-w;start_thread;epoll_wait;entry_SYSCALL_64_after_hwframe;do_syscall_64;do_epoll_wait 26210584
+tokio-runtime-w;start_thread;foreign_types_shared::ForeignTypeRef::as_ptr 14247708
+tokio-runtime-w;start_thread;futures_core::task::__internal::atomic_waker::AtomicWaker::register 16743124
+tokio-runtime-w;start_thread;futures_task::waker_ref::WakerRef::new_unowned 18265248
+tokio-runtime-w;start_thread;futures_task::waker_ref::waker_ref 21701274
+tokio-runtime-w;start_thread;futures_util::lock::bilock::BiLock<T>::unlock 16503785
+tokio-runtime-w;start_thread;lock_api::mutex::Mutex<R,T>::lock 16333091
+tokio-runtime-w;start_thread;mio::sys::unix::selector::Selector::select 13332041
+tokio-runtime-w;start_thread;mio::sys::unix::selector::Selector::select::{{closure}} 12254965
+tokio-runtime-w;start_thread;native_tls::TlsStream<S>::get_mut 22624940
+tokio-runtime-w;start_thread;openssl::ssl::SslStream<S>::get_mut 33380931
+tokio-runtime-w;start_thread;openssl::ssl::SslStream<S>::make_error 12414653
+tokio-runtime-w;start_thread;openssl::ssl::bio::state 12643980
+tokio-runtime-w;start_thread;std::io::cursor::Cursor<T>::position 13977325
+tokio-runtime-w;start_thread;std::io::cursor::Cursor<T>::split 13392905
+tokio-runtime-w;start_thread;std::io::error::repr_bitpacked::decode_repr 39617370
+tokio-runtime-w;start_thread;std::io::error::repr_bitpacked::kind_from_prim 22470574
+tokio-runtime-w;start_thread;std::io::impls::<impl std::io::Read for &[u8]>::read 22108960
+tokio-runtime-w;start_thread;std::sync::poison::Flag::done 14977610
+tokio-runtime-w;start_thread;std::sync::poison::map_result 16784145
+tokio-runtime-w;start_thread;std::sync::rwlock::RwLockReadGuard<T>::new 14144500
+tokio-runtime-w;start_thread;std::thread::local::LocalKey<T>::try_with 19011477
+tokio-runtime-w;start_thread;std::time::Instant::now 15254252
+tokio-runtime-w;start_thread;tokio::io::read_buf::ReadBuf::remaining 18639378
+tokio-runtime-w;start_thread;tokio::loom::std::atomic_u32::AtomicU32::unsync_load 17377869
+tokio-runtime-w;start_thread;tokio::loom::std::parking_lot::Mutex<T>::lock 15593094
+tokio-runtime-w;start_thread;tokio::process::imp::GlobalOrphanQueue::reap_orphans 23966277
+tokio-runtime-w;start_thread;tokio::process::imp::orphan::OrphanQueueImpl<T>::reap_orphans 11866683
+tokio-runtime-w;start_thread;tokio::runtime::driver::Handle::io 12469265
+tokio-runtime-w;start_thread;tokio::runtime::driver::IoStack::park 14714071
+tokio-runtime-w;start_thread;tokio::runtime::io::driver::Driver::park 22557145
+tokio-runtime-w;start_thread;tokio::runtime::io::driver::Driver::turn 18947569
+tokio-runtime-w;start_thread;tokio::runtime::process::Driver::park 17928708
+tokio-runtime-w;start_thread;tokio::runtime::scheduler::multi_thread::queue::unpack 30511715
+tokio-runtime-w;start_thread;tokio::runtime::scheduler::multi_thread::worker::Context::park 14577939
+tokio-runtime-w;start_thread;tokio::runtime::scheduler::multi_thread::worker::Context::reset_lifo_enabled 15904572
+tokio-runtime-w;start_thread;tokio::runtime::scheduler::multi_thread::worker::Context::run_task 15966519
+tokio-runtime-w;start_thread;tokio::runtime::scheduler::multi_thread::worker::Context::run_task::{{closure}} 20281826
+tokio-runtime-w;start_thread;tokio::runtime::scheduler::multi_thread::worker::Core::maintenance 14105350
+tokio-runtime-w;start_thread;tokio::runtime::scheduler::multi_thread::worker::with_current 11852537
+tokio-runtime-w;start_thread;tokio::runtime::task::harness::Harness<T,S>::from_raw 16689574
+tokio-runtime-w;start_thread;tokio::runtime::task::harness::Harness<T,S>::header_ptr 15901397
+tokio-runtime-w;start_thread;tokio::runtime::task::list::OwnedTasks<S>::assert_owner 21150599
+tokio-runtime-w;start_thread;tokio::runtime::task::state::Snapshot::is_cancelled 16216864
+tokio-runtime-w;start_thread;tokio::runtime::task::state::State::transition_to_idle 12820150
+tokio-runtime-w;start_thread;tokio::runtime::time::<impl tokio::runtime::time::handle::Handle>::process_at_sharded_time 28028196
+tokio-runtime-w;start_thread;tokio::runtime::time::<impl tokio::runtime::time::handle::Handle>::process_at_time 20936859
+tokio-runtime-w;start_thread;tokio::runtime::time::AtomicOptionNonZeroU64::store 12634934
+tokio-runtime-w;start_thread;tokio::runtime::time::Driver::park 42865115
+tokio-runtime-w;start_thread;tokio::runtime::time::ShardedWheel::lock_sharded_wheel 14014742
+tokio-runtime-w;start_thread;tokio::runtime::time::wheel::Wheel::elapsed 15328742
+tokio-runtime-w;start_thread;tokio::runtime::time::wheel::Wheel::next_expiration 46053665
+tokio-runtime-w;start_thread;tokio::runtime::time::wheel::level::Level::next_expiration 31793719
+tokio-runtime-w;start_thread;tokio::runtime::time::wheel::level::Level::next_occupied_slot 55486204
+tokio-runtime-w;start_thread;tokio::time::instant::Instant::saturating_duration_since;std::sys::pal::unix::time::Timespec::sub_timespec 18982954
+tokio-runtime-w;start_thread;tokio::time::instant::Instant::saturating_duration_since;std::time::Instant::saturating_duration_since;std::sys::pal::unix::time::Timespec::sub_timespec 17323013
+tokio-runtime-w;start_thread;tokio::util::bit::Pack::max_value 15350608
+tokio-runtime-w;start_thread;tokio::util::bit::Pack::width 3023512
+tokio-runtime-w;start_thread;tokio::util::linked_list::LinkedList<L,<L as tokio::util::linked_list::Link>::Target>::pop_back 18373149
+tokio-runtime-w;start_thread;tokio::util::wake_list::WakeList::new 137150255
+tokio-runtime-w;start_thread;tokio::util::wake_list::WakeList::wake_all 39196580
+tokio-runtime-w;start_thread;tokio_native_tls::TlsStream<S>::with_context 13708671
+tokio-runtime-w;start_thread;tokio_tungstenite::WebSocketStream<S>::with_context 27879491
+tokio-runtime-w;start_thread;tokio_tungstenite::compat::AllowStd<S>::with_context 15975125
+tokio-runtime-w;start_thread;tokio_tungstenite::compat::cvt 33794326
+tokio-runtime-w;start_thread;tungstenite::buffer::ReadBuffer<_>::clean_up 11945423
+tokio-runtime-w;start_thread;tungstenite::buffer::ReadBuffer<_>::read_from 15023223
+tokio-runtime-w;start_thread;tungstenite::protocol::WebSocketContext::read_message_frame 30456138
+tokio-runtime-w;start_thread;tungstenite::protocol::WebSocketContext::write_message 12128570
+tokio-runtime-w;start_thread;tungstenite::protocol::WebSocketState::is_active 14014272
+tokio-runtime-w;start_thread;tungstenite::protocol::frame::FrameCodec::read_frame 15328742
+tokio-runtime-w;start_thread;tungstenite::protocol::frame::frame::Frame::apply_mask 15791851
+tokio-runtime-w;start_thread;tungstenite::protocol::frame::frame::Frame::format 13892560
+tokio-runtime-w;start_thread;utf8::decode 12147266
