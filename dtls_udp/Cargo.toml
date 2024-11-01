@@ -1,0 +1,29 @@
+[package]
+name = "dtls_udp_example"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+# Existing dependencies
+udp-dtls = "0.1.0"
+tokio = { version = "1", features = ["full"] }
+wtransport = { path = "../wtransport/wtransport", features = ["self-signed", "dangerous-configuration"] }
+anyhow = "1.0.71"
+tracing = "0.1.37"
+tracing-subscriber = { version = "0.3.17", features = ["env-filter"] }
+
+[[bin]]
+name = "server"
+path = "src/server.rs"
+
+[[bin]]
+name = "client"
+path = "src/client.rs"
+
+[[bin]]
+name = "wt_server"
+path = "src/wt_server.rs"
+
+[[bin]]
+name = "wt_client"
+path = "src/wt_client.rs"
