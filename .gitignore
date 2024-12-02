@@ -2,3 +2,7 @@
 /xdp_ebpf.o
 /__pycache__
 /FlameGraph
+/websocket_rust/target
+/webrtc_rust/target
+/dtls_udp/target
+/gamesimulator

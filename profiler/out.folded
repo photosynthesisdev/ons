@@ -1,90 +1,215 @@
-server;BIO_read 12598191
-server;[libcrypto.so.1.1] 15483473
-server;[unknown];OPENSSL_cleanse 13259049
-server;[unknown];[libcrypto.so.1.1] 74843946
-server;[unknown];[libssl.so.1.1] 254176694
-server;[unknown];[unknown];<core::net::socket_addr::SocketAddr as std::net::socket_addr::ToSocketAddrs>::to_socket_addrs 14411039
-server;[unknown];[unknown];<udp_dtls::udp_channel::UdpChannel as std::io::Read>::read;__libc_recv 27615926
-server;[unknown];[unknown];<udp_dtls::udp_channel::UdpChannel as std::io::Read>::read;__libc_recv;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_recvfrom;__sys_recvfrom;sock_recvmsg;inet_recvmsg;udp_recvmsg;__skb_recv_udp;__skb_wait_for_more_packets 19805650
-server;[unknown];[unknown];<udp_dtls::udp_channel::UdpChannel as std::io::Read>::read;__libc_recv;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_recvfrom;__sys_recvfrom;sock_recvmsg;inet_recvmsg;udp_recvmsg;__skb_recv_udp;__skb_wait_for_more_packets;finish_wait 1561022
-server;[unknown];[unknown];<udp_dtls::udp_channel::UdpChannel as std::io::Read>::read;__libc_recv;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_recvfrom;__sys_recvfrom;sock_recvmsg;inet_recvmsg;udp_recvmsg;__skb_recv_udp;__skb_wait_for_more_packets;schedule_timeout;schedule;__schedule;__perf_event_task_sched_out;task_ctx_sched_out;ctx_sched_out;perf_pmu_disable.part.0;x86_pmu_disable;__intel_pmu_disable_all 163629643
-server;[unknown];[unknown];<udp_dtls::udp_channel::UdpChannel as std::io::Read>::read;__libc_recv;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_recvfrom;__sys_recvfrom;sock_recvmsg;inet_recvmsg;udp_recvmsg;__skb_recv_udp;__skb_wait_for_more_packets;schedule_timeout;schedule;__schedule;_raw_spin_lock 13445640
-server;[unknown];[unknown];<udp_dtls::udp_channel::UdpChannel as std::io::Read>::read;__libc_recv;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_recvfrom;__sys_recvfrom;sock_recvmsg;inet_recvmsg;udp_recvmsg;__skb_recv_udp;__skb_wait_for_more_packets;schedule_timeout;schedule;__schedule;apic_timer_interrupt 1179721
-server;[unknown];[unknown];<udp_dtls::udp_channel::UdpChannel as std::io::Read>::read;__libc_recv;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_recvfrom;__sys_recvfrom;sock_recvmsg;inet_recvmsg;udp_recvmsg;__skb_recv_udp;__skb_wait_for_more_packets;schedule_timeout;schedule;__schedule;deactivate_task 14165275
-server;[unknown];[unknown];<udp_dtls::udp_channel::UdpChannel as std::io::Read>::read;__libc_recv;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_recvfrom;__sys_recvfrom;sock_recvmsg;inet_recvmsg;udp_recvmsg;__skb_recv_udp;__skb_wait_for_more_packets;schedule_timeout;schedule;__schedule;deactivate_task;dequeue_task_fair;dequeue_entity;update_cfs_group 25809772
-server;[unknown];[unknown];<udp_dtls::udp_channel::UdpChannel as std::io::Read>::read;__libc_recv;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_recvfrom;__sys_recvfrom;sock_recvmsg;inet_recvmsg;udp_recvmsg;__skb_recv_udp;__skb_wait_for_more_packets;schedule_timeout;schedule;__schedule;deactivate_task;dequeue_task_fair;dequeue_entity;update_load_avg 14835236
-server;[unknown];[unknown];<udp_dtls::udp_channel::UdpChannel as std::io::Read>::read;__libc_recv;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_recvfrom;__sys_recvfrom;sock_recvmsg;inet_recvmsg;udp_recvmsg;__skb_recv_udp;__skb_wait_for_more_packets;schedule_timeout;schedule;__schedule;deactivate_task;psi_task_change 32436558
-server;[unknown];[unknown];<udp_dtls::udp_channel::UdpChannel as std::io::Read>::read;__libc_recv;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_recvfrom;__sys_recvfrom;sock_recvmsg;inet_recvmsg;udp_recvmsg;__skb_recv_udp;__skb_wait_for_more_packets;schedule_timeout;schedule;__schedule;finish_task_switch;__perf_event_task_sched_in 142902671
-server;[unknown];[unknown];<udp_dtls::udp_channel::UdpChannel as std::io::Read>::read;__libc_recv;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_recvfrom;__sys_recvfrom;sock_recvmsg;inet_recvmsg;udp_recvmsg;__skb_recv_udp;__skb_wait_for_more_packets;schedule_timeout;schedule;__schedule;finish_task_switch;__perf_event_task_sched_in;perf_event_sched_in;ctx_sched_in;visit_groups_merge;flexible_sched_in 20590803
-server;[unknown];[unknown];<udp_dtls::udp_channel::UdpChannel as std::io::Read>::read;__libc_recv;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_recvfrom;__sys_recvfrom;sock_recvmsg;inet_recvmsg;udp_recvmsg;__skb_recv_udp;__skb_wait_for_more_packets;schedule_timeout;schedule;__schedule;finish_task_switch;__perf_event_task_sched_in;perf_event_sched_in;ctx_sched_in;visit_groups_merge;flexible_sched_in;group_sched_in;perf_swevent_add 1257828
-server;[unknown];[unknown];<udp_dtls::udp_channel::UdpChannel as std::io::Read>::read;__libc_recv;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_recvfrom;__sys_recvfrom;sock_recvmsg;inet_recvmsg;udp_recvmsg;__skb_recv_udp;__skb_wait_for_more_packets;schedule_timeout;schedule;__schedule;finish_task_switch;__perf_event_task_sched_in;perf_pmu_enable.part.0 9114
-server;[unknown];[unknown];<udp_dtls::udp_channel::UdpChannel as std::io::Read>::read;__libc_recv;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_recvfrom;__sys_recvfrom;sock_recvmsg;inet_recvmsg;udp_recvmsg;__skb_recv_udp;__skb_wait_for_more_packets;schedule_timeout;schedule;__schedule;finish_task_switch;__perf_event_task_sched_in;perf_pmu_enable.part.0;x86_pmu_enable 22412
-server;[unknown];[unknown];<udp_dtls::udp_channel::UdpChannel as std::io::Read>::read;__libc_recv;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_recvfrom;__sys_recvfrom;sock_recvmsg;inet_recvmsg;udp_recvmsg;__skb_recv_udp;__skb_wait_for_more_packets;schedule_timeout;schedule;__schedule;finish_task_switch;__perf_event_task_sched_in;perf_pmu_enable.part.0;x86_pmu_enable;intel_pmu_enable_all;native_write_msr 30275968
-server;[unknown];[unknown];<udp_dtls::udp_channel::UdpChannel as std::io::Read>::read;__libc_recv;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_recvfrom;__sys_recvfrom;sock_recvmsg;inet_recvmsg;udp_recvmsg;__skb_recv_udp;__skb_wait_for_more_packets;schedule_timeout;schedule;__schedule;finish_task_switch;perf_pmu_enable.part.0 10948
-server;[unknown];[unknown];<udp_dtls::udp_channel::UdpChannel as std::io::Read>::read;__libc_recv;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_recvfrom;__sys_recvfrom;sock_recvmsg;inet_recvmsg;udp_recvmsg;__skb_recv_udp;_raw_spin_unlock_bh;__local_bh_enable_ip 1579268
-server;[unknown];[unknown];<udp_dtls::udp_channel::UdpChannel as std::io::Read>::read;__libc_recv;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_recvfrom;__sys_recvfrom;sock_recvmsg;inet_recvmsg;udp_recvmsg;_copy_to_iter 13499128
-server;[unknown];[unknown];<udp_dtls::udp_channel::UdpChannel as std::io::Read>::read;__libc_recv;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_recvfrom;__sys_recvfrom;sockfd_lookup_light;__fget_light 13478634
-server;[unknown];[unknown];<udp_dtls::udp_channel::UdpChannel as std::io::Read>::read;__libc_recv;entry_SYSCALL_64_after_hwframe;do_syscall_64;switch_fpu_return 12962903
-server;[unknown];[unknown];[libcrypto.so.1.1] 16157072
-server;[unknown];[unknown];[unknown];__libc_write;entry_SYSCALL_64 10515158
-server;[unknown];[unknown];__libc_write;entry_SYSCALL_64 15483473
-server;[unknown];[unknown];core::slice::raw::from_raw_parts 13521462
-server;[unknown];[unknown];openssl::ssl::bio::bread 25985160
-server;[unknown];[unknown];openssl::ssl::bio::bwrite 17087389
-server;[unknown];[unknown];std::net::udp::UdpSocket::send_to;__libc_sendto;entry_SYSCALL_64 28426912
-server;[unknown];[unknown];std::net::udp::UdpSocket::send_to;__libc_sendto;entry_SYSCALL_64_after_hwframe;do_syscall_64 14049146
-server;[unknown];[unknown];std::net::udp::UdpSocket::send_to;__libc_sendto;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_sendto;__sys_sendto;move_addr_to_kernel.part.0 12793600
-server;[unknown];[unknown];std::net::udp::UdpSocket::send_to;__libc_sendto;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_sendto;__sys_sendto;sock_sendmsg;inet_sendmsg;udp_sendmsg;_raw_spin_unlock_bh 14797338
-server;[unknown];[unknown];std::net::udp::UdpSocket::send_to;__libc_sendto;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_sendto;__sys_sendto;sock_sendmsg;inet_sendmsg;udp_sendmsg;ip4_datagram_release_cb 31381632
-server;[unknown];[unknown];std::net::udp::UdpSocket::send_to;__libc_sendto;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_sendto;__sys_sendto;sock_sendmsg;inet_sendmsg;udp_sendmsg;ip_make_skb;__ip_append_data.isra.0;sock_alloc_send_skb;sock_alloc_send_pskb;alloc_skb_with_frags;__alloc_skb;__kmalloc_reserve.isra.0;__kmalloc_node_track_caller;__slab_alloc;___slab_alloc 16261894
-server;[unknown];[unknown];std::net::udp::UdpSocket::send_to;__libc_sendto;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_sendto;__sys_sendto;sock_sendmsg;inet_sendmsg;udp_sendmsg;ip_make_skb;__ip_make_skb;ip_idents_reserve 11913712
-server;[unknown];[unknown];std::net::udp::UdpSocket::send_to;__libc_sendto;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_sendto;__sys_sendto;sock_sendmsg;inet_sendmsg;udp_sendmsg;ip_route_output_flow;xfrm_lookup_route;xfrm_lookup_with_ifid 17861770
-server;[unknown];[unknown];std::net::udp::UdpSocket::send_to;__libc_sendto;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_sendto;__sys_sendto;sock_sendmsg;inet_sendmsg;udp_sendmsg;udp_send_skb.isra.0;ip_send_skb;ip_local_out;__ip_local_out;drm_connector_init_panel_orientation_property 13713969
-server;[unknown];[unknown];std::net::udp::UdpSocket::send_to;__libc_sendto;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_sendto;__sys_sendto;sock_sendmsg;inet_sendmsg;udp_sendmsg;udp_send_skb.isra.0;ip_send_skb;ip_local_out;__ip_local_out;nf_hook_slow;drm_crtc_add_crc_entry;get_l4proto 13499128
-server;[unknown];[unknown];std::net::udp::UdpSocket::send_to;__libc_sendto;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_sendto;__sys_sendto;sock_sendmsg;inet_sendmsg;udp_sendmsg;udp_send_skb.isra.0;ip_send_skb;ip_local_out;ip_output;ip_finish_output;__ip_finish_output;ip_finish_output2;dev_queue_xmit;__dev_queue_xmit;_raw_spin_lock 11774233
-server;[unknown];[unknown];std::net::udp::UdpSocket::send_to;__libc_sendto;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_sendto;__sys_sendto;sock_sendmsg;inet_sendmsg;udp_sendmsg;udp_send_skb.isra.0;ip_send_skb;ip_local_out;ip_output;ip_finish_output;__ip_finish_output;ip_finish_output2;dev_queue_xmit;__dev_queue_xmit;sch_direct_xmit;dev_hard_start_xmit;event_rpc_bind_status;tg3_tx_frag_set 17802436
-server;[unknown];[unknown];std::net::udp::UdpSocket::send_to;__libc_sendto;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_sendto;__sys_sendto;sock_sendmsg;inet_sendmsg;udp_sendmsg;udp_send_skb.isra.0;ip_send_skb;ip_local_out;ip_output;ip_finish_output;__ip_finish_output;ip_finish_output2;neigh_resolve_output;dev_queue_xmit;dst_release 18387442
-server;[unknown];[unknown];std::net::udp::UdpSocket::send_to;__libc_sendto;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_sendto;__sys_sendto;sock_sendmsg;inet_sendmsg;udp_sendmsg;udp_send_skb.isra.0;ip_send_skb;ip_local_out;ip_output;nf_hook_slow;crtc_crc_read 15899458
-server;[unknown];[unknown];std::net::udp::UdpSocket::send_to;__libc_sendto;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_sendto;__sys_sendto;sock_sendmsg;inet_sendmsg;udp_sendmsg;udp_send_skb.isra.0;ip_send_skb;ip_local_out;ip_output;nf_hook_slow;crtc_crc_read;crtc_crc_read;nlm_traverse_locks 16285896
-server;[unknown];[unknown];std::net::udp::UdpSocket::send_to;__libc_sendto;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_sendto;__sys_sendto;sock_sendmsg;security_socket_sendmsg;apparmor_socket_sendmsg;aa_sk_perm 14575731
-server;[unknown];[unknown];std::panic::catch_unwind 12958786
-server;std::rt::lang_start;[libssl.so.1.1] 13772269
-server;std::rt::lang_start;core::slice::raw::from_raw_parts_mut::precondition_check 25330970
-server;std::rt::lang_start;foreign_types_shared::ForeignTypeRef::as_ptr 12088708
-server;std::rt::lang_start;openssl::ssl::SslStream<S>::read_uninit 13017595
-server;std::rt::lang_start;openssl::ssl::SslStream<S>::ssl_read_uninit 16731952
-server;std::rt::lang_start;openssl::ssl::SslStream<S>::ssl_write 27240761
-server;std::rt::lang_start;server::main 18786705
-server;std::rt::lang_start;server::main;std::io::stdio::_print 12139050
-server;std::rt::lang_start;server::main;std::io::stdio::_print;<&std::io::stdio::Stdout as std::io::Write>::write_fmt;<alloc::borrow::Cow<B> as core::fmt::Debug>::fmt;<str as core::fmt::Debug>::fmt;<std::io::Write::write_fmt::Adapter<T> as core::fmt::Write>::write_str;<std::io::stdio::StdoutLock as std::io::Write>::write_all 30897065
-server;std::rt::lang_start;server::main;std::io::stdio::_print;<&std::io::stdio::Stdout as std::io::Write>::write_fmt;core::fmt::write 9930579
-server;std::rt::lang_start;server::main;std::io::stdio::_print;<&std::io::stdio::Stdout as std::io::Write>::write_fmt;core::fmt::write;<core::net::socket_addr::SocketAddrV4 as core::fmt::Display>::fmt;core::fmt::write;<core::net::ip_addr::Ipv4Addr as core::fmt::Display>::fmt;core::fmt::write;core::fmt::num::imp::<impl core::fmt::Display for u8>::fmt 22214136
-server;std::rt::lang_start;server::main;std::io::stdio::_print;<&std::io::stdio::Stdout as std::io::Write>::write_fmt;core::fmt::write;<core::net::socket_addr::SocketAddrV4 as core::fmt::Display>::fmt;core::fmt::write;<core::net::ip_addr::Ipv4Addr as core::fmt::Display>::fmt;core::fmt::write;core::fmt::num::imp::<impl core::fmt::Display for u8>::fmt;<std::io::Write::write_fmt::Adapter<T> as core::fmt::Write>::write_str;<std::io::stdio::StdoutLock as std::io::Write>::write_all 9397627
-server;std::rt::lang_start;server::main;std::io::stdio::_print;<&std::io::stdio::Stdout as std::io::Write>::write_fmt;core::fmt::write;<core::net::socket_addr::SocketAddrV4 as core::fmt::Display>::fmt;core::fmt::write;<core::net::ip_addr::Ipv4Addr as core::fmt::Display>::fmt;core::fmt::write;core::fmt::num::imp::<impl core::fmt::Display for u8>::fmt;<std::io::Write::write_fmt::Adapter<T> as core::fmt::Write>::write_str;<std::io::stdio::StdoutLock as std::io::Write>::write_all;core::slice::memchr::memrchr 15841124
-server;std::rt::lang_start;server::main;std::io::stdio::_print;<&std::io::stdio::Stdout as std::io::Write>::write_fmt;core::fmt::write;<core::net::socket_addr::SocketAddrV4 as core::fmt::Display>::fmt;core::fmt::write;core::fmt::num::imp::<impl core::fmt::Display for u16>::fmt;<std::io::Write::write_fmt::Adapter<T> as core::fmt::Write>::write_str 14449588
-server;std::rt::lang_start;server::main;std::io::stdio::_print;<&std::io::stdio::Stdout as std::io::Write>::write_fmt;core::fmt::write;<std::io::Write::write_fmt::Adapter<T> as core::fmt::Write>::write_str;<std::io::stdio::StdoutLock as std::io::Write>::write_all 12022155
-server;std::rt::lang_start;server::main;std::io::stdio::_print;<&std::io::stdio::Stdout as std::io::Write>::write_fmt;core::fmt::write;<std::io::Write::write_fmt::Adapter<T> as core::fmt::Write>::write_str;<std::io::stdio::StdoutLock as std::io::Write>::write_all;__libc_write 18957234
-server;std::rt::lang_start;server::main;std::io::stdio::_print;<&std::io::stdio::Stdout as std::io::Write>::write_fmt;core::fmt::write;<std::io::Write::write_fmt::Adapter<T> as core::fmt::Write>::write_str;<std::io::stdio::StdoutLock as std::io::Write>::write_all;__libc_write;entry_SYSCALL_64_after_hwframe;do_syscall_64 72612811
-server;std::rt::lang_start;server::main;std::io::stdio::_print;<&std::io::stdio::Stdout as std::io::Write>::write_fmt;core::fmt::write;<std::io::Write::write_fmt::Adapter<T> as core::fmt::Write>::write_str;<std::io::stdio::StdoutLock as std::io::Write>::write_all;__libc_write;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_write;ksys_write;__vfs_write 163375202
-server;std::rt::lang_start;server::main;std::io::stdio::_print;<&std::io::stdio::Stdout as std::io::Write>::write_fmt;core::fmt::write;<std::io::Write::write_fmt::Adapter<T> as core::fmt::Write>::write_str;<std::io::stdio::StdoutLock as std::io::Write>::write_all;__libc_write;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_write;ksys_write;vfs_write;__vfs_write;tty_write;n_tty_write 73336147
-server;std::rt::lang_start;server::main;std::io::stdio::_print;<&std::io::stdio::Stdout as std::io::Write>::write_fmt;core::fmt::write;<std::io::Write::write_fmt::Adapter<T> as core::fmt::Write>::write_str;<std::io::stdio::StdoutLock as std::io::Write>::write_all;__libc_write;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_write;ksys_write;vfs_write;__vfs_write;tty_write;n_tty_write;do_output_char;pty_write;__lock_text_start 17008320
-server;std::rt::lang_start;server::main;std::io::stdio::_print;<&std::io::stdio::Stdout as std::io::Write>::write_fmt;core::fmt::write;<std::io::Write::write_fmt::Adapter<T> as core::fmt::Write>::write_str;<std::io::stdio::StdoutLock as std::io::Write>::write_all;__libc_write;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_write;ksys_write;vfs_write;__vfs_write;tty_write;n_tty_write;do_output_char;pty_write;memcpy_erms 13036018
-server;std::rt::lang_start;server::main;std::io::stdio::_print;<&std::io::stdio::Stdout as std::io::Write>::write_fmt;core::fmt::write;<std::io::Write::write_fmt::Adapter<T> as core::fmt::Write>::write_str;<std::io::stdio::StdoutLock as std::io::Write>::write_all;__libc_write;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_write;ksys_write;vfs_write;__vfs_write;tty_write;n_tty_write;do_output_char;pty_write;tty_flip_buffer_push;queue_work_on 12022155
-server;std::rt::lang_start;server::main;std::io::stdio::_print;<&std::io::stdio::Stdout as std::io::Write>::write_fmt;core::fmt::write;<std::io::Write::write_fmt::Adapter<T> as core::fmt::Write>::write_str;<std::io::stdio::StdoutLock as std::io::Write>::write_all;__libc_write;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_write;ksys_write;vfs_write;__vfs_write;tty_write;n_tty_write;pty_write;tty_flip_buffer_push;queue_work_on;__queue_work;insert_work;wake_up_process;try_to_wake_up 12360641
-server;std::rt::lang_start;server::main;std::io::stdio::_print;<&std::io::stdio::Stdout as std::io::Write>::write_fmt;core::fmt::write;<std::io::Write::write_fmt::Adapter<T> as core::fmt::Write>::write_str;<std::io::stdio::StdoutLock as std::io::Write>::write_all;__libc_write;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_write;ksys_write;vfs_write;__vfs_write;tty_write;n_tty_write;pty_write;tty_flip_buffer_push;queue_work_on;__queue_work;insert_work;wake_up_process;try_to_wake_up;__lock_text_start 16216084
-server;std::rt::lang_start;server::main;std::io::stdio::_print;<&std::io::stdio::Stdout as std::io::Write>::write_fmt;core::fmt::write;<std::io::Write::write_fmt::Adapter<T> as core::fmt::Write>::write_str;<std::io::stdio::StdoutLock as std::io::Write>::write_all;__libc_write;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_write;ksys_write;vfs_write;__vfs_write;tty_write;n_tty_write;pty_write;tty_flip_buffer_push;queue_work_on;__queue_work;insert_work;wake_up_process;try_to_wake_up;select_task_rq_fair 34241462
-server;std::rt::lang_start;server::main;std::io::stdio::_print;<&std::io::stdio::Stdout as std::io::Write>::write_fmt;core::fmt::write;<std::io::Write::write_fmt::Adapter<T> as core::fmt::Write>::write_str;<std::io::stdio::StdoutLock as std::io::Write>::write_all;__libc_write;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_write;ksys_write;vfs_write;__vfs_write;tty_write;n_tty_write;pty_write;tty_flip_buffer_push;queue_work_on;__queue_work;insert_work;wake_up_process;try_to_wake_up;ttwu_do_activate;activate_task;enqueue_task_fair 21934009
-server;std::rt::lang_start;server::main;std::io::stdio::_print;<&std::io::stdio::Stdout as std::io::Write>::write_fmt;core::fmt::write;<std::io::Write::write_fmt::Adapter<T> as core::fmt::Write>::write_str;<std::io::stdio::StdoutLock as std::io::Write>::write_all;__libc_write;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_write;ksys_write;vfs_write;__vfs_write;tty_write;n_tty_write;pty_write;tty_flip_buffer_push;queue_work_on;__queue_work;insert_work;wake_up_process;try_to_wake_up;ttwu_do_activate;activate_task;enqueue_task_fair;enqueue_entity;update_load_avg 24026775
-server;std::rt::lang_start;server::main;std::io::stdio::_print;<&std::io::stdio::Stdout as std::io::Write>::write_fmt;core::fmt::write;<std::io::Write::write_fmt::Adapter<T> as core::fmt::Write>::write_str;<std::io::stdio::StdoutLock as std::io::Write>::write_all;__libc_write;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_write;ksys_write;vfs_write;__vfs_write;tty_write;n_tty_write;pty_write;tty_flip_buffer_push;queue_work_on;__queue_work;insert_work;wake_up_process;try_to_wake_up;ttwu_do_activate;ttwu_do_wakeup;check_preempt_curr 32882533
-server;std::rt::lang_start;server::main;std::io::stdio::_print;<&std::io::stdio::Stdout as std::io::Write>::write_fmt;core::fmt::write;<std::io::Write::write_fmt::Adapter<T> as core::fmt::Write>::write_str;<std::io::stdio::StdoutLock as std::io::Write>::write_all;__libc_write;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_write;ksys_write;vfs_write;__vfs_write;tty_write;n_tty_write;pty_write;tty_flip_buffer_push;queue_work_on;__queue_work;insert_work;wake_up_process;try_to_wake_up;ttwu_do_activate;ttwu_do_wakeup;check_preempt_curr;resched_curr 10349749
-server;std::rt::lang_start;server::main;std::io::stdio::_print;<&std::io::stdio::Stdout as std::io::Write>::write_fmt;core::fmt::write;<std::io::Write::write_fmt::Adapter<T> as core::fmt::Write>::write_str;<std::io::stdio::StdoutLock as std::io::Write>::write_all;__libc_write;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_write;ksys_write;vfs_write;__vfs_write;tty_write;n_tty_write;pty_write;tty_flip_buffer_push;queue_work_on;__queue_work;insert_work;wake_up_process;try_to_wake_up;update_cfs_rq_h_load 13580153
-server;std::rt::lang_start;server::main;std::io::stdio::_print;<&std::io::stdio::Stdout as std::io::Write>::write_fmt;core::fmt::write;<std::io::Write::write_fmt::Adapter<T> as core::fmt::Write>::write_str;<std::io::stdio::StdoutLock as std::io::Write>::write_all;__libc_write;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_write;ksys_write;vfs_write;__vfs_write;tty_write;n_tty_write;pty_write;tty_flip_buffer_push;queue_work_on;__queue_work;insert_work;wake_up_process;try_to_wake_up;update_rq_clock;sched_clock_cpu;native_sched_clock 11234113
-server;std::rt::lang_start;server::main;std::io::stdio::_print;<&std::io::stdio::Stdout as std::io::Write>::write_fmt;core::fmt::write;<std::io::Write::write_fmt::Adapter<T> as core::fmt::Write>::write_str;<std::io::stdio::StdoutLock as std::io::Write>::write_all;__libc_write;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_write;ksys_write;vfs_write;__vfs_write;tty_write;n_tty_write;pty_write;tty_flip_buffer_push;queue_work_on;_raw_spin_lock 13356935
-server;std::rt::lang_start;server::main;std::io::stdio::_print;<&std::io::stdio::Stdout as std::io::Write>::write_fmt;core::fmt::write;<std::io::Write::write_fmt::Adapter<T> as core::fmt::Write>::write_str;<std::io::stdio::StdoutLock as std::io::Write>::write_all;__libc_write;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_write;ksys_write;vfs_write;__vfs_write;tty_write;n_tty_write;pty_write;tty_flip_buffer_push;queue_work_on;get_work_pool 146138652
-server;std::rt::lang_start;server::main;std::io::stdio::_print;<&std::io::stdio::Stdout as std::io::Write>::write_fmt;core::fmt::write;<std::io::Write::write_fmt::Adapter<T> as core::fmt::Write>::write_str;<std::io::stdio::StdoutLock as std::io::Write>::write_all;__libc_write;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_write;ksys_write;vfs_write;__vfs_write;tty_write;n_tty_write;tty_write_room;tty_buffer_space_avail 18620897
-server;std::rt::lang_start;server::main;std::io::stdio::_print;<&std::io::stdio::Stdout as std::io::Write>::write_fmt;core::fmt::write;<std::io::Write::write_fmt::Adapter<T> as core::fmt::Write>::write_str;<std::io::stdio::StdoutLock as std::io::Write>::write_all;__libc_write;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_write;ksys_write;vfs_write;__vfs_write;tty_write;tty_ldisc_ref_wait;ldsem_down_read 15428214
-server;std::rt::lang_start;server::main;std::io::stdio::_print;<&std::io::stdio::Stdout as std::io::Write>::write_fmt;core::fmt::write;<std::io::Write::write_fmt::Adapter<T> as core::fmt::Write>::write_str;<std::io::stdio::StdoutLock as std::io::Write>::write_all;__libc_write;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_write;ksys_write;vfs_write;__vfs_write;tty_write;tty_paranoia_check 16679889
-server;std::rt::lang_start;server::main;std::io::stdio::_print;<&std::io::stdio::Stdout as std::io::Write>::write_fmt;core::fmt::write;<std::io::Write::write_fmt::Adapter<T> as core::fmt::Write>::write_str;<std::io::stdio::StdoutLock as std::io::Write>::write_all;__libc_write;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_write;ksys_write;vfs_write;__vfs_write;tty_write;tty_write_room 17266572
-server;std::rt::lang_start;server::main;std::io::stdio::_print;<&std::io::stdio::Stdout as std::io::Write>::write_fmt;core::fmt::write;<std::io::Write::write_fmt::Adapter<T> as core::fmt::Write>::write_str;<std::io::stdio::StdoutLock as std::io::Write>::write_all;__libc_write;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_write;ksys_write;vfs_write;fsnotify 16494114
-server;std::rt::lang_start;server::main;std::io::stdio::_print;<&std::io::stdio::Stdout as std::io::Write>::write_fmt;core::fmt::write;<std::io::Write::write_fmt::Adapter<T> as core::fmt::Write>::write_str;<std::io::stdio::StdoutLock as std::io::Write>::write_all;core::slice::memchr::memrchr 18858420
-server;std::rt::lang_start;server::main;std::io::stdio::_print;<&std::io::stdio::Stdout as std::io::Write>::write_fmt;core::fmt::write;<std::io::Write::write_fmt::Adapter<T> as core::fmt::Write>::write_str;<std::io::stdio::StdoutLock as std::io::Write>::write_all;std::io::buffered::bufwriter::BufWriter<W>::flush_buf 15641207
+tokio-runtime-w;<quinn::connection::ReadDatagram as core::future::future::Future>::poll 187323088
+tokio-runtime-w;<quinn_proto::varint::VarInt as quinn_proto::coding::Codec>::decode 19598403
+tokio-runtime-w;<tokio::runtime::coop::RestoreOnPending as core::ops::drop::Drop>::drop 41527401
+tokio-runtime-w;<tokio::sync::batch_semaphore::Acquire as core::future::future::Future>::poll 28013700
+tokio-runtime-w;[libc-2.31.so];swapgs_restore_regs_and_return_to_usermode;prepare_exit_to_usermode;exit_to_usermode_loop;schedule;__schedule;finish_task_switch;__perf_event_task_sched_in 13495
+tokio-runtime-w;[unknown];<mio::event::events::Iter as core::iter::traits::iterator::Iterator>::next 19356705
+tokio-runtime-w;[unknown];<quinn::connection::ConnectionDriver as core::future::future::Future>::poll;std::sys::pal::unix::time::Timespec::now 11998178
+tokio-runtime-w;[unknown];<quinn_proto::congestion::cubic::Cubic as quinn_proto::congestion::Controller>::window 28901143
+tokio-runtime-w;[unknown];<sharded_slab::pool::Ref<T,C> as core::ops::drop::Drop>::drop 11373005
+tokio-runtime-w;[unknown];<tokio::sync::batch_semaphore::Acquire as core::future::future::Future>::poll 17528011
+tokio-runtime-w;[unknown];<tokio::sync::mpsc::bounded::Semaphore as tokio::sync::mpsc::chan::Semaphore>::add_permit 17507940
+tokio-runtime-w;[unknown];<tokio::sync::notify::Notified as core::ops::drop::Drop>::drop 9621683
+tokio-runtime-w;[unknown];<tracing_subscriber::layer::layered::Layered<L,S> as tracing_core::subscriber::Subscriber>::try_close 150833539
+tokio-runtime-w;[unknown];<tracing_subscriber::registry::sharded::Registry as tracing_core::subscriber::Subscriber>::exit 13407954
+tokio-runtime-w;[unknown];[libc-2.31.so] 182288687
+tokio-runtime-w;[unknown];[unknown];<quinn::endpoint::EndpointDriver as core::future::future::Future>::poll 14761346
+tokio-runtime-w;[unknown];[unknown];<tracing::instrument::Instrumented<T> as core::future::future::Future>::poll;call_function_single_interrupt;smp_call_function_single_interrupt;generic_smp_call_function_single_interrupt;flush_smp_call_function_queue;remote_function;event_function 12830
+tokio-runtime-w;[unknown];[unknown];[libm-2.31.so] 11521522
+tokio-runtime-w;[unknown];[unknown];__floattidf 11395565
+tokio-runtime-w;[unknown];[unknown];std::sys::pal::unix::time::Timespec::now 177926777
+tokio-runtime-w;[unknown];[unknown];tokio::runtime::scheduler::multi_thread::queue::Steal<T>::steal_into 21491471
+tokio-runtime-w;[unknown];[unknown];tokio::runtime::scheduler::multi_thread::worker::Context::park_timeout 10727355
+tokio-runtime-w;[unknown];[unknown];tokio::runtime::scheduler::multi_thread::worker::Context::run 272567799
+tokio-runtime-w;[unknown];[unknown];tokio::runtime::scheduler::multi_thread::worker::Context::run;clock_gettime 2268213
+tokio-runtime-w;[unknown];[unknown];tokio::runtime::task::state::State::transition_to_idle 10721178
+tokio-runtime-w;[unknown];alloc::string::String::from_utf8_lossy 14810603
+tokio-runtime-w;[unknown];epoll_wait;entry_SYSCALL_64_after_hwframe;__x64_sys_epoll_wait 19759560
+tokio-runtime-w;[unknown];epoll_wait;entry_SYSCALL_64_after_hwframe;do_syscall_64 44593836
+tokio-runtime-w;[unknown];epoll_wait;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_epoll_wait;do_epoll_wait 12277670
+tokio-runtime-w;[unknown];epoll_wait;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_epoll_wait;do_epoll_wait;__fget_light 9134917
+tokio-runtime-w;[unknown];epoll_wait;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_epoll_wait;do_epoll_wait;ep_poll 198689465
+tokio-runtime-w;[unknown];epoll_wait;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_epoll_wait;do_epoll_wait;ep_poll;ep_scan_ready_list.constprop.0 14247349
+tokio-runtime-w;[unknown];epoll_wait;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_epoll_wait;do_epoll_wait;ep_poll;ep_scan_ready_list.constprop.0;ep_send_events_proc 21290542
+tokio-runtime-w;[unknown];epoll_wait;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_epoll_wait;do_epoll_wait;ep_poll;ep_scan_ready_list.constprop.0;ep_send_events_proc;ep_item_poll.isra.0 3521511
+tokio-runtime-w;[unknown];epoll_wait;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_epoll_wait;do_epoll_wait;ep_poll;ep_scan_ready_list.constprop.0;ep_send_events_proc;ep_item_poll.isra.0;sock_poll 3595883
+tokio-runtime-w;[unknown];epoll_wait;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_epoll_wait;do_epoll_wait;ep_poll;ep_scan_ready_list.constprop.0;ep_send_events_proc;ep_item_poll.isra.0;sock_poll;udp_poll 1784513
+tokio-runtime-w;[unknown];epoll_wait;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_epoll_wait;do_epoll_wait;ep_poll;ep_scan_ready_list.constprop.0;ep_send_events_proc;ep_item_poll.isra.0;sock_poll;udp_poll;datagram_poll 10799091
+tokio-runtime-w;[unknown];epoll_wait;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_epoll_wait;do_epoll_wait;ep_poll;ep_scan_ready_list.constprop.0;ep_send_events_proc;sock_poll 3584727
+tokio-runtime-w;[unknown];epoll_wait;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_epoll_wait;do_epoll_wait;ep_poll;ep_send_events_proc 1827265
+tokio-runtime-w;[unknown];epoll_wait;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_epoll_wait;do_epoll_wait;ep_poll;schedule_hrtimeout_range;schedule_hrtimeout_range_clock;enqueue_hrtimer 11597840
+tokio-runtime-w;[unknown];epoll_wait;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_epoll_wait;do_epoll_wait;ep_poll;schedule_hrtimeout_range;schedule_hrtimeout_range_clock;hrtimer_init_sleeper 14188850
+tokio-runtime-w;[unknown];epoll_wait;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_epoll_wait;do_epoll_wait;ep_poll;schedule_hrtimeout_range;schedule_hrtimeout_range_clock;hrtimer_try_to_cancel;hrtimer_active 7423000
+tokio-runtime-w;[unknown];epoll_wait;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_epoll_wait;do_epoll_wait;ep_poll;schedule_hrtimeout_range;schedule_hrtimeout_range_clock;hrtimer_try_to_cancel;lock_hrtimer_base;_raw_spin_lock_irqsave 1602820
+tokio-runtime-w;[unknown];epoll_wait;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_epoll_wait;do_epoll_wait;ep_poll;schedule_hrtimeout_range;schedule_hrtimeout_range_clock;schedule;__schedule;__perf_event_task_sched_out;task_ctx_sched_out;ctx_sched_out;x86_pmu_disable 15199101
+tokio-runtime-w;[unknown];epoll_wait;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_epoll_wait;do_epoll_wait;ep_poll;schedule_hrtimeout_range;schedule_hrtimeout_range_clock;schedule;__schedule;deactivate_task 17528773
+tokio-runtime-w;[unknown];epoll_wait;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_epoll_wait;do_epoll_wait;ep_poll;schedule_hrtimeout_range;schedule_hrtimeout_range_clock;schedule;__schedule;deactivate_task;dequeue_task_fair;account_entity_dequeue 18031303
+tokio-runtime-w;[unknown];epoll_wait;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_epoll_wait;do_epoll_wait;ep_poll;schedule_hrtimeout_range;schedule_hrtimeout_range_clock;schedule;__schedule;deactivate_task;dequeue_task_fair;clear_buddies 13021782
+tokio-runtime-w;[unknown];epoll_wait;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_epoll_wait;do_epoll_wait;ep_poll;schedule_hrtimeout_range;schedule_hrtimeout_range_clock;schedule;__schedule;deactivate_task;dequeue_task_fair;update_cfs_group 10801757
+tokio-runtime-w;[unknown];epoll_wait;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_epoll_wait;do_epoll_wait;ep_poll;schedule_hrtimeout_range;schedule_hrtimeout_range_clock;schedule;__schedule;deactivate_task;psi_task_change 28569569
+tokio-runtime-w;[unknown];epoll_wait;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_epoll_wait;do_epoll_wait;ep_poll;schedule_hrtimeout_range;schedule_hrtimeout_range_clock;schedule;__schedule;deactivate_task;psi_task_change;record_times;sched_clock_cpu;native_sched_clock 171024865
+tokio-runtime-w;[unknown];epoll_wait;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_epoll_wait;do_epoll_wait;ep_poll;schedule_hrtimeout_range;schedule_hrtimeout_range_clock;schedule;__schedule;finish_task_switch;__perf_event_task_sched_in 45730
+tokio-runtime-w;[unknown];epoll_wait;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_epoll_wait;do_epoll_wait;ep_poll;schedule_hrtimeout_range;schedule_hrtimeout_range_clock;schedule;__schedule;finish_task_switch;__perf_event_task_sched_in;perf_event_sched_in;ctx_sched_in;visit_groups_merge 175877493
+tokio-runtime-w;[unknown];epoll_wait;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_epoll_wait;do_epoll_wait;ep_poll;schedule_hrtimeout_range;schedule_hrtimeout_range_clock;schedule;__schedule;finish_task_switch;__perf_event_task_sched_in;perf_event_sched_in;ctx_sched_in;visit_groups_merge;flexible_sched_in;group_sched_in;event_sched_in.isra.0 10077345
+tokio-runtime-w;[unknown];epoll_wait;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_epoll_wait;do_epoll_wait;ep_poll;schedule_hrtimeout_range;schedule_hrtimeout_range_clock;schedule;__schedule;finish_task_switch;__perf_event_task_sched_in;perf_event_sched_in;ctx_sched_in;visit_groups_merge;flexible_sched_in;group_sched_in;event_sched_in.isra.0;perf_swevent_add;perf_event_update_userpage;arch_perf_update_userpage 13966415
+tokio-runtime-w;[unknown];epoll_wait;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_epoll_wait;do_epoll_wait;ep_poll;schedule_hrtimeout_range;schedule_hrtimeout_range_clock;schedule;__schedule;finish_task_switch;__perf_event_task_sched_in;perf_pmu_enable.part.0 25101
+tokio-runtime-w;[unknown];epoll_wait;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_epoll_wait;do_epoll_wait;ep_poll;schedule_hrtimeout_range;schedule_hrtimeout_range_clock;schedule;__schedule;finish_task_switch;__perf_event_task_sched_in;perf_pmu_enable.part.0;x86_pmu_enable 905634
+tokio-runtime-w;[unknown];epoll_wait;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_epoll_wait;do_epoll_wait;ep_poll;schedule_hrtimeout_range;schedule_hrtimeout_range_clock;schedule;__schedule;finish_task_switch;__perf_event_task_sched_in;perf_pmu_enable.part.0;x86_pmu_enable;intel_pmu_enable_all;native_write_msr 11364292
+tokio-runtime-w;[unknown];epoll_wait;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_epoll_wait;do_epoll_wait;ep_poll;schedule_hrtimeout_range;schedule_hrtimeout_range_clock;schedule;__schedule;finish_task_switch;_raw_spin_lock 173432399
+tokio-runtime-w;[unknown];epoll_wait;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_epoll_wait;do_epoll_wait;ep_poll;schedule_hrtimeout_range;schedule_hrtimeout_range_clock;schedule;__schedule;finish_task_switch;ret_from_intr;do_IRQ;handle_edge_irq;handle_irq_event;handle_irq_event_percpu;__handle_irq_event_percpu;tg3_msi_1shot;__napi_schedule;__raise_softirq_irqoff 1758371
+tokio-runtime-w;[unknown];epoll_wait;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_epoll_wait;do_epoll_wait;ep_poll;schedule_hrtimeout_range;schedule_hrtimeout_range_clock;schedule;__schedule;pick_next_task_idle;put_prev_task_fair;put_prev_entity 11084928
+tokio-runtime-w;[unknown];epoll_wait;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_epoll_wait;do_epoll_wait;ep_poll;select_estimate_accuracy;ktime_get_ts64 17548482
+tokio-runtime-w;[unknown];epoll_wait;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_epoll_wait;do_epoll_wait;schedule_hrtimeout_range 9504478
+tokio-runtime-w;[unknown];epoll_wait;entry_SYSCALL_64_after_hwframe;do_syscall_64;fpregs_assert_state_consistent 6165924
+tokio-runtime-w;[unknown];epoll_wait;syscall_return_via_sysret 12160712
+tokio-runtime-w;[unknown];malloc 20101814
+tokio-runtime-w;[unknown];mio::poll::Poll::poll 24930134
+tokio-runtime-w;[unknown];octets::Octets::get_varint 162869182
+tokio-runtime-w;[unknown];quinn::connection::poll_accept 15949875
+tokio-runtime-w;[unknown];quinn::endpoint::RecvState::poll_socket 12766138
+tokio-runtime-w;[unknown];quinn_proto::connection::Connection::handle_decode 11607113
+tokio-runtime-w;[unknown];quinn_proto::connection::Connection::poll_transmit 25979790
+tokio-runtime-w;[unknown];quinn_proto::connection::Connection::process_payload 50166384
+tokio-runtime-w;[unknown];quinn_proto::connection::packet_crypto::decrypt_packet_body 12936173
+tokio-runtime-w;[unknown];quinn_proto::connection::packet_crypto::unprotect_header 12168352
+tokio-runtime-w;[unknown];quinn_proto::connection::spaces::PacketSpace::maybe_queue_probe 11597840
+tokio-runtime-w;[unknown];quinn_proto::connection::streams::state::StreamsState::write_control_frames 19440073
+tokio-runtime-w;[unknown];quinn_proto::packet::PartialDecode::new 12660457
+tokio-runtime-w;[unknown];quinn_proto::range_set::array_range_set::ArrayRangeSet::insert 19959605
+tokio-runtime-w;[unknown];quinn_udp::imp::UdpSocketState::recv;__errno_location 14988899
+tokio-runtime-w;[unknown];recvmmsg;entry_SYSCALL_64 16099822
+tokio-runtime-w;[unknown];recvmmsg;entry_SYSCALL_64_after_hwframe;do_syscall_64 22751022
+tokio-runtime-w;[unknown];recvmmsg;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_recvmmsg;__sys_recvmmsg;do_recvmmsg 33185595
+tokio-runtime-w;[unknown];recvmmsg;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_recvmmsg;__sys_recvmmsg;do_recvmmsg;___sys_recvmsg;____sys_recvmsg;_copy_to_user 10721178
+tokio-runtime-w;[unknown];recvmmsg;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_recvmmsg;__sys_recvmmsg;do_recvmmsg;___sys_recvmsg;____sys_recvmsg;sock_recvmsg;inet6_recvmsg;udpv6_recvmsg 35120559
+tokio-runtime-w;[unknown];recvmmsg;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_recvmmsg;__sys_recvmmsg;do_recvmmsg;___sys_recvmsg;____sys_recvmsg;sock_recvmsg;inet6_recvmsg;udpv6_recvmsg;__cgroup_bpf_run_filter_sock_addr 24172498
+tokio-runtime-w;[unknown];recvmmsg;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_recvmmsg;__sys_recvmmsg;do_recvmmsg;___sys_recvmsg;____sys_recvmsg;sock_recvmsg;inet6_recvmsg;udpv6_recvmsg;__check_object_size;__virt_addr_valid 10487337
+tokio-runtime-w;[unknown];recvmmsg;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_recvmmsg;__sys_recvmmsg;do_recvmmsg;___sys_recvmsg;____sys_recvmsg;sock_recvmsg;inet6_recvmsg;udpv6_recvmsg;_copy_to_iter;copy_user_generic_unrolled 12123280
+tokio-runtime-w;[unknown];recvmmsg;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_recvmmsg;__sys_recvmmsg;do_recvmmsg;___sys_recvmsg;____sys_recvmsg;sock_recvmsg;inet6_recvmsg;udpv6_recvmsg;_raw_spin_lock_bh 10939378
+tokio-runtime-w;[unknown];recvmmsg;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_recvmmsg;__sys_recvmmsg;do_recvmmsg;___sys_recvmsg;____sys_recvmsg;sock_recvmsg;inet6_recvmsg;udpv6_recvmsg;ip6_datagram_recv_common_ctl;put_cmsg;copy_user_generic_unrolled 9000770
+tokio-runtime-w;[unknown];recvmmsg;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_recvmmsg;__sys_recvmmsg;do_recvmmsg;___sys_recvmsg;copy_msghdr_from_user 12160712
+tokio-runtime-w;[unknown];recvmmsg;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_recvmmsg;__sys_recvmmsg;do_recvmmsg;___sys_recvmsg;copy_msghdr_from_user;copy_user_generic_unrolled 17702016
+tokio-runtime-w;[unknown];recvmmsg;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_recvmmsg;__sys_recvmmsg;do_recvmmsg;sockfd_lookup_light;__fdget;__fget_light;__fget 31578025
+tokio-runtime-w;[unknown];recvmmsg;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_recvmmsg;__sys_recvmmsg;sockfd_lookup_light 18589012
+tokio-runtime-w;[unknown];ring::aead::quic::aes_new_mask 7250725
+tokio-runtime-w;[unknown];ring_core_0_17_8_aes_hw_encrypt 193812072
+tokio-runtime-w;[unknown];std::sys::pal::unix::time::Timespec::now 14947647
+tokio-runtime-w;[unknown];tokio::macros::support::thread_rng_n 16838166
+tokio-runtime-w;[unknown];tokio::runtime::io::driver::Driver::turn 15330910
+tokio-runtime-w;[unknown];tokio::runtime::task::harness::Harness<T,S>::poll 19690417
+tokio-runtime-w;[unknown];tokio::runtime::task::waker::wake_by_val;[unknown];[unknown];[unknown];<quinn_proto::varint::VarInt as quinn_proto::coding::Codec>::decode 6165924
+tokio-runtime-w;[unknown];tokio::runtime::task::waker::wake_by_val;[unknown];[unknown];[unknown];bytes::bytes_mut::shared_v_clone 11259200
+tokio-runtime-w;[unknown];tokio::runtime::task::waker::wake_by_val;[unknown];[unknown];tokio::net::unix::datagram::socket::UnixDatagram::poll_recv_ready 16411214
+tokio-runtime-w;[unknown];tokio::runtime::task::waker::wake_by_val;[unknown];tokio::runtime::task::state::State::transition_to_notified_by_val 11982573
+tokio-runtime-w;[unknown];tokio::runtime::time::Driver::park_internal 20361821
+tokio-runtime-w;[unknown];tokio::runtime::time::wheel::Wheel::next_expiration 41371437
+tokio-runtime-w;[unknown];tokio::runtime::time::wheel::level::Level::next_expiration 181226791
+tokio-runtime-w;[unknown];tokio::sync::batch_semaphore::Semaphore::add_permits_locked 10879666
+tokio-runtime-w;[unknown];tokio::sync::batch_semaphore::Semaphore::release 11485061
+tokio-runtime-w;[unknown];tokio::sync::mpsc::list::Tx<T>::find_block 13407954
+tokio-runtime-w;[unknown];tokio::sync::mpsc::list::Tx<T>::push 5933860
+tokio-runtime-w;[unknown];tokio::sync::mpsc::unbounded::UnboundedSender<T>::send 133991584
+tokio-runtime-w;[unknown];tokio::sync::notify::Notified::poll_notified 14308766
+tokio-runtime-w;[unknown];tokio::sync::notify::Notify::notify_waiters 13021782
+tokio-runtime-w;[unknown];tokio::util::linked_list::LinkedList<L,<L as tokio::util::linked_list::Link>::Target>::push_front 163416301
+tokio-runtime-w;[unknown];tracing_subscriber::filter::env::EnvFilter::on_enter 11604203
+tokio-runtime-w;[unknown];wt_server::handle_connection_impl::_$u7b$$u7b$closure$u7d$$u7d$::_$u7b$$u7b$closure$u7d$$u7d$::h720980f95604b8da 11701249
+tokio-runtime-w;[unknown];wtransport::driver::worker::Worker::run_impl::_$u7b$$u7b$closure$u7d$$u7d$::_$u7b$$u7b$closure$u7d$$u7d$::hf1a8a8984a80afbb 201353805
+tokio-runtime-w;__libc_sendmsg;entry_SYSCALL_64 17766850
+tokio-runtime-w;__libc_sendmsg;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_sendmsg;__sys_sendmsg;___sys_sendmsg;____sys_sendmsg;copy_user_enhanced_fast_string 40809291
+tokio-runtime-w;__libc_sendmsg;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_sendmsg;__sys_sendmsg;___sys_sendmsg;____sys_sendmsg;sock_kfree_s;kfree 9621784
+tokio-runtime-w;__libc_sendmsg;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_sendmsg;__sys_sendmsg;___sys_sendmsg;____sys_sendmsg;sock_sendmsg;inet6_sendmsg;udpv6_sendmsg;security_sk_classify_flow 9629272
+tokio-runtime-w;__libc_sendmsg;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_sendmsg;__sys_sendmsg;___sys_sendmsg;____sys_sendmsg;sock_sendmsg;inet6_sendmsg;udpv6_sendmsg;udp_sendmsg;__ip_make_skb 11640485
+tokio-runtime-w;__libc_sendmsg;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_sendmsg;__sys_sendmsg;___sys_sendmsg;____sys_sendmsg;sock_sendmsg;inet6_sendmsg;udpv6_sendmsg;udp_sendmsg;ip_make_skb;__ip_append_data.isra.0;ip_generic_getfrag;__check_object_size 10112533
+tokio-runtime-w;__libc_sendmsg;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_sendmsg;__sys_sendmsg;___sys_sendmsg;____sys_sendmsg;sock_sendmsg;inet6_sendmsg;udpv6_sendmsg;udp_sendmsg;ip_make_skb;__ip_append_data.isra.0;ip_generic_getfrag;__check_object_size;__virt_addr_valid 190669063
+tokio-runtime-w;__libc_sendmsg;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_sendmsg;__sys_sendmsg;___sys_sendmsg;____sys_sendmsg;sock_sendmsg;inet6_sendmsg;udpv6_sendmsg;udp_sendmsg;ip_make_skb;__ip_append_data.isra.0;ip_generic_getfrag;_copy_from_iter_full;copy_user_generic_unrolled 183715584
+tokio-runtime-w;__libc_sendmsg;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_sendmsg;__sys_sendmsg;___sys_sendmsg;____sys_sendmsg;sock_sendmsg;inet6_sendmsg;udpv6_sendmsg;udp_sendmsg;ip_make_skb;__ip_append_data.isra.0;skb_put 105462226
+tokio-runtime-w;__libc_sendmsg;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_sendmsg;__sys_sendmsg;___sys_sendmsg;____sys_sendmsg;sock_sendmsg;inet6_sendmsg;udpv6_sendmsg;udp_sendmsg;ip_make_skb;__ip_append_data.isra.0;sock_alloc_send_skb;sock_alloc_send_pskb 152741813
+tokio-runtime-w;__libc_sendmsg;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_sendmsg;__sys_sendmsg;___sys_sendmsg;____sys_sendmsg;sock_sendmsg;inet6_sendmsg;udpv6_sendmsg;udp_sendmsg;ip_route_output_flow;ip_route_output_key_hash;ip_route_output_key_hash_rcu 174575287
+tokio-runtime-w;__libc_sendmsg;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_sendmsg;__sys_sendmsg;___sys_sendmsg;____sys_sendmsg;sock_sendmsg;inet6_sendmsg;udpv6_sendmsg;udp_sendmsg;ip_route_output_flow;ip_route_output_key_hash;ip_route_output_key_hash_rcu;fib_table_lookup 195250762
+tokio-runtime-w;__libc_sendmsg;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_sendmsg;__sys_sendmsg;___sys_sendmsg;____sys_sendmsg;sock_sendmsg;inet6_sendmsg;udpv6_sendmsg;udp_sendmsg;release_sock;_raw_spin_unlock_bh;__local_bh_enable_ip 8207913
+tokio-runtime-w;__libc_sendmsg;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_sendmsg;__sys_sendmsg;___sys_sendmsg;____sys_sendmsg;sock_sendmsg;inet6_sendmsg;udpv6_sendmsg;udp_sendmsg;udp_send_skb.isra.0;ip_send_skb;ip_local_out;__ip_local_out;connector_write 20177825
+tokio-runtime-w;__libc_sendmsg;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_sendmsg;__sys_sendmsg;___sys_sendmsg;____sys_sendmsg;sock_sendmsg;inet6_sendmsg;udpv6_sendmsg;udp_sendmsg;udp_send_skb.isra.0;ip_send_skb;ip_local_out;__ip_local_out;nf_hook_slow;connector_write;nf_conntrack_in 183693684
+tokio-runtime-w;__libc_sendmsg;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_sendmsg;__sys_sendmsg;___sys_sendmsg;____sys_sendmsg;sock_sendmsg;inet6_sendmsg;udpv6_sendmsg;udp_sendmsg;udp_send_skb.isra.0;ip_send_skb;ip_local_out;__ip_local_out;nf_hook_slow;connector_write;nf_conntrack_in;get_l4proto 10983160
+tokio-runtime-w;__libc_sendmsg;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_sendmsg;__sys_sendmsg;___sys_sendmsg;____sys_sendmsg;sock_sendmsg;inet6_sendmsg;udpv6_sendmsg;udp_sendmsg;udp_send_skb.isra.0;ip_send_skb;ip_local_out;__ip_local_out;nf_hook_slow;connector_write;nf_conntrack_in;nf_ct_get_tuple 30109519
+tokio-runtime-w;__libc_sendmsg;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_sendmsg;__sys_sendmsg;___sys_sendmsg;____sys_sendmsg;sock_sendmsg;inet6_sendmsg;udpv6_sendmsg;udp_sendmsg;udp_send_skb.isra.0;ip_send_skb;ip_local_out;__ip_local_out;nf_hook_slow;iptable_filter_hook;ipt_do_table 212481767
+tokio-runtime-w;__libc_sendmsg;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_sendmsg;__sys_sendmsg;___sys_sendmsg;____sys_sendmsg;sock_sendmsg;inet6_sendmsg;udpv6_sendmsg;udp_sendmsg;udp_send_skb.isra.0;ip_send_skb;ip_local_out;ip_output;ip_finish_output;__cgroup_bpf_run_filter_skb 8260361
+tokio-runtime-w;__libc_sendmsg;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_sendmsg;__sys_sendmsg;___sys_sendmsg;____sys_sendmsg;sock_sendmsg;inet6_sendmsg;udpv6_sendmsg;udp_sendmsg;udp_send_skb.isra.0;ip_send_skb;ip_local_out;ip_output;ip_finish_output;__ip_finish_output;ip_finish_output2 14626695
+tokio-runtime-w;__libc_sendmsg;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_sendmsg;__sys_sendmsg;___sys_sendmsg;____sys_sendmsg;sock_sendmsg;inet6_sendmsg;udpv6_sendmsg;udp_sendmsg;udp_send_skb.isra.0;ip_send_skb;ip_local_out;ip_output;ip_finish_output;__ip_finish_output;ip_finish_output2;dev_queue_xmit;__dev_queue_xmit 20559863
+tokio-runtime-w;__libc_sendmsg;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_sendmsg;__sys_sendmsg;___sys_sendmsg;____sys_sendmsg;sock_sendmsg;inet6_sendmsg;udpv6_sendmsg;udp_sendmsg;udp_send_skb.isra.0;ip_send_skb;ip_local_out;ip_output;ip_finish_output;__ip_finish_output;ip_finish_output2;dev_queue_xmit;__dev_queue_xmit;__qdisc_run 14653460
+tokio-runtime-w;__libc_sendmsg;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_sendmsg;__sys_sendmsg;___sys_sendmsg;____sys_sendmsg;sock_sendmsg;inet6_sendmsg;udpv6_sendmsg;udp_sendmsg;udp_send_skb.isra.0;ip_send_skb;ip_local_out;ip_output;ip_finish_output;__ip_finish_output;ip_finish_output2;dev_queue_xmit;__dev_queue_xmit;_raw_spin_lock 191984566
+tokio-runtime-w;__libc_sendmsg;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_sendmsg;__sys_sendmsg;___sys_sendmsg;____sys_sendmsg;sock_sendmsg;inet6_sendmsg;udpv6_sendmsg;udp_sendmsg;udp_send_skb.isra.0;ip_send_skb;ip_local_out;ip_output;ip_finish_output;__ip_finish_output;ip_finish_output2;dev_queue_xmit;__dev_queue_xmit;sch_direct_xmit;dev_hard_start_xmit;tg3_tx_frag_set 8362444
+tokio-runtime-w;__libc_sendmsg;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_sendmsg;__sys_sendmsg;___sys_sendmsg;____sys_sendmsg;sock_sendmsg;inet6_sendmsg;udpv6_sendmsg;udp_sendmsg;udp_send_skb.isra.0;ip_send_skb;ip_local_out;ip_output;ip_finish_output;__ip_finish_output;ip_finish_output2;dev_queue_xmit;__dev_queue_xmit;sch_direct_xmit;tg3_start_xmit 10824231
+tokio-runtime-w;__libc_sendmsg;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_sendmsg;__sys_sendmsg;___sys_sendmsg;____sys_sendmsg;sock_sendmsg;inet6_sendmsg;udpv6_sendmsg;udp_sendmsg;udp_send_skb.isra.0;ip_send_skb;ip_local_out;ip_output;nf_hook_slow;nf_nat_ipv4_fn 18348347
+tokio-runtime-w;__libc_sendmsg;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_sendmsg;__sys_sendmsg;___sys_sendmsg;____sys_sendmsg;sock_sendmsg;inet6_sendmsg;udpv6_sendmsg;udp_sendmsg;xfrm_lookup_route 14988899
+tokio-runtime-w;__libc_sendmsg;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_sendmsg;__sys_sendmsg;___sys_sendmsg;____sys_sendmsg;sock_sendmsg;security_socket_sendmsg 17799758
+tokio-runtime-w;__libc_sendmsg;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_sendmsg;__sys_sendmsg;___sys_sendmsg;copy_msghdr_from_user;move_addr_to_kernel.part.0;copy_user_generic_unrolled 187805679
+tokio-runtime-w;__vdso_clock_gettime 13119409
+tokio-runtime-w;alloc::collections::btree::remove::<impl alloc::collections::btree::node::Handle<alloc::collections::btree::node::NodeRef<alloc::collections::btree::node::marker::Mut,K,V,alloc::collections::btree::node::marker::Leaf>,alloc::collections::btree::node::marker::KV>>::remove_leaf_kv 12469940
+tokio-runtime-w;clock_gettime 13035373
+tokio-runtime-w;clock_gettime;__vdso_clock_gettime;[[vdso]] 1796393
+tokio-runtime-w;core::ptr::drop_in_place<tokio::sync::mpsc::bounded::Sender<core::result::Result< 16749698
+tokio-runtime-w;malloc 7604775
+tokio-runtime-w;mio::sys::unix::waker::Waker::wake;__libc_write;entry_SYSCALL_64 14383634
+tokio-runtime-w;parking_lot::condvar::Condvar::wait_until_internal 22089824
+tokio-runtime-w;quinn::connection::Connection::send_datagram 14260050
+tokio-runtime-w;quinn_proto::connection::Connection::handle_decode 11604203
+tokio-runtime-w;quinn_proto::connection::Connection::on_ack_received 13032653
+tokio-runtime-w;quinn_proto::connection::Connection::poll_transmit 26766146
+tokio-runtime-w;quinn_proto::connection::Connection::recv_stream 10242393
+tokio-runtime-w;quinn_proto::connection::Connection::reset_idle_timeout 11998178
+tokio-runtime-w;quinn_proto::connection::packet_builder::PacketBuilder::new 1771090
+tokio-runtime-w;quinn_proto::connection::streams::SendStream::stopped 24783898
+tokio-runtime-w;quinn_proto::connection::streams::recv::Chunks::new;apic_timer_interrupt;smp_apic_timer_interrupt;hrtimer_interrupt;__hrtimer_run_queues;tick_sched_timer;tick_sched_handle;update_process_times;scheduler_tick;perf_event_task_tick;perf_pmu_enable.part.0;x86_pmu_enable;intel_pmu_enable_all;native_write_msr 11885863
+tokio-runtime-w;quinn_proto::connection::streams::recv::Chunks::next 19834070
+tokio-runtime-w;quinn_proto::packet::PartialDecode::finish 12975726
+tokio-runtime-w;quinn_proto::range_set::array_range_set::ArrayRangeSet::insert 15246989
+tokio-runtime-w;ring::aead::aes_gcm::aes_gcm_seal 195065230
+tokio-runtime-w;ring::aead::gcm::Context::pre_finish 16753988
+tokio-runtime-w;ring_core_0_17_8_aes_hw_encrypt 1998628
+tokio-runtime-w;ring_core_0_17_8_gcm_ghash_avx 571960065
+tokio-runtime-w;ring_core_0_17_8_gcm_gmult_clmul 12905934
+tokio-runtime-w;syscall 22664897
+tokio-runtime-w;syscall;entry_SYSCALL_64_after_hwframe;do_syscall_64 12652509
+tokio-runtime-w;syscall;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_futex 10121312
+tokio-runtime-w;syscall;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_futex;do_futex;futex_wait;futex_wait_queue_me 16373752
+tokio-runtime-w;syscall;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_futex;do_futex;futex_wait;futex_wait_queue_me;schedule;__schedule;__perf_event_task_sched_out;task_ctx_sched_out;ctx_sched_out;sched_clock_cpu 15829806
+tokio-runtime-w;syscall;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_futex;do_futex;futex_wait;futex_wait_queue_me;schedule;__schedule;_raw_spin_lock 11339009
+tokio-runtime-w;syscall;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_futex;do_futex;futex_wait;futex_wait_queue_me;schedule;__schedule;deactivate_task;dequeue_task_fair;dequeue_entity;update_curr 7916802
+tokio-runtime-w;syscall;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_futex;do_futex;futex_wait;futex_wait_queue_me;schedule;__schedule;deactivate_task;dequeue_task_fair;dequeue_entity;update_curr;update_min_vruntime 9767346
+tokio-runtime-w;syscall;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_futex;do_futex;futex_wait;futex_wait_queue_me;schedule;__schedule;deactivate_task;psi_task_change 175303520
+tokio-runtime-w;syscall;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_futex;do_futex;futex_wait;futex_wait_queue_me;schedule;__schedule;finish_task_switch;__perf_event_task_sched_in 9920366
+tokio-runtime-w;syscall;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_futex;do_futex;futex_wait;futex_wait_queue_me;schedule;__schedule;finish_task_switch;__perf_event_task_sched_in;perf_event_sched_in;ctx_sched_in;sched_clock_cpu 149516889
+tokio-runtime-w;syscall;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_futex;do_futex;futex_wait;futex_wait_queue_me;schedule;__schedule;finish_task_switch;__perf_event_task_sched_in;perf_event_sched_in;ctx_sched_in;visit_groups_merge 30940488
+tokio-runtime-w;syscall;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_futex;do_futex;futex_wait;futex_wait_queue_me;schedule;__schedule;finish_task_switch;__perf_event_task_sched_in;perf_pmu_enable.part.0 38935
+tokio-runtime-w;syscall;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_futex;do_futex;futex_wait;futex_wait_queue_me;schedule;__schedule;finish_task_switch;__perf_event_task_sched_in;perf_pmu_enable.part.0;x86_pmu_enable 64285
+tokio-runtime-w;syscall;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_futex;do_futex;futex_wait;futex_wait_queue_me;schedule;__schedule;finish_task_switch;perf_pmu_enable.part.0 12554
+tokio-runtime-w;syscall;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_futex;do_futex;futex_wait;futex_wait_queue_me;schedule;__schedule;pick_next_task_idle;put_prev_task_fair;put_prev_entity 10030521
+tokio-runtime-w;syscall;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_futex;do_futex;futex_wake 20513875
+tokio-runtime-w;syscall;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_futex;do_futex;futex_wake;wake_up_q;try_to_wake_up;activate_task 9093945
+tokio-runtime-w;syscall;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_futex;do_futex;futex_wake;wake_up_q;try_to_wake_up;select_task_rq_fair 193222822
+tokio-runtime-w;syscall;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_futex;do_futex;futex_wake;wake_up_q;try_to_wake_up;select_task_rq_fair;update_cfs_rq_h_load 20760377
+tokio-runtime-w;syscall;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_futex;do_futex;futex_wake;wake_up_q;try_to_wake_up;ttwu_do_activate;activate_task;enqueue_task_fair;enqueue_entity 173804150
+tokio-runtime-w;syscall;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_futex;do_futex;futex_wake;wake_up_q;try_to_wake_up;ttwu_do_activate;activate_task;psi_task_change 28892257
+tokio-runtime-w;syscall;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_futex;do_futex;futex_wake;wake_up_q;try_to_wake_up;ttwu_do_activate;activate_task;psi_task_change;record_times;sched_clock_cpu;native_sched_clock 186073414
+tokio-runtime-w;syscall;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_futex;do_futex;hash_futex 10862434
+tokio-runtime-w;syscall;entry_SYSCALL_64_after_hwframe;do_syscall_64;fpregs_assert_state_consistent 10987441
+tokio-runtime-w;syscall;syscall_return_via_sysret 21743163
+tokio-runtime-w;tokio::runtime::io::registration::Registration::poll_ready 12991270
+tokio-runtime-w;tokio::runtime::scheduler::multi_thread::park::Parker::park 14538705
+tokio-runtime-w;tokio::runtime::scheduler::multi_thread::worker::<impl tokio::runtime::scheduler::multi_thread::handle::Handle>::schedule_local 171843202
+tokio-runtime-w;tokio::runtime::scheduler::multi_thread::worker::Context::park_timeout 1966216
+tokio-runtime-w;tokio::runtime::time::<impl tokio::runtime::time::handle::Handle>::process 14620790
+tokio-runtime-w;tokio::runtime::time::<impl tokio::runtime::time::handle::Handle>::process_at_sharded_time 30076999
+tokio-runtime-w;tokio::runtime::time::Driver::park_internal 9185582
+tokio-runtime-w;tokio::runtime::time::entry::TimerEntry::poll_elapsed 7701018
+tokio-runtime-w;tokio::runtime::time::entry::TimerEntry::reset;std::time::Instant::saturating_duration_since;std::sys::pal::unix::time::Timespec::sub_timespec 7521723
+tokio-runtime-w;tokio::runtime::time::wheel::Wheel::next_expiration 86341668
+tokio-runtime-w;tokio::runtime::time::wheel::Wheel::next_expiration;tokio::runtime::time::<impl tokio::runtime::time::handle::Handle>::process_at_sharded_time 11281826
+tokio-runtime-w;tokio::runtime::time::wheel::Wheel::poll 27874160
+tokio-runtime-w;tokio::runtime::time::wheel::level::Level::next_expiration 8153865
+tokio-runtime-w;tokio::sync::mpsc::chan::Rx<T,S>::recv 42662338
+tokio-runtime-w;tokio::sync::mpsc::chan::Rx<T,S>::recv;apic_timer_interrupt;smp_apic_timer_interrupt;hrtimer_interrupt;__hrtimer_run_queues;tick_sched_timer;tick_sched_handle;update_process_times;scheduler_tick;trigger_load_balance;idle_cpu 13910204
+tokio-runtime-w;tokio::sync::mpsc::list::Rx<T>::pop 39694587
+tokio-runtime-w;tokio::sync::watch::state::AtomicState::load 12326607
+tokio-runtime-w;wtransport::driver::worker::Worker::run_impl::_$u7b$$u7b$closure$u7d$$u7d$::_$u7b$$u7b$closure$u7d$$u7d$::hf1a8a8984a80afbb 13891376

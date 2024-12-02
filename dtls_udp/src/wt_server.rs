@@ -45,12 +45,12 @@ async fn handle_connection_impl(incoming_session: IncomingSession) -> Result<()>
                 Ok(datagram) => {
                     let payload = datagram.payload().to_vec(); // Store payload in a variable with a longer lifespan
                     let received_data = String::from_utf8_lossy(&payload);
-                    info!("Received datagram from client: '{}'", received_data);
+                    //info!("Received datagram from client: '{}'", received_data);
 
                     if let Err(e) = connection.send_datagram(&payload) {
                         error!("Failed to send datagram: {:?}", e);
                     } else {
-                        info!("Echoed datagram back to client");
+                        //info!("Echoed datagram back to client");
                     }
                 }
                 Err(e) => {

@@ -11,10 +11,14 @@ wtransport = { path = "../wtransport/wtransport", features = ["self-signed", "da
 anyhow = "1.0.71"
 tracing = "0.1.37"
 tracing-subscriber = { version = "0.3.17", features = ["env-filter"] }
+serde_json = "1.0"
+bytes = "1.5"
+csv = "1.2"
 
 [[bin]]
 name = "server"
 path = "src/server.rs"
+
 
 [[bin]]
 name = "client"

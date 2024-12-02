@@ -1,0 +1,250 @@
+tokio-runtime-w;clock_gettime;__vdso_clock_gettime 12929631
+tokio-runtime-w;rustls::server::hs::process_client_hello 154143231
+tokio-runtime-w;start_thread;<&mut W as core::fmt::Write::write_fmt::SpecWriteFmt>::spec_write_fmt;<core::fmt::Formatter as core::fmt::Write>::write_fmt;<core::fmt::Formatter as core::fmt::Write>::write_fmt 12623518
+tokio-runtime-w;start_thread;<&mut W as core::fmt::Write::write_fmt::SpecWriteFmt>::spec_write_fmt;<core::fmt::Formatter as core::fmt::Write>::write_fmt;<core::fmt::Formatter as core::fmt::Write>::write_fmt;alloc::vec::Vec<T,A>::push 12221210
+tokio-runtime-w;start_thread;<&mut W as core::fmt::Write::write_fmt::SpecWriteFmt>::spec_write_fmt;<core::fmt::Formatter as core::fmt::Write>::write_fmt;alloc::string::String::push_str 155003207
+tokio-runtime-w;start_thread;<&mut W as core::fmt::Write::write_fmt::SpecWriteFmt>::spec_write_fmt;[libc-2.31.so] 15533389
+tokio-runtime-w;start_thread;<&mut W as core::fmt::Write::write_fmt::SpecWriteFmt>::spec_write_fmt;core::fmt::Formatter::write_fmt;<core::fmt::Formatter as core::fmt::Write>::write_fmt;<core::fmt::Formatter as core::fmt::Write>::write_fmt;alloc::vec::Vec<T,A>::reserve 13736812
+tokio-runtime-w;start_thread;<&mut W as core::fmt::Write::write_fmt::SpecWriteFmt>::spec_write_fmt;core::fmt::Formatter::write_fmt;core::fmt::num::imp::<impl core::fmt::Display for u8>::fmt 11215183
+tokio-runtime-w;start_thread;<&mut W as core::fmt::Write::write_fmt::SpecWriteFmt>::spec_write_fmt;core::fmt::Formatter::write_fmt;core::fmt::write;alloc::vec::Vec<T,A>::append_elements 9792871
+tokio-runtime-w;start_thread;<&mut W as core::fmt::Write::write_fmt::SpecWriteFmt>::spec_write_fmt;nu_ansi_term::ansi::<impl nu_ansi_term::style::Style>::write_prefix 15392131
+tokio-runtime-w;start_thread;<F as core::future::into_future::IntoFuture>::into_future 184577159
+tokio-runtime-w;start_thread;<I as core::iter::traits::collect::IntoIterator>::into_iter 9290368
+tokio-runtime-w;start_thread;<alloc::sync::Arc<T,A> as core::ops::deref::Deref>::deref 60806638
+tokio-runtime-w;start_thread;<alloc::vec::Vec<T,A> as core::convert::AsRef<[T]>>::as_ref 15112765
+tokio-runtime-w;start_thread;<bytes::bytes_mut::BytesMut as core::convert::AsRef<[u8]>>::as_ref 17739348
+tokio-runtime-w;start_thread;<core::array::drain::Drain<T> as core::iter::traits::unchecked_iterator::UncheckedIterator>::next_unchecked 157262161
+tokio-runtime-w;start_thread;<core::cell::BorrowRef as core::ops::drop::Drop>::drop 8841621
+tokio-runtime-w;start_thread;<core::iter::adapters::enumerate::Enumerate<I> as core::iter::traits::iterator::Iterator>::next 238262073
+tokio-runtime-w;start_thread;<core::iter::adapters::zip::Zip<A,B> as core::iter::adapters::zip::ZipImpl<A,B>>::next 10041169
+tokio-runtime-w;start_thread;<core::iter::adapters::zip::Zip<A,B> as core::iter::traits::iterator::Iterator>::next 13550906
+tokio-runtime-w;start_thread;<core::ops::control_flow::ControlFlow<B,C> as core::ops::try_trait::Try>::from_output 10854482
+tokio-runtime-w;start_thread;<core::ops::range::Range<T> as core::iter::range::RangeIteratorImpl>::spec_next 12127219
+tokio-runtime-w;start_thread;<core::option::Option<T> as core::ops::try_trait::FromResidual<core::option::Option<core::convert::Infallible>>>::from_residual 82846128
+tokio-runtime-w;start_thread;<core::option::Option<T> as core::ops::try_trait::Try>::branch 199632913
+tokio-runtime-w;start_thread;<core::panic::unwind_safe::AssertUnwindSafe<F> as core::ops::function::FnOnce< 13036905
+tokio-runtime-w;start_thread;<core::pin::Pin<Ptr> as core::ops::deref::Deref>::deref 11414263
+tokio-runtime-w;start_thread;<core::ptr::non_null::NonNull<T> as core::cmp::PartialEq>::eq 9165151
+tokio-runtime-w;start_thread;<core::result::Result<T,E> as core::ops::try_trait::Try>::branch 194161177
+tokio-runtime-w;start_thread;<core::slice::iter::Iter<T> as core::iter::traits::iterator::Iterator>::fold 14780055
+tokio-runtime-w;start_thread;<core::slice::iter::Iter<T> as core::iter::traits::iterator::Iterator>::next 517623325
+tokio-runtime-w;start_thread;<core::slice::iter::IterMut<T> as core::iter::traits::iterator::Iterator>::next 13152671
+tokio-runtime-w;start_thread;<core::sync::atomic::AtomicPtr<T> as bytes::loom::sync::atomic::AtomicMut<T>>::with_mut 15780060
+tokio-runtime-w;start_thread;<parking_lot_core::thread_parker::imp::ThreadParker as parking_lot_core::thread_parker::ThreadParkerT>::park 1871081
+tokio-runtime-w;start_thread;<quinn::connection::ConnectionDriver as core::future::future::Future>::poll 10716862
+tokio-runtime-w;start_thread;<quinn::connection::ConnectionRef as core::ops::deref::Deref>::deref 17007508
+tokio-runtime-w;start_thread;<quinn::runtime::UdpPollHelper<MakeFut,Fut> as quinn::runtime::UdpPoller>::poll_writable 11623520
+tokio-runtime-w;start_thread;<quinn::runtime::tokio::UdpSocket as quinn::runtime::AsyncUdpSocket>::try_send::{{closure}} 268003434
+tokio-runtime-w;start_thread;<ring::bits::BitLength<u64> as ring::bits::FromUsizeBytes>::from_usize_bytes 154118464
+tokio-runtime-w;start_thread;<tokio::loom::std::atomic_u32::AtomicU32 as core::ops::deref::Deref>::deref 13921906
+tokio-runtime-w;start_thread;<tokio::loom::std::atomic_usize::AtomicUsize as core::ops::deref::Deref>::deref 160739191
+tokio-runtime-w;start_thread;<tokio::sync::mpsc::bounded::OwnedPermit<T> as core::ops::drop::Drop>::drop 10287920
+tokio-runtime-w;start_thread;<tokio::sync::notify::Waiter as tokio::util::linked_list::Link>::pointers 12493734
+tokio-runtime-w;start_thread;<tracing_subscriber::fmt::fmt_layer::Layer<S,N,E,W> as tracing_subscriber::layer::Layer<S>>::on_event::{{closure}};<std::io::stdio::Stdout as std::io::Write>::write_all;__libc_write;entry_SYSCALL_64_after_hwframe;do_syscall_64 183681808
+tokio-runtime-w;start_thread;<tracing_subscriber::fmt::fmt_layer::Layer<S,N,E,W> as tracing_subscriber::layer::Layer<S>>::on_event::{{closure}};<std::io::stdio::Stdout as std::io::Write>::write_all;__libc_write;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_write;ksys_write;vfs_write;__vfs_write;tty_write;__check_object_size;__virt_addr_valid 15775718
+tokio-runtime-w;start_thread;<tracing_subscriber::fmt::fmt_layer::Layer<S,N,E,W> as tracing_subscriber::layer::Layer<S>>::on_event::{{closure}};<std::io::stdio::Stdout as std::io::Write>::write_all;__libc_write;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_write;ksys_write;vfs_write;__vfs_write;tty_write;ldsem_down_read 11991488
+tokio-runtime-w;start_thread;<tracing_subscriber::fmt::fmt_layer::Layer<S,N,E,W> as tracing_subscriber::layer::Layer<S>>::on_event::{{closure}};<std::io::stdio::Stdout as std::io::Write>::write_all;__libc_write;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_write;ksys_write;vfs_write;__vfs_write;tty_write;n_tty_write 11849656
+tokio-runtime-w;start_thread;<tracing_subscriber::fmt::fmt_layer::Layer<S,N,E,W> as tracing_subscriber::layer::Layer<S>>::on_event::{{closure}};<std::io::stdio::Stdout as std::io::Write>::write_all;__libc_write;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_write;ksys_write;vfs_write;__vfs_write;tty_write;n_tty_write;pty_write;tty_flip_buffer_push;queue_work_on;__queue_work;insert_work;wake_up_process;try_to_wake_up;ttwu_do_activate;activate_task;psi_task_change 15105142
+tokio-runtime-w;start_thread;<tracing_subscriber::layer::layered::Layered<L,S> as tracing_core::subscriber::Subscriber>::downcast_raw::{{closure}} 11575088
+tokio-runtime-w;start_thread;<tracing_subscriber::layer::layered::Layered<L,S> as tracing_core::subscriber::Subscriber>::event 14243851
+tokio-runtime-w;start_thread;<usize as core::slice::index::SliceIndex<[T]>>::index 161883018
+tokio-runtime-w;start_thread;[libc-2.31.so] 98923682
+tokio-runtime-w;start_thread;[libm-2.31.so] 10412790
+tokio-runtime-w;start_thread;__libc_sendmsg;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_sendmsg;__sys_sendmsg;___sys_sendmsg;____sys_sendmsg;sock_sendmsg;inet6_sendmsg;udpv6_sendmsg;udp_sendmsg;ip_make_skb;__ip_append_data.isra.0;sock_alloc_send_skb;sock_alloc_send_pskb;alloc_skb_with_frags;__alloc_skb 9534899
+tokio-runtime-w;start_thread;__libc_sendmsg;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_sendmsg;__sys_sendmsg;___sys_sendmsg;____sys_sendmsg;sock_sendmsg;inet6_sendmsg;udpv6_sendmsg;udp_sendmsg;udp_send_skb.isra.0;ip_send_skb;ip_local_out;__ip_local_out;nf_hook_slow;drm_crtc_add_crc_entry;drm_mode_atomic_ioctl;drm_mode_atomic_ioctl 113366833
+tokio-runtime-w;start_thread;__libc_sendmsg;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_sendmsg;__sys_sendmsg;___sys_sendmsg;____sys_sendmsg;sock_sendmsg;inet6_sendmsg;udpv6_sendmsg;udp_sendmsg;udp_send_skb.isra.0;ip_send_skb;ip_local_out;ip_output;ip_finish_output;__ip_finish_output;ip_finish_output2;neigh_resolve_output;dev_queue_xmit;dst_release 13182580
+tokio-runtime-w;start_thread;__libc_sendmsg;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_sendmsg;__sys_sendmsg;___sys_sendmsg;____sys_sendmsg;sock_sendmsg;inet6_sendmsg;udpv6_sendmsg;udp_sendmsg;udp_send_skb.isra.0;ip_send_skb;ip_local_out;ip_send_check 10314199
+tokio-runtime-w;start_thread;__libc_sendmsg;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_sendmsg;__sys_sendmsg;___sys_sendmsg;____sys_sendmsg;sock_sendmsg;security_socket_sendmsg;apparmor_socket_sendmsg;aa_sk_perm;_cond_resched 11279519
+tokio-runtime-w;start_thread;__libc_sendmsg;entry_SYSCALL_64_after_hwframe;do_syscall_64;apic_timer_interrupt;smp_apic_timer_interrupt;hrtimer_interrupt;__hrtimer_run_queues;__remove_hrtimer;rb_next 10079006
+tokio-runtime-w;start_thread;__rust_try 173208229
+tokio-runtime-w;start_thread;alloc::collections::btree::map::BTreeMap<K,V,A>::insert 9340802
+tokio-runtime-w;start_thread;alloc::collections::vec_deque::VecDeque<T,A>::pop_front 13428118
+tokio-runtime-w;start_thread;alloc::vec::Vec<T,A>::append_elements 11514031
+tokio-runtime-w;start_thread;bytes::bytes_mut::BytesMut::advance_unchecked 12544681
+tokio-runtime-w;start_thread;core::array::<impl core::convert::AsRef<[T]> for [T: N]>::as_ref 14266198
+tokio-runtime-w;start_thread;core::array::try_from_trusted_iterator 9644347
+tokio-runtime-w;start_thread;core::cell::Cell<T>::set 11084471
+tokio-runtime-w;start_thread;core::cell::RefCell<T>::try_borrow_mut 154854595
+tokio-runtime-w;start_thread;core::cmp::min_by 15033927
+tokio-runtime-w;start_thread;core::core_arch::x86::m128iExt::as_i8x16 17346113
+tokio-runtime-w;start_thread;core::core_arch::x86::sse2::_mm_loadu_si128 9714988
+tokio-runtime-w;start_thread;core::future::poll_fn::poll_fn 13526850
+tokio-runtime-w;start_thread;core::intrinsics::copy_nonoverlapping::precondition_check 36716228
+tokio-runtime-w;start_thread;core::iter::range::<impl core::iter::traits::iterator::Iterator for core::ops::range::Range<A>>::next 297036913
+tokio-runtime-w;start_thread;core::iter::traits::iterator::Iterator::find_map 12316962
+tokio-runtime-w;start_thread;core::mem::replace 13142324
+tokio-runtime-w;start_thread;core::ops::function::FnOnce::call_once 25150707
+tokio-runtime-w;start_thread;core::option::Option<T>::as_ref 360989703
+tokio-runtime-w;start_thread;core::option::Option<T>::expect 11864984
+tokio-runtime-w;start_thread;core::option::Option<T>::is_none 22475723
+tokio-runtime-w;start_thread;core::option::Option<T>::is_some 21375934
+tokio-runtime-w;start_thread;core::pin::Pin<&mut T>::map_unchecked_mut 14714052
+tokio-runtime-w;start_thread;core::ptr::const_ptr::<impl *const T>::is_null 12002096
+tokio-runtime-w;start_thread;core::ptr::drop_in_place<core::cell::BorrowRef> 13247015
+tokio-runtime-w;start_thread;core::ptr::drop_in_place<core::cell::RefMut<core::option::Option<alloc::boxed::Box<tokio::runtime::scheduler::multi_thread::worker::Core>>>> 14315742
+tokio-runtime-w;start_thread;core::ptr::drop_in_place<core::cell::RefMut<tracing_subscriber::registry::stack::SpanStack>> 11120556
+tokio-runtime-w;start_thread;core::ptr::drop_in_place<core::cell::UnsafeCell<core::option::Option<core::task::wake::Waker>>> 10399319
+tokio-runtime-w;start_thread;core::ptr::drop_in_place<core::option::Option<tokio::runtime::task::Notified<alloc::sync::Arc<tokio::runtime::scheduler::multi_thread::handle::Handle>>>> 9950588
+tokio-runtime-w;start_thread;core::ptr::drop_in_place<core::result::Result< 11808147
+tokio-runtime-w;start_thread;core::ptr::drop_in_place<lock_api::mutex::MutexGuard<parking_lot::raw_mutex::RawMutex,tokio::runtime::scheduler::multi_thread::worker::Synced>> 11580638
+tokio-runtime-w;start_thread;core::ptr::drop_in_place<tokio::sync::batch_semaphore::Acquire> 11162751
+tokio-runtime-w;start_thread;core::ptr::drop_in_place<tokio::util::try_lock::LockGuard<tokio::runtime::driver::Driver>> 11754249
+tokio-runtime-w;start_thread;core::result::Result<T,E>::is_err 13370388
+tokio-runtime-w;start_thread;core::result::Result<T,E>::is_ok 13701258
+tokio-runtime-w;start_thread;core::slice::<impl [T]>::copy_from_slice 175582209
+tokio-runtime-w;start_thread;core::slice::<impl [T]>::get_unchecked 10173773
+tokio-runtime-w;start_thread;core::slice::<impl [T]>::iter 13720646
+tokio-runtime-w;start_thread;core::slice::iter::<impl core::iter::traits::collect::IntoIterator for &[T]>::into_iter 13387609
+tokio-runtime-w;start_thread;core::slice::iter::IterMut<T>::new 11808147
+tokio-runtime-w;start_thread;core::slice::raw::from_raw_parts::precondition_check 181947103
+tokio-runtime-w;start_thread;core::slice::raw::from_raw_parts_mut::precondition_check 31122265
+tokio-runtime-w;start_thread;core::sync::atomic::AtomicBool::load 11256620
+tokio-runtime-w;start_thread;core::sync::atomic::AtomicPtr<T>::load 11883683
+tokio-runtime-w;start_thread;core::sync::atomic::AtomicU8::compare_exchange_weak 16100324
+tokio-runtime-w;start_thread;core::sync::atomic::AtomicUsize::compare_exchange 13214689
+tokio-runtime-w;start_thread;core::sync::atomic::AtomicUsize::compare_exchange_weak 17639006
+tokio-runtime-w;start_thread;core::sync::atomic::AtomicUsize::load 12136167
+tokio-runtime-w;start_thread;core::sync::atomic::AtomicUsize::swap 9440113
+tokio-runtime-w;start_thread;core::sync::atomic::atomic_compare_exchange 202030170
+tokio-runtime-w;start_thread;core::sync::atomic::atomic_compare_exchange_weak 27899007
+tokio-runtime-w;start_thread;core::sync::atomic::atomic_load 77666155
+tokio-runtime-w;start_thread;core::task::wake::Context::waker 9690340
+tokio-runtime-w;start_thread;core::time::Duration::as_nanos 9934549
+tokio-runtime-w;start_thread;core::time::Duration::from_nanos 159496397
+tokio-runtime-w;start_thread;epoll_wait;entry_SYSCALL_64_after_hwframe 171993642
+tokio-runtime-w;start_thread;epoll_wait;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_epoll_wait;__fdget 9995805
+tokio-runtime-w;start_thread;epoll_wait;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_epoll_wait;do_epoll_wait;ep_poll;ep_scan_ready_list.constprop.0;ep_send_events_proc 5448096
+tokio-runtime-w;start_thread;epoll_wait;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_epoll_wait;do_epoll_wait;ep_poll;ep_scan_ready_list.constprop.0;ep_send_events_proc;ep_item_poll.isra.0 3577514
+tokio-runtime-w;start_thread;epoll_wait;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_epoll_wait;do_epoll_wait;ep_poll;ep_scan_ready_list.constprop.0;ep_send_events_proc;ep_item_poll.isra.0;eventfd_poll 1790886
+tokio-runtime-w;start_thread;epoll_wait;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_epoll_wait;do_epoll_wait;ep_poll;ep_scan_ready_list.constprop.0;ep_send_events_proc;sock_poll 1804896
+tokio-runtime-w;start_thread;epoll_wait;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_epoll_wait;do_epoll_wait;ep_poll;schedule_hrtimeout_range;schedule_hrtimeout_range_clock;hrtimer_start_range_ns;enqueue_hrtimer;rb_insert_color 13717483
+tokio-runtime-w;start_thread;epoll_wait;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_epoll_wait;do_epoll_wait;ep_poll;schedule_hrtimeout_range;schedule_hrtimeout_range_clock;hrtimer_try_to_cancel;__remove_hrtimer;rb_erase 1711140
+tokio-runtime-w;start_thread;epoll_wait;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_epoll_wait;do_epoll_wait;ep_poll;schedule_hrtimeout_range;schedule_hrtimeout_range_clock;schedule;__schedule;deactivate_task;dequeue_task_fair;dequeue_entity;update_curr;cpuacct_charge 10589777
+tokio-runtime-w;start_thread;epoll_wait;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_epoll_wait;do_epoll_wait;ep_poll;schedule_hrtimeout_range;schedule_hrtimeout_range_clock;schedule;__schedule;deactivate_task;dequeue_task_fair;dequeue_entity;update_load_avg 15753018
+tokio-runtime-w;start_thread;epoll_wait;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_epoll_wait;do_epoll_wait;ep_poll;schedule_hrtimeout_range;schedule_hrtimeout_range_clock;schedule;__schedule;deactivate_task;psi_task_change 35093011
+tokio-runtime-w;start_thread;epoll_wait;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_epoll_wait;do_epoll_wait;ep_poll;schedule_hrtimeout_range;schedule_hrtimeout_range_clock;schedule;__schedule;finish_task_switch;__perf_event_task_sched_in 35154
+tokio-runtime-w;start_thread;epoll_wait;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_epoll_wait;do_epoll_wait;ep_poll;schedule_hrtimeout_range;schedule_hrtimeout_range_clock;schedule;__schedule;finish_task_switch;__perf_event_task_sched_in;perf_event_sched_in;ctx_sched_in;rb_next 1553234
+tokio-runtime-w;start_thread;epoll_wait;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_epoll_wait;do_epoll_wait;ep_poll;schedule_hrtimeout_range;schedule_hrtimeout_range_clock;schedule;__schedule;finish_task_switch;__perf_event_task_sched_in;perf_event_sched_in;ctx_sched_in;visit_groups_merge 1350267
+tokio-runtime-w;start_thread;epoll_wait;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_epoll_wait;do_epoll_wait;ep_poll;schedule_hrtimeout_range;schedule_hrtimeout_range_clock;schedule;__schedule;finish_task_switch;__perf_event_task_sched_in;perf_event_sched_in;ctx_sched_in;visit_groups_merge;flexible_sched_in;group_sched_in;event_sched_in.isra.0;perf_log_itrace_start 1416899
+tokio-runtime-w;start_thread;epoll_wait;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_epoll_wait;do_epoll_wait;ep_poll;schedule_hrtimeout_range;schedule_hrtimeout_range_clock;schedule;__schedule;finish_task_switch;__perf_event_task_sched_in;perf_pmu_enable.part.0;x86_pmu_enable 129434
+tokio-runtime-w;start_thread;epoll_wait;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_epoll_wait;do_epoll_wait;ep_poll;schedule_hrtimeout_range;schedule_hrtimeout_range_clock;schedule;__schedule;finish_task_switch;apic_timer_interrupt;smp_apic_timer_interrupt;hrtimer_interrupt;__hrtimer_run_queues;tick_sched_timer;tick_sched_handle;update_process_times;account_process_tick;account_system_time;account_system_index_time 1804240
+tokio-runtime-w;start_thread;epoll_wait;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_epoll_wait;do_epoll_wait;ktime_get_ts64 10387712
+tokio-runtime-w;start_thread;epoll_wait;entry_SYSCALL_64_after_hwframe;do_syscall_64;apic_timer_interrupt;smp_apic_timer_interrupt;hrtimer_interrupt;__hrtimer_run_queues;tick_sched_do_timer 9340802
+tokio-runtime-w;start_thread;hashbrown::map::equivalent_key::{{closure}} 180362647
+tokio-runtime-w;start_thread;hashbrown::raw::RawIterRange<T>::new 15152373
+tokio-runtime-w;start_thread;hashbrown::rustc_entry::<impl hashbrown::map::HashMap<K,V,S,A>>::rustc_entry 12301974
+tokio-runtime-w;start_thread;libc::unix::linux_like::CMSG_LEN 15732231
+tokio-runtime-w;start_thread;mio::net::udp::UdpSocket::try_io::{{closure}} 174521160
+tokio-runtime-w;start_thread;mio::sys::unix::waker::Waker::wake;<&std::os::unix::net::stream::UnixStream as std::io::Write>::write 14928339
+tokio-runtime-w;start_thread;mio::sys::unix::waker::Waker::wake;__libc_write;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_write;ksys_write;vfs_write;__vfs_write;eventfd_write;__wake_up_locked_key;__wake_up_common;ep_poll_callback;__wake_up;__wake_up_common_lock;__wake_up_common;default_wake_function;try_to_wake_up;ttwu_do_activate;activate_task 154485790
+tokio-runtime-w;start_thread;mio::sys::unix::waker::Waker::wake;__libc_write;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_write;ksys_write;vfs_write;__vfs_write;eventfd_write;_raw_spin_lock_irq 12446317
+tokio-runtime-w;start_thread;octets::Octets::get_u8 176183686
+tokio-runtime-w;start_thread;parking_lot_core::parking_lot::deadlock::acquire_resource 18753706
+tokio-runtime-w;start_thread;parking_lot_core::parking_lot::lock_bucket_pair 10573606
+tokio-runtime-w;start_thread;parking_lot_core::parking_lot::park 13814655
+tokio-runtime-w;start_thread;parking_lot_core::parking_lot::unpark_requeue 14971278
+tokio-runtime-w;start_thread;parking_lot_core::thread_parker::imp::ThreadParker::futex_wait 3732850
+tokio-runtime-w;start_thread;quinn::endpoint::Endpoint::new_with_abstract_socket::{{closure}} 11176317
+tokio-runtime-w;start_thread;quinn::endpoint::RecvState::poll_socket::{{closure}} 13411322
+tokio-runtime-w;start_thread;quinn_proto::connection::Connection::handle_event 13504158
+tokio-runtime-w;start_thread;quinn_proto::connection::Connection::on_ack_received 11176317
+tokio-runtime-w;start_thread;quinn_proto::connection::Connection::process_decrypted_packet 27438548
+tokio-runtime-w;start_thread;quinn_proto::connection::Connection::process_decrypted_packet;page_fault;do_page_fault;__do_page_fault;do_user_addr_fault;handle_mm_fault;__handle_mm_fault;do_anonymous_page;mem_cgroup_try_charge_delay;mem_cgroup_throttle_swaprate 134113107
+tokio-runtime-w;start_thread;quinn_proto::connection::Connection::space_can_send 9095741
+tokio-runtime-w;start_thread;quinn_proto::connection::State::is_handshake 10596952
+tokio-runtime-w;start_thread;quinn_proto::connection::instant_saturating_sub;<std::time::Instant as core::ops::arith::Sub>::sub;std::sys::pal::unix::time::Timespec::sub_timespec 12475315
+tokio-runtime-w;start_thread;quinn_proto::connection::paths::PathData::sent 11692153
+tokio-runtime-w;start_thread;quinn_proto::connection::paths::RttEstimator::get 14156822
+tokio-runtime-w;start_thread;quinn_proto::connection::streams::state::StreamsState::poll 13437673
+tokio-runtime-w;start_thread;quinn_proto::connection::timer::TimerTable::set 159085726
+tokio-runtime-w;start_thread;quinn_proto::crypto::rustls::<impl quinn_proto::crypto::PacketKey for alloc::boxed::Box<dyn rustls::quic::PacketKey>>::tag_len 11930539
+tokio-runtime-w;start_thread;quinn_proto::endpoint::Endpoint::handle 15363944
+tokio-runtime-w;start_thread;recvmmsg;entry_SYSCALL_64_after_hwframe;do_syscall_64 184837569
+tokio-runtime-w;start_thread;recvmmsg;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_recvmmsg;__sys_recvmmsg;do_recvmmsg;___sys_recvmsg;____sys_recvmsg;sock_recvmsg;inet6_recvmsg;udpv6_recvmsg;_raw_spin_lock_bh 10219119
+tokio-runtime-w;start_thread;recvmmsg;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_recvmmsg;__sys_recvmmsg;do_recvmmsg;___sys_recvmsg;____sys_recvmsg;sock_recvmsg;inet6_recvmsg;udpv6_recvmsg;skb_consume_udp;__consume_stateless_skb;kfree_skbmem 9720605
+tokio-runtime-w;start_thread;recvmmsg;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_recvmmsg;__sys_recvmmsg;do_recvmmsg;___sys_recvmsg;____sys_recvmsg;sock_recvmsg;security_socket_recvmsg;apparmor_socket_recvmsg;aa_sk_perm 11883683
+tokio-runtime-w;start_thread;recvmmsg;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_recvmmsg;__sys_recvmmsg;do_recvmmsg;___sys_recvmsg;copy_msghdr_from_user;copy_user_generic_unrolled 11192735
+tokio-runtime-w;start_thread;recvmmsg;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_recvmmsg;__sys_recvmmsg;fput 172571987
+tokio-runtime-w;start_thread;recvmmsg;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_recvmmsg;do_recvmmsg 12648778
+tokio-runtime-w;start_thread;sharded_slab::page::slot::RefCount<C>::decr 9215723
+tokio-runtime-w;start_thread;sharded_slab::pool::Ref<T,C>::value 10969024
+tokio-runtime-w;start_thread;socket2::sys::<impl std::os::fd::raw::FromRawFd for socket2::socket::Socket>::from_raw_fd 18027977
+tokio-runtime-w;start_thread;std::collections::hash::map::HashMap<K,V,S>::get 12016972
+tokio-runtime-w;start_thread;std::io::error::repr_bitpacked::decode_repr 10691422
+tokio-runtime-w;start_thread;std::panicking::try::do_call 16793990
+tokio-runtime-w;start_thread;std::sync::mutex::Mutex<T>::lock;syscall;entry_SYSCALL_64_after_hwframe;do_syscall_64 3556595
+tokio-runtime-w;start_thread;std::sync::mutex::Mutex<T>::lock;syscall;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_futex;do_futex;futex_wait;futex_wait_queue_me;schedule;__schedule;deactivate_task;dequeue_task_fair;dequeue_entity 9738162
+tokio-runtime-w;start_thread;std::sync::mutex::Mutex<T>::lock;syscall;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_futex;do_futex;futex_wait;futex_wait_queue_me;schedule;__schedule;finish_task_switch;__perf_event_task_sched_in;perf_pmu_enable.part.0;x86_pmu_enable 818535
+tokio-runtime-w;start_thread;std::sys::thread_local::native::eager::Storage<T>::get 14797152
+tokio-runtime-w;start_thread;std::thread::local::LocalKey<T>::try_with 27971598
+tokio-runtime-w;start_thread;std::time::SystemTime::now 16363159
+tokio-runtime-w;start_thread;syscall 21843881
+tokio-runtime-w;start_thread;syscall;entry_SYSCALL_64 12640256
+tokio-runtime-w;start_thread;syscall;entry_SYSCALL_64_after_hwframe 1819511
+tokio-runtime-w;start_thread;syscall;entry_SYSCALL_64_after_hwframe;do_syscall_64 34695109
+tokio-runtime-w;start_thread;syscall;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_futex;do_futex;futex_wait 12582798
+tokio-runtime-w;start_thread;syscall;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_futex;do_futex;futex_wait;futex_wait_queue_me;schedule;__schedule 10389092
+tokio-runtime-w;start_thread;syscall;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_futex;do_futex;futex_wait;futex_wait_queue_me;schedule;__schedule;__perf_event_task_sched_out 11479268
+tokio-runtime-w;start_thread;syscall;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_futex;do_futex;futex_wait;futex_wait_queue_me;schedule;__schedule;deactivate_task;dequeue_task_fair;dequeue_entity;update_load_avg;__update_load_avg_cfs_rq 14082657
+tokio-runtime-w;start_thread;syscall;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_futex;do_futex;futex_wait;futex_wait_queue_me;schedule;__schedule;deactivate_task;dequeue_task_fair;dequeue_entity;update_load_avg;intel_pstate_update_util;native_write_msr 11479268
+tokio-runtime-w;start_thread;syscall;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_futex;do_futex;futex_wait;futex_wait_queue_me;schedule;__schedule;finish_task_switch;__perf_event_task_sched_in 155400932
+tokio-runtime-w;start_thread;syscall;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_futex;do_futex;futex_wait;futex_wait_queue_me;schedule;__schedule;finish_task_switch;__perf_event_task_sched_in;perf_pmu_enable.part.0;intel_pmu_enable_all 11530
+tokio-runtime-w;start_thread;syscall;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_futex;do_futex;futex_wait;futex_wait_queue_me;schedule;__schedule;finish_task_switch;__perf_event_task_sched_in;perf_pmu_enable.part.0;x86_pmu_enable 191112
+tokio-runtime-w;start_thread;syscall;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_futex;do_futex;futex_wait;futex_wait_queue_me;schedule;__schedule;finish_task_switch;perf_pmu_enable.part.0 72791
+tokio-runtime-w;start_thread;syscall;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_futex;do_futex;futex_wait;futex_wait_setup 12796889
+tokio-runtime-w;start_thread;syscall;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_futex;do_futex;futex_wait;futex_wait_setup;get_futex_key;get_futex_key_refs.isra.0;ret_from_intr;do_IRQ;irq_exit;__softirqentry_text_start;net_rx_action;tg3_poll_msix;napi_complete_done 10497888
+tokio-runtime-w;start_thread;syscall;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_futex;do_futex;futex_wake;mark_wake_futex 22271494
+tokio-runtime-w;start_thread;syscall;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_futex;do_futex;futex_wake;wake_up_q;try_to_wake_up;ttwu_do_activate;activate_task;enqueue_task_fair;enqueue_entity;update_cfs_group 11794160
+tokio-runtime-w;start_thread;syscall;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_futex;do_futex;futex_wake;wake_up_q;try_to_wake_up;ttwu_do_activate;activate_task;enqueue_task_fair;enqueue_entity;update_load_avg;__update_load_avg_se 17730608
+tokio-runtime-w;start_thread;syscall;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_futex;do_futex;futex_wake;wake_up_q;try_to_wake_up;ttwu_do_activate;activate_task;psi_task_change 29902902
+tokio-runtime-w;start_thread;syscall;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_futex;do_futex;futex_wake;wake_up_q;try_to_wake_up;update_cfs_rq_h_load 10990651
+tokio-runtime-w;start_thread;syscall;entry_SYSCALL_64_after_hwframe;do_syscall_64;switch_fpu_return 3517680
+tokio-runtime-w;start_thread;syscall;syscall_return_via_sysret 7311881
+tokio-runtime-w;start_thread;thread_local::thread_id::get 12145855
+tokio-runtime-w;start_thread;tokio::loom::std::parking_lot::Condvar::wait 19990344
+tokio-runtime-w;start_thread;tokio::net::udp::UdpSocket::writable 9608491
+tokio-runtime-w;start_thread;tokio::runtime::context::CONTEXT::{{constant}}::{{closure}} 10412892
+tokio-runtime-w;start_thread;tokio::runtime::context::budget::{{closure}} 9526582
+tokio-runtime-w;start_thread;tokio::runtime::driver::Handle::time 81847287
+tokio-runtime-w;start_thread;tokio::runtime::io::scheduled_io::ScheduledIo::ready_event 12168166
+tokio-runtime-w;start_thread;tokio::runtime::scheduler::inject::shared::Shared<T>::is_empty 143034510
+tokio-runtime-w;start_thread;tokio::runtime::scheduler::multi_thread::idle::Idle::notify_should_wakeup 15944492
+tokio-runtime-w;start_thread;tokio::runtime::scheduler::multi_thread::idle::Idle::unpark_worker_by_id 11005451
+tokio-runtime-w;start_thread;tokio::runtime::scheduler::multi_thread::park::Inner::park 26220468
+tokio-runtime-w;start_thread;tokio::runtime::scheduler::multi_thread::queue::Steal<T>::steal_into 15860169
+tokio-runtime-w;start_thread;tokio::runtime::scheduler::multi_thread::queue::Steal<T>::steal_into2 11162751
+tokio-runtime-w;start_thread;tokio::runtime::scheduler::multi_thread::worker::Context::run 19973493
+tokio-runtime-w;start_thread;tokio::runtime::scheduler::multi_thread::worker::Core::has_tasks 160178987
+tokio-runtime-w;start_thread;tokio::runtime::scheduler::multi_thread::worker::Core::transition_from_parked 13869386
+tokio-runtime-w;start_thread;tokio::runtime::task::core::Core<T,S>::poll::{{closure}} 13522935
+tokio-runtime-w;start_thread;tokio::runtime::task::state::Snapshot::is_complete 11706253
+tokio-runtime-w;start_thread;tokio::runtime::task::state::Snapshot::ref_dec 13261757
+tokio-runtime-w;start_thread;tokio::runtime::time::<impl tokio::runtime::time::handle::Handle>::process_at_sharded_time 9582649
+tokio-runtime-w;start_thread;tokio::runtime::time::Driver::park_internal::{{closure}} 16014114
+tokio-runtime-w;start_thread;tokio::runtime::time::Inner::is_shutdown 12410724
+tokio-runtime-w;start_thread;tokio::runtime::time::handle::Handle::is_shutdown 16073724
+tokio-runtime-w;start_thread;tokio::runtime::time::handle::Handle::time_source 13445136
+tokio-runtime-w;start_thread;tokio::runtime::time::wheel::Wheel::next_expiration 64736249
+tokio-runtime-w;start_thread;tokio::runtime::time::wheel::Wheel::poll 10702895
+tokio-runtime-w;start_thread;tokio::runtime::time::wheel::level::Level::next_occupied_slot 169339286
+tokio-runtime-w;start_thread;tokio::runtime::time::wheel::level::slot_range 9689864
+tokio-runtime-w;start_thread;tokio::sync::batch_semaphore::Semaphore::add_permits_locked 13305414
+tokio-runtime-w;start_thread;tokio::sync::batch_semaphore::Semaphore::poll_acquire 172897507
+tokio-runtime-w;start_thread;tokio::sync::mpsc::bounded::Receiver<T>::recv::{{closure}} 13329328
+tokio-runtime-w;start_thread;tokio::sync::mpsc::unbounded::UnboundedReceiver<T>::poll_recv 11891444
+tokio-runtime-w;start_thread;tokio::util::linked_list::LinkedList<L,<L as tokio::util::linked_list::Link>::Target>::is_empty 13006798
+tokio-runtime-w;start_thread;tokio::util::wake_list::WakeList::new 35917348
+tokio-runtime-w;start_thread;tracing_core::dispatcher::Dispatch::try_close 11333054
+tokio-runtime-w;start_thread;tracing_core::event::Event::dispatch 12612112
+tokio-runtime-w;start_thread;tracing_subscriber::fmt::format::Writer::by_ref 16847896
+tokio-runtime-w;start_thread;tracing_subscriber::registry::sharded::Registry::has_per_layer_filters 11967434
+tokio-runtime-w;start_thread;tracing_subscriber::registry::sharded::Registry::start_close 10525056
+tokio-runtime-w;start_thread;tracing_subscriber::registry::stack::SpanStack::pop 11951597
+tokio-runtime-w;start_thread;wtransport::connection::Connection::receive_datagram::{{closure}} 10264454
+tokio-runtime-w;start_thread;wtransport::driver::streams::settings::RemoteSettingsStream::read_frame::{{closure}} 10034674
+tokio-runtime-w;start_thread;wtransport::driver::streams::settings::RemoteSettingsStream::run::{{closure}} 22990542
+tokio-runtime-w;start_thread;wtransport::driver::utils::BiChannelEndpoint<T>::recv::{{closure}} 12854939
+tokio-runtime-w;start_thread;wtransport::driver::worker::Worker::run_impl::{{closure}} 14573085
+tokio-runtime-w;start_thread;wtransport::driver::worker::Worker::run_impl::{{closure}}::{{closure}} 16334316
+wt_server;std::rt::lang_start;syscall;entry_SYSCALL_64_after_hwframe;do_syscall_64 1956288
+wt_server;std::rt::lang_start;syscall;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_futex;do_futex;futex_wait;futex_wait_queue_me;schedule;__schedule;finish_task_switch;perf_pmu_enable.part.0 11724

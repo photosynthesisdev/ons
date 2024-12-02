@@ -1,0 +1,3 @@
+RUST_LOG=info cargo run --bin signaling_server
+RUST_LOG=info cargo run --bin webrtc_server
+RUST_LOG=info cargo run --bin webrtc_client

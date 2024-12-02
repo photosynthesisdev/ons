@@ -1,0 +1,383 @@
+tokio-runtime-w;start_thread;alloc::collections::vec_deque::VecDeque<T,A>::pop_front 0 13428118
+tokio-runtime-w;start_thread;<&mut W as core::fmt::Write::write_fmt::SpecWriteFmt>::spec_write_fmt;<core::fmt::Formatter as core::fmt::Write>::write_fmt;alloc::string::String::push_str 0 155003207
+server;[unknown];[unknown];std::net::udp::UdpSocket::send_to;__libc_sendto;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_sendto;__sys_sendto;sock_sendmsg;inet_sendmsg;udp_sendmsg;udp_send_skb.isra.0;ip_send_skb;ip_local_out;ip_output;ip_finish_output;__ip_finish_output;ip_finish_output2;dev_queue_xmit;__dev_queue_xmit;sch_direct_xmit;validate_xmit_skb_list;netif_skb_features 9421918 0
+server;[unknown];[unknown];std::net::udp::UdpSocket::send_to;__libc_sendto;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_sendto;__sys_sendto;sock_sendmsg;inet_sendmsg;udp_sendmsg;ip_make_skb;__ip_make_skb;siphash_3u32 12256786 0
+server;[unknown];[unknown];openssl::ssl::bio::bread::{{closure}} 27573880 0
+server;std::rt::lang_start;server::main;std::io::stdio::_print;<&std::io::stdio::Stdout as std::io::Write>::write_fmt;core::fmt::write;<std::io::Write::write_fmt::Adapter<T> as core::fmt::Write>::write_str;<std::io::stdio::StdoutLock as std::io::Write>::write_all;__libc_write;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_write;ksys_write;vfs_write;__vfs_write;tty_write;n_tty_write;pty_write;memcpy_erms 16771287 0
+server;std::rt::lang_start;server::main;std::io::stdio::_print;<&std::io::stdio::Stdout as std::io::Write>::write_fmt;core::fmt::write;<std::io::Write::write_fmt::Adapter<T> as core::fmt::Write>::write_str;<std::io::stdio::StdoutLock as std::io::Write>::write_all;__libc_write;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_write;ksys_write;vfs_write;__vfs_write;tty_write;n_tty_write;pty_write;tty_flip_buffer_push;queue_work_on;__queue_work;get_work_pool;radix_tree_lookup 12716610 0
+server;[unknown];[unknown];<udp_dtls::udp_channel::UdpChannel as std::io::Read>::read;__libc_recv;entry_SYSCALL_64_after_hwframe;do_syscall_64 47345984 0
+server;[unknown];[unknown];<udp_dtls::udp_channel::UdpChannel as std::io::Read>::read;__libc_recv;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_recvfrom;__sys_recvfrom;sock_recvmsg;inet_recvmsg;udp_recvmsg;__skb_recv_udp;__skb_wait_for_more_packets;schedule_timeout;schedule;__schedule;finish_task_switch;__perf_event_task_sched_in;perf_pmu_enable.part.0;x86_pmu_enable 34600 0
+server;std::rt::lang_start;server::main;std::io::stdio::_print;<&std::io::stdio::Stdout as std::io::Write>::write_fmt;core::fmt::write;<std::io::Write::write_fmt::Adapter<T> as core::fmt::Write>::write_str;<std::io::stdio::StdoutLock as std::io::Write>::write_all;__libc_write;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_write;ksys_write;vfs_write;__vfs_write;tty_write;__check_heap_object 27472795 0
+tokio-runtime-w;start_thread;core::sync::atomic::AtomicUsize::compare_exchange_weak 0 17639006
+tokio-runtime-w;start_thread;alloc::collections::btree::map::BTreeMap<K,V,A>::insert 0 9340802
+tokio-runtime-w;start_thread;__libc_sendmsg;entry_SYSCALL_64_after_hwframe;do_syscall_64;apic_timer_interrupt;smp_apic_timer_interrupt;hrtimer_interrupt;__hrtimer_run_queues;__remove_hrtimer;rb_next 0 10079006
+tokio-runtime-w;start_thread;core::cell::RefCell<T>::try_borrow_mut 0 154854595
+server;[unknown];[unknown];<udp_dtls::udp_channel::UdpChannel as std::io::Read>::read;__libc_recv;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_recvfrom;__sys_recvfrom;sock_recvmsg;inet_recvmsg;udp_recvmsg;_copy_to_iter;copy_user_generic_unrolled 11470023 0
+tokio-runtime-w;start_thread;mio::sys::unix::waker::Waker::wake;<&std::os::unix::net::stream::UnixStream as std::io::Write>::write 0 14928339
+tokio-runtime-w;start_thread;<core::ops::range::Range<T> as core::iter::range::RangeIteratorImpl>::spec_next 0 12127219
+tokio-runtime-w;start_thread;<core::slice::iter::IterMut<T> as core::iter::traits::iterator::Iterator>::next 0 13152671
+tokio-runtime-w;start_thread;hashbrown::rustc_entry::<impl hashbrown::map::HashMap<K,V,S,A>>::rustc_entry 0 12301974
+tokio-runtime-w;start_thread;syscall;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_futex;do_futex;futex_wait;futex_wait_queue_me;schedule;__schedule;finish_task_switch;perf_pmu_enable.part.0 0 72791
+server;[unknown];[unknown];std::net::udp::UdpSocket::send_to;__libc_sendto;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_sendto;__sys_sendto;sock_sendmsg;inet_sendmsg;udp_sendmsg;udp_send_skb.isra.0;ip_send_skb;ip_local_out;ip_output;ip_finish_output;ipv4_mtu 9672994 0
+tokio-runtime-w;start_thread;wtransport::driver::streams::settings::RemoteSettingsStream::run::{{closure}} 0 22990542
+tokio-runtime-w;start_thread;core::iter::traits::iterator::Iterator::find_map 0 12316962
+tokio-runtime-w;start_thread;<core::result::Result<T,E> as core::ops::try_trait::Try>::branch 0 194161177
+tokio-runtime-w;start_thread;tokio::sync::mpsc::bounded::Receiver<T>::recv::{{closure}} 0 13329328
+tokio-runtime-w;start_thread;epoll_wait;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_epoll_wait;do_epoll_wait;ep_poll;ep_scan_ready_list.constprop.0;ep_send_events_proc;sock_poll 0 1804896
+tokio-runtime-w;start_thread;<&mut W as core::fmt::Write::write_fmt::SpecWriteFmt>::spec_write_fmt;nu_ansi_term::ansi::<impl nu_ansi_term::style::Style>::write_prefix 0 15392131
+tokio-runtime-w;start_thread;tracing_subscriber::registry::sharded::Registry::has_per_layer_filters 0 11967434
+tokio-runtime-w;start_thread;alloc::vec::Vec<T,A>::append_elements 0 11514031
+server;[unknown];[unknown];<udp_dtls::udp_channel::UdpChannel as std::io::Read>::read;__libc_recv;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_recvfrom;__sys_recvfrom;sock_recvmsg;inet_recvmsg;udp_recvmsg;__skb_recv_udp;__skb_wait_for_more_packets;schedule_timeout;schedule;__schedule;finish_task_switch;__perf_event_task_sched_in;perf_event_sched_in;ctx_sched_in;visit_groups_merge;flexible_sched_in 10049382 0
+server;[unknown];[unknown];<udp_dtls::udp_channel::UdpChannel as std::io::Read>::read;__libc_recv;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_recvfrom;__sys_recvfrom;sock_recvmsg;inet_recvmsg;udp_recvmsg;skb_consume_udp;__consume_stateless_skb;skb_release_data 24384266 0
+tokio-runtime-w;start_thread;core::slice::iter::<impl core::iter::traits::collect::IntoIterator for &[T]>::into_iter 0 13387609
+tokio-runtime-w;start_thread;core::slice::raw::from_raw_parts_mut::precondition_check 0 31122265
+server;[unknown];[unknown];<udp_dtls::udp_channel::UdpChannel as std::io::Read>::read;__libc_recv;entry_SYSCALL_64_after_hwframe;do_syscall_64;switch_fpu_return 7568081 0
+tokio-runtime-w;start_thread;core::time::Duration::from_nanos 0 159496397
+server;std::rt::lang_start;server::main;std::io::stdio::_print;<&std::io::stdio::Stdout as std::io::Write>::write_fmt;core::fmt::write;<std::io::Write::write_fmt::Adapter<T> as core::fmt::Write>::write_str;<std::io::stdio::StdoutLock as std::io::Write>::write_all;__libc_write;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_write;ksys_write;vfs_write;__vfs_write;tty_write;n_tty_write;pty_write;tty_flip_buffer_push;queue_work_on;insert_work 8246766 0
+tokio-runtime-w;start_thread;parking_lot_core::thread_parker::imp::ThreadParker::futex_wait 0 3732850
+tokio-runtime-w;start_thread;<&mut W as core::fmt::Write::write_fmt::SpecWriteFmt>::spec_write_fmt;core::fmt::Formatter::write_fmt;core::fmt::write;alloc::vec::Vec<T,A>::append_elements 0 9792871
+tokio-runtime-w;start_thread;<tokio::sync::notify::Waiter as tokio::util::linked_list::Link>::pointers 0 12493734
+tokio-runtime-w;start_thread;__libc_sendmsg;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_sendmsg;__sys_sendmsg;___sys_sendmsg;____sys_sendmsg;sock_sendmsg;inet6_sendmsg;udpv6_sendmsg;udp_sendmsg;udp_send_skb.isra.0;ip_send_skb;ip_local_out;ip_output;ip_finish_output;__ip_finish_output;ip_finish_output2;neigh_resolve_output;dev_queue_xmit;dst_release 0 13182580
+tokio-runtime-w;start_thread;tokio::runtime::time::wheel::level::Level::next_occupied_slot 0 169339286
+server;[unknown];[unknown];<udp_dtls::udp_channel::UdpChannel as std::io::Read>::read;__libc_recv;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_recvfrom;__sys_recvfrom;sock_recvmsg;inet_recvmsg;udp_recvmsg;__skb_recv_udp;__skb_wait_for_more_packets;schedule_timeout;schedule;__schedule;finish_task_switch;__perf_event_task_sched_in;perf_event_sched_in;ctx_sched_in;sched_clock_cpu 14859216 0
+tokio-runtime-w;start_thread;quinn_proto::connection::streams::state::StreamsState::poll 0 13437673
+server;[unknown];[unknown];std::net::udp::UdpSocket::send_to;__libc_sendto;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_sendto;__sys_sendto;sock_sendmsg;inet_sendmsg;udp_sendmsg;udp_send_skb.isra.0;ip_send_skb;ip_local_out;ip_output;ip_finish_output;__ip_finish_output;ip_finish_output2;neigh_resolve_output;dev_queue_xmit;__dev_queue_xmit 11312329 0
+tokio-runtime-w;start_thread;tokio::runtime::scheduler::multi_thread::worker::Context::run 0 19973493
+tokio-runtime-w;start_thread;<core::iter::adapters::zip::Zip<A,B> as core::iter::adapters::zip::ZipImpl<A,B>>::next 0 10041169
+tokio-runtime-w;start_thread;wtransport::driver::worker::Worker::run_impl::{{closure}} 0 14573085
+server;std::rt::lang_start;[libssl.so.1.1] 11517698 0
+server;std::rt::lang_start;server::main;std::io::stdio::_print;<&std::io::stdio::Stdout as std::io::Write>::write_fmt;core::fmt::write;<core::net::socket_addr::SocketAddrV4 as core::fmt::Display>::fmt;core::fmt::write 15051126 0
+server;[unknown];[unknown];<udp_dtls::udp_channel::UdpChannel as std::io::Read>::read;__libc_recv;entry_SYSCALL_64_after_hwframe;__x64_sys_recvfrom 154485628 0
+tokio-runtime-w;start_thread;core::ptr::drop_in_place<core::cell::RefMut<core::option::Option<alloc::boxed::Box<tokio::runtime::scheduler::multi_thread::worker::Core>>>> 0 14315742
+tokio-runtime-w;start_thread;syscall;entry_SYSCALL_64_after_hwframe;do_syscall_64;switch_fpu_return 0 3517680
+tokio-runtime-w;start_thread;__libc_sendmsg;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_sendmsg;__sys_sendmsg;___sys_sendmsg;____sys_sendmsg;sock_sendmsg;inet6_sendmsg;udpv6_sendmsg;udp_sendmsg;udp_send_skb.isra.0;ip_send_skb;ip_local_out;__ip_local_out;nf_hook_slow;drm_crtc_add_crc_entry;drm_mode_atomic_ioctl;drm_mode_atomic_ioctl 0 113366833
+server;[unknown];[unknown];<udp_dtls::udp_channel::UdpChannel as std::io::Read>::read;__libc_recv;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_recvfrom;__sys_recvfrom;sock_recvmsg;inet_recvmsg;udp_recvmsg;__skb_recv_udp;__skb_wait_for_more_packets;schedule_timeout;schedule;__schedule;finish_task_switch;__perf_event_task_sched_in 16105596 0
+tokio-runtime-w;start_thread;syscall;entry_SYSCALL_64_after_hwframe;do_syscall_64 0 34695109
+tokio-runtime-w;start_thread;syscall;syscall_return_via_sysret 0 7311881
+tokio-runtime-w;start_thread;<usize as core::slice::index::SliceIndex<[T]>>::index 0 161883018
+tokio-runtime-w;start_thread;bytes::bytes_mut::BytesMut::advance_unchecked 0 12544681
+tokio-runtime-w;start_thread;quinn_proto::connection::Connection::on_ack_received 0 11176317
+tokio-runtime-w;start_thread;quinn::endpoint::RecvState::poll_socket::{{closure}} 0 13411322
+tokio-runtime-w;start_thread;syscall;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_futex;do_futex;futex_wait 0 12582798
+server;[unknown];[unknown];std::net::udp::UdpSocket::send_to;__libc_sendto;entry_SYSCALL_64_after_hwframe;__x64_sys_sendto 9820626 0
+tokio-runtime-w;start_thread;quinn_proto::connection::State::is_handshake 0 10596952
+tokio-runtime-w;start_thread;syscall;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_futex;do_futex;futex_wait;futex_wait_queue_me;schedule;__schedule;deactivate_task;dequeue_task_fair;dequeue_entity;update_load_avg;__update_load_avg_cfs_rq 0 14082657
+tokio-runtime-w;start_thread;core::slice::<impl [T]>::get_unchecked 0 10173773
+tokio-runtime-w;start_thread;tracing_core::dispatcher::Dispatch::try_close 0 11333054
+server;std::rt::lang_start;server::main;std::io::stdio::_print;<&std::io::stdio::Stdout as std::io::Write>::write_fmt;core::fmt::write;<std::io::Write::write_fmt::Adapter<T> as core::fmt::Write>::write_str;<std::io::stdio::StdoutLock as std::io::Write>::write_all;__libc_write;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_write;ksys_write;__fsnotify_parent 11894460 0
+tokio-runtime-w;start_thread;parking_lot_core::parking_lot::park 0 13814655
+server;[unknown];[unknown];std::net::udp::UdpSocket::send_to;__libc_sendto;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_sendto;__sys_sendto;sock_sendmsg;inet_sendmsg;udp_sendmsg;udp_send_skb.isra.0;ip_send_skb;ip_local_out;__ip_local_out;nf_hook_slow;nf_nat_ipv4_local_fn;nf_nat_ipv4_fn;nf_nat_packet 30053839 0
+server;[unknown];[unknown];std::net::udp::UdpSocket::send_to;__libc_sendto;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_sendto;__sys_sendto;sock_sendmsg;inet_sendmsg;udp_sendmsg;ip_make_skb;__ip_append_data.isra.0 10047862 0
+tokio-runtime-w;start_thread;[libc-2.31.so] 0 98923682
+tokio-runtime-w;start_thread;__libc_sendmsg;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_sendmsg;__sys_sendmsg;___sys_sendmsg;____sys_sendmsg;sock_sendmsg;inet6_sendmsg;udpv6_sendmsg;udp_sendmsg;udp_send_skb.isra.0;ip_send_skb;ip_local_out;ip_send_check 0 10314199
+server;std::rt::lang_start;server::main;std::io::stdio::_print;<&std::io::stdio::Stdout as std::io::Write>::write_fmt;core::fmt::write;<std::io::Write::write_fmt::Adapter<T> as core::fmt::Write>::write_str;<std::io::stdio::StdoutLock as std::io::Write>::write_all;__libc_write;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_write;ksys_write;vfs_write;__vfs_write;tty_write;n_tty_write;pty_write;tty_flip_buffer_push;queue_work_on 11195238 0
+tokio-runtime-w;start_thread;core::ptr::drop_in_place<tokio::util::try_lock::LockGuard<tokio::runtime::driver::Driver>> 0 11754249
+tokio-runtime-w;start_thread;core::ptr::drop_in_place<core::result::Result< 0 11808147
+server;[unknown];[unknown];std::net::udp::UdpSocket::send_to;__libc_sendto;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_sendto;__sys_sendto;sock_sendmsg;inet_sendmsg;security_sk_classify_flow 8457384 0
+tokio-runtime-w;start_thread;tokio::runtime::scheduler::multi_thread::idle::Idle::unpark_worker_by_id 0 11005451
+tokio-runtime-w;start_thread;std::sync::mutex::Mutex<T>::lock;syscall;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_futex;do_futex;futex_wait;futex_wait_queue_me;schedule;__schedule;finish_task_switch;__perf_event_task_sched_in;perf_pmu_enable.part.0;x86_pmu_enable 0 818535
+tokio-runtime-w;start_thread;core::pin::Pin<&mut T>::map_unchecked_mut 0 14714052
+server;[unknown];[unknown];std::net::udp::UdpSocket::send_to;__libc_sendto;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_sendto;__sys_sendto;sock_sendmsg;inet_sendmsg;udp_sendmsg;udp_send_skb.isra.0;ip_send_skb;ip_local_out;ip_output;ip_finish_output;__ip_finish_output;ip_finish_output2;neigh_resolve_output;__dev_queue_xmit 14968050 0
+tokio-runtime-w;start_thread;quinn_proto::connection::paths::RttEstimator::get 0 14156822
+server;std::rt::lang_start;server::main;std::io::stdio::_print;<&std::io::stdio::Stdout as std::io::Write>::write_fmt;core::fmt::write;<core::net::socket_addr::SocketAddrV4 as core::fmt::Display>::fmt;core::fmt::write;<core::net::ip_addr::Ipv4Addr as core::fmt::Display>::fmt;core::fmt::write;core::fmt::num::imp::<impl core::fmt::Display for u8>::fmt;<std::io::stdio::StdoutLock as std::io::Write>::write_all 11043918 0
+tokio-runtime-w;start_thread;core::sync::atomic::AtomicUsize::compare_exchange 0 13214689
+server;[unknown];[unknown];std::net::udp::UdpSocket::send_to;__libc_sendto;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_sendto;__sys_sendto;sock_sendmsg;inet_sendmsg;udp_sendmsg;udp_send_skb.isra.0;ip_send_skb;ip_local_out;ip_output;ip_finish_output;__ip_finish_output;ip_finish_output2;neigh_resolve_output;dev_queue_xmit;__dev_queue_xmit;__qdisc_run 11816163 0
+tokio-runtime-w;start_thread;epoll_wait;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_epoll_wait;do_epoll_wait;ep_poll;schedule_hrtimeout_range;schedule_hrtimeout_range_clock;schedule;__schedule;finish_task_switch;apic_timer_interrupt;smp_apic_timer_interrupt;hrtimer_interrupt;__hrtimer_run_queues;tick_sched_timer;tick_sched_handle;update_process_times;account_process_tick;account_system_time;account_system_index_time 0 1804240
+server;[unknown];[unknown];std::net::udp::UdpSocket::send_to;__libc_sendto;syscall_return_via_sysret 34639939 0
+server;[unknown];[unknown];std::net::udp::UdpSocket::send_to;__libc_sendto;entry_SYSCALL_64_after_hwframe;do_syscall_64 34439416 0
+tokio-runtime-w;start_thread;quinn_proto::connection::paths::PathData::sent 0 11692153
+server;std::rt::lang_start;server::main;std::io::stdio::_print;<&std::io::stdio::Stdout as std::io::Write>::write_fmt;core::fmt::write;<std::io::Write::write_fmt::Adapter<T> as core::fmt::Write>::write_str;<std::io::stdio::StdoutLock as std::io::Write>::write_all;__libc_write;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_write;ksys_write;vfs_write;__vfs_write;tty_write;n_tty_write;do_output_char;pty_write;memcpy_erms 11007868 0
+tokio-runtime-w;start_thread;<core::pin::Pin<Ptr> as core::ops::deref::Deref>::deref 0 11414263
+server;[unknown];[unknown];<udp_dtls::udp_channel::UdpChannel as std::io::Read>::read;__libc_recv;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_recvfrom;__sys_recvfrom;sock_recvmsg;inet_recvmsg;udp_recvmsg;__skb_recv_udp;__skb_wait_for_more_packets;schedule_timeout;schedule;__schedule;rcu_qs 12470315 0
+tokio-runtime-w;start_thread;syscall;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_futex;do_futex;futex_wait;futex_wait_queue_me;schedule;__schedule;finish_task_switch;__perf_event_task_sched_in;perf_pmu_enable.part.0;intel_pmu_enable_all 0 11530
+tokio-runtime-w;start_thread;core::ptr::drop_in_place<core::cell::BorrowRef> 0 13247015
+server;[unknown];[unknown];<udp_dtls::udp_channel::UdpChannel as std::io::Read>::read;__libc_recv;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_recvfrom;__sys_recvfrom;sock_recvmsg;inet_recvmsg;udp_recvmsg 1651196 0
+tokio-runtime-w;start_thread;epoll_wait;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_epoll_wait;do_epoll_wait;ep_poll;schedule_hrtimeout_range;schedule_hrtimeout_range_clock;schedule;__schedule;finish_task_switch;__perf_event_task_sched_in;perf_event_sched_in;ctx_sched_in;rb_next 0 1553234
+server;std::rt::lang_start;server::main;std::io::stdio::_print;<&std::io::stdio::Stdout as std::io::Write>::write_fmt;core::fmt::write;<std::io::Write::write_fmt::Adapter<T> as core::fmt::Write>::write_str;<std::io::stdio::StdoutLock as std::io::Write>::write_all;__libc_write;syscall_return_via_sysret 21112148 0
+server;std::rt::lang_start;core::fmt::Arguments::new_v1 11604597 0
+tokio-runtime-w;start_thread;recvmmsg;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_recvmmsg;do_recvmmsg 0 12648778
+tokio-runtime-w;start_thread;sharded_slab::page::slot::RefCount<C>::decr 0 9215723
+tokio-runtime-w;start_thread;core::slice::raw::from_raw_parts::precondition_check 0 181947103
+tokio-runtime-w;start_thread;tokio::sync::batch_semaphore::Semaphore::poll_acquire 0 172897507
+tokio-runtime-w;start_thread;tokio::runtime::io::scheduled_io::ScheduledIo::ready_event 0 12168166
+server;[unknown];[unknown];<udp_dtls::udp_channel::UdpChannel as std::io::Read>::read;__libc_recv;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_recvfrom;__sys_recvfrom;sock_recvmsg;inet_recvmsg;udp_recvmsg;__skb_recv_udp;__skb_wait_for_more_packets;schedule_timeout;schedule;__schedule;deactivate_task 21022667 0
+server;std::rt::lang_start;server::main;std::io::stdio::_print;<&std::io::stdio::Stdout as std::io::Write>::write_fmt;core::fmt::write;<std::io::Write::write_fmt::Adapter<T> as core::fmt::Write>::write_str;<std::io::stdio::StdoutLock as std::io::Write>::write_all;core::slice::memchr::memrchr 25506204 0
+server;std::rt::lang_start;server::main;std::io::stdio::_print;<&std::io::stdio::Stdout as std::io::Write>::write_fmt;core::fmt::write;<std::io::Write::write_fmt::Adapter<T> as core::fmt::Write>::write_str;<std::io::stdio::StdoutLock as std::io::Write>::write_all;__libc_write;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_write;ksys_write;vfs_write;__vfs_write;tty_write;tty_ldisc_ref_wait;ldsem_down_read 13447897 0
+tokio-runtime-w;start_thread;<&mut W as core::fmt::Write::write_fmt::SpecWriteFmt>::spec_write_fmt;core::fmt::Formatter::write_fmt;<core::fmt::Formatter as core::fmt::Write>::write_fmt;<core::fmt::Formatter as core::fmt::Write>::write_fmt;alloc::vec::Vec<T,A>::reserve 0 13736812
+tokio-runtime-w;start_thread;epoll_wait;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_epoll_wait;do_epoll_wait;ep_poll;schedule_hrtimeout_range;schedule_hrtimeout_range_clock;hrtimer_try_to_cancel;__remove_hrtimer;rb_erase 0 1711140
+tokio-runtime-w;start_thread;core::sync::atomic::AtomicBool::load 0 11256620
+server;[unknown];[unknown];std::net::udp::UdpSocket::send_to;__libc_sendto;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_sendto;__sys_sendto;sock_sendmsg;inet_sendmsg;udp_sendmsg;udp_send_skb.isra.0;ip_send_skb;ip_local_out;ip_output;ip_finish_output;__ip_finish_output;ip_finish_output2;neigh_resolve_output;dev_queue_xmit;__dev_queue_xmit;sch_direct_xmit;dev_hard_start_xmit 15780911 0
+tokio-runtime-w;start_thread;<ring::bits::BitLength<u64> as ring::bits::FromUsizeBytes>::from_usize_bytes 0 154118464
+tokio-runtime-w;start_thread;<quinn::connection::ConnectionRef as core::ops::deref::Deref>::deref 0 17007508
+server;std::rt::lang_start;server::main;std::io::stdio::_print;<&std::io::stdio::Stdout as std::io::Write>::write_fmt;core::fmt::write;<std::io::Write::write_fmt::Adapter<T> as core::fmt::Write>::write_str;<std::io::stdio::StdoutLock as std::io::Write>::write_all;__libc_write;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_write;ksys_write;vfs_write;__vfs_write;tty_write;tty_write_unlock;__wake_up;__wake_up_common_lock;_raw_spin_lock_irqsave 11072256 0
+tokio-runtime-w;start_thread;core::result::Result<T,E>::is_err 0 13370388
+tokio-runtime-w;start_thread;core::cell::Cell<T>::set 0 11084471
+tokio-runtime-w;start_thread;syscall;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_futex;do_futex;futex_wake;wake_up_q;try_to_wake_up;ttwu_do_activate;activate_task;enqueue_task_fair;enqueue_entity;update_load_avg;__update_load_avg_se 0 17730608
+server;std::rt::lang_start;foreign_types_shared::ForeignTypeRef::from_ptr 11188056 0
+tokio-runtime-w;start_thread;recvmmsg;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_recvmmsg;__sys_recvmmsg;do_recvmmsg;___sys_recvmsg;____sys_recvmsg;sock_recvmsg;inet6_recvmsg;udpv6_recvmsg;_raw_spin_lock_bh 0 10219119
+server;[unknown];[unknown];<udp_dtls::udp_channel::UdpChannel as std::io::Read>::read;__libc_recv;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_recvfrom;__sys_recvfrom;sock_recvmsg;inet_recvmsg;udp_recvmsg;__check_object_size;__check_heap_object 11697473 0
+server;[unknown];[unknown];std::net::udp::UdpSocket::send_to;__libc_sendto;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_sendto;__sys_sendto;sock_sendmsg;inet_sendmsg;udp_sendmsg;ip_route_output_flow;ip_route_output_key_hash;ip_route_output_key_hash_rcu 14204777 0
+server;[unknown];[unknown];<udp_dtls::udp_channel::UdpChannel as std::io::Read>::read;__libc_recv;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_recvfrom;__sys_recvfrom;sock_recvmsg;inet_recvmsg;udp_recvmsg;__skb_recv_udp;__local_bh_enable_ip 1561915 0
+server;std::rt::lang_start;server::main;std::io::stdio::_print;<&std::io::stdio::Stdout as std::io::Write>::write_fmt;core::fmt::write;<std::io::Write::write_fmt::Adapter<T> as core::fmt::Write>::write_str;<std::io::stdio::StdoutLock as std::io::Write>::write_all;__libc_write;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_write;ksys_write;vfs_write;__vfs_write;tty_write;n_tty_write;pty_write 12245882 0
+tokio-runtime-w;start_thread;__libc_sendmsg;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_sendmsg;__sys_sendmsg;___sys_sendmsg;____sys_sendmsg;sock_sendmsg;inet6_sendmsg;udpv6_sendmsg;udp_sendmsg;ip_make_skb;__ip_append_data.isra.0;sock_alloc_send_skb;sock_alloc_send_pskb;alloc_skb_with_frags;__alloc_skb 0 9534899
+tokio-runtime-w;start_thread;<tokio::loom::std::atomic_u32::AtomicU32 as core::ops::deref::Deref>::deref 0 13921906
+server;std::rt::lang_start;server::main;std::io::stdio::_print;<&std::io::stdio::Stdout as std::io::Write>::write_fmt;core::fmt::write;<std::io::Write::write_fmt::Adapter<T> as core::fmt::Write>::write_str;<std::io::stdio::StdoutLock as std::io::Write>::write_all;__libc_write;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_write;ksys_write;vfs_write;__vfs_write;tty_write;n_tty_write;pty_write;tty_flip_buffer_push;queue_work_on;__queue_work;insert_work;wake_up_process;try_to_wake_up;ttwu_do_activate;activate_task;enqueue_task_fair;enqueue_entity;update_load_avg 10513565 0
+tokio-runtime-w;start_thread;tokio::runtime::scheduler::multi_thread::worker::Core::has_tasks 0 160178987
+server;std::rt::lang_start;server::main;std::io::stdio::_print;<&std::io::stdio::Stdout as std::io::Write>::write_fmt;core::fmt::write;<std::io::Write::write_fmt::Adapter<T> as core::fmt::Write>::write_str;<std::io::stdio::StdoutLock as std::io::Write>::write_all;__libc_write;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_write;ksys_write;vfs_write;__vfs_write;tty_write;n_tty_write;pty_write;tty_insert_flip_string_fixed_flag;__tty_buffer_request_room 39512665 0
+tokio-runtime-w;start_thread;std::thread::local::LocalKey<T>::try_with 0 27971598
+tokio-runtime-w;start_thread;std::sys::thread_local::native::eager::Storage<T>::get 0 14797152
+tokio-runtime-w;start_thread;recvmmsg;entry_SYSCALL_64_after_hwframe;do_syscall_64 0 184837569
+server;std::rt::lang_start;server::main;std::io::stdio::_print;<&std::io::stdio::Stdout as std::io::Write>::write_fmt;core::fmt::write;<std::io::Write::write_fmt::Adapter<T> as core::fmt::Write>::write_str;<std::io::stdio::StdoutLock as std::io::Write>::write_all;__libc_write;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_write;ksys_write;vfs_write;rw_verify_area;security_file_permission;apparmor_file_permission;common_file_perm 14980376 0
+tokio-runtime-w;start_thread;core::ptr::const_ptr::<impl *const T>::is_null 0 12002096
+tokio-runtime-w;start_thread;syscall;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_futex;do_futex;futex_wait;futex_wait_queue_me;schedule;__schedule;deactivate_task;dequeue_task_fair;dequeue_entity;update_load_avg;intel_pstate_update_util;native_write_msr 0 11479268
+server;std::rt::lang_start;server::main;std::io::stdio::_print;<&std::io::stdio::Stdout as std::io::Write>::write_fmt;core::fmt::write;<std::io::Write::write_fmt::Adapter<T> as core::fmt::Write>::write_str;<std::io::stdio::StdoutLock as std::io::Write>::write_all;__libc_write;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_write;ksys_write 16020305 0
+tokio-runtime-w;start_thread;syscall;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_futex;do_futex;futex_wait;futex_wait_setup 0 12796889
+tokio-runtime-w;start_thread;<&mut W as core::fmt::Write::write_fmt::SpecWriteFmt>::spec_write_fmt;core::fmt::Formatter::write_fmt;core::fmt::num::imp::<impl core::fmt::Display for u8>::fmt 0 11215183
+tokio-runtime-w;start_thread;core::sync::atomic::AtomicUsize::swap 0 9440113
+server;[unknown];[unknown];std::net::udp::UdpSocket::send_to;__libc_sendto;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_sendto;__sys_sendto;sock_sendmsg;inet_sendmsg;udp_sendmsg;ip_make_skb;__ip_append_data.isra.0;sock_alloc_send_skb;sock_alloc_send_pskb;alloc_skb_with_frags;__alloc_skb;__kmalloc_reserve.isra.0 15905383 0
+tokio-runtime-w;start_thread;tracing_core::event::Event::dispatch 0 12612112
+tokio-runtime-w;start_thread;tokio::runtime::time::wheel::level::slot_range 0 9689864
+tokio-runtime-w;start_thread;core::slice::iter::IterMut<T>::new 0 11808147
+tokio-runtime-w;start_thread;quinn_proto::connection::timer::TimerTable::set 0 159085726
+server;[unknown];[unknown];std::net::udp::UdpSocket::send_to;__libc_sendto;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_sendto;__sys_sendto;sock_sendmsg;inet_sendmsg;udp_sendmsg;ip_route_output_flow;ip_route_output_key_hash 10918710 0
+tokio-runtime-w;start_thread;tokio::runtime::task::core::Core<T,S>::poll::{{closure}} 0 13522935
+tokio-runtime-w;start_thread;syscall;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_futex;do_futex;futex_wake;wake_up_q;try_to_wake_up;ttwu_do_activate;activate_task;enqueue_task_fair;enqueue_entity;update_cfs_group 0 11794160
+tokio-runtime-w;start_thread;tracing_subscriber::fmt::format::Writer::by_ref 0 16847896
+server;[unknown];[unknown];std::net::udp::UdpSocket::send_to;__libc_sendto;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_sendto;__sys_sendto;sock_sendmsg;inet_sendmsg;udp_sendmsg 9809213 0
+tokio-runtime-w;start_thread;socket2::sys::<impl std::os::fd::raw::FromRawFd for socket2::socket::Socket>::from_raw_fd 0 18027977
+server;[unknown];[unknown];std::net::udp::UdpSocket::send_to;__libc_sendto;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_sendto;__sys_sendto;sock_sendmsg;inet_sendmsg;udp_sendmsg;__cgroup_bpf_run_filter_sock_addr 23531973 0
+server;std::rt::lang_start;server::main;std::io::stdio::_print;<&std::io::stdio::Stdout as std::io::Write>::write_fmt;core::fmt::write;<core::net::socket_addr::SocketAddrV4 as core::fmt::Display>::fmt;core::fmt::write;<core::net::ip_addr::Ipv4Addr as core::fmt::Display>::fmt;core::fmt::write;core::fmt::num::imp::<impl core::fmt::Display for u8>::fmt;<std::io::Write::write_fmt::Adapter<T> as core::fmt::Write>::write_str;<std::io::stdio::StdoutLock as std::io::Write>::write_all;core::slice::memchr::memrchr 14189832 0
+tokio-runtime-w;start_thread;epoll_wait;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_epoll_wait;do_epoll_wait;ep_poll;ep_scan_ready_list.constprop.0;ep_send_events_proc;ep_item_poll.isra.0 0 3577514
+tokio-runtime-w;clock_gettime;__vdso_clock_gettime 0 12929631
+server;[unknown];[unknown];core::slice::raw::from_raw_parts 22511465 0
+tokio-runtime-w;start_thread;quinn_proto::connection::Connection::space_can_send 0 9095741
+tokio-runtime-w;start_thread;<&mut W as core::fmt::Write::write_fmt::SpecWriteFmt>::spec_write_fmt;[libc-2.31.so] 0 15533389
+tokio-runtime-w;start_thread;<core::ops::control_flow::ControlFlow<B,C> as core::ops::try_trait::Try>::from_output 0 10854482
+server;[unknown];BIO_write 23488942 0
+server;std::rt::lang_start;server::main;std::io::stdio::_print;core::fmt::write 13842243 0
+server;[unknown];[unknown];std::net::udp::UdpSocket::send_to;__libc_sendto;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_sendto;__sys_sendto;sock_sendmsg;inet_sendmsg;udp_sendmsg;ip_make_skb;ip_setup_cork;ipv4_mtu 15312246 0
+server;[unknown];[unknown];<udp_dtls::udp_channel::UdpChannel as std::io::Read>::read;__libc_recv;entry_SYSCALL_64_after_hwframe 26846172 0
+server;std::rt::lang_start;server::main;std::io::stdio::_print;<&std::io::stdio::Stdout as std::io::Write>::write_fmt;core::fmt::write;<std::io::Write::write_fmt::Adapter<T> as core::fmt::Write>::write_str;<std::io::stdio::StdoutLock as std::io::Write>::write_all 19513346 0
+tokio-runtime-w;start_thread;syscall;entry_SYSCALL_64 0 12640256
+tokio-runtime-w;start_thread;syscall;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_futex;do_futex;futex_wake;wake_up_q;try_to_wake_up;ttwu_do_activate;activate_task;psi_task_change 0 29902902
+tokio-runtime-w;start_thread;core::task::wake::Context::waker 0 9690340
+server;std::rt::lang_start;server::main;std::io::stdio::_print;<&std::io::stdio::Stdout as std::io::Write>::write_fmt;core::fmt::write;<std::io::Write::write_fmt::Adapter<T> as core::fmt::Write>::write_str;<std::io::stdio::StdoutLock as std::io::Write>::write_all;__libc_write;entry_SYSCALL_64_after_hwframe;do_syscall_64 128760364 0
+tokio-runtime-w;start_thread;libc::unix::linux_like::CMSG_LEN 0 15732231
+tokio-runtime-w;start_thread;tokio::loom::std::parking_lot::Condvar::wait 0 19990344
+tokio-runtime-w;start_thread;std::sync::mutex::Mutex<T>::lock;syscall;entry_SYSCALL_64_after_hwframe;do_syscall_64 0 3556595
+tokio-runtime-w;start_thread;recvmmsg;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_recvmmsg;__sys_recvmmsg;do_recvmmsg;___sys_recvmsg;____sys_recvmsg;sock_recvmsg;security_socket_recvmsg;apparmor_socket_recvmsg;aa_sk_perm 0 11883683
+server;[unknown];[unknown];std::net::udp::UdpSocket::send_to;__libc_sendto;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_sendto;__sys_sendto;sock_sendmsg;inet_sendmsg;udp_sendmsg;udp_send_skb.isra.0;ip_send_skb;ip_local_out;ip_output;ip_finish_output;__ip_finish_output;ip_finish_output2;dev_queue_xmit;__dev_queue_xmit;sch_direct_xmit;validate_xmit_skb_list;validate_xmit_skb 11037792 0
+server;std::rt::lang_start;server::main;std::io::stdio::_print;<&std::io::stdio::Stdout as std::io::Write>::write_fmt;core::fmt::write;<std::io::Write::write_fmt::Adapter<T> as core::fmt::Write>::write_str;<std::io::stdio::StdoutLock as std::io::Write>::write_all;__libc_write;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_write;ksys_write;__fget_light 10139202 0
+tokio-runtime-w;start_thread;<&mut W as core::fmt::Write::write_fmt::SpecWriteFmt>::spec_write_fmt;<core::fmt::Formatter as core::fmt::Write>::write_fmt;<core::fmt::Formatter as core::fmt::Write>::write_fmt;alloc::vec::Vec<T,A>::push 0 12221210
+tokio-runtime-w;start_thread;epoll_wait;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_epoll_wait;do_epoll_wait;ep_poll;schedule_hrtimeout_range;schedule_hrtimeout_range_clock;schedule;__schedule;finish_task_switch;__perf_event_task_sched_in;perf_event_sched_in;ctx_sched_in;visit_groups_merge;flexible_sched_in;group_sched_in;event_sched_in.isra.0;perf_log_itrace_start 0 1416899
+server;[unknown];[unknown];<udp_dtls::udp_channel::UdpChannel as std::io::Read>::read;__libc_recv;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_recvfrom;__sys_recvfrom;sock_recvmsg;inet_recvmsg;udp_recvmsg;__skb_recv_udp 1534591 0
+tokio-runtime-w;start_thread;thread_local::thread_id::get 0 12145855
+tokio-runtime-w;start_thread;tracing_subscriber::registry::stack::SpanStack::pop 0 11951597
+tokio-runtime-w;start_thread;tokio::runtime::task::state::Snapshot::is_complete 0 11706253
+tokio-runtime-w;start_thread;syscall;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_futex;do_futex;futex_wake;mark_wake_futex 0 22271494
+server;[unknown];[unknown];<udp_dtls::udp_channel::UdpChannel as std::io::Read>::read;__libc_recv;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_recvfrom;__sys_recvfrom;sock_recvmsg;inet_recvmsg;udp_recvmsg;__skb_recv_udp;__skb_wait_for_more_packets;schedule_timeout;schedule;__schedule;deactivate_task;psi_task_change 323863083 0
+server;[unknown];[libcrypto.so.1.1] 98926778 0
+tokio-runtime-w;start_thread;tokio::runtime::driver::Handle::time 0 81847287
+tokio-runtime-w;start_thread;epoll_wait;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_epoll_wait;do_epoll_wait;ktime_get_ts64 0 10387712
+tokio-runtime-w;start_thread;core::ptr::drop_in_place<lock_api::mutex::MutexGuard<parking_lot::raw_mutex::RawMutex,tokio::runtime::scheduler::multi_thread::worker::Synced>> 0 11580638
+tokio-runtime-w;start_thread;tokio::runtime::scheduler::multi_thread::park::Inner::park 0 26220468
+tokio-runtime-w;start_thread;core::option::Option<T>::expect 0 11864984
+server;[unknown];[unknown];<udp_dtls::udp_channel::UdpChannel as std::io::Read>::read;__libc_recv;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_recvfrom;__sys_recvfrom;sock_recvmsg;inet_recvmsg;udp_recvmsg;__skb_recv_udp;__skb_wait_for_more_packets;schedule_timeout;schedule;__schedule;update_rq_clock;sched_clock_cpu 18139812 0
+tokio-runtime-w;start_thread;core::core_arch::x86::sse2::_mm_loadu_si128 0 9714988
+tokio-runtime-w;start_thread;epoll_wait;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_epoll_wait;do_epoll_wait;ep_poll;schedule_hrtimeout_range;schedule_hrtimeout_range_clock;schedule;__schedule;deactivate_task;psi_task_change 0 35093011
+tokio-runtime-w;start_thread;syscall;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_futex;do_futex;futex_wait;futex_wait_queue_me;schedule;__schedule;finish_task_switch;__perf_event_task_sched_in 0 155400932
+server;std::rt::lang_start;server::main;std::io::stdio::_print;<&std::io::stdio::Stdout as std::io::Write>::write_fmt;core::fmt::write;<std::io::Write::write_fmt::Adapter<T> as core::fmt::Write>::write_str;<std::io::stdio::StdoutLock as std::io::Write>::write_all;__libc_write;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_write;ksys_write;vfs_write;__vfs_write;tty_write;n_tty_write;pty_write;tty_flip_buffer_push;queue_work_on;__queue_work;insert_work;wake_up_process;try_to_wake_up;ttwu_do_activate;activate_task 31986782 0
+tokio-runtime-w;start_thread;syscall;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_futex;do_futex;futex_wait;futex_wait_queue_me;schedule;__schedule 0 10389092
+tokio-runtime-w;start_thread;tokio::runtime::time::Inner::is_shutdown 0 12410724
+server;[unknown];[unknown];__rust_try 39852880 0
+tokio-runtime-w;start_thread;epoll_wait;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_epoll_wait;do_epoll_wait;ep_poll;schedule_hrtimeout_range;schedule_hrtimeout_range_clock;hrtimer_start_range_ns;enqueue_hrtimer;rb_insert_color 0 13717483
+tokio-runtime-w;start_thread;<tracing_subscriber::fmt::fmt_layer::Layer<S,N,E,W> as tracing_subscriber::layer::Layer<S>>::on_event::{{closure}};<std::io::stdio::Stdout as std::io::Write>::write_all;__libc_write;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_write;ksys_write;vfs_write;__vfs_write;tty_write;ldsem_down_read 0 11991488
+tokio-runtime-w;start_thread;tokio::runtime::time::handle::Handle::time_source 0 13445136
+tokio-runtime-w;start_thread;__rust_try 0 173208229
+tokio-runtime-w;start_thread;core::iter::range::<impl core::iter::traits::iterator::Iterator for core::ops::range::Range<A>>::next 0 297036913
+tokio-runtime-w;start_thread;tokio::runtime::context::budget::{{closure}} 0 9526582
+tokio-runtime-w;start_thread;<quinn::runtime::tokio::UdpSocket as quinn::runtime::AsyncUdpSocket>::try_send::{{closure}} 0 268003434
+server;std::rt::lang_start;<core::ops::range::RangeFrom<usize> as core::slice::index::SliceIndex<[T]>>::index 12296002 0
+server;std::rt::lang_start;server::main;std::io::stdio::_print;<&std::io::stdio::Stdout as std::io::Write>::write_fmt;core::fmt::write;<std::io::Write::write_fmt::Adapter<T> as core::fmt::Write>::write_str;<std::io::stdio::StdoutLock as std::io::Write>::write_all;__libc_write;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_write;ksys_write;vfs_write;__vfs_write;tty_write;n_tty_write;remove_wait_queue;_raw_spin_lock_irqsave 12779286 0
+tokio-runtime-w;start_thread;core::option::Option<T>::is_some 0 21375934
+tokio-runtime-w;start_thread;std::panicking::try::do_call 0 16793990
+tokio-runtime-w;start_thread;quinn_proto::crypto::rustls::<impl quinn_proto::crypto::PacketKey for alloc::boxed::Box<dyn rustls::quic::PacketKey>>::tag_len 0 11930539
+tokio-runtime-w;start_thread;core::intrinsics::copy_nonoverlapping::precondition_check 0 36716228
+server;std::rt::lang_start;core::array::<impl core::ops::index::Index<I> for [T: N]>::index 14690694 0
+tokio-runtime-w;start_thread;<core::option::Option<T> as core::ops::try_trait::Try>::branch 0 199632913
+server;std::rt::lang_start;server::main;std::io::stdio::_print;<&std::io::stdio::Stdout as std::io::Write>::write_fmt;core::fmt::write;<std::io::Write::write_fmt::Adapter<T> as core::fmt::Write>::write_str;<std::io::stdio::StdoutLock as std::io::Write>::write_all;__libc_write;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_write;ksys_write;vfs_write;__vfs_write;tty_write;n_tty_write;pty_write;tty_flip_buffer_push;queue_work_on;__queue_work;insert_work;wake_up_process;try_to_wake_up;ttwu_do_activate;activate_task;enqueue_task_fair 14640896 0
+tokio-runtime-w;start_thread;<core::slice::iter::Iter<T> as core::iter::traits::iterator::Iterator>::next 0 517623325
+server;[unknown];[unknown];std::net::udp::UdpSocket::send_to;__libc_sendto;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_sendto;__sys_sendto;sockfd_lookup_light;__fget_light 11037792 0
+server;std::rt::lang_start;server::main;std::io::stdio::_print;<&std::io::stdio::Stdout as std::io::Write>::write_fmt;core::fmt::write;<std::io::Write::write_fmt::Adapter<T> as core::fmt::Write>::write_str;<std::io::stdio::StdoutLock as std::io::Write>::write_all;__libc_write;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_write;ksys_write;vfs_write;__vfs_write;tty_write;mutex_unlock 11195238 0
+tokio-runtime-w;start_thread;recvmmsg;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_recvmmsg;__sys_recvmmsg;fput 0 172571987
+tokio-runtime-w;start_thread;tokio::runtime::scheduler::multi_thread::worker::Core::transition_from_parked 0 13869386
+tokio-runtime-w;start_thread;<tracing_subscriber::fmt::fmt_layer::Layer<S,N,E,W> as tracing_subscriber::layer::Layer<S>>::on_event::{{closure}};<std::io::stdio::Stdout as std::io::Write>::write_all;__libc_write;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_write;ksys_write;vfs_write;__vfs_write;tty_write;__check_object_size;__virt_addr_valid 0 15775718
+tokio-runtime-w;start_thread;<I as core::iter::traits::collect::IntoIterator>::into_iter 0 9290368
+tokio-runtime-w;start_thread;<core::iter::adapters::zip::Zip<A,B> as core::iter::traits::iterator::Iterator>::next 0 13550906
+server;std::rt::lang_start;server::main;std::io::stdio::_print;<&std::io::stdio::Stdout as std::io::Write>::write_fmt;core::fmt::write;<std::io::Write::write_fmt::Adapter<T> as core::fmt::Write>::write_str;<std::io::stdio::StdoutLock as std::io::Write>::write_all;__libc_write;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_write;ksys_write;vfs_write;__vfs_write;tty_write;n_tty_write;pty_write_room 10192077 0
+server;std::rt::lang_start;server::main;std::io::stdio::_print;<&std::io::stdio::Stdout as std::io::Write>::write_fmt;std::io::stdio::Stdout::lock 11704455 0
+tokio-runtime-w;start_thread;tokio::runtime::context::CONTEXT::{{constant}}::{{closure}} 0 10412892
+server;[unknown];[unknown];openssl::ssl::bio::bread 10990488 0
+tokio-runtime-w;start_thread;core::cmp::min_by 0 15033927
+tokio-runtime-w;start_thread;<tokio::sync::mpsc::bounded::OwnedPermit<T> as core::ops::drop::Drop>::drop 0 10287920
+server;[unknown];[unknown];<udp_dtls::udp_channel::UdpChannel as std::io::Read>::read;__libc_recv;entry_SYSCALL_64_after_hwframe;switch_fpu_return 14926014 0
+tokio-runtime-w;start_thread;tokio::runtime::time::Driver::park_internal::{{closure}} 0 16014114
+tokio-runtime-w;start_thread;epoll_wait;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_epoll_wait;do_epoll_wait;ep_poll;schedule_hrtimeout_range;schedule_hrtimeout_range_clock;schedule;__schedule;finish_task_switch;__perf_event_task_sched_in;perf_event_sched_in;ctx_sched_in;visit_groups_merge 0 1350267
+server;std::rt::lang_start;<openssl::ssl::SslStream<S> as std::io::Write>::write 10336763 0
+tokio-runtime-w;start_thread;tokio::runtime::task::state::Snapshot::ref_dec 0 13261757
+tokio-runtime-w;start_thread;epoll_wait;entry_SYSCALL_64_after_hwframe 0 171993642
+tokio-runtime-w;start_thread;<core::panic::unwind_safe::AssertUnwindSafe<F> as core::ops::function::FnOnce< 0 13036905
+tokio-runtime-w;start_thread;core::sync::atomic::AtomicUsize::load 0 12136167
+server;[unknown];[unknown];<udp_dtls::udp_channel::UdpChannel as std::io::Read>::read;__libc_recv;syscall_return_via_sysret 11454441 0
+tokio-runtime-w;start_thread;wtransport::connection::Connection::receive_datagram::{{closure}} 0 10264454
+tokio-runtime-w;start_thread;<core::ptr::non_null::NonNull<T> as core::cmp::PartialEq>::eq 0 9165151
+server;[unknown];[unknown];<core::net::socket_addr::SocketAddr as std::net::socket_addr::ToSocketAddrs>::to_socket_addrs 27154230 0
+tokio-runtime-w;start_thread;core::option::Option<T>::as_ref 0 360989703
+server;std::rt::lang_start;server::main;std::io::stdio::_print;<&std::io::stdio::Stdout as std::io::Write>::write_fmt;core::fmt::write;<std::io::Write::write_fmt::Adapter<T> as core::fmt::Write>::write_str;<std::io::stdio::StdoutLock as std::io::Write>::write_all;__libc_write;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_write;ksys_write;vfs_write;__vfs_write;tty_write 14685182 0
+tokio-runtime-w;start_thread;tokio::sync::mpsc::unbounded::UnboundedReceiver<T>::poll_recv 0 11891444
+tokio-runtime-w;start_thread;wtransport::driver::streams::settings::RemoteSettingsStream::read_frame::{{closure}} 0 10034674
+tokio-runtime-w;start_thread;core::array::<impl core::convert::AsRef<[T]> for [T: N]>::as_ref 0 14266198
+tokio-runtime-w;start_thread;core::result::Result<T,E>::is_ok 0 13701258
+tokio-runtime-w;start_thread;syscall;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_futex;do_futex;futex_wait;futex_wait_queue_me;schedule;__schedule;finish_task_switch;__perf_event_task_sched_in;perf_pmu_enable.part.0;x86_pmu_enable 0 191112
+tokio-runtime-w;start_thread;epoll_wait;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_epoll_wait;do_epoll_wait;ep_poll;ep_scan_ready_list.constprop.0;ep_send_events_proc;ep_item_poll.isra.0;eventfd_poll 0 1790886
+server;std::rt::lang_start;server::main;std::io::stdio::_print;<&std::io::stdio::Stdout as std::io::Write>::write_fmt;core::fmt::write;<std::io::Write::write_fmt::Adapter<T> as core::fmt::Write>::write_str;<std::io::stdio::StdoutLock as std::io::Write>::write_all;__libc_write;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_write;ksys_write;vfs_write;__vfs_write;tty_write;n_tty_write;pty_write;tty_flip_buffer_push;queue_work_on;__queue_work;insert_work;wake_up_process;try_to_wake_up;ttwu_do_activate;activate_task;enqueue_task_fair;enqueue_entity;account_entity_enqueue 16474178 0
+tokio-runtime-w;start_thread;core::sync::atomic::atomic_compare_exchange 0 202030170
+tokio-runtime-w;start_thread;std::collections::hash::map::HashMap<K,V,S>::get 0 12016972
+server;[unknown];[unknown];<udp_dtls::udp_channel::UdpChannel as std::io::Read>::read;__libc_recv;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_recvfrom;__sys_recvfrom;sock_recvmsg;inet_recvmsg;udp_recvmsg;__skb_recv_udp;__skb_wait_for_more_packets;schedule_timeout;schedule;__schedule;deactivate_task;dequeue_task_fair;dequeue_entity;update_curr;__cgroup_account_cputime;cgroup_rstat_updated 30166372 0
+server;[unknown];[unknown];std::net::udp::UdpSocket::send_to;__libc_sendto;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_sendto;__sys_sendto;sock_sendmsg;inet_sendmsg;udp_sendmsg;udp_send_skb.isra.0;ip_send_skb;ip_local_out;__ip_local_out;nf_hook_slow;iptable_filter_hook;ipt_do_table 13150224 0
+server;BIO_read 166489401 0
+tokio-runtime-w;start_thread;core::ptr::drop_in_place<tokio::sync::batch_semaphore::Acquire> 0 11162751
+tokio-runtime-w;start_thread;tokio::runtime::time::handle::Handle::is_shutdown 0 16073724
+tokio-runtime-w;start_thread;tokio::util::wake_list::WakeList::new 0 35917348
+tokio-runtime-w;start_thread;core::option::Option<T>::is_none 0 22475723
+server;[unknown];[libssl.so.1.1] 223707444 0
+tokio-runtime-w;start_thread;wtransport::driver::worker::Worker::run_impl::{{closure}}::{{closure}} 0 16334316
+tokio-runtime-w;start_thread;<alloc::vec::Vec<T,A> as core::convert::AsRef<[T]>>::as_ref 0 15112765
+tokio-runtime-w;start_thread;std::time::SystemTime::now 0 16363159
+tokio-runtime-w;start_thread;syscall;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_futex;do_futex;futex_wait;futex_wait_queue_me;schedule;__schedule;__perf_event_task_sched_out 0 11479268
+tokio-runtime-w;start_thread;recvmmsg;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_recvmmsg;__sys_recvmmsg;do_recvmmsg;___sys_recvmsg;copy_msghdr_from_user;copy_user_generic_unrolled 0 11192735
+tokio-runtime-w;start_thread;quinn_proto::connection::Connection::process_decrypted_packet 0 27438548
+tokio-runtime-w;start_thread;<core::array::drain::Drain<T> as core::iter::traits::unchecked_iterator::UncheckedIterator>::next_unchecked 0 157262161
+tokio-runtime-w;start_thread;<alloc::sync::Arc<T,A> as core::ops::deref::Deref>::deref 0 60806638
+server;[unknown];[unknown];[libcrypto.so.1.1] 37512839 0
+tokio-runtime-w;start_thread;tokio::net::udp::UdpSocket::writable 0 9608491
+tokio-runtime-w;start_thread;<tracing_subscriber::fmt::fmt_layer::Layer<S,N,E,W> as tracing_subscriber::layer::Layer<S>>::on_event::{{closure}};<std::io::stdio::Stdout as std::io::Write>::write_all;__libc_write;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_write;ksys_write;vfs_write;__vfs_write;tty_write;n_tty_write 0 11849656
+tokio-runtime-w;start_thread;epoll_wait;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_epoll_wait;do_epoll_wait;ep_poll;schedule_hrtimeout_range;schedule_hrtimeout_range_clock;schedule;__schedule;deactivate_task;dequeue_task_fair;dequeue_entity;update_load_avg 0 15753018
+tokio-runtime-w;start_thread;<&mut W as core::fmt::Write::write_fmt::SpecWriteFmt>::spec_write_fmt;<core::fmt::Formatter as core::fmt::Write>::write_fmt;<core::fmt::Formatter as core::fmt::Write>::write_fmt 0 12623518
+tokio-runtime-w;start_thread;core::slice::<impl [T]>::copy_from_slice 0 175582209
+server;std::rt::lang_start;<core::ops::range::Range<usize> as core::slice::index::SliceIndex<[T]>>::get_unchecked::precondition_check 11855120 0
+tokio-runtime-w;start_thread;syscall;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_futex;do_futex;futex_wait;futex_wait_setup;get_futex_key;get_futex_key_refs.isra.0;ret_from_intr;do_IRQ;irq_exit;__softirqentry_text_start;net_rx_action;tg3_poll_msix;napi_complete_done 0 10497888
+tokio-runtime-w;start_thread;tokio::runtime::scheduler::multi_thread::queue::Steal<T>::steal_into 0 15860169
+tokio-runtime-w;start_thread;tokio::runtime::time::wheel::Wheel::next_expiration 0 64736249
+server;std::rt::lang_start;server::main;std::io::stdio::_print;<&std::io::stdio::Stdout as std::io::Write>::write_fmt;core::fmt::write;<std::io::Write::write_fmt::Adapter<T> as core::fmt::Write>::write_str;<std::io::stdio::StdoutLock as std::io::Write>::write_all;__libc_write;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_write;ksys_write;vfs_write;__vfs_write;tty_write;n_tty_write;pty_write;tty_flip_buffer_push;queue_work_on;__queue_work;insert_work;wake_up_process;try_to_wake_up;ttwu_do_activate;activate_task;enqueue_task_fair;enqueue_entity;update_curr 11619841 0
+tokio-runtime-w;start_thread;syscall;entry_SYSCALL_64_after_hwframe 0 1819511
+server;std::rt::lang_start;server::main;std::io::stdio::_print;<&std::io::stdio::Stdout as std::io::Write>::write_fmt;core::fmt::write;<std::io::Write::write_fmt::Adapter<T> as core::fmt::Write>::write_str;<std::io::stdio::StdoutLock as std::io::Write>::write_all;__libc_write;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_write;ksys_write;vfs_write;__vfs_write;tty_write;__check_object_size 10139202 0
+server;[unknown];[unknown];<udp_dtls::udp_channel::UdpChannel as std::io::Read>::read;__libc_recv;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_recvfrom;__sys_recvfrom;sock_recvmsg;inet_recvmsg;udp_recvmsg;__skb_recv_udp;__skb_wait_for_more_packets;schedule_timeout;schedule;__schedule;pick_next_task_fair;newidle_balance 10684104 0
+tokio-runtime-w;start_thread;core::core_arch::x86::m128iExt::as_i8x16 0 17346113
+tokio-runtime-w;start_thread;mio::net::udp::UdpSocket::try_io::{{closure}} 0 174521160
+server;[unknown];[unknown];core::slice::raw::from_raw_parts_mut::precondition_check 8277154 0
+server;[unknown];[unknown];<udp_dtls::udp_channel::UdpChannel as std::io::Read>::read;__libc_recv;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_recvfrom;__sys_recvfrom;sock_recvmsg;inet_recvmsg;udp_recvmsg;__skb_recv_udp;__skb_wait_for_more_packets;schedule_timeout;schedule;__schedule;finish_task_switch;__perf_event_task_sched_in;perf_event_sched_in;ctx_sched_in;visit_groups_merge 11025883 0
+wt_server;std::rt::lang_start;syscall;entry_SYSCALL_64_after_hwframe;do_syscall_64 0 1956288
+server;std::rt::lang_start;server::main;std::io::stdio::_print;<&std::io::stdio::Stdout as std::io::Write>::write_fmt;core::fmt::write;<std::io::Write::write_fmt::Adapter<T> as core::fmt::Write>::write_str;<std::io::stdio::StdoutLock as std::io::Write>::write_all;__libc_write;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_write;ksys_write;vfs_write;__vfs_write;tty_write;tty_write_unlock;__wake_up_common_lock 16437571 0
+tokio-runtime-w;start_thread;quinn::endpoint::Endpoint::new_with_abstract_socket::{{closure}} 0 11176317
+server;[unknown];[unknown];std::net::udp::UdpSocket::send_to;__libc_sendto;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_sendto;__sys_sendto;sock_sendmsg;inet_sendmsg;udp_sendmsg;udp_send_skb.isra.0;ip_send_skb;ip_local_out;__ip_local_out;nf_hook_slow;drm_crtc_add_crc_entry;drm_mode_atomic_ioctl;drm_mode_atomic_ioctl 48784998 0
+tokio-runtime-w;start_thread;<quinn::connection::ConnectionDriver as core::future::future::Future>::poll 0 10716862
+tokio-runtime-w;start_thread;syscall 0 21843881
+tokio-runtime-w;start_thread;core::ops::function::FnOnce::call_once 0 25150707
+tokio-runtime-w;start_thread;core::time::Duration::as_nanos 0 9934549
+tokio-runtime-w;start_thread;<F as core::future::into_future::IntoFuture>::into_future 0 184577159
+tokio-runtime-w;start_thread;core::sync::atomic::AtomicPtr<T>::load 0 11883683
+tokio-runtime-w;start_thread;core::mem::replace 0 13142324
+tokio-runtime-w;start_thread;core::slice::<impl [T]>::iter 0 13720646
+server;std::rt::lang_start;server::main;std::io::stdio::_print;<&std::io::stdio::Stdout as std::io::Write>::write_fmt;core::fmt::write;<std::io::Write::write_fmt::Adapter<T> as core::fmt::Write>::write_str 14922680 0
+tokio-runtime-w;start_thread;tokio::runtime::scheduler::inject::shared::Shared<T>::is_empty 0 143034510
+tokio-runtime-w;start_thread;<core::sync::atomic::AtomicPtr<T> as bytes::loom::sync::atomic::AtomicMut<T>>::with_mut 0 15780060
+tokio-runtime-w;start_thread;core::sync::atomic::atomic_load 0 77666155
+server;[unknown];[unknown];<udp_dtls::udp_channel::UdpChannel as std::io::Read>::read;__libc_recv;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_recvfrom;__sys_recvfrom;sock_recvmsg;inet_recvmsg;udp_recvmsg;__skb_recv_udp;__skb_wait_for_more_packets;schedule_timeout;schedule;__schedule;deactivate_task;dequeue_task_fair;dequeue_entity;update_cfs_group 10046928 0
+server;std::rt::lang_start;server::main;std::io::stdio::_print;<&std::io::stdio::Stdout as std::io::Write>::write_fmt 12587360 0
+tokio-runtime-w;start_thread;core::sync::atomic::AtomicU8::compare_exchange_weak 0 16100324
+tokio-runtime-w;start_thread;quinn_proto::connection::Connection::handle_event 0 13504158
+tokio-runtime-w;start_thread;hashbrown::map::equivalent_key::{{closure}} 0 180362647
+server;[libssl.so.1.1] 78117203 0
+tokio-runtime-w;rustls::server::hs::process_client_hello 0 154143231
+tokio-runtime-w;start_thread;<core::iter::adapters::enumerate::Enumerate<I> as core::iter::traits::iterator::Iterator>::next 0 238262073
+server;[unknown];[unknown];[unknown];__libc_write;entry_SYSCALL_64 25944403 0
+server;[unknown];[libc-2.31.so] 16085137 0
+tokio-runtime-w;start_thread;recvmmsg;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_recvmmsg;__sys_recvmmsg;do_recvmmsg;___sys_recvmsg;____sys_recvmsg;sock_recvmsg;inet6_recvmsg;udpv6_recvmsg;skb_consume_udp;__consume_stateless_skb;kfree_skbmem 0 9720605
+tokio-runtime-w;start_thread;<tokio::loom::std::atomic_usize::AtomicUsize as core::ops::deref::Deref>::deref 0 160739191
+tokio-runtime-w;start_thread;__libc_sendmsg;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_sendmsg;__sys_sendmsg;___sys_sendmsg;____sys_sendmsg;sock_sendmsg;security_socket_sendmsg;apparmor_socket_sendmsg;aa_sk_perm;_cond_resched 0 11279519
+tokio-runtime-w;start_thread;epoll_wait;entry_SYSCALL_64_after_hwframe;do_syscall_64;apic_timer_interrupt;smp_apic_timer_interrupt;hrtimer_interrupt;__hrtimer_run_queues;tick_sched_do_timer 0 9340802
+server;[unknown];[unknown];<udp_dtls::udp_channel::UdpChannel as std::io::Read>::read;__libc_recv;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_recvfrom;__sys_recvfrom;sock_recvmsg;inet_recvmsg;udp_recvmsg;__skb_recv_udp;__skb_wait_for_more_packets;schedule_timeout;schedule;__schedule;put_prev_task_fair 22692921 0
+tokio-runtime-w;start_thread;core::array::try_from_trusted_iterator 0 9644347
+server;std::rt::lang_start;server::main;std::io::stdio::_print;<&std::io::stdio::Stdout as std::io::Write>::write_fmt;core::fmt::write;<std::io::Write::write_fmt::Adapter<T> as core::fmt::Write>::write_str;<std::io::stdio::StdoutLock as std::io::Write>::write_all;__libc_write;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_write;ksys_write;vfs_write;__vfs_write;tty_write;up_read 9559153 0
+server;[unknown];[unknown];std::net::udp::UdpSocket::send_to;__libc_sendto;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_sendto;__sys_sendto;sock_sendmsg;inet_sendmsg;udp_sendmsg;udp_send_skb.isra.0;ip_send_skb;ip_local_out;ip_output;ip_finish_output;__ip_finish_output;ip_finish_output2;neigh_resolve_output;dev_queue_xmit;__dev_queue_xmit;sch_direct_xmit;dev_hard_start_xmit;tg3_tx_frag_set 10114230 0
+server;[unknown];[unknown];<udp_dtls::udp_channel::UdpChannel as std::io::Read>::read;__libc_recv;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_recvfrom;__sys_recvfrom;sock_recvmsg;inet_recvmsg;udp_recvmsg;__skb_recv_udp;__skb_wait_for_more_packets;schedule_timeout;schedule;__schedule;finish_task_switch;__perf_event_task_sched_in;ctx_sched_in 11999999 0
+server;[unknown];[unknown];std::net::udp::UdpSocket::send_to;__libc_sendto;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_sendto;__sys_sendto 12694475 0
+tokio-runtime-w;start_thread;wtransport::driver::utils::BiChannelEndpoint<T>::recv::{{closure}} 0 12854939
+tokio-runtime-w;start_thread;epoll_wait;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_epoll_wait;do_epoll_wait;ep_poll;schedule_hrtimeout_range;schedule_hrtimeout_range_clock;schedule;__schedule;deactivate_task;dequeue_task_fair;dequeue_entity;update_curr;cpuacct_charge 0 10589777
+tokio-runtime-w;start_thread;tokio::util::linked_list::LinkedList<L,<L as tokio::util::linked_list::Link>::Target>::is_empty 0 13006798
+tokio-runtime-w;start_thread;epoll_wait;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_epoll_wait;__fdget 0 9995805
+tokio-runtime-w;start_thread;core::sync::atomic::atomic_compare_exchange_weak 0 27899007
+tokio-runtime-w;start_thread;tokio::runtime::scheduler::multi_thread::queue::Steal<T>::steal_into2 0 11162751
+wt_server;std::rt::lang_start;syscall;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_futex;do_futex;futex_wait;futex_wait_queue_me;schedule;__schedule;finish_task_switch;perf_pmu_enable.part.0 0 11724
+server;std::rt::lang_start;server::main;std::io::stdio::_print;<&std::io::stdio::Stdout as std::io::Write>::write_fmt;core::fmt::write;<std::io::Write::write_fmt::Adapter<T> as core::fmt::Write>::write_str;<std::io::stdio::StdoutLock as std::io::Write>::write_all;__libc_write;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_write;ksys_write;vfs_write;__vfs_write;tty_write;n_tty_write;pty_write;tty_flip_buffer_push;queue_work_on;__queue_work;insert_work;wake_up_process;try_to_wake_up;update_cfs_rq_h_load 16756297 0
+tokio-runtime-w;start_thread;quinn_proto::endpoint::Endpoint::handle 0 15363944
+server;[unknown];[unknown];std::net::udp::UdpSocket::send_to;__libc_sendto;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_sendto;__sys_sendto;sock_sendmsg 10418859 0
+tokio-runtime-w;start_thread;mio::sys::unix::waker::Waker::wake;__libc_write;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_write;ksys_write;vfs_write;__vfs_write;eventfd_write;__wake_up_locked_key;__wake_up_common;ep_poll_callback;__wake_up;__wake_up_common_lock;__wake_up_common;default_wake_function;try_to_wake_up;ttwu_do_activate;activate_task 0 154485790
+tokio-runtime-w;start_thread;<core::slice::iter::Iter<T> as core::iter::traits::iterator::Iterator>::fold 0 14780055
+server;[unknown];EVP_MD_CTX_md 24642120 0
+server;std::rt::lang_start;server::main;std::io::stdio::_print;<&std::io::stdio::Stdout as std::io::Write>::write_fmt;core::fmt::write;<std::io::Write::write_fmt::Adapter<T> as core::fmt::Write>::write_str;<std::io::stdio::StdoutLock as std::io::Write>::write_all;__libc_write;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_write;ksys_write;vfs_write;__vfs_write;tty_write;n_tty_write;pty_write;__lock_text_start 14521147 0
+tokio-runtime-w;start_thread;quinn_proto::connection::instant_saturating_sub;<std::time::Instant as core::ops::arith::Sub>::sub;std::sys::pal::unix::time::Timespec::sub_timespec 0 12475315
+tokio-runtime-w;start_thread;<tracing_subscriber::layer::layered::Layered<L,S> as tracing_core::subscriber::Subscriber>::event 0 14243851
+server;std::rt::lang_start;server::main;std::io::stdio::_print;<&std::io::stdio::Stdout as std::io::Write>::write_fmt;core::fmt::write;<std::io::Write::write_fmt::Adapter<T> as core::fmt::Write>::write_str;<std::io::stdio::StdoutLock as std::io::Write>::write_all;__libc_write;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_write;ksys_write;vfs_write;__vfs_write;tty_write;n_tty_write;pty_write;tty_flip_buffer_push;queue_work_on;__queue_work;insert_work;wake_up_process;try_to_wake_up;update_rq_clock;sched_clock_cpu;native_sched_clock 8457384 0
+tokio-runtime-w;start_thread;hashbrown::raw::RawIterRange<T>::new 0 15152373
+tokio-runtime-w;start_thread;<quinn::runtime::UdpPollHelper<MakeFut,Fut> as quinn::runtime::UdpPoller>::poll_writable 0 11623520
+server;std::rt::lang_start;server::main;std::io::stdio::_print;<&std::io::stdio::Stdout as std::io::Write>::write_fmt;core::fmt::write;<std::io::Write::write_fmt::Adapter<T> as core::fmt::Write>::write_str;<std::io::stdio::StdoutLock as std::io::Write>::write_all;std::io::buffered::bufwriter::BufWriter<W>::flush_buf 13943067 0
+tokio-runtime-w;start_thread;tokio::runtime::time::<impl tokio::runtime::time::handle::Handle>::process_at_sharded_time 0 9582649
+server;std::rt::lang_start;server::main;std::io::stdio::_print;<&std::io::stdio::Stdout as std::io::Write>::write_fmt;core::fmt::write;<std::io::Write::write_fmt::Adapter<T> as core::fmt::Write>::write_str;<std::io::stdio::StdoutLock as std::io::Write>::write_all;__libc_write;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_write;ksys_write;vfs_write;__vfs_write;tty_write;n_tty_write;pty_write;tty_flip_buffer_push;queue_work_on;__queue_work;insert_work;wake_up_process;try_to_wake_up;ttwu_do_activate;ttwu_do_wakeup;check_preempt_curr;resched_curr 48529246 0
+tokio-runtime-w;start_thread;std::sync::mutex::Mutex<T>::lock;syscall;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_futex;do_futex;futex_wait;futex_wait_queue_me;schedule;__schedule;deactivate_task;dequeue_task_fair;dequeue_entity 0 9738162
+tokio-runtime-w;start_thread;epoll_wait;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_epoll_wait;do_epoll_wait;ep_poll;ep_scan_ready_list.constprop.0;ep_send_events_proc 0 5448096
+tokio-runtime-w;start_thread;epoll_wait;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_epoll_wait;do_epoll_wait;ep_poll;schedule_hrtimeout_range;schedule_hrtimeout_range_clock;schedule;__schedule;finish_task_switch;__perf_event_task_sched_in 0 35154
+tokio-runtime-w;start_thread;core::ptr::drop_in_place<core::option::Option<tokio::runtime::task::Notified<alloc::sync::Arc<tokio::runtime::scheduler::multi_thread::handle::Handle>>>> 0 9950588
+tokio-runtime-w;start_thread;parking_lot_core::parking_lot::deadlock::acquire_resource 0 18753706
+server;std::rt::lang_start;server::main;std::io::stdio::_print;<&std::io::stdio::Stdout as std::io::Write>::write_fmt;core::fmt::write;<std::io::Write::write_fmt::Adapter<T> as core::fmt::Write>::write_str;<std::io::stdio::StdoutLock as std::io::Write>::write_all;__libc_write;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_write;ksys_write;vfs_write;__vfs_write;tty_write;n_tty_write;pty_write;tty_flip_buffer_push;queue_work_on;__queue_work;insert_work;wake_up_process;try_to_wake_up;select_task_rq_fair;select_idle_sibling;available_idle_cpu 11509363 0
+server;std::rt::lang_start;server::main;std::io::stdio::_print;<&std::io::stdio::Stdout as std::io::Write>::write_fmt;core::fmt::write;<core::net::socket_addr::SocketAddrV4 as core::fmt::Display>::fmt;core::fmt::write;core::fmt::num::imp::<impl core::fmt::Display for u16>::fmt;core::fmt::Formatter::pad_integral 14683659 0
+server;std::rt::lang_start;server::main;std::io::stdio::_print;<&std::io::stdio::Stdout as std::io::Write>::write_fmt;core::fmt::write;<std::io::Write::write_fmt::Adapter<T> as core::fmt::Write>::write_str;<std::io::stdio::StdoutLock as std::io::Write>::write_all;__libc_write;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_write;ksys_write;vfs_write;__vfs_write;tty_write;n_tty_write;pty_write;tty_flip_buffer_push;queue_work_on;__queue_work;insert_work;wake_up_process;try_to_wake_up;select_task_rq_fair 16893997 0
+tokio-runtime-w;start_thread;core::future::poll_fn::poll_fn 0 13526850
+server;std::rt::lang_start;server::main;std::io::stdio::_print;<&std::io::stdio::Stdout as std::io::Write>::write_fmt;core::fmt::write;<std::io::Write::write_fmt::Adapter<T> as core::fmt::Write>::write_str;<std::io::stdio::StdoutLock as std::io::Write>::write_all;__libc_write;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_write;ksys_write;vfs_write;__vfs_write;tty_write;n_tty_write;pty_write;tty_flip_buffer_push;queue_work_on;__queue_work;insert_work;wake_up_process;try_to_wake_up;ttwu_do_activate;activate_task;enqueue_task_fair;enqueue_entity;update_load_avg;__update_load_avg_cfs_rq 9369493 0
+tokio-runtime-w;start_thread;core::ptr::drop_in_place<core::cell::RefMut<tracing_subscriber::registry::stack::SpanStack>> 0 11120556
+tokio-runtime-w;start_thread;<parking_lot_core::thread_parker::imp::ThreadParker as parking_lot_core::thread_parker::ThreadParkerT>::park 0 1871081
+server;std::rt::lang_start;server::main;std::io::stdio::_print;<&std::io::stdio::Stdout as std::io::Write>::write_fmt;core::fmt::write;<std::io::Write::write_fmt::Adapter<T> as core::fmt::Write>::write_str;<std::io::stdio::StdoutLock as std::io::Write>::write_all;__libc_write 12907665 0
+tokio-runtime-w;start_thread;epoll_wait;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_epoll_wait;do_epoll_wait;ep_poll;schedule_hrtimeout_range;schedule_hrtimeout_range_clock;schedule;__schedule;finish_task_switch;__perf_event_task_sched_in;perf_pmu_enable.part.0;x86_pmu_enable 0 129434
+server;[unknown];[unknown];<udp_dtls::udp_channel::UdpChannel as std::io::Read>::read;__libc_recv;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_recvfrom;sock_recvmsg 20790308 0
+tokio-runtime-w;start_thread;parking_lot_core::parking_lot::lock_bucket_pair 0 10573606
+tokio-runtime-w;start_thread;<tracing_subscriber::fmt::fmt_layer::Layer<S,N,E,W> as tracing_subscriber::layer::Layer<S>>::on_event::{{closure}};<std::io::stdio::Stdout as std::io::Write>::write_all;__libc_write;entry_SYSCALL_64_after_hwframe;do_syscall_64 0 183681808
+server;std::rt::lang_start;server::main;std::io::stdio::_print;<&std::io::stdio::Stdout as std::io::Write>::write_fmt;core::fmt::write;<std::io::Write::write_fmt::Adapter<T> as core::fmt::Write>::write_str;<std::io::stdio::StdoutLock as std::io::Write>::write_all;__libc_write;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_write;ksys_write;vfs_write;__vfs_write;tty_write;n_tty_write;pty_write;tty_flip_buffer_push;queue_work_on;__queue_work;insert_work;wake_up_process;try_to_wake_up;ttwu_do_activate;__x86_indirect_thunk_rax 8935854 0
+server;[unknown];[unknown];__libc_write;entry_SYSCALL_64 41839664 0
+tokio-runtime-w;start_thread;octets::Octets::get_u8 0 176183686
+tokio-runtime-w;start_thread;<tracing_subscriber::fmt::fmt_layer::Layer<S,N,E,W> as tracing_subscriber::layer::Layer<S>>::on_event::{{closure}};<std::io::stdio::Stdout as std::io::Write>::write_all;__libc_write;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_write;ksys_write;vfs_write;__vfs_write;tty_write;n_tty_write;pty_write;tty_flip_buffer_push;queue_work_on;__queue_work;insert_work;wake_up_process;try_to_wake_up;ttwu_do_activate;activate_task;psi_task_change 0 15105142
+tokio-runtime-w;start_thread;core::ptr::drop_in_place<core::cell::UnsafeCell<core::option::Option<core::task::wake::Waker>>> 0 10399319
+server;[unknown];[unknown];<udp_dtls::udp_channel::UdpChannel as std::io::Read>::read;__libc_recv;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_recvfrom;__sys_recvfrom;sock_recvmsg;inet_recvmsg;udp_recvmsg;__skb_recv_udp;__skb_wait_for_more_packets;schedule_timeout;schedule;__schedule;deactivate_task;psi_task_change;record_times;sched_clock_cpu;native_sched_clock 14980376 0
+tokio-runtime-w;start_thread;<bytes::bytes_mut::BytesMut as core::convert::AsRef<[u8]>>::as_ref 0 17739348
+tokio-runtime-w;start_thread;<core::option::Option<T> as core::ops::try_trait::FromResidual<core::option::Option<core::convert::Infallible>>>::from_residual 0 82846128
+tokio-runtime-w;start_thread;<core::cell::BorrowRef as core::ops::drop::Drop>::drop 0 8841621
+tokio-runtime-w;start_thread;tokio::runtime::time::wheel::Wheel::poll 0 10702895
+server;[unknown];[unknown];std::net::udp::UdpSocket::send_to;__libc_sendto;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_sendto;__sys_sendto;__check_object_size 10616304 0
+tokio-runtime-w;start_thread;<tracing_subscriber::layer::layered::Layered<L,S> as tracing_core::subscriber::Subscriber>::downcast_raw::{{closure}} 0 11575088
+tokio-runtime-w;start_thread;tracing_subscriber::registry::sharded::Registry::start_close 0 10525056
+tokio-runtime-w;start_thread;sharded_slab::pool::Ref<T,C>::value 0 10969024
+tokio-runtime-w;start_thread;[libm-2.31.so] 0 10412790
+server;[unknown];[unknown];<udp_dtls::udp_channel::UdpChannel as std::io::Read>::read;__libc_recv;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_recvfrom;__sys_recvfrom;sock_recvmsg;inet_recvmsg;udp_recvmsg;_copy_to_iter 15095094 0
+server;[unknown];[unknown];<udp_dtls::udp_channel::UdpChannel as std::io::Read>::read;__libc_recv;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_recvfrom;__sys_recvfrom;sock_recvmsg;inet_recvmsg;udp_recvmsg;__skb_recv_udp;__skb_wait_for_more_packets;schedule_timeout;schedule;__schedule;deactivate_task;dequeue_task_fair;dequeue_entity;update_cfs_group;reweight_entity 24582778 0
+server;[unknown];[unknown];<udp_dtls::udp_channel::UdpChannel as std::io::Read>::read;__libc_recv;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_recvfrom;__sys_recvfrom;sock_recvmsg;inet_recvmsg;udp_recvmsg;__skb_recv_udp;__skb_wait_for_more_packets;schedule_timeout;schedule;__schedule;finish_task_switch;__perf_event_task_sched_in;perf_pmu_enable.part.0;x86_pmu_enable;intel_pmu_enable_all;native_write_msr 13587026 0
+server;[unknown];[unknown];<udp_dtls::udp_channel::UdpChannel as std::io::Read>::read;__libc_recv;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_recvfrom;__sys_recvfrom;sock_recvmsg;inet_recvmsg;udp_recvmsg;__skb_recv_udp;__skb_wait_for_more_packets 1231395 0
+tokio-runtime-w;start_thread;mio::sys::unix::waker::Waker::wake;__libc_write;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_write;ksys_write;vfs_write;__vfs_write;eventfd_write;_raw_spin_lock_irq 0 12446317
+tokio-runtime-w;start_thread;tokio::sync::batch_semaphore::Semaphore::add_permits_locked 0 13305414
+tokio-runtime-w;start_thread;std::io::error::repr_bitpacked::decode_repr 0 10691422
+server;[unknown];[unknown];std::net::udp::UdpSocket::send_to;__libc_sendto;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_sendto;__sys_sendto;sock_sendmsg;inet_sendmsg;udp_sendmsg;ip_make_skb;__ip_append_data.isra.0;ip_generic_getfrag 12253839 0
+tokio-runtime-w;start_thread;syscall;entry_SYSCALL_64_after_hwframe;do_syscall_64;__x64_sys_futex;do_futex;futex_wake;wake_up_q;try_to_wake_up;update_cfs_rq_h_load 0 10990651
+tokio-runtime-w;start_thread;tokio::runtime::scheduler::multi_thread::idle::Idle::notify_should_wakeup 0 15944492
+server;[unknown];[unknown];<udp_dtls::udp_channel::UdpChannel as std::io::Read>::read;<std::net::tcp::TcpStream as std::io::Read>::read 8904668 0
+tokio-runtime-w;start_thread;parking_lot_core::parking_lot::unpark_requeue 0 14971278
+tokio-runtime-w;start_thread;quinn_proto::connection::Connection::process_decrypted_packet;page_fault;do_page_fault;__do_page_fault;do_user_addr_fault;handle_mm_fault;__handle_mm_fault;do_anonymous_page;mem_cgroup_try_charge_delay;mem_cgroup_throttle_swaprate 0 134113107
+server;std::rt::lang_start;server::main;std::io::stdio::_print;<&std::io::stdio::Stdout as std::io::Write>::write_fmt;core::fmt::write;<core::net::socket_addr::SocketAddrV4 as core::fmt::Display>::fmt;core::fmt::write;core::fmt::num::imp::<impl core::fmt::Display for u16>::fmt 11995227 0

@@ -1,0 +1,342 @@
+# Event 'cycles'
+#
+# Baseline  Delta Abs  Shared Object       Symbol                                                                                                                                                       
+# ........  .........  ..................  .............................................................................................................................................................
+#
+    10.15%     -9.35%  [kernel.kallsyms]   [k] psi_task_change
+               +4.92%  wt_server           [.] <core::slice::iter::Iter<T> as core::iter::traits::iterator::Iterator>::next
+               +3.63%  wt_server           [.] core::option::Option<T>::as_ref
+               +2.99%  wt_server           [.] tokio::runtime::scheduler::multi_thread::worker::Core::steal_work
+               +2.69%  wt_server           [.] <quinn::runtime::tokio::UdpSocket as quinn::runtime::AsyncUdpSocket>::try_send::{{closure}}
+     6.60%     -2.49%  [kernel.kallsyms]   [k] do_syscall_64
+               +2.42%  wt_server           [.] <core::iter::adapters::enumerate::Enumerate<I> as core::iter::traits::iterator::Iterator>::next
+               +2.03%  wt_server           [.] core::sync::atomic::atomic_compare_exchange
+     2.11%     -2.01%  [kernel.kallsyms]   [k] syscall_return_via_sysret
+               +2.01%  wt_server           [.] <core::option::Option<T> as core::ops::try_trait::Try>::branch
+               +1.95%  wt_server           [.] <core::result::Result<T,E> as core::ops::try_trait::Try>::branch
+               +1.86%  wt_server           [.] <F as core::future::into_future::IntoFuture>::into_future
+               +1.83%  wt_server           [.] core::slice::raw::from_raw_parts::precondition_check
+               +1.81%  wt_server           [.] hashbrown::raw::RawTable<T,A>::find::{{closure}}
+               +1.77%  wt_server           [.] octets::Octets::get_u8
+               +1.76%  wt_server           [.] core::slice::<impl [T]>::copy_from_slice
+               +1.75%  wt_server           [.] mio::net::udp::UdpSocket::try_io::{{closure}}
+               +1.74%  wt_server           [.] __rust_try
+               +1.74%  wt_server           [.] tokio::sync::batch_semaphore::Semaphore::poll_acquire
+               +1.73%  [kernel.kallsyms]   [k] fput
+               +1.70%  wt_server           [.] tokio::runtime::time::wheel::level::Level::next_occupied_slot
+     1.79%     -1.66%  [kernel.kallsyms]   [k] entry_SYSCALL_64
+               +1.63%  wt_server           [.] <usize as core::slice::index::SliceIndex<[T]>>::index
+               +1.62%  wt_server           [.] <tokio::loom::std::atomic_usize::AtomicUsize as core::ops::deref::Deref>::deref
+               +1.61%  wt_server           [.] tokio::runtime::scheduler::multi_thread::worker::Core::has_tasks
+               +1.60%  wt_server           [.] core::time::Duration::from_nanos
+               +1.60%  wt_server           [.] quinn_proto::connection::timer::TimerTable::set
+               +1.58%  wt_server           [.] <core::array::drain::Drain<T> as core::iter::traits::unchecked_iterator::UncheckedIterator>::next_unchecked
+               +1.56%  wt_server           [.] alloc::string::String::push_str
+               +1.56%  wt_server           [.] core::ptr::non_null::NonNull<T>::new_unchecked::precondition_check
+               +1.55%  wt_server           [.] rustls::server::hs::process_client_hello
+               +1.55%  wt_server           [.] <ring::bits::BitLength<u64> as ring::bits::FromUsizeBytes>::from_usize_bytes
+               +1.44%  wt_server           [.] tokio::runtime::scheduler::inject::shared::Shared<T>::is_empty
+               +1.35%  [kernel.kallsyms]   [k] mem_cgroup_throttle_swaprate
+     0.50%     +1.06%  [kernel.kallsyms]   [k] __perf_event_task_sched_in
+     0.84%     +0.91%  [kernel.kallsyms]   [k] entry_SYSCALL_64_after_hwframe
+               +0.83%  wt_server           [.] <core::option::Option<T> as core::ops::try_trait::FromResidual<core::option::Option<core::convert::Infallible>>>::from_residual
+               +0.82%  wt_server           [.] tokio::runtime::driver::Handle::time
+               +0.78%  wt_server           [.] tokio::runtime::time::wheel::Wheel::next_expiration
+     0.71%     -0.67%  [kernel.kallsyms]   [k] switch_fpu_return
+     0.50%     +0.61%  libc-2.31.so        [.] 0x000000000018b910
+     1.00%     +0.55%  [kernel.kallsyms]   [k] activate_task
+               +0.52%  wt_server           [.] <alloc::sync::Arc<T,A> as core::ops::deref::Deref>::deref
+               +0.51%  wt_server           [.] core::sync::atomic::atomic_load
+     0.53%     -0.41%  [kernel.kallsyms]   [k] update_cfs_rq_h_load
+     1.53%     -0.39%  [kernel.kallsyms]   [k] drm_mode_atomic_ioctl
+               +0.37%  wt_server           [.] core::intrinsics::copy_nonoverlapping::precondition_check
+               +0.36%  wt_server           [.] tokio::util::wake_list::WakeList::new
+     0.35%     -0.33%  [kernel.kallsyms]   [k] visit_groups_merge
+               +0.31%  wt_server           [.] core::slice::raw::from_raw_parts_mut::precondition_check
+     0.43%     -0.31%  [kernel.kallsyms]   [k] native_write_msr
+     0.42%     -0.30%  [kernel.kallsyms]   [k] ldsem_down_read
+               +0.28%  wt_server           [.] std::thread::local::LocalKey<T>::try_with
+               +0.28%  wt_server           [.] core::sync::atomic::atomic_compare_exchange_weak
+               +0.28%  wt_server           [.] quinn_proto::connection::Connection::process_decrypted_packet
+               +0.26%  wt_server           [.] tokio::runtime::scheduler::multi_thread::park::Inner::park
+               +0.26%  wt_server           [.] core::sync::atomic::AtomicUsize::load
+               +0.25%  wt_server           [.] core::option::Option<T>::expect
+               +0.25%  wt_server           [.] std::sys::thread_local::native::eager::Storage<T>::get
+               +0.25%  wt_server           [.] core::ops::function::FnOnce::call_once
+     0.36%     -0.25%  [kernel.kallsyms]   [k] copy_user_generic_unrolled
+               +0.24%  wt_server           [.] core::sync::atomic::AtomicBool::load
+               +0.23%  wt_server           [.] wtransport::driver::streams::settings::RemoteSettingsStream::run::{{closure}}
+               +0.23%  wt_server           [.] core::option::Option<T>::is_none
+               +0.22%  [kernel.kallsyms]   [k] mark_wake_futex
+               +0.22%  libc-2.31.so        [.] syscall
+               +0.21%  wt_server           [.] core::option::Option<T>::is_some
+               +0.21%  wt_server           [.] alloc::vec::Vec<T,A>::append_elements
+               +0.20%  wt_server           [.] tokio::loom::std::parking_lot::Condvar::wait
+               +0.20%  wt_server           [.] tokio::runtime::scheduler::multi_thread::worker::Context::run
+     0.31%     -0.20%  [kernel.kallsyms]   [k] update_cfs_group
+               +0.19%  wt_server           [.] parking_lot_core::parking_lot::deadlock::acquire_resource
+               +0.18%  wt_server           [.] socket2::sys::<impl std::os::fd::raw::FromRawFd for socket2::socket::Socket>::from_raw_fd
+               +0.18%  wt_server           [.] <std::io::cursor::Cursor<T> as bytes::buf::buf_impl::Buf>::remaining
+               +0.18%  [kernel.kallsyms]   [k] __update_load_avg_se
+               +0.18%  wt_server           [.] core::sync::atomic::AtomicUsize::compare_exchange_weak
+               +0.17%  wt_server           [.] core::core_arch::x86::m128iExt::as_i8x16
+     0.33%     -0.17%  [kernel.kallsyms]   [k] update_load_avg
+               +0.17%  wt_server           [.] <quinn::connection::ConnectionRef as core::ops::deref::Deref>::deref
+               +0.17%  wt_server           [.] tracing_subscriber::fmt::format::Writer::by_ref
+               +0.17%  wt_server           [.] std::panicking::try::do_call
+               +0.16%  wt_server           [.] <tracing_subscriber::fmt::time::SystemTime as tracing_subscriber::fmt::time::FormatTime>::format_time
+               +0.16%  wt_server           [.] wtransport::driver::worker::Worker::run_impl::{{closure}}::{{closure}}
+               +0.16%  wt_server           [.] <parking_lot::raw_mutex::RawMutex as lock_api::mutex::RawMutex>::lock
+               +0.16%  wt_server           [.] tokio::runtime::time::handle::Handle::is_shutdown
+               +0.16%  wt_server           [.] tokio::runtime::time::Driver::park_internal::{{closure}}
+               +0.16%  wt_server           [.] tokio::runtime::scheduler::multi_thread::idle::Idle::notify_should_wakeup
+               +0.16%  wt_server           [.] tokio::runtime::scheduler::multi_thread::queue::Steal<T>::steal_into
+               +0.16%  wt_server           [.] <core::sync::atomic::AtomicPtr<T> as bytes::loom::sync::atomic::AtomicMut<T>>::with_mut
+               +0.16%  [kernel.kallsyms]   [k] __virt_addr_valid
+               +0.16%  wt_server           [.] quinn_udp::cmsg::imp::<impl quinn_udp::cmsg::CMsgHdr for libc::unix::linux_like::linux::gnu::cmsghdr>::cmsg_len
+               +0.15%  wt_server           [.] nu_ansi_term::ansi::<impl nu_ansi_term::style::Style>::write_prefix
+               +0.15%  wt_server           [.] quinn_proto::endpoint::Endpoint::handle
+               +0.15%  wt_server           [.] hashbrown::raw::RawIterRange<T>::new
+     0.29%     -0.15%  [kernel.kallsyms]   [k] __update_load_avg_cfs_rq
+               +0.15%  wt_server           [.] <alloc::vec::Vec<T,A> as core::convert::AsRef<[T]>>::as_ref
+               +0.15%  wt_server           [.] core::cmp::min_by
+               +0.15%  wt_server           [.] parking_lot::condvar::Condvar::notify_one_slow
+               +0.15%  wt_server           [.] <&std::os::unix::net::stream::UnixStream as std::io::Write>::write
+               +0.15%  wt_server           [.] <core::slice::iter::Iter<T> as core::iter::traits::iterator::Iterator>::fold
+               +0.15%  wt_server           [.] core::pin::Pin<&mut T>::map_unchecked_mut
+               +0.15%  wt_server           [.] wtransport::driver::worker::Worker::run_impl::{{closure}}
+               +0.14%  wt_server           [.] core::ptr::drop_in_place<core::cell::RefMut<core::option::Option<alloc::boxed::Box<tokio::runtime::scheduler::multi_thread::worker::Core>>>>
+               +0.14%  wt_server           [.] core::array::<impl core::convert::AsRef<[T]> for [T; N]>::as_ref
+               +0.14%  wt_server           [.] <tracing_subscriber::layer::layered::Layered<L,S> as tracing_core::subscriber::Subscriber>::event
+               +0.14%  wt_server           [.] quinn_proto::connection::paths::RttEstimator::get
+               +0.14%  wt_server           [.] <tokio::loom::std::atomic_u32::AtomicU32 as core::ops::deref::Deref>::deref
+               +0.14%  wt_server           [.] tokio::runtime::scheduler::multi_thread::worker::Core::transition_from_parked
+               +0.14%  wt_server           [.] parking_lot_core::parking_lot::park
+               +0.14%  wt_server           [.] alloc::vec::Vec<T,A>::reserve
+               +0.14%  wt_server           [.] core::slice::<impl [T]>::iter
+               +0.14%  [kernel.kallsyms]   [k] rb_insert_color
+               +0.14%  wt_server           [.] core::result::Result<T,E>::is_ok
+               +0.14%  wt_server           [.] core::sync::atomic::AtomicI32::load
+               +0.14%  wt_server           [.] <core::iter::adapters::zip::Zip<A,B> as core::iter::traits::iterator::Iterator>::next
+               +0.14%  wt_server           [.] core::future::poll_fn::poll_fn
+               +0.14%  wt_server           [.] tokio::runtime::task::core::Core<T,S>::poll::{{closure}}
+               +0.14%  wt_server           [.] quinn_proto::connection::Connection::handle_event
+               +0.14%  wt_server           [.] tokio::runtime::time::handle::Handle::time_source
+               +0.14%  wt_server           [.] quinn_proto::connection::streams::state::StreamsState::poll
+               +0.13%  wt_server           [.] alloc::collections::vec_deque::VecDeque<T,A>::pop_front
+               +0.13%  wt_server           [.] core::slice::iter::<impl core::iter::traits::collect::IntoIterator for &[T]>::into_iter
+               +0.13%  wt_server           [.] core::result::Result<T,E>::is_err
+               +0.13%  wt_server           [.] tokio::sync::mpsc::bounded::Receiver<T>::recv::{{closure}}
+               +0.13%  wt_server           [.] tokio::sync::batch_semaphore::Semaphore::add_permits_locked
+               +0.13%  wt_server           [.] tokio::runtime::task::state::Snapshot::ref_dec
+               +0.13%  wt_server           [.] core::ptr::drop_in_place<core::cell::BorrowRef>
+               +0.13%  wt_server           [.] core::sync::atomic::AtomicUsize::compare_exchange
+               +0.13%  [kernel.kallsyms]   [k] dst_release
+               +0.13%  wt_server           [.] <core::slice::iter::IterMut<T> as core::iter::traits::iterator::Iterator>::next
+               +0.13%  wt_server           [.] core::mem::replace
+               +0.13%  wt_server           [.] <core::panic::unwind_safe::AssertUnwindSafe<F> as core::ops::function::FnOnce<()>>::call_once
+               +0.13%  wt_server           [.] tokio::util::linked_list::LinkedList<L,<L as tokio::util::linked_list::Link>::Target>::is_empty
+               +0.13%  [vdso]              [.] __vdso_clock_gettime
+               +0.13%  wt_server           [.] wtransport::driver::utils::BiChannelEndpoint<T>::recv::{{closure}}
+               +0.13%  [kernel.kallsyms]   [k] futex_wait_setup
+               +0.13%  [kernel.kallsyms]   [k] do_recvmmsg
+               +0.13%  wt_server           [.] <core::fmt::Formatter as core::fmt::Write>::write_fmt
+               +0.13%  wt_server           [.] tracing_core::event::Event::dispatch
+               +0.13%  [kernel.kallsyms]   [k] futex_wait
+               +0.13%  wt_server           [.] bytes::bytes_mut::BytesMut::advance_unchecked
+               +0.13%  wt_server           [.] <tokio::sync::notify::Waiter as tokio::util::linked_list::Link>::pointers
+               +0.13%  wt_server           [.] std::sys::pal::unix::time::Timespec::sub_timespec
+               +0.13%  [kernel.kallsyms]   [k] _raw_spin_lock_irq
+               +0.12%  wt_server           [.] <core::iter::adapters::filter_map::FilterMap<I,F> as core::iter::traits::iterator::Iterator>::next
+               +0.12%  wt_server           [.] hashbrown::rustc_entry::<impl hashbrown::map::HashMap<K,V,S,A>>::rustc_entry
+               +0.12%  wt_server           [.] alloc::vec::Vec<T,A>::push
+               +0.12%  wt_server           [.] tokio::runtime::time::wheel::Wheel::no_expirations_before
+               +0.12%  wt_server           [.] tokio::runtime::io::scheduled_io::ScheduledIo::ready_event
+               +0.12%  wt_server           [.] thread_local::thread_id::get
+               +0.12%  wt_server           [.] <core::ops::range::Range<T> as core::iter::range::RangeIteratorImpl>::spec_next
+               +0.12%  wt_server           [.] std::collections::hash::map::HashMap<K,V,S>::get
+               +0.12%  wt_server           [.] core::ptr::const_ptr::<impl *const T>::is_null
+               +0.12%  wt_server           [.] <tracing_subscriber::registry::sharded::Registry as tracing_core::subscriber::Subscriber>::event_enabled
+               +0.12%  wt_server           [.] tracing_subscriber::registry::stack::SpanStack::pop
+               +0.12%  wt_server           [.] quinn_proto::crypto::rustls::<impl quinn_proto::crypto::PacketKey for alloc::boxed::Box<dyn rustls::quic::PacketKey>>::tag_len
+               +0.12%  wt_server           [.] tokio::sync::mpsc::unbounded::UnboundedReceiver<T>::poll_recv
+               +0.12%  [kernel.kallsyms]   [k] aa_sk_perm
+               +0.12%  wt_server           [.] parking_lot_core::parking_lot::get_hashtable
+               +0.12%  [kernel.kallsyms]   [k] n_tty_write
+               +0.12%  wt_server           [.] core::ptr::drop_in_place<core::result::Result<(),alloc::boxed::Box<dyn core::any::Any+core::marker::Send>>>
+               +0.12%  wt_server           [.] core::slice::iter::IterMut<T>::new
+               +0.12%  wt_server           [.] core::ptr::drop_in_place<tokio::util::try_lock::LockGuard<tokio::runtime::driver::Driver>>
+               +0.12%  wt_server           [.] tokio::runtime::task::state::Snapshot::is_complete
+               +0.12%  wt_server           [.] quinn_proto::connection::paths::PathData::sent
+               +0.12%  wt_server           [.] <quinn::runtime::UdpPollHelper<MakeFut,Fut> as quinn::runtime::UdpPoller>::poll_writable
+               +0.12%  wt_server           [.] core::ptr::drop_in_place<lock_api::mutex::MutexGuard<parking_lot::raw_mutex::RawMutex,tokio::runtime::scheduler::multi_thread::worker::Synced>>
+               +0.12%  wt_server           [.] core::option::Option<T>::or_else
+               +0.12%  [kernel.kallsyms]   [k] __perf_event_task_sched_out
+               +0.11%  wt_server           [.] <core::pin::Pin<Ptr> as core::ops::deref::Deref>::deref
+               +0.11%  wt_server           [.] <tracing_subscriber::registry::sharded::Registry as tracing_core::subscriber::Subscriber>::exit::{{closure}}
+               +0.11%  [kernel.kallsyms]   [k] rcu_all_qs
+               +0.11%  wt_server           [.] core::fmt::num::imp::<impl core::fmt::Display for u8>::fmt
+               +0.11%  wt_server           [.] quinn::endpoint::Endpoint::new_with_abstract_socket::{{closure}}
+               +0.11%  wt_server           [.] quinn_proto::connection::Connection::on_ack_received
+               +0.11%  wt_server           [.] core::ptr::drop_in_place<tokio::sync::batch_semaphore::Acquire>
+               +0.11%  wt_server           [.] tokio::runtime::scheduler::multi_thread::queue::Steal<T>::steal_into2
+               +0.11%  wt_server           [.] core::ptr::drop_in_place<core::cell::RefMut<tracing_subscriber::registry::stack::SpanStack>>
+               +0.11%  wt_server           [.] core::cell::Cell<T>::set
+               +0.11%  wt_server           [.] tokio::runtime::scheduler::multi_thread::idle::Idle::unpark_worker_by_id
+               +0.11%  wt_server           [.] <sharded_slab::pool::Ref<T,C> as core::ops::deref::Deref>::deref
+               +0.11%  wt_server           [.] <core::ops::control_flow::ControlFlow<B,C> as core::ops::try_trait::Try>::from_output
+               +0.11%  wt_server           [.] <quinn::connection::ConnectionDriver as core::future::future::Future>::poll
+               +0.11%  wt_server           [.] tokio::runtime::time::wheel::Wheel::poll
+               +0.11%  wt_server           [.] std::io::error::repr_bitpacked::decode_repr
+               +0.11%  wt_server           [.] quinn_proto::connection::State::is_handshake
+               +0.11%  [kernel.kallsyms]   [k] cpuacct_charge
+               +0.11%  wt_server           [.] parking_lot_core::parking_lot::lock_bucket_pair
+               +0.11%  wt_server           [.] <tracing_subscriber::layer::layered::Layered<L,S> as tracing_core::subscriber::Subscriber>::try_close::{{closure}}
+               +0.11%  [kernel.kallsyms]   [k] napi_complete_done
+               +0.10%  libm-2.31.so        [.] 0x000000000000d314
+               +0.10%  wt_server           [.] core::ptr::drop_in_place<core::cell::UnsafeCell<core::option::Option<core::task::wake::Waker>>>
+               +0.10%  [kernel.kallsyms]   [k] __schedule
+               +0.10%  [kernel.kallsyms]   [k] ktime_get_ts64
+               +0.10%  [kernel.kallsyms]   [k] ip_send_check
+               +0.10%  wt_server           [.] <tokio::sync::mpsc::bounded::OwnedPermit<T> as core::ops::drop::Drop>::drop
+               +0.10%  wt_server           [.] wtransport::connection::Connection::receive_datagram::{{closure}}
+               +0.10%  [kernel.kallsyms]   [k] _raw_spin_lock_bh
+               +0.10%  wt_server           [.] thread_local::ThreadLocal<T>::get_inner
+               +0.10%  [kernel.kallsyms]   [k] timerqueue_del
+               +0.10%  wt_server           [.] <core::iter::adapters::zip::Zip<A,B> as core::iter::adapters::zip::ZipImpl<A,B>>::next
+               +0.10%  wt_server           [.] wtransport::driver::streams::settings::RemoteSettingsStream::read_frame::{{closure}}
+               +0.10%  [kernel.kallsyms]   [k] do_epoll_wait
+               +0.10%  wt_server           [.] core::ptr::drop_in_place<core::option::Option<tokio::runtime::task::Notified<alloc::sync::Arc<tokio::runtime::scheduler::multi_thread::handle::Handle>>>>
+               +0.10%  wt_server           [.] core::time::Duration::as_nanos
+               +0.10%  [kernel.kallsyms]   [k] dequeue_entity
+               +0.10%  [kernel.kallsyms]   [k] kfree_skbmem
+               +0.10%  wt_server           [.] core::core_arch::x86::sse2::_mm_loadu_si128
+               +0.10%  wt_server           [.] core::task::wake::Context::waker
+               +0.10%  wt_server           [.] core::num::<impl usize>::pow
+               +0.10%  wt_server           [.] core::array::try_from_trusted_iterator
+               +0.10%  wt_server           [.] tokio::net::udp::UdpSocket::writable
+               +0.10%  wt_server           [.] tokio::runtime::time::<impl tokio::runtime::time::handle::Handle>::process_at_sharded_time
+               +0.10%  [kernel.kallsyms]   [k] __alloc_skb
+               +0.10%  wt_server           [.] tokio::runtime::context::budget::{{closure}}
+               +0.10%  wt_server           [.] tokio::runtime::scheduler::multi_thread::worker::Context::park
+               +0.09%  wt_server           [.] core::sync::atomic::AtomicUsize::swap
+               +0.09%  [kernel.kallsyms]   [k] tick_sched_do_timer
+               +0.09%  wt_server           [.] alloc::collections::btree::map::BTreeMap<K,V,A>::insert
+               +0.09%  wt_server           [.] <I as core::iter::traits::collect::IntoIterator>::into_iter
+               +0.09%  wt_server           [.] sharded_slab::page::slot::RefCount<C>::decr
+               +0.09%  wt_server           [.] <core::ptr::non_null::NonNull<T> as core::cmp::PartialEq>::eq
+               +0.09%  wt_server           [.] quinn_proto::connection::Connection::space_can_send
+               +0.09%  wt_server           [.] <core::cell::BorrowRef as core::ops::drop::Drop>::drop
+               +0.05%  [kernel.kallsyms]   [k] ep_send_events_proc
+               +0.04%  [kernel.kallsyms]   [k] ep_item_poll.isra.0
+               +0.03%  libc-2.31.so        [.] epoll_wait
+               +0.02%  wt_server           [.] parking_lot_core::thread_parker::imp::ThreadParker::futex_wait
+               +0.02%  wt_server           [.] <parking_lot_core::thread_parker::imp::ThreadParker as parking_lot_core::thread_parker::ThreadParkerT>::park
+               +0.02%  [kernel.kallsyms]   [k] sock_poll
+               +0.02%  [kernel.kallsyms]   [k] account_system_index_time
+               +0.02%  [kernel.kallsyms]   [k] eventfd_poll
+               +0.02%  [kernel.kallsyms]   [k] rb_erase
+               +0.02%  [kernel.kallsyms]   [k] rb_next
+               +0.01%  [kernel.kallsyms]   [k] perf_log_itrace_start
+               +0.01%  [kernel.kallsyms]   [k] memcpy_fromio
+     0.00%     +0.00%  [kernel.kallsyms]   [k] native_apic_mem_write
+               +0.00%  [kernel.kallsyms]   [k] intel_pmu_handle_irq
+     0.00%     +0.00%  [kernel.kallsyms]   [k] intel_bts_enable_local
+     0.00%     +0.00%  [kernel.kallsyms]   [k] x86_pmu_enable
+     0.00%     +0.00%  [kernel.kallsyms]   [k] perf_pmu_enable.part.0
+               +0.00%  [kernel.kallsyms]   [k] intel_pmu_enable_all
+     9.82%             libssl.so.1.1       [.] 0x000000000001ecb0
+     5.22%             libcrypto.so.1.1    [.] BIO_read
+     4.84%             [kernel.kallsyms]   [k] __x64_sys_recvfrom
+     4.28%             libcrypto.so.1.1    [.] 0x00000000000a850f
+     1.52%             [kernel.kallsyms]   [k] resched_curr
+     1.25%             server              [.] __rust_try
+     1.24%             server              [.] core::slice::memchr::memrchr
+     1.24%             [kernel.kallsyms]   [k] __tty_buffer_request_room
+     1.23%             [kernel.kallsyms]   [k] __check_heap_object
+     1.03%             [kernel.kallsyms]   [k] sched_clock
+     0.96%             server              [.] <std::io::stdio::StdoutLock as std::io::Write>::write_all
+     0.95%             [kernel.kallsyms]   [k] cgroup_rstat_updated
+     0.94%             [kernel.kallsyms]   [k] nf_nat_packet
+     0.91%             server              [.] core::fmt::write
+     0.87%             [kernel.kallsyms]   [k] memcpy_erms
+     0.86%             server              [.] openssl::ssl::bio::bread::{{closure}}
+     0.85%             server              [.] <core::net::socket_addr::SocketAddr as std::net::socket_addr::ToSocketAddrs>::to_socket_addrs
+     0.84%             server              [.] std::io::buffered::bufwriter::BufWriter<W>::flush_buf
+     0.82%             [kernel.kallsyms]   [k] __dev_queue_xmit
+     0.78%             [kernel.kallsyms]   [k] ipv4_mtu
+     0.77%             libcrypto.so.1.1    [.] EVP_MD_CTX_md
+     0.77%             [kernel.kallsyms]   [k] reweight_entity
+     0.76%             [kernel.kallsyms]   [k] skb_release_data
+     0.75%             [kernel.kallsyms]   [k] _raw_spin_lock_irqsave
+     0.74%             [kernel.kallsyms]   [k] __cgroup_bpf_run_filter_sock_addr
+     0.74%             libcrypto.so.1.1    [.] BIO_write
+     0.73%             [kernel.kallsyms]   [k] native_sched_clock
+     0.71%             [kernel.kallsyms]   [k] put_prev_task_fair
+     0.66%             [kernel.kallsyms]   [k] __fget_light
+     0.66%             [kernel.kallsyms]   [k] deactivate_task
+     0.65%             [kernel.kallsyms]   [k] sock_recvmsg
+     0.53%             [kernel.kallsyms]   [k] select_task_rq_fair
+     0.52%             [kernel.kallsyms]   [k] account_entity_enqueue
+     0.52%             [kernel.kallsyms]   [k] __wake_up_common_lock
+     0.50%             [kernel.kallsyms]   [k] ksys_write
+     0.50%             [kernel.kallsyms]   [k] __kmalloc_reserve.isra.0
+     0.49%             [kernel.kallsyms]   [k] dev_hard_start_xmit
+     0.47%             [kernel.kallsyms]   [k] _copy_to_iter
+     0.47%             [kernel.kallsyms]   [k] common_file_perm
+     0.47%             server              [.] <std::io::Write::write_fmt::Adapter<T> as core::fmt::Write>::write_str
+     0.46%             server              [.] core::array::<impl core::ops::index::Index<I> for [T; N]>::index
+     0.46%             [kernel.kallsyms]   [k] tty_write
+     0.46%             server              [.] core::fmt::Formatter::pad_integral
+     0.46%             [kernel.kallsyms]   [k] enqueue_task_fair
+     0.46%             [kernel.kallsyms]   [k] __lock_text_start
+     0.45%             [kernel.kallsyms]   [k] ip_route_output_key_hash_rcu
+     0.41%             [kernel.kallsyms]   [k] ipt_do_table
+     0.40%             [kernel.kallsyms]   [k] radix_tree_lookup
+     0.40%             server              [.] core::slice::raw::from_raw_parts::precondition_check
+     0.40%             [kernel.kallsyms]   [k] __sys_sendto
+     0.39%             server              [.] <&std::io::stdio::Stdout as std::io::Write>::write_fmt
+     0.39%             [kernel.kallsyms]   [k] rcu_qs
+     0.39%             server              [.] <core::ops::range::RangeFrom<usize> as core::slice::index::SliceIndex<[T]>>::index
+     0.38%             [kernel.kallsyms]   [k] siphash_3u32
+     0.38%             [kernel.kallsyms]   [k] ip_generic_getfrag
+     0.38%             [kernel.kallsyms]   [k] pty_write
+     0.38%             [kernel.kallsyms]   [k] perf_event_sched_in
+     0.38%             server              [.] core::fmt::num::imp::<impl core::fmt::Display for u16>::fmt
+     0.37%             [kernel.kallsyms]   [k] vfs_write
+     0.37%             server              [.] <core::ops::range::Range<usize> as core::slice::index::SliceIndex<[T]>>::get_unchecked::precondition_check
+     0.37%             [kernel.kallsyms]   [k] __qdisc_run
+     0.37%             server              [.] std::io::stdio::Stdout::lock
+     0.36%             [kernel.kallsyms]   [k] update_curr
+     0.36%             server              [.] core::fmt::Arguments::new_v1
+     0.36%             [kernel.kallsyms]   [k] available_idle_cpu
+     0.35%             [kernel.kallsyms]   [k] mutex_unlock
+     0.35%             [kernel.kallsyms]   [k] queue_work_on
+     0.35%             server              [.] foreign_types_shared::ForeignTypeRef::from_ptr
+     0.35%             [kernel.kallsyms]   [k] validate_xmit_skb
+     0.34%             server              [.] openssl::ssl::bio::bread
+     0.34%             [kernel.kallsyms]   [k] ip_route_output_key_hash
+     0.34%             libpthread-2.31.so  [.] __libc_recv
+     0.33%             [kernel.kallsyms]   [k] newidle_balance
+     0.33%             [kernel.kallsyms]   [k] __check_object_size
+     0.33%             [kernel.kallsyms]   [k] sock_sendmsg
+     0.32%             server              [.] <openssl::ssl::SslStream<S> as std::io::Write>::write
+     0.32%             [kernel.kallsyms]   [k] pty_write_room
+     0.32%             [kernel.kallsyms]   [k] check_stack_object
+     0.32%             [kernel.kallsyms]   [k] tg3_tx_frag_set
+     0.32%             [kernel.kallsyms]   [k] flexible_sched_in
+     0.31%             [kernel.kallsyms]   [k] __ip_append_data.isra.0
+     0.31%             [kernel.kallsyms]   [k] __x64_sys_sendto
+     0.31%             [kernel.kallsyms]   [k] udp_sendmsg
+     0.31%             server              [.] core::slice::raw::from_raw_parts
+     0.30%             [kernel.kallsyms]   [k] up_read
+     0.30%             [kernel.kallsyms]   [k] netif_skb_features
+     0.28%             [kernel.kallsyms]   [k] __x86_indirect_thunk_rax
+     0.28%             server              [.] <std::net::tcp::TcpStream as std::io::Read>::read
+     0.27%             [kernel.kallsyms]   [k] security_sk_classify_flow
+     0.26%             server              [.] core::slice::raw::from_raw_parts_mut::precondition_check
+     0.26%             [kernel.kallsyms]   [k] insert_work
+     0.05%             [kernel.kallsyms]   [k] udp_recvmsg
+     0.05%             [kernel.kallsyms]   [k] _raw_spin_unlock_bh
+     0.05%             [kernel.kallsyms]   [k] __skb_recv_udp
+     0.04%             [kernel.kallsyms]   [k] __skb_wait_for_more_packets

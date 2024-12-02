@@ -1,0 +1,2269 @@
+tokio-runtime-w 286310 5401559.917621:          1 cycles: 
+	ffffffff8ca0e7df event_function+0x9f ([kernel.kallsyms])
+	ffffffff8ca09083 remote_function+0x43 ([kernel.kallsyms])
+	ffffffff8c94ecb2 flush_smp_call_function_queue+0x52 ([kernel.kallsyms])
+	ffffffff8c94f803 generic_smp_call_function_single_interrupt+0x13 ([kernel.kallsyms])
+	ffffffff8d4026ce smp_call_function_single_interrupt+0x3e ([kernel.kallsyms])
+	ffffffff8d401d0f call_function_single_interrupt+0xf ([kernel.kallsyms])
+	    55939f564cd0 tokio::runtime::io::registration::Registration::poll_ready+0x0 (/users/dorlando/ons/websocket_rust/target/release/server)
+
+tokio-runtime-w 286310 5401559.917639:          1 cycles: 
+	ffffffff8ca0e7df event_function+0x9f ([kernel.kallsyms])
+	ffffffff8ca09083 remote_function+0x43 ([kernel.kallsyms])
+	ffffffff8c94ecb2 flush_smp_call_function_queue+0x52 ([kernel.kallsyms])
+	ffffffff8c94f803 generic_smp_call_function_single_interrupt+0x13 ([kernel.kallsyms])
+	ffffffff8d4026ce smp_call_function_single_interrupt+0x3e ([kernel.kallsyms])
+	ffffffff8d401d0f call_function_single_interrupt+0xf ([kernel.kallsyms])
+	    55939f564cd0 tokio::runtime::io::registration::Registration::poll_ready+0x0 (/users/dorlando/ons/websocket_rust/target/release/server)
+
+tokio-runtime-w 286310 5401559.917647:         73 cycles: 
+	ffffffff8ca0e7df event_function+0x9f ([kernel.kallsyms])
+	ffffffff8ca09083 remote_function+0x43 ([kernel.kallsyms])
+	ffffffff8c94ecb2 flush_smp_call_function_queue+0x52 ([kernel.kallsyms])
+	ffffffff8c94f803 generic_smp_call_function_single_interrupt+0x13 ([kernel.kallsyms])
+	ffffffff8d4026ce smp_call_function_single_interrupt+0x3e ([kernel.kallsyms])
+	ffffffff8d401d0f call_function_single_interrupt+0xf ([kernel.kallsyms])
+	    55939f564cd0 tokio::runtime::io::registration::Registration::poll_ready+0x0 (/users/dorlando/ons/websocket_rust/target/release/server)
+
+tokio-runtime-w 286310 5401559.917656:      10340 cycles: 
+	ffffffff8ca0e7df event_function+0x9f ([kernel.kallsyms])
+	ffffffff8ca09083 remote_function+0x43 ([kernel.kallsyms])
+	ffffffff8c94ecb2 flush_smp_call_function_queue+0x52 ([kernel.kallsyms])
+	ffffffff8c94f803 generic_smp_call_function_single_interrupt+0x13 ([kernel.kallsyms])
+	ffffffff8d4026ce smp_call_function_single_interrupt+0x3e ([kernel.kallsyms])
+	ffffffff8d401d0f call_function_single_interrupt+0xf ([kernel.kallsyms])
+	    55939f564cd0 tokio::runtime::io::registration::Registration::poll_ready+0x0 (/users/dorlando/ons/websocket_rust/target/release/server)
+
+tokio-runtime-w 286310 5401559.917667:    1507964 cycles: 
+	ffffffff8cca5795 apparmor_socket_sendmsg+0x5 ([kernel.kallsyms])
+	ffffffff8d10eebb sock_sendmsg+0x1b ([kernel.kallsyms])
+	ffffffff8d110e93 __sys_sendto+0x113 ([kernel.kallsyms])
+	ffffffff8d110f39 __x64_sys_sendto+0x29 ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f2a5f5d77dc __libc_send+0x6c (/usr/lib/x86_64-linux-gnu/libpthread-2.31.so)
+
+tokio-runtime-w 286310 5401559.923591:  176270764 cycles: 
+	    55939f553a65 tokio::runtime::time::<impl tokio::runtime::time::handle::Handle>::process_at_sharded_time+0x5 (/users/dorlando/ons/websocket_rust/target/release/server)
+
+tokio-runtime-w 286310 5401560.355694:          1 cycles: 
+	ffffffff8ca0abad perf_pmu_enable.part.0+0xd ([kernel.kallsyms])
+	ffffffff8ca10e76 __perf_event_task_sched_in+0x186 ([kernel.kallsyms])
+	ffffffff8c8d3e4d finish_task_switch+0xfd ([kernel.kallsyms])
+	ffffffff8d2d0b4b __schedule+0x2eb ([kernel.kallsyms])
+	ffffffff8d2d0fe2 schedule+0x42 ([kernel.kallsyms])
+	ffffffff8d2d4d89 schedule_hrtimeout_range_clock+0xf9 ([kernel.kallsyms])
+	ffffffff8d2d4db3 schedule_hrtimeout_range+0x13 ([kernel.kallsyms])
+	ffffffff8cb34880 ep_poll+0x3d0 ([kernel.kallsyms])
+	ffffffff8cb34988 do_epoll_wait+0xb8 ([kernel.kallsyms])
+	ffffffff8cb349be __x64_sys_epoll_wait+0x1e ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f2a5f39a68e epoll_wait+0x5e (/usr/lib/x86_64-linux-gnu/libc-2.31.so)
+
+tokio-runtime-w 286310 5401560.355710:          1 cycles: 
+	ffffffff8ca0abad perf_pmu_enable.part.0+0xd ([kernel.kallsyms])
+	ffffffff8ca10e76 __perf_event_task_sched_in+0x186 ([kernel.kallsyms])
+	ffffffff8c8d3e4d finish_task_switch+0xfd ([kernel.kallsyms])
+	ffffffff8d2d0b4b __schedule+0x2eb ([kernel.kallsyms])
+	ffffffff8d2d0fe2 schedule+0x42 ([kernel.kallsyms])
+	ffffffff8d2d4d89 schedule_hrtimeout_range_clock+0xf9 ([kernel.kallsyms])
+	ffffffff8d2d4db3 schedule_hrtimeout_range+0x13 ([kernel.kallsyms])
+	ffffffff8cb34880 ep_poll+0x3d0 ([kernel.kallsyms])
+	ffffffff8cb34988 do_epoll_wait+0xb8 ([kernel.kallsyms])
+	ffffffff8cb349be __x64_sys_epoll_wait+0x1e ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f2a5f39a68e epoll_wait+0x5e (/usr/lib/x86_64-linux-gnu/libc-2.31.so)
+
+tokio-runtime-w 286310 5401560.355719:         82 cycles: 
+	ffffffff8ca0abad perf_pmu_enable.part.0+0xd ([kernel.kallsyms])
+	ffffffff8ca10e76 __perf_event_task_sched_in+0x186 ([kernel.kallsyms])
+	ffffffff8c8d3e4d finish_task_switch+0xfd ([kernel.kallsyms])
+	ffffffff8d2d0b4b __schedule+0x2eb ([kernel.kallsyms])
+	ffffffff8d2d0fe2 schedule+0x42 ([kernel.kallsyms])
+	ffffffff8d2d4d89 schedule_hrtimeout_range_clock+0xf9 ([kernel.kallsyms])
+	ffffffff8d2d4db3 schedule_hrtimeout_range+0x13 ([kernel.kallsyms])
+	ffffffff8cb34880 ep_poll+0x3d0 ([kernel.kallsyms])
+	ffffffff8cb34988 do_epoll_wait+0xb8 ([kernel.kallsyms])
+	ffffffff8cb349be __x64_sys_epoll_wait+0x1e ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f2a5f39a68e epoll_wait+0x5e (/usr/lib/x86_64-linux-gnu/libc-2.31.so)
+
+tokio-runtime-w 286310 5401560.355727:      11606 cycles: 
+	ffffffff8ca0abad perf_pmu_enable.part.0+0xd ([kernel.kallsyms])
+	ffffffff8ca10e76 __perf_event_task_sched_in+0x186 ([kernel.kallsyms])
+	ffffffff8c8d3e4d finish_task_switch+0xfd ([kernel.kallsyms])
+	ffffffff8d2d0b4b __schedule+0x2eb ([kernel.kallsyms])
+	ffffffff8d2d0fe2 schedule+0x42 ([kernel.kallsyms])
+	ffffffff8d2d4d89 schedule_hrtimeout_range_clock+0xf9 ([kernel.kallsyms])
+	ffffffff8d2d4db3 schedule_hrtimeout_range+0x13 ([kernel.kallsyms])
+	ffffffff8cb34880 ep_poll+0x3d0 ([kernel.kallsyms])
+	ffffffff8cb34988 do_epoll_wait+0xb8 ([kernel.kallsyms])
+	ffffffff8cb349be __x64_sys_epoll_wait+0x1e ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f2a5f39a68e epoll_wait+0x5e (/usr/lib/x86_64-linux-gnu/libc-2.31.so)
+
+tokio-runtime-w 286310 5401560.355739:    1675955 cycles: 
+	ffffffff8d2d5db6 _raw_write_lock_irq+0x6 ([kernel.kallsyms])
+	ffffffff8cb34538 ep_poll+0x88 ([kernel.kallsyms])
+	ffffffff8cb34988 do_epoll_wait+0xb8 ([kernel.kallsyms])
+	ffffffff8cb349be __x64_sys_epoll_wait+0x1e ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f2a5f39a68e epoll_wait+0x5e (/usr/lib/x86_64-linux-gnu/libc-2.31.so)
+
+tokio-runtime-w 286310 5401560.360123:  154717909 cycles: 
+	    7f2a5f6d23df [unknown] (/usr/lib/x86_64-linux-gnu/libcrypto.so.1.1)
+	51317b3e37b95f19 [unknown] ([unknown])
+
+tokio-runtime-w 286310 5401560.452506:   17449480 cycles: 
+	    7f2a5f911d0c [unknown] (/usr/lib/x86_64-linux-gnu/libssl.so.1.1)
+	    7f2a5f9656a0 [unknown] ([unknown])
+
+tokio-runtime-w 286310 5401560.808902:   30884425 cycles: 
+	ffffffff8cb3481a ep_poll+0x36a ([kernel.kallsyms])
+	ffffffff8cb34988 do_epoll_wait+0xb8 ([kernel.kallsyms])
+	ffffffff8cb349be __x64_sys_epoll_wait+0x1e ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f2a5f39a68e epoll_wait+0x5e (/usr/lib/x86_64-linux-gnu/libc-2.31.so)
+
+tokio-runtime-w 286310 5401560.881186:   16526153 cycles: 
+	    55939f548a63 tokio::runtime::time::wheel::Wheel::next_expiration+0xf3 (/users/dorlando/ons/websocket_rust/target/release/server)
+
+tokio-runtime-w 286310 5401560.927956:   17157921 cycles: 
+	    55939f54c277 tokio::runtime::scheduler::multi_thread::worker::Context::run+0x777 (/users/dorlando/ons/websocket_rust/target/release/server)
+
+tokio-runtime-w 286310 5401560.975659:   18194608 cycles: 
+	    55939f5489b3 tokio::runtime::time::wheel::Wheel::next_expiration+0x43 (/users/dorlando/ons/websocket_rust/target/release/server)
+
+tokio-runtime-w 286310 5401561.026354:   18194608 cycles: 
+	ffffffff8d1c17cb tcp_recvmsg+0x28b ([kernel.kallsyms])
+	ffffffff8d1f69ce inet_recvmsg+0x5e ([kernel.kallsyms])
+	ffffffff8d10fd79 sock_recvmsg+0x69 ([kernel.kallsyms])
+	ffffffff8d1110b5 __sys_recvfrom+0xe5 ([kernel.kallsyms])
+	ffffffff8d1111c9 __x64_sys_recvfrom+0x29 ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f2a5f5d765c __libc_recv+0x6c (/usr/lib/x86_64-linux-gnu/libpthread-2.31.so)
+
+tokio-runtime-w 286310 5401561.077174:   18053523 cycles: 
+	    55939f51f126 tungstenite::protocol::WebSocketContext::send_one_frame+0x106 (/users/dorlando/ons/websocket_rust/target/release/server)
+	              1e [unknown] ([unknown])
+	    7f2a580008d0 [unknown] ([unknown])
+	    7f2a580008d0 [unknown] ([unknown])
+	    7f2a580008d0 [unknown] ([unknown])
+	    7f2a580008d0 [unknown] ([unknown])
+	    7f2a580008d0 [unknown] ([unknown])
+	    7f2a580008d0 [unknown] ([unknown])
+	    7f2a580008d0 [unknown] ([unknown])
+
+tokio-runtime-w 286310 5401561.125847:   20822834 cycles: 
+	    55939f51f126 tungstenite::protocol::WebSocketContext::send_one_frame+0x106 (/users/dorlando/ons/websocket_rust/target/release/server)
+	              1e [unknown] ([unknown])
+	    7f2a580008d0 [unknown] ([unknown])
+	    7f2a580008d0 [unknown] ([unknown])
+	    7f2a580008d0 [unknown] ([unknown])
+	    7f2a580008d0 [unknown] ([unknown])
+	    7f2a580008d0 [unknown] ([unknown])
+	    7f2a580008d0 [unknown] ([unknown])
+	    7f2a580008d0 [unknown] ([unknown])
+
+tokio-runtime-w 286310 5401561.182285:   16387501 cycles: 
+	ffffffff8d10d03d sock_poll+0x2d ([kernel.kallsyms])
+	ffffffff8cb33c53 ep_item_poll.isra.0+0x43 ([kernel.kallsyms])
+	ffffffff8cb33e84 ep_send_events_proc+0xe4 ([kernel.kallsyms])
+	ffffffff8cb33ac1 ep_scan_ready_list.constprop.0+0xb1 ([kernel.kallsyms])
+	ffffffff8cb34538 ep_poll+0x88 ([kernel.kallsyms])
+	ffffffff8cb34988 do_epoll_wait+0xb8 ([kernel.kallsyms])
+	ffffffff8cb349be __x64_sys_epoll_wait+0x1e ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f2a5f39a68e epoll_wait+0x5e (/usr/lib/x86_64-linux-gnu/libc-2.31.so)
+
+tokio-runtime-w 286310 5401561.229985:   14092098 cycles: 
+	ffffffff8ca116fd __perf_event_task_sched_out+0x12d ([kernel.kallsyms])
+	ffffffff8d2d0d03 __schedule+0x4a3 ([kernel.kallsyms])
+	ffffffff8d2d0fe2 schedule+0x42 ([kernel.kallsyms])
+	ffffffff8d2d4d89 schedule_hrtimeout_range_clock+0xf9 ([kernel.kallsyms])
+	ffffffff8d2d4db3 schedule_hrtimeout_range+0x13 ([kernel.kallsyms])
+	ffffffff8cb34880 ep_poll+0x3d0 ([kernel.kallsyms])
+	ffffffff8cb34988 do_epoll_wait+0xb8 ([kernel.kallsyms])
+	ffffffff8cb349be __x64_sys_epoll_wait+0x1e ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f2a5f39a68e epoll_wait+0x5e (/usr/lib/x86_64-linux-gnu/libc-2.31.so)
+
+tokio-runtime-w 286310 5401561.266611:   14273420 cycles: 
+	ffffffffc0a1748f nf_conntrack_inet_error+0xdb ([kernel.kallsyms])
+	ffffffffc0a1882f nf_nat_ipv4_fn+0x4f ([kernel.kallsyms])
+	ffffffffc0a18869 nlmsvc_proc_share+0x36 ([kernel.kallsyms])
+	ffffffff8d1a5d25 nf_hook_slow+0x45 ([kernel.kallsyms])
+	ffffffff8d1b4c87 __ip_local_out+0xd7 ([kernel.kallsyms])
+	ffffffff8d1b4d0d ip_local_out+0x1d ([kernel.kallsyms])
+	ffffffff8d1b508a __ip_queue_xmit+0x17a ([kernel.kallsyms])
+	ffffffff8d1d8300 ip_queue_xmit+0x10 ([kernel.kallsyms])
+	ffffffff8d1d243c __tcp_transmit_skb+0x53c ([kernel.kallsyms])
+	ffffffff8d1d3ff2 tcp_write_xmit+0x3c2 ([kernel.kallsyms])
+	ffffffff8d1d4807 __tcp_push_pending_frames+0x37 ([kernel.kallsyms])
+	ffffffff8d1bdaad tcp_push+0xfd ([kernel.kallsyms])
+	ffffffff8d1c3685 tcp_sendmsg_locked+0xc75 ([kernel.kallsyms])
+	ffffffff8d1c381d tcp_sendmsg+0x2d ([kernel.kallsyms])
+	ffffffff8d1f66f3 inet_sendmsg+0x43 ([kernel.kallsyms])
+	ffffffff8d10eefe sock_sendmsg+0x5e ([kernel.kallsyms])
+	ffffffff8d110e93 __sys_sendto+0x113 ([kernel.kallsyms])
+	ffffffff8d110f39 __x64_sys_sendto+0x29 ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f2a5f5d77dc __libc_send+0x6c (/usr/lib/x86_64-linux-gnu/libpthread-2.31.so)
+
+tokio-runtime-w 286310 5401561.303261:   14208814 cycles: 
+	    55939f51fb75 <futures_util::stream::stream::split::SplitSink<S,Item> as futures_sink::Sink<Item>>::poll_flush+0x75 (/users/dorlando/ons/websocket_rust/target/release/server)
+
+tokio-runtime-w 286310 5401561.339626:   11479324 cycles: 
+	    7f2a5f39a696 epoll_wait+0x66 (/usr/lib/x86_64-linux-gnu/libc-2.31.so)
+
+tokio-runtime-w 286310 5401561.368616:   12590311 cycles: 
+	    55939f5539ce tokio::runtime::time::<impl tokio::runtime::time::handle::Handle>::process+0x18e (/users/dorlando/ons/websocket_rust/target/release/server)
+
+tokio-runtime-w 286310 5401561.433220:   20723139 cycles: 
+	ffffffff8c8e4c00 update_curr+0x20 ([kernel.kallsyms])
+	ffffffff8c8e6833 dequeue_entity+0x23 ([kernel.kallsyms])
+	ffffffff8c8e6ef8 dequeue_task_fair+0x58 ([kernel.kallsyms])
+	ffffffff8c8d8b03 deactivate_task+0x103 ([kernel.kallsyms])
+	ffffffff8d2d0968 __schedule+0x108 ([kernel.kallsyms])
+	ffffffff8d2d0fe2 schedule+0x42 ([kernel.kallsyms])
+	ffffffff8d2d4d89 schedule_hrtimeout_range_clock+0xf9 ([kernel.kallsyms])
+	ffffffff8d2d4db3 schedule_hrtimeout_range+0x13 ([kernel.kallsyms])
+	ffffffff8cb34880 ep_poll+0x3d0 ([kernel.kallsyms])
+	ffffffff8cb34988 do_epoll_wait+0xb8 ([kernel.kallsyms])
+	ffffffff8cb349be __x64_sys_epoll_wait+0x1e ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f2a5f39a68e epoll_wait+0x5e (/usr/lib/x86_64-linux-gnu/libc-2.31.so)
+
+tokio-runtime-w 286310 5401561.481552:   15664095 cycles: 
+	ffffffff8d600ce0 __x86_indirect_thunk_rax+0x0 ([kernel.kallsyms])
+	ffffffff8ca0d77c flexible_sched_in+0x11c ([kernel.kallsyms])
+	ffffffff8ca07e39 visit_groups_merge+0x129 ([kernel.kallsyms])
+	ffffffff8ca07f38 ctx_sched_in+0xb8 ([kernel.kallsyms])
+	ffffffff8ca08051 perf_event_sched_in+0x61 ([kernel.kallsyms])
+	ffffffff8ca10e5c __perf_event_task_sched_in+0x16c ([kernel.kallsyms])
+	ffffffff8c8d3e4d finish_task_switch+0xfd ([kernel.kallsyms])
+	ffffffff8d2d0b4b __schedule+0x2eb ([kernel.kallsyms])
+	ffffffff8d2d0fe2 schedule+0x42 ([kernel.kallsyms])
+	ffffffff8d2d4d89 schedule_hrtimeout_range_clock+0xf9 ([kernel.kallsyms])
+	ffffffff8d2d4db3 schedule_hrtimeout_range+0x13 ([kernel.kallsyms])
+	ffffffff8cb34880 ep_poll+0x3d0 ([kernel.kallsyms])
+	ffffffff8cb34988 do_epoll_wait+0xb8 ([kernel.kallsyms])
+	ffffffff8cb349be __x64_sys_epoll_wait+0x1e ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f2a5f39a68e epoll_wait+0x5e (/usr/lib/x86_64-linux-gnu/libc-2.31.so)
+
+tokio-runtime-w 286310 5401561.495250:   12735453 cycles: 
+	ffffffff8d2d2515 mutex_unlock+0x5 ([kernel.kallsyms])
+	ffffffff8cb34538 ep_poll+0x88 ([kernel.kallsyms])
+	ffffffff8cb34988 do_epoll_wait+0xb8 ([kernel.kallsyms])
+	ffffffff8cb349be __x64_sys_epoll_wait+0x1e ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f2a5f39a68e epoll_wait+0x5e (/usr/lib/x86_64-linux-gnu/libc-2.31.so)
+
+tokio-runtime-w 286310 5401561.526606:   13827047 cycles: 
+	    55939f54884c tokio::runtime::time::wheel::Wheel::poll+0x26c (/users/dorlando/ons/websocket_rust/target/release/server)
+
+tokio-runtime-w 286310 5401561.560076:   11666115 cycles: 
+	    55939f51d429 tungstenite::protocol::WebSocketContext::read_message+0x179 (/users/dorlando/ons/websocket_rust/target/release/server)
+
+tokio-runtime-w 286310 5401561.588827:   10975233 cycles: 
+	    7f2a5f6d24dd [unknown] (/usr/lib/x86_64-linux-gnu/libcrypto.so.1.1)
+	dc61e13a1269e311 [unknown] ([unknown])
+
+tokio-runtime-w 286310 5401561.633550:   11689056 cycles: 
+	ffffffff8c83bc88 native_sched_clock+0x48 ([kernel.kallsyms])
+	ffffffff8c8df381 sched_clock_cpu+0x11 ([kernel.kallsyms])
+	ffffffff8c901ebb record_times+0x1b ([kernel.kallsyms])
+	ffffffff8c902b58 psi_task_change+0xe8 ([kernel.kallsyms])
+	ffffffff8c8d8bcc deactivate_task+0x1cc ([kernel.kallsyms])
+	ffffffff8d2d0968 __schedule+0x108 ([kernel.kallsyms])
+	ffffffff8d2d0fe2 schedule+0x42 ([kernel.kallsyms])
+	ffffffff8d2d4d89 schedule_hrtimeout_range_clock+0xf9 ([kernel.kallsyms])
+	ffffffff8d2d4db3 schedule_hrtimeout_range+0x13 ([kernel.kallsyms])
+	ffffffff8cb34880 ep_poll+0x3d0 ([kernel.kallsyms])
+	ffffffff8cb34988 do_epoll_wait+0xb8 ([kernel.kallsyms])
+	ffffffff8cb349be __x64_sys_epoll_wait+0x1e ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f2a5f39a68e epoll_wait+0x5e (/usr/lib/x86_64-linux-gnu/libc-2.31.so)
+
+tokio-runtime-w 286310 5401561.666653:   13823680 cycles: 
+	ffffffff8c8082a7 arch_perf_update_userpage+0x77 ([kernel.kallsyms])
+	ffffffff8ca11b81 perf_swevent_add+0xc1 ([kernel.kallsyms])
+	ffffffff8ca0ba6b event_sched_in.isra.0+0xdb ([kernel.kallsyms])
+	ffffffff8ca0bbee group_sched_in+0x5e ([kernel.kallsyms])
+	ffffffff8ca0d77c flexible_sched_in+0x11c ([kernel.kallsyms])
+	ffffffff8ca07e39 visit_groups_merge+0x129 ([kernel.kallsyms])
+	ffffffff8ca07f38 ctx_sched_in+0xb8 ([kernel.kallsyms])
+	ffffffff8ca08051 perf_event_sched_in+0x61 ([kernel.kallsyms])
+	ffffffff8ca10e5c __perf_event_task_sched_in+0x16c ([kernel.kallsyms])
+	ffffffff8c8d3e4d finish_task_switch+0xfd ([kernel.kallsyms])
+	ffffffff8d2d0b4b __schedule+0x2eb ([kernel.kallsyms])
+	ffffffff8d2d0fe2 schedule+0x42 ([kernel.kallsyms])
+	ffffffff8d2d4d89 schedule_hrtimeout_range_clock+0xf9 ([kernel.kallsyms])
+	ffffffff8d2d4db3 schedule_hrtimeout_range+0x13 ([kernel.kallsyms])
+	ffffffff8cb34880 ep_poll+0x3d0 ([kernel.kallsyms])
+	ffffffff8cb34988 do_epoll_wait+0xb8 ([kernel.kallsyms])
+	ffffffff8cb349be __x64_sys_epoll_wait+0x1e ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f2a5f39a68e epoll_wait+0x5e (/usr/lib/x86_64-linux-gnu/libc-2.31.so)
+
+tokio-runtime-w 286310 5401561.702973:   19510603 cycles: 
+	    55939f5538d7 tokio::runtime::time::<impl tokio::runtime::time::handle::Handle>::process+0x97 (/users/dorlando/ons/websocket_rust/target/release/server)
+
+tokio-runtime-w 286310 5401561.721509:   11596582 cycles: 
+	    55939f51b9d1 tungstenite::protocol::frame::FrameCodec::write_frame+0x101 (/users/dorlando/ons/websocket_rust/target/release/server)
+	              1e [unknown] ([unknown])
+	37317c3834373332 [unknown] ([unknown])
+
+tokio-runtime-w 286310 5401561.753430:   10608611 cycles: 
+	ffffffff8c902b4e psi_task_change+0xde ([kernel.kallsyms])
+	ffffffff8c8d8bcc deactivate_task+0x1cc ([kernel.kallsyms])
+	ffffffff8d2d0968 __schedule+0x108 ([kernel.kallsyms])
+	ffffffff8d2d0fe2 schedule+0x42 ([kernel.kallsyms])
+	ffffffff8d2d4d89 schedule_hrtimeout_range_clock+0xf9 ([kernel.kallsyms])
+	ffffffff8d2d4db3 schedule_hrtimeout_range+0x13 ([kernel.kallsyms])
+	ffffffff8cb34880 ep_poll+0x3d0 ([kernel.kallsyms])
+	ffffffff8cb34988 do_epoll_wait+0xb8 ([kernel.kallsyms])
+	ffffffff8cb349be __x64_sys_epoll_wait+0x1e ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f2a5f39a68e epoll_wait+0x5e (/usr/lib/x86_64-linux-gnu/libc-2.31.so)
+
+tokio-runtime-w 286310 5401561.782901:   10608611 cycles: 
+	ffffffff8c8a7d27 __local_bh_enable_ip+0x17 ([kernel.kallsyms])
+	ffffffff8d13480f __dev_queue_xmit+0x36f ([kernel.kallsyms])
+	ffffffff8d134d90 dev_queue_xmit+0x10 ([kernel.kallsyms])
+	ffffffff8d146dd0 neigh_resolve_output+0x110 ([kernel.kallsyms])
+	ffffffff8d1b37ab ip_finish_output2+0x19b ([kernel.kallsyms])
+	ffffffff8d1b3c5f __ip_finish_output+0xbf ([kernel.kallsyms])
+	ffffffff8d1b3d9d ip_finish_output+0x2d ([kernel.kallsyms])
+	ffffffff8d1b5655 ip_output+0x75 ([kernel.kallsyms])
+	ffffffff8d1b4d2d ip_local_out+0x3d ([kernel.kallsyms])
+	ffffffff8d1b508a __ip_queue_xmit+0x17a ([kernel.kallsyms])
+	ffffffff8d1d8300 ip_queue_xmit+0x10 ([kernel.kallsyms])
+	ffffffff8d1d243c __tcp_transmit_skb+0x53c ([kernel.kallsyms])
+	ffffffff8d1d3ff2 tcp_write_xmit+0x3c2 ([kernel.kallsyms])
+	ffffffff8d1d4807 __tcp_push_pending_frames+0x37 ([kernel.kallsyms])
+	ffffffff8d1bdaad tcp_push+0xfd ([kernel.kallsyms])
+	ffffffff8d1c3685 tcp_sendmsg_locked+0xc75 ([kernel.kallsyms])
+	ffffffff8d1c381d tcp_sendmsg+0x2d ([kernel.kallsyms])
+	ffffffff8d1f66f3 inet_sendmsg+0x43 ([kernel.kallsyms])
+	ffffffff8d10eefe sock_sendmsg+0x5e ([kernel.kallsyms])
+	ffffffff8d110e93 __sys_sendto+0x113 ([kernel.kallsyms])
+	ffffffff8d110f39 __x64_sys_sendto+0x29 ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f2a5f5d77dc __libc_send+0x6c (/usr/lib/x86_64-linux-gnu/libpthread-2.31.so)
+
+tokio-runtime-w 286310 5401561.828607:   15060069 cycles: 
+	    7f2a5f3118a8 [unknown] (/usr/lib/x86_64-linux-gnu/libc-2.31.so)
+	               0 [unknown] ([unknown])
+
+tokio-runtime-w 286310 5401561.872249:   12247832 cycles: 
+	    55939f54f3c0 tokio::runtime::time::wheel::level::Level::next_expiration+0x0 (/users/dorlando/ons/websocket_rust/target/release/server)
+
+tokio-runtime-w 286310 5401561.926652:   14739794 cycles: 
+	    55939f548a59 tokio::runtime::time::wheel::Wheel::next_expiration+0xe9 (/users/dorlando/ons/websocket_rust/target/release/server)
+
+tokio-runtime-w 286310 5401561.964005:   14464920 cycles: 
+	    55939f52e5d2 <tokio_tungstenite::compat::AllowStd<S> as std::io::Write>::flush+0x2 (/users/dorlando/ons/websocket_rust/target/release/server)
+	              41 [unknown] ([unknown])
+
+tokio-runtime-w 286310 5401562.000523:   15639132 cycles: 
+	    55939f51ba56 tungstenite::protocol::frame::FrameCodec::write_frame+0x186 (/users/dorlando/ons/websocket_rust/target/release/server)
+	              1e [unknown] ([unknown])
+	    7f2a580008d0 [unknown] ([unknown])
+	    7f2a580008d0 [unknown] ([unknown])
+	    7f2a580008d0 [unknown] ([unknown])
+	    7f2a580008d0 [unknown] ([unknown])
+	    7f2a580008d0 [unknown] ([unknown])
+	    7f2a580008d0 [unknown] ([unknown])
+	    7f2a580008d0 [unknown] ([unknown])
+
+tokio-runtime-w 286310 5401562.040504:   18136551 cycles: 
+	ffffffff8c804553 do_syscall_64+0xe3 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f2a5f5d765c __libc_recv+0x6c (/usr/lib/x86_64-linux-gnu/libpthread-2.31.so)
+
+tokio-runtime-w 286310 5401562.087094:   14568061 cycles: 
+	ffffffff8d115002 sock_rfree+0x12 ([kernel.kallsyms])
+	ffffffff8d11bf73 skb_release_all+0x13 ([kernel.kallsyms])
+	ffffffff8d11bfa3 __kfree_skb+0x13 ([kernel.kallsyms])
+	ffffffff8d1c1d8b tcp_recvmsg+0x84b ([kernel.kallsyms])
+	ffffffff8d1f69ce inet_recvmsg+0x5e ([kernel.kallsyms])
+	ffffffff8d10fd79 sock_recvmsg+0x69 ([kernel.kallsyms])
+	ffffffff8d1110b5 __sys_recvfrom+0xe5 ([kernel.kallsyms])
+	ffffffff8d1111c9 __x64_sys_recvfrom+0x29 ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f2a5f5d765c __libc_recv+0x6c (/usr/lib/x86_64-linux-gnu/libpthread-2.31.so)
+
+tokio-runtime-w 286310 5401562.124580:   12326056 cycles: 
+	    7ffff87b06a0 [unknown] ([vdso])
+	    7ffff87b0918 __vdso_clock_gettime+0x38 ([vdso])
+	    7f2a5f3580b5 clock_gettime+0x25 (/usr/lib/x86_64-linux-gnu/libc-2.31.so)
+
+tokio-runtime-w 286310 5401562.156355:   11160367 cycles: 
+	ffffffff8cad4641 __check_object_size+0x61 ([kernel.kallsyms])
+	ffffffff8d1c2f63 tcp_sendmsg_locked+0x553 ([kernel.kallsyms])
+	ffffffff8d1c381d tcp_sendmsg+0x2d ([kernel.kallsyms])
+	ffffffff8d1f66f3 inet_sendmsg+0x43 ([kernel.kallsyms])
+	ffffffff8d10eefe sock_sendmsg+0x5e ([kernel.kallsyms])
+	ffffffff8d110e93 __sys_sendto+0x113 ([kernel.kallsyms])
+	ffffffff8d110f39 __x64_sys_sendto+0x29 ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f2a5f5d77dc __libc_send+0x6c (/usr/lib/x86_64-linux-gnu/libpthread-2.31.so)
+
+tokio-runtime-w 286310 5401562.186046:   11734197 cycles: 
+	    55939f553d6f tokio::runtime::time::<impl tokio::runtime::time::handle::Handle>::process_at_sharded_time+0x30f (/users/dorlando/ons/websocket_rust/target/release/server)
+	    55939f548a39 tokio::runtime::time::wheel::Wheel::next_expiration+0xc9 (/users/dorlando/ons/websocket_rust/target/release/server)
+
+tokio-runtime-w 286310 5401562.215811:   15104868 cycles: 
+	ffffffff8d1a9567 ipv4_mtu+0x47 ([kernel.kallsyms])
+	ffffffff8d1b3cb0 __ip_finish_output+0x110 ([kernel.kallsyms])
+	ffffffff8d1b3d9d ip_finish_output+0x2d ([kernel.kallsyms])
+	ffffffff8d1b5655 ip_output+0x75 ([kernel.kallsyms])
+	ffffffff8d1b4d2d ip_local_out+0x3d ([kernel.kallsyms])
+	ffffffff8d1b508a __ip_queue_xmit+0x17a ([kernel.kallsyms])
+	ffffffff8d1d8300 ip_queue_xmit+0x10 ([kernel.kallsyms])
+	ffffffff8d1d243c __tcp_transmit_skb+0x53c ([kernel.kallsyms])
+	ffffffff8d1d3ff2 tcp_write_xmit+0x3c2 ([kernel.kallsyms])
+	ffffffff8d1d4807 __tcp_push_pending_frames+0x37 ([kernel.kallsyms])
+	ffffffff8d1bdaad tcp_push+0xfd ([kernel.kallsyms])
+	ffffffff8d1c3685 tcp_sendmsg_locked+0xc75 ([kernel.kallsyms])
+	ffffffff8d1c381d tcp_sendmsg+0x2d ([kernel.kallsyms])
+	ffffffff8d1f66f3 inet_sendmsg+0x43 ([kernel.kallsyms])
+	ffffffff8d10eefe sock_sendmsg+0x5e ([kernel.kallsyms])
+	ffffffff8d110e93 __sys_sendto+0x113 ([kernel.kallsyms])
+	ffffffff8d110f39 __x64_sys_sendto+0x29 ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f2a5f5d77dc __libc_send+0x6c (/usr/lib/x86_64-linux-gnu/libpthread-2.31.so)
+
+tokio-runtime-w 286310 5401562.254642:   16039742 cycles: 
+	    55939f550b41 tokio::io::poll_evented::PollEvented<E>::poll_read+0xd1 (/users/dorlando/ons/websocket_rust/target/release/server)
+	               5 [unknown] ([unknown])
+	9f7bc33072203196 [unknown] ([unknown])
+
+tokio-runtime-w 286310 5401562.296097:   18933788 cycles: 
+	    55939f52c369 tungstenite::protocol::frame::frame::FrameHeader::parse_internal+0x289 (/users/dorlando/ons/websocket_rust/target/release/server)
+
+tokio-runtime-w 286310 5401562.326445:   12499608 cycles: 
+	ffffffffc023b3aa ipt_do_table+0x38a ([kernel.kallsyms])
+	ffffffffc02de05f iptable_filter_hook+0x1f ([kernel.kallsyms])
+	ffffffff8d1a5d25 nf_hook_slow+0x45 ([kernel.kallsyms])
+	ffffffff8d1b4c87 __ip_local_out+0xd7 ([kernel.kallsyms])
+	ffffffff8d1b4d0d ip_local_out+0x1d ([kernel.kallsyms])
+	ffffffff8d1b508a __ip_queue_xmit+0x17a ([kernel.kallsyms])
+	ffffffff8d1d8300 ip_queue_xmit+0x10 ([kernel.kallsyms])
+	ffffffff8d1d243c __tcp_transmit_skb+0x53c ([kernel.kallsyms])
+	ffffffff8d1d3ff2 tcp_write_xmit+0x3c2 ([kernel.kallsyms])
+	ffffffff8d1d4807 __tcp_push_pending_frames+0x37 ([kernel.kallsyms])
+	ffffffff8d1bdaad tcp_push+0xfd ([kernel.kallsyms])
+	ffffffff8d1c3685 tcp_sendmsg_locked+0xc75 ([kernel.kallsyms])
+	ffffffff8d1c381d tcp_sendmsg+0x2d ([kernel.kallsyms])
+	ffffffff8d1f66f3 inet_sendmsg+0x43 ([kernel.kallsyms])
+	ffffffff8d10eefe sock_sendmsg+0x5e ([kernel.kallsyms])
+	ffffffff8d110e93 __sys_sendto+0x113 ([kernel.kallsyms])
+	ffffffff8d110f39 __x64_sys_sendto+0x29 ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f2a5f5d77dc __libc_send+0x6c (/usr/lib/x86_64-linux-gnu/libpthread-2.31.so)
+
+tokio-runtime-w 286310 5401562.362634:   14942002 cycles: 
+	    55939f51d3e9 tungstenite::protocol::WebSocketContext::read_message+0x139 (/users/dorlando/ons/websocket_rust/target/release/server)
+	              41 [unknown] ([unknown])
+
+tokio-runtime-w 286310 5401562.426798:   18933788 cycles: 
+	ffffffff8d1d2572 __tcp_transmit_skb+0x672 ([kernel.kallsyms])
+	ffffffff8d1d3ff2 tcp_write_xmit+0x3c2 ([kernel.kallsyms])
+	ffffffff8d1d4807 __tcp_push_pending_frames+0x37 ([kernel.kallsyms])
+	ffffffff8d1bdaad tcp_push+0xfd ([kernel.kallsyms])
+	ffffffff8d1c3685 tcp_sendmsg_locked+0xc75 ([kernel.kallsyms])
+	ffffffff8d1c381d tcp_sendmsg+0x2d ([kernel.kallsyms])
+	ffffffff8d1f66f3 inet_sendmsg+0x43 ([kernel.kallsyms])
+	ffffffff8d10eefe sock_sendmsg+0x5e ([kernel.kallsyms])
+	ffffffff8d110e93 __sys_sendto+0x113 ([kernel.kallsyms])
+	ffffffff8d110f39 __x64_sys_sendto+0x29 ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f2a5f5d77dc __libc_send+0x6c (/usr/lib/x86_64-linux-gnu/libpthread-2.31.so)
+
+tokio-runtime-w 286310 5401562.464724:   21161625 cycles: 
+	    7f2a5f927ac0 SSL_get_state+0x0 (/usr/lib/x86_64-linux-gnu/libssl.so.1.1)
+	    7f2a5f9656a0 [unknown] ([unknown])
+
+tokio-runtime-w 286310 5401562.511131:   16809404 cycles: 
+	ffffffff8d400091 entry_SYSCALL_64_after_hwframe+0x49 ([kernel.kallsyms])
+	    7f2a5f39a68e epoll_wait+0x5e (/usr/lib/x86_64-linux-gnu/libc-2.31.so)
+
+tokio-runtime-w 286310 5401562.553453:   17080446 cycles: 
+	    55939f54c4fd tokio::runtime::scheduler::multi_thread::worker::Context::run+0x9fd (/users/dorlando/ons/websocket_rust/target/release/server)
+
+tokio-runtime-w 286310 5401562.595714:   16048825 cycles: 
+	    55939f52b7f9 openssl::ssl::bio::bread+0x79 (/users/dorlando/ons/websocket_rust/target/release/server)
+
+tokio-runtime-w 286310 5401562.634633:   15643299 cycles: 
+	ffffffff8c902aa1 psi_task_change+0x31 ([kernel.kallsyms])
+	ffffffff8c8d8bcc deactivate_task+0x1cc ([kernel.kallsyms])
+	ffffffff8d2d0968 __schedule+0x108 ([kernel.kallsyms])
+	ffffffff8d2d0fe2 schedule+0x42 ([kernel.kallsyms])
+	ffffffff8d2d4d89 schedule_hrtimeout_range_clock+0xf9 ([kernel.kallsyms])
+	ffffffff8d2d4db3 schedule_hrtimeout_range+0x13 ([kernel.kallsyms])
+	ffffffff8cb34880 ep_poll+0x3d0 ([kernel.kallsyms])
+	ffffffff8cb34988 do_epoll_wait+0xb8 ([kernel.kallsyms])
+	ffffffff8cb349be __x64_sys_epoll_wait+0x1e ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f2a5f39a68e epoll_wait+0x5e (/usr/lib/x86_64-linux-gnu/libc-2.31.so)
+
+tokio-runtime-w 286310 5401562.671630:   14731512 cycles: 
+	    55939f51ad41 <tokio_native_tls::TlsStream<S> as tokio::io::async_read::AsyncRead>::poll_read+0x91 (/users/dorlando/ons/websocket_rust/target/release/server)
+	a4a135dffaf266c9 [unknown] ([unknown])
+
+tokio-runtime-w 286310 5401562.707025:   13576508 cycles: 
+	ffffffff8d1dc106 tcp_v4_send_check+0x6 ([kernel.kallsyms])
+	ffffffff8d1d3ff2 tcp_write_xmit+0x3c2 ([kernel.kallsyms])
+	ffffffff8d1d4807 __tcp_push_pending_frames+0x37 ([kernel.kallsyms])
+	ffffffff8d1bdaad tcp_push+0xfd ([kernel.kallsyms])
+	ffffffff8d1c3685 tcp_sendmsg_locked+0xc75 ([kernel.kallsyms])
+	ffffffff8d1c381d tcp_sendmsg+0x2d ([kernel.kallsyms])
+	ffffffff8d1f66f3 inet_sendmsg+0x43 ([kernel.kallsyms])
+	ffffffff8d10eefe sock_sendmsg+0x5e ([kernel.kallsyms])
+	ffffffff8d110e93 __sys_sendto+0x113 ([kernel.kallsyms])
+	ffffffff8d110f39 __x64_sys_sendto+0x29 ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f2a5f5d77dc __libc_send+0x6c (/usr/lib/x86_64-linux-gnu/libpthread-2.31.so)
+
+tokio-runtime-w 286310 5401562.739100:   13576508 cycles: 
+	    55939f5489fb tokio::runtime::time::wheel::Wheel::next_expiration+0x8b (/users/dorlando/ons/websocket_rust/target/release/server)
+
+tokio-runtime-w 286310 5401562.770678:   20518664 cycles: 
+	    55939f51e15b tungstenite::protocol::WebSocketContext::read_message+0xeab (/users/dorlando/ons/websocket_rust/target/release/server)
+
+tokio-runtime-w 286310 5401562.818862:   14779974 cycles: 
+	ffffffff8ccb05c8 aa_sk_perm+0x48 ([kernel.kallsyms])
+	ffffffff8cca55c9 apparmor_socket_recvmsg+0x29 ([kernel.kallsyms])
+	ffffffff8cc596fd security_socket_recvmsg+0x3d ([kernel.kallsyms])
+	ffffffff8d10fd32 sock_recvmsg+0x22 ([kernel.kallsyms])
+	ffffffff8d1110b5 __sys_recvfrom+0xe5 ([kernel.kallsyms])
+	ffffffff8d1111c9 __x64_sys_recvfrom+0x29 ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f2a5f5d765c __libc_recv+0x6c (/usr/lib/x86_64-linux-gnu/libpthread-2.31.so)
+
+tokio-runtime-w 286310 5401562.853133:   13851563 cycles: 
+	ffffffff8c8d5a7b update_rq_clock+0x1b ([kernel.kallsyms])
+	ffffffff8d2d0927 __schedule+0xc7 ([kernel.kallsyms])
+	ffffffff8d2d0fe2 schedule+0x42 ([kernel.kallsyms])
+	ffffffff8d2d4d89 schedule_hrtimeout_range_clock+0xf9 ([kernel.kallsyms])
+	ffffffff8d2d4db3 schedule_hrtimeout_range+0x13 ([kernel.kallsyms])
+	ffffffff8cb34880 ep_poll+0x3d0 ([kernel.kallsyms])
+	ffffffff8cb34988 do_epoll_wait+0xb8 ([kernel.kallsyms])
+	ffffffff8cb349be __x64_sys_epoll_wait+0x1e ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f2a5f39a68e epoll_wait+0x5e (/usr/lib/x86_64-linux-gnu/libc-2.31.so)
+
+tokio-runtime-w 286310 5401562.885705:   13755072 cycles: 
+	    7f2a5f8fb43d [unknown] (/usr/lib/x86_64-linux-gnu/libssl.so.1.1)
+
+tokio-runtime-w 286310 5401562.918302:   18978195 cycles: 
+	    55939f52e5d4 <tokio_tungstenite::compat::AllowStd<S> as std::io::Write>::flush+0x4 (/users/dorlando/ons/websocket_rust/target/release/server)
+
+tokio-runtime-w 286310 5401562.963695:   15883835 cycles: 
+	ffffffff8d1a9578 ipv4_mtu+0x58 ([kernel.kallsyms])
+	ffffffff8d1d1a22 tcp_current_mss+0x42 ([kernel.kallsyms])
+	ffffffff8d1bdbec tcp_send_mss+0x1c ([kernel.kallsyms])
+	ffffffff8d1c2b31 tcp_sendmsg_locked+0x121 ([kernel.kallsyms])
+	ffffffff8d1c381d tcp_sendmsg+0x2d ([kernel.kallsyms])
+	ffffffff8d1f66f3 inet_sendmsg+0x43 ([kernel.kallsyms])
+	ffffffff8d10eefe sock_sendmsg+0x5e ([kernel.kallsyms])
+	ffffffff8d110e93 __sys_sendto+0x113 ([kernel.kallsyms])
+	ffffffff8d110f39 __x64_sys_sendto+0x29 ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f2a5f5d77dc __libc_send+0x6c (/usr/lib/x86_64-linux-gnu/libpthread-2.31.so)
+
+tokio-runtime-w 286310 5401563.001776:   12545752 cycles: 
+	    55939f56c662 futures_core::task::__internal::atomic_waker::AtomicWaker::register+0x12 (/users/dorlando/ons/websocket_rust/target/release/server)
+	              41 [unknown] ([unknown])
+
+tokio-runtime-w 286310 5401563.031343:   13569602 cycles: 
+	    7f2a5f6d23c0 [unknown] (/usr/lib/x86_64-linux-gnu/libcrypto.so.1.1)
+	298ae2ff8996babc [unknown] ([unknown])
+
+tokio-runtime-w 286310 5401563.063544:   14317936 cycles: 
+	ffffffff8ca0773c calc_timer_values+0x5c ([kernel.kallsyms])
+	ffffffff8ca114ee perf_event_update_userpage+0x3e ([kernel.kallsyms])
+	ffffffff8ca11b81 perf_swevent_add+0xc1 ([kernel.kallsyms])
+	ffffffff8ca0ba6b event_sched_in.isra.0+0xdb ([kernel.kallsyms])
+	ffffffff8ca0bbee group_sched_in+0x5e ([kernel.kallsyms])
+	ffffffff8ca0d77c flexible_sched_in+0x11c ([kernel.kallsyms])
+	ffffffff8ca07e39 visit_groups_merge+0x129 ([kernel.kallsyms])
+	ffffffff8ca07f38 ctx_sched_in+0xb8 ([kernel.kallsyms])
+	ffffffff8ca08051 perf_event_sched_in+0x61 ([kernel.kallsyms])
+	ffffffff8ca10e5c __perf_event_task_sched_in+0x16c ([kernel.kallsyms])
+	ffffffff8c8d3e4d finish_task_switch+0xfd ([kernel.kallsyms])
+	ffffffff8d2d0b4b __schedule+0x2eb ([kernel.kallsyms])
+	ffffffff8d2d0fe2 schedule+0x42 ([kernel.kallsyms])
+	ffffffff8d2d4d89 schedule_hrtimeout_range_clock+0xf9 ([kernel.kallsyms])
+	ffffffff8d2d4db3 schedule_hrtimeout_range+0x13 ([kernel.kallsyms])
+	ffffffff8cb34880 ep_poll+0x3d0 ([kernel.kallsyms])
+	ffffffff8cb34988 do_epoll_wait+0xb8 ([kernel.kallsyms])
+	ffffffff8cb349be __x64_sys_epoll_wait+0x1e ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f2a5f39a68e epoll_wait+0x5e (/usr/lib/x86_64-linux-gnu/libc-2.31.so)
+
+tokio-runtime-w 286310 5401563.097132:   11482796 cycles: 
+	    7f2a5f3580a7 clock_gettime+0x17 (/usr/lib/x86_64-linux-gnu/libc-2.31.so)
+
+tokio-runtime-w 286310 5401563.124308:   13240055 cycles: 
+	ffffffffc03a29d0 __nf_ct_refresh_acct+0x0 ([kernel.kallsyms])
+	ffffffffc03a4ee6 nf_conntrack_in+0x1f6 ([kernel.kallsyms])
+	ffffffffc03a8a78 connector_write+0xc5 ([kernel.kallsyms])
+	ffffffff8d1a5d25 nf_hook_slow+0x45 ([kernel.kallsyms])
+	ffffffff8d1b4c87 __ip_local_out+0xd7 ([kernel.kallsyms])
+	ffffffff8d1b4d0d ip_local_out+0x1d ([kernel.kallsyms])
+	ffffffff8d1b508a __ip_queue_xmit+0x17a ([kernel.kallsyms])
+	ffffffff8d1d8300 ip_queue_xmit+0x10 ([kernel.kallsyms])
+	ffffffff8d1d243c __tcp_transmit_skb+0x53c ([kernel.kallsyms])
+	ffffffff8d1d3ff2 tcp_write_xmit+0x3c2 ([kernel.kallsyms])
+	ffffffff8d1d4807 __tcp_push_pending_frames+0x37 ([kernel.kallsyms])
+	ffffffff8d1bdaad tcp_push+0xfd ([kernel.kallsyms])
+	ffffffff8d1c3685 tcp_sendmsg_locked+0xc75 ([kernel.kallsyms])
+	ffffffff8d1c381d tcp_sendmsg+0x2d ([kernel.kallsyms])
+	ffffffff8d1f66f3 inet_sendmsg+0x43 ([kernel.kallsyms])
+	ffffffff8d10eefe sock_sendmsg+0x5e ([kernel.kallsyms])
+	ffffffff8d110e93 __sys_sendto+0x113 ([kernel.kallsyms])
+	ffffffff8d110f39 __x64_sys_sendto+0x29 ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f2a5f5d77dc __libc_send+0x6c (/usr/lib/x86_64-linux-gnu/libpthread-2.31.so)
+
+tokio-runtime-w 286310 5401563.155941:   15827085 cycles: 
+	    7f2a5f76fde7 EVP_CIPHER_block_size+0x7 (/usr/lib/x86_64-linux-gnu/libcrypto.so.1.1)
+	    7f2a5f9656a0 [unknown] ([unknown])
+
+tokio-runtime-w 286310 5401563.193916:   14062431 cycles: 
+	    7f2a5f6d23ef [unknown] (/usr/lib/x86_64-linux-gnu/libcrypto.so.1.1)
+	114e61f3231e831a [unknown] ([unknown])
+
+tokio-runtime-w 286310 5401563.228002:   17272184 cycles: 
+	    55939f545920 openssl_sys::openssl::bio::BIO_clear_retry_flags+0x0 (/users/dorlando/ons/websocket_rust/target/release/server)
+
+tokio-runtime-w 286310 5401563.268893:   14211221 cycles: 
+	    55939f512e43 server::main::_$u7b$$u7b$closure$u7d$$u7d$::_$u7b$$u7b$closure$u7d$$u7d$::h89e6eb4ed385d30b+0x2393 (/users/dorlando/ons/websocket_rust/target/release/server)
+
+tokio-runtime-w 286310 5401563.302858:   16188110 cycles: 
+	    7f2a5f79e509 [unknown] (/usr/lib/x86_64-linux-gnu/libcrypto.so.1.1)
+	ff912f5f5441b3ed [unknown] ([unknown])
+
+tokio-runtime-w 286310 5401563.325720:   13267399 cycles: 
+	ffffffff8d115fd0 release_sock+0x30 ([kernel.kallsyms])
+	ffffffff8d1c179e tcp_recvmsg+0x25e ([kernel.kallsyms])
+	ffffffff8d1f69ce inet_recvmsg+0x5e ([kernel.kallsyms])
+	ffffffff8d10fd79 sock_recvmsg+0x69 ([kernel.kallsyms])
+	ffffffff8d1110b5 __sys_recvfrom+0xe5 ([kernel.kallsyms])
+	ffffffff8d1111c9 __x64_sys_recvfrom+0x29 ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f2a5f5d765c __libc_recv+0x6c (/usr/lib/x86_64-linux-gnu/libpthread-2.31.so)
+
+tokio-runtime-w 286310 5401563.362606:   13268031 cycles: 
+	    55939f519cc6 <tokio_tungstenite::WebSocketStream<T> as futures_sink::Sink<tungstenite::protocol::message::Message>>::poll_flush+0xa6 (/users/dorlando/ons/websocket_rust/target/release/server)
+
+tokio-runtime-w 286310 5401563.424793:   17334837 cycles: 
+	    7f2a5f77daa4 CRYPTO_malloc+0x4 (/usr/lib/x86_64-linux-gnu/libcrypto.so.1.1)
+	    7f2a5f9656a0 [unknown] ([unknown])
+
+tokio-runtime-w 286310 5401563.465411:   17334837 cycles: 
+	    7f2a5f6d2083 [unknown] (/usr/lib/x86_64-linux-gnu/libcrypto.so.1.1)
+	5ab87cca66d0442f [unknown] ([unknown])
+
+tokio-runtime-w 286310 5401563.506422:   13610516 cycles: 
+	ffffffff8d1a5d14 nf_hook_slow+0x34 ([kernel.kallsyms])
+	ffffffff8d1b4c87 __ip_local_out+0xd7 ([kernel.kallsyms])
+	ffffffff8d1b4d0d ip_local_out+0x1d ([kernel.kallsyms])
+	ffffffff8d1b508a __ip_queue_xmit+0x17a ([kernel.kallsyms])
+	ffffffff8d1d8300 ip_queue_xmit+0x10 ([kernel.kallsyms])
+	ffffffff8d1d243c __tcp_transmit_skb+0x53c ([kernel.kallsyms])
+	ffffffff8d1d3ff2 tcp_write_xmit+0x3c2 ([kernel.kallsyms])
+	ffffffff8d1d4807 __tcp_push_pending_frames+0x37 ([kernel.kallsyms])
+	ffffffff8d1bdaad tcp_push+0xfd ([kernel.kallsyms])
+	ffffffff8d1c3685 tcp_sendmsg_locked+0xc75 ([kernel.kallsyms])
+	ffffffff8d1c381d tcp_sendmsg+0x2d ([kernel.kallsyms])
+	ffffffff8d1f66f3 inet_sendmsg+0x43 ([kernel.kallsyms])
+	ffffffff8d10eefe sock_sendmsg+0x5e ([kernel.kallsyms])
+	ffffffff8d110e93 __sys_sendto+0x113 ([kernel.kallsyms])
+	ffffffff8d110f39 __x64_sys_sendto+0x29 ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f2a5f5d77dc __libc_send+0x6c (/usr/lib/x86_64-linux-gnu/libpthread-2.31.so)
+
+tokio-runtime-w 286310 5401563.539961:   13386217 cycles: 
+	ffffffff8cd247e0 import_single_range+0x20 ([kernel.kallsyms])
+	ffffffff8d1111c9 __x64_sys_recvfrom+0x29 ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f2a5f5d765c __libc_recv+0x6c (/usr/lib/x86_64-linux-gnu/libpthread-2.31.so)
+
+tokio-runtime-w 286310 5401563.573231:   13268031 cycles: 
+	ffffffff8cad46d3 __check_object_size+0xf3 ([kernel.kallsyms])
+	ffffffff8d1227ab simple_copy_to_iter+0x2b ([kernel.kallsyms])
+	ffffffff8d1224a8 __skb_datagram_iter+0x68 ([kernel.kallsyms])
+	ffffffff8d122730 skb_copy_datagram_iter+0x40 ([kernel.kallsyms])
+	ffffffff8d1c1c03 tcp_recvmsg+0x6c3 ([kernel.kallsyms])
+	ffffffff8d1f69ce inet_recvmsg+0x5e ([kernel.kallsyms])
+	ffffffff8d10fd79 sock_recvmsg+0x69 ([kernel.kallsyms])
+	ffffffff8d1110b5 __sys_recvfrom+0xe5 ([kernel.kallsyms])
+	ffffffff8d1111c9 __x64_sys_recvfrom+0x29 ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f2a5f5d765c __libc_recv+0x6c (/usr/lib/x86_64-linux-gnu/libpthread-2.31.so)
+
+tokio-runtime-w 286310 5401563.614704:   11333746 cycles: 
+	    55939f56c724 futures_core::task::__internal::atomic_waker::AtomicWaker::wake+0x4 (/users/dorlando/ons/websocket_rust/target/release/server)
+
+tokio-runtime-w 286310 5401563.641772:   12395310 cycles: 
+	    7f2a5f901396 [unknown] (/usr/lib/x86_64-linux-gnu/libssl.so.1.1)
+	    7f2a5f9656a0 [unknown] ([unknown])
+
+tokio-runtime-w 286310 5401563.671688:   12395310 cycles: 
+	    55939f550b41 tokio::io::poll_evented::PollEvented<E>::poll_read+0xd1 (/users/dorlando/ons/websocket_rust/target/release/server)
+	               5 [unknown] ([unknown])
+	5615260e622499b2 [unknown] ([unknown])
+
+tokio-runtime-w 286310 5401563.697100:   17831668 cycles: 
+	    55939f54f423 tokio::runtime::time::wheel::level::Level::next_expiration+0x63 (/users/dorlando/ons/websocket_rust/target/release/server)
+
+tokio-runtime-w 286310 5401563.747939:   12687594 cycles: 
+	ffffffff8caa4064 __ksize+0x54 ([kernel.kallsyms])
+	ffffffff8ca4f6e9 ksize+0x19 ([kernel.kallsyms])
+	ffffffff8d119eb8 __alloc_skb+0x98 ([kernel.kallsyms])
+	ffffffff8d1c20ab sk_stream_alloc_skb+0x6b ([kernel.kallsyms])
+	ffffffff8d1c2dce tcp_sendmsg_locked+0x3be ([kernel.kallsyms])
+	ffffffff8d1c381d tcp_sendmsg+0x2d ([kernel.kallsyms])
+	ffffffff8d1f66f3 inet_sendmsg+0x43 ([kernel.kallsyms])
+	ffffffff8d10eefe sock_sendmsg+0x5e ([kernel.kallsyms])
+	ffffffff8d110e93 __sys_sendto+0x113 ([kernel.kallsyms])
+	ffffffff8d110f39 __x64_sys_sendto+0x29 ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f2a5f5d77dc __libc_send+0x6c (/usr/lib/x86_64-linux-gnu/libpthread-2.31.so)
+
+tokio-runtime-w 286310 5401563.783980:   12873237 cycles: 
+	    7f2a5f6d23b8 [unknown] (/usr/lib/x86_64-linux-gnu/libcrypto.so.1.1)
+	7c35383735332065 [unknown] ([unknown])
+
+tokio-runtime-w 286310 5401563.820460:   16591664 cycles: 
+	    55939f54f423 tokio::runtime::time::wheel::level::Level::next_expiration+0x63 (/users/dorlando/ons/websocket_rust/target/release/server)
+
+tokio-runtime-w 286310 5401563.867514:   13144526 cycles: 
+	    7f2a5f906baf [unknown] (/usr/lib/x86_64-linux-gnu/libssl.so.1.1)
+	    7f2a5f9656a0 [unknown] ([unknown])
+
+tokio-runtime-w 286310 5401563.904726:   14582996 cycles: 
+	ffffffff8c901ed5 record_times+0x35 ([kernel.kallsyms])
+	ffffffff8c902b58 psi_task_change+0xe8 ([kernel.kallsyms])
+	ffffffff8c8d8bcc deactivate_task+0x1cc ([kernel.kallsyms])
+	ffffffff8d2d0968 __schedule+0x108 ([kernel.kallsyms])
+	ffffffff8d2d0fe2 schedule+0x42 ([kernel.kallsyms])
+	ffffffff8d2d4d89 schedule_hrtimeout_range_clock+0xf9 ([kernel.kallsyms])
+	ffffffff8d2d4db3 schedule_hrtimeout_range+0x13 ([kernel.kallsyms])
+	ffffffff8cb34880 ep_poll+0x3d0 ([kernel.kallsyms])
+	ffffffff8cb34988 do_epoll_wait+0xb8 ([kernel.kallsyms])
+	ffffffff8cb349be __x64_sys_epoll_wait+0x1e ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f2a5f39a68e epoll_wait+0x5e (/usr/lib/x86_64-linux-gnu/libc-2.31.so)
+
+tokio-runtime-w 286310 5401563.947270:   12335337 cycles: 
+	    55939f52e6d7 <tokio_tungstenite::compat::AllowStd<S> as std::io::Write>::flush+0x107 (/users/dorlando/ons/websocket_rust/target/release/server)
+	               0 [unknown] ([unknown])
+
+tokio-runtime-w 286310 5401563.982523:   15720458 cycles: 
+	ffffffff8cd26f09 _copy_to_iter+0x59 ([kernel.kallsyms])
+	ffffffff8d1227b9 simple_copy_to_iter+0x39 ([kernel.kallsyms])
+	ffffffff8d1224a8 __skb_datagram_iter+0x68 ([kernel.kallsyms])
+	ffffffff8d122730 skb_copy_datagram_iter+0x40 ([kernel.kallsyms])
+	ffffffff8d1c1c03 tcp_recvmsg+0x6c3 ([kernel.kallsyms])
+	ffffffff8d1f69ce inet_recvmsg+0x5e ([kernel.kallsyms])
+	ffffffff8d10fd79 sock_recvmsg+0x69 ([kernel.kallsyms])
+	ffffffff8d1110b5 __sys_recvfrom+0xe5 ([kernel.kallsyms])
+	ffffffff8d1111c9 __x64_sys_recvfrom+0x29 ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f2a5f5d765c __libc_recv+0x6c (/usr/lib/x86_64-linux-gnu/libpthread-2.31.so)
+
+tokio-runtime-w 286310 5401564.027313:   11006153 cycles: 
+	    7f2a5f358094 clock_gettime+0x4 (/usr/lib/x86_64-linux-gnu/libc-2.31.so)
+	    55939f54c10e tokio::runtime::scheduler::multi_thread::worker::Context::run+0x60e (/users/dorlando/ons/websocket_rust/target/release/server)
+
+tokio-runtime-w 286310 5401564.058798:   10314572 cycles: 
+	ffffffff8c902c9c psi_task_change+0x22c ([kernel.kallsyms])
+	ffffffff8c8d8bcc deactivate_task+0x1cc ([kernel.kallsyms])
+	ffffffff8d2d0968 __schedule+0x108 ([kernel.kallsyms])
+	ffffffff8d2d0fe2 schedule+0x42 ([kernel.kallsyms])
+	ffffffff8d2d4d89 schedule_hrtimeout_range_clock+0xf9 ([kernel.kallsyms])
+	ffffffff8d2d4db3 schedule_hrtimeout_range+0x13 ([kernel.kallsyms])
+	ffffffff8cb34880 ep_poll+0x3d0 ([kernel.kallsyms])
+	ffffffff8cb34988 do_epoll_wait+0xb8 ([kernel.kallsyms])
+	ffffffff8cb349be __x64_sys_epoll_wait+0x1e ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f2a5f39a68e epoll_wait+0x5e (/usr/lib/x86_64-linux-gnu/libc-2.31.so)
+
+tokio-runtime-w 286310 5401564.088442:    8684321 cycles: 
+	    55939f526f3e std::io::default_read_to_end+0x55e (/users/dorlando/ons/websocket_rust/target/release/server)
+
+tokio-runtime-w 286310 5401564.113288:    9069698 cycles: 
+	    7f2a5f76fde7 EVP_CIPHER_block_size+0x7 (/usr/lib/x86_64-linux-gnu/libcrypto.so.1.1)
+	    7f2a5f9656a0 [unknown] ([unknown])
+
+tokio-runtime-w 286310 5401564.139008:    8574868 cycles: 
+	    55939f590013 __rdl_alloc+0x3 (/users/dorlando/ons/websocket_rust/target/release/server)
+	        e9438f51 [unknown] ([unknown])
+
+tokio-runtime-w 286310 5401564.163442:    8274003 cycles: 
+	    7f2a5f30f603 [unknown] (/usr/lib/x86_64-linux-gnu/libc-2.31.so)
+
+tokio-runtime-w 286310 5401564.188257:    8057452 cycles: 
+	    7f2a5f900094 [unknown] (/usr/lib/x86_64-linux-gnu/libssl.so.1.1)
+	    7f2a5f9656a0 [unknown] ([unknown])
+
+tokio-runtime-w 286310 5401564.210888:    9707031 cycles: 
+	ffffffff8d2d5ea0 _raw_spin_lock+0x10 ([kernel.kallsyms])
+	ffffffff8d2d0d03 __schedule+0x4a3 ([kernel.kallsyms])
+	ffffffff8d2d0fe2 schedule+0x42 ([kernel.kallsyms])
+	ffffffff8d2d4d89 schedule_hrtimeout_range_clock+0xf9 ([kernel.kallsyms])
+	ffffffff8d2d4db3 schedule_hrtimeout_range+0x13 ([kernel.kallsyms])
+	ffffffff8cb34880 ep_poll+0x3d0 ([kernel.kallsyms])
+	ffffffff8cb34988 do_epoll_wait+0xb8 ([kernel.kallsyms])
+	ffffffff8cb349be __x64_sys_epoll_wait+0x1e ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f2a5f39a68e epoll_wait+0x5e (/usr/lib/x86_64-linux-gnu/libc-2.31.so)
+
+tokio-runtime-w 286310 5401564.238559:    8186275 cycles: 
+	ffffffff8d2d5db9 _raw_write_lock_irq+0x9 ([kernel.kallsyms])
+	ffffffff8cb34811 ep_poll+0x361 ([kernel.kallsyms])
+	ffffffff8cb34988 do_epoll_wait+0xb8 ([kernel.kallsyms])
+	ffffffff8cb349be __x64_sys_epoll_wait+0x1e ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f2a5f39a68e epoll_wait+0x5e (/usr/lib/x86_64-linux-gnu/libc-2.31.so)
+
+tokio-runtime-w 286310 5401564.261848:    8943914 cycles: 
+	    55939f550f17 tokio::io::poll_evented::PollEvented<E>::poll_write+0x1a7 (/users/dorlando/ons/websocket_rust/target/release/server)
+
+tokio-runtime-w 286310 5401564.287039:    8943914 cycles: 
+	ffffffff8d2d5ea0 _raw_spin_lock+0x10 ([kernel.kallsyms])
+	ffffffff8d2d0d03 __schedule+0x4a3 ([kernel.kallsyms])
+	ffffffff8d2d0fe2 schedule+0x42 ([kernel.kallsyms])
+	ffffffff8d2d4d89 schedule_hrtimeout_range_clock+0xf9 ([kernel.kallsyms])
+	ffffffff8d2d4db3 schedule_hrtimeout_range+0x13 ([kernel.kallsyms])
+	ffffffff8cb34880 ep_poll+0x3d0 ([kernel.kallsyms])
+	ffffffff8cb34988 do_epoll_wait+0xb8 ([kernel.kallsyms])
+	ffffffff8cb349be __x64_sys_epoll_wait+0x1e ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f2a5f39a68e epoll_wait+0x5e (/usr/lib/x86_64-linux-gnu/libc-2.31.so)
+
+tokio-runtime-w 286310 5401564.312391:   14528474 cycles: 
+	    7f2a5f8fe2c8 [unknown] (/usr/lib/x86_64-linux-gnu/libssl.so.1.1)
+	    7f2a5f9656a0 [unknown] ([unknown])
+
+tokio-runtime-w 286310 5401564.353700:   10449346 cycles: 
+	ffffffff8cadf89c fput_many+0xc ([kernel.kallsyms])
+	ffffffff8cb34961 do_epoll_wait+0x91 ([kernel.kallsyms])
+	ffffffff8cb349be __x64_sys_epoll_wait+0x1e ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f2a5f39a68e epoll_wait+0x5e (/usr/lib/x86_64-linux-gnu/libc-2.31.so)
+
+tokio-runtime-w 286310 5401564.383131:   10678388 cycles: 
+	ffffffffc023b16d ipt_do_table+0x14d ([kernel.kallsyms])
+	ffffffffc02de05f iptable_filter_hook+0x1f ([kernel.kallsyms])
+	ffffffff8d1a5d25 nf_hook_slow+0x45 ([kernel.kallsyms])
+	ffffffff8d1b4c87 __ip_local_out+0xd7 ([kernel.kallsyms])
+	ffffffff8d1b4d0d ip_local_out+0x1d ([kernel.kallsyms])
+	ffffffff8d1b508a __ip_queue_xmit+0x17a ([kernel.kallsyms])
+	ffffffff8d1d8300 ip_queue_xmit+0x10 ([kernel.kallsyms])
+	ffffffff8d1d243c __tcp_transmit_skb+0x53c ([kernel.kallsyms])
+	ffffffff8d1d3ff2 tcp_write_xmit+0x3c2 ([kernel.kallsyms])
+	ffffffff8d1d4807 __tcp_push_pending_frames+0x37 ([kernel.kallsyms])
+	ffffffff8d1bdaad tcp_push+0xfd ([kernel.kallsyms])
+	ffffffff8d1c3685 tcp_sendmsg_locked+0xc75 ([kernel.kallsyms])
+	ffffffff8d1c381d tcp_sendmsg+0x2d ([kernel.kallsyms])
+	ffffffff8d1f66f3 inet_sendmsg+0x43 ([kernel.kallsyms])
+	ffffffff8d10eefe sock_sendmsg+0x5e ([kernel.kallsyms])
+	ffffffff8d110e93 __sys_sendto+0x113 ([kernel.kallsyms])
+	ffffffff8d110f39 __x64_sys_sendto+0x29 ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f2a5f5d77dc __libc_send+0x6c (/usr/lib/x86_64-linux-gnu/libpthread-2.31.so)
+
+tokio-runtime-w 286310 5401564.414467:   10283129 cycles: 
+	ffffffff8c8e4c4c update_curr+0x6c ([kernel.kallsyms])
+	ffffffff8c8e6833 dequeue_entity+0x23 ([kernel.kallsyms])
+	ffffffff8c8e6ef8 dequeue_task_fair+0x58 ([kernel.kallsyms])
+	ffffffff8c8d8b03 deactivate_task+0x103 ([kernel.kallsyms])
+	ffffffff8d2d0968 __schedule+0x108 ([kernel.kallsyms])
+	ffffffff8d2d0fe2 schedule+0x42 ([kernel.kallsyms])
+	ffffffff8d2d4d89 schedule_hrtimeout_range_clock+0xf9 ([kernel.kallsyms])
+	ffffffff8d2d4db3 schedule_hrtimeout_range+0x13 ([kernel.kallsyms])
+	ffffffff8cb34880 ep_poll+0x3d0 ([kernel.kallsyms])
+	ffffffff8cb34988 do_epoll_wait+0xb8 ([kernel.kallsyms])
+	ffffffff8cb349be __x64_sys_epoll_wait+0x1e ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f2a5f39a68e epoll_wait+0x5e (/usr/lib/x86_64-linux-gnu/libc-2.31.so)
+
+tokio-runtime-w 286310 5401564.444106:   10289745 cycles: 
+	ffffffff8d400030 entry_SYSCALL_64+0x20 ([kernel.kallsyms])
+	    7f2a5f5d77dc __libc_send+0x6c (/usr/lib/x86_64-linux-gnu/libpthread-2.31.so)
+
+tokio-runtime-w 286310 5401564.473823:   10289745 cycles: 
+	ffffffff8d40015e syscall_return_via_sysret+0x6d ([kernel.kallsyms])
+	    7f2a5f5d765c __libc_recv+0x6c (/usr/lib/x86_64-linux-gnu/libpthread-2.31.so)
+
+tokio-runtime-w 286310 5401564.503662:   13033571 cycles: 
+	    7f2a5f815778 OPENSSL_cleanse+0x38 (/usr/lib/x86_64-linux-gnu/libcrypto.so.1.1)
+	70d4a4947a55cb4e [unknown] ([unknown])
+
+tokio-runtime-w 286310 5401564.541396:   17054371 cycles: 
+	    7f2a5f77da74 CRYPTO_free+0x4 (/usr/lib/x86_64-linux-gnu/libcrypto.so.1.1)
+	    7f2a5f9656a0 [unknown] ([unknown])
+
+tokio-runtime-w 286310 5401564.590271:   15479638 cycles: 
+	ffffffff8caa8ac9 __slab_free+0x109 ([kernel.kallsyms])
+	ffffffff8caa9878 kmem_cache_free+0x288 ([kernel.kallsyms])
+	ffffffff8d11856e kfree_skbmem+0x4e ([kernel.kallsyms])
+	ffffffff8d11bfab __kfree_skb+0x1b ([kernel.kallsyms])
+	ffffffff8d1c1d8b tcp_recvmsg+0x84b ([kernel.kallsyms])
+	ffffffff8d1f69ce inet_recvmsg+0x5e ([kernel.kallsyms])
+	ffffffff8d10fd79 sock_recvmsg+0x69 ([kernel.kallsyms])
+	ffffffff8d1110b5 __sys_recvfrom+0xe5 ([kernel.kallsyms])
+	ffffffff8d1111c9 __x64_sys_recvfrom+0x29 ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f2a5f5d765c __libc_recv+0x6c (/usr/lib/x86_64-linux-gnu/libpthread-2.31.so)
+
+tokio-runtime-w 286310 5401564.634666:   13417575 cycles: 
+	ffffffff8c901ea9 record_times+0x9 ([kernel.kallsyms])
+	ffffffff8c902b58 psi_task_change+0xe8 ([kernel.kallsyms])
+	ffffffff8c8d8bcc deactivate_task+0x1cc ([kernel.kallsyms])
+	ffffffff8d2d0968 __schedule+0x108 ([kernel.kallsyms])
+	ffffffff8d2d0fe2 schedule+0x42 ([kernel.kallsyms])
+	ffffffff8d2d4d89 schedule_hrtimeout_range_clock+0xf9 ([kernel.kallsyms])
+	ffffffff8d2d4db3 schedule_hrtimeout_range+0x13 ([kernel.kallsyms])
+	ffffffff8cb34880 ep_poll+0x3d0 ([kernel.kallsyms])
+	ffffffff8cb34988 do_epoll_wait+0xb8 ([kernel.kallsyms])
+	ffffffff8cb349be __x64_sys_epoll_wait+0x1e ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f2a5f39a68e epoll_wait+0x5e (/usr/lib/x86_64-linux-gnu/libc-2.31.so)
+
+tokio-runtime-w 286310 5401564.673687:   11667247 cycles: 
+	ffffffff8caab298 __kmalloc_node_track_caller+0x308 ([kernel.kallsyms])
+	ffffffff8d119dc1 __kmalloc_reserve.isra.0+0x31 ([kernel.kallsyms])
+	ffffffff8d119ea4 __alloc_skb+0x84 ([kernel.kallsyms])
+	ffffffff8d1c20ab sk_stream_alloc_skb+0x6b ([kernel.kallsyms])
+	ffffffff8d1c2dce tcp_sendmsg_locked+0x3be ([kernel.kallsyms])
+	ffffffff8d1c381d tcp_sendmsg+0x2d ([kernel.kallsyms])
+	ffffffff8d1f66f3 inet_sendmsg+0x43 ([kernel.kallsyms])
+	ffffffff8d10eefe sock_sendmsg+0x5e ([kernel.kallsyms])
+	ffffffff8d110e93 __sys_sendto+0x113 ([kernel.kallsyms])
+	ffffffff8d110f39 __x64_sys_sendto+0x29 ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f2a5f5d77dc __libc_send+0x6c (/usr/lib/x86_64-linux-gnu/libpthread-2.31.so)
+
+tokio-runtime-w 286310 5401564.705552:   13261915 cycles: 
+	ffffffff8c967683 cgroup_rstat_updated+0x33 ([kernel.kallsyms])
+	ffffffff8c967b98 __cgroup_account_cputime+0x28 ([kernel.kallsyms])
+	ffffffff8c8e4cf2 update_curr+0x112 ([kernel.kallsyms])
+	ffffffff8c8e6833 dequeue_entity+0x23 ([kernel.kallsyms])
+	ffffffff8c8e6ef8 dequeue_task_fair+0x58 ([kernel.kallsyms])
+	ffffffff8c8d8b03 deactivate_task+0x103 ([kernel.kallsyms])
+	ffffffff8d2d0968 __schedule+0x108 ([kernel.kallsyms])
+	ffffffff8d2d0fe2 schedule+0x42 ([kernel.kallsyms])
+	ffffffff8d2d4d89 schedule_hrtimeout_range_clock+0xf9 ([kernel.kallsyms])
+	ffffffff8d2d4db3 schedule_hrtimeout_range+0x13 ([kernel.kallsyms])
+	ffffffff8cb34880 ep_poll+0x3d0 ([kernel.kallsyms])
+	ffffffff8cb34988 do_epoll_wait+0xb8 ([kernel.kallsyms])
+	ffffffff8cb349be __x64_sys_epoll_wait+0x1e ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f2a5f39a68e epoll_wait+0x5e (/usr/lib/x86_64-linux-gnu/libc-2.31.so)
+
+tokio-runtime-w 286310 5401564.744141:   11473874 cycles: 
+	    55939f548610 tokio::runtime::time::wheel::Wheel::poll+0x30 (/users/dorlando/ons/websocket_rust/target/release/server)
+
+tokio-runtime-w 286310 5401564.777359:   10904921 cycles: 
+	    55939f5b2199 core::str::converts::from_utf8+0x89 (/users/dorlando/ons/websocket_rust/target/release/server)
+	    55939f53a1af utf8::decode+0x1f (/users/dorlando/ons/websocket_rust/target/release/server)
+	3701010100000000 [unknown] ([unknown])
+
+tokio-runtime-w 286310 5401564.808943:   12751483 cycles: 
+	    55939f5495e7 tokio::runtime::task::state::State::transition_to_idle+0x37 (/users/dorlando/ons/websocket_rust/target/release/server)
+
+tokio-runtime-w 286310 5401564.846317:   12052031 cycles: 
+	ffffffff8d2d5e9c _raw_spin_lock+0xc ([kernel.kallsyms])
+	ffffffff8d2d0fe2 schedule+0x42 ([kernel.kallsyms])
+	ffffffff8d2d4d89 schedule_hrtimeout_range_clock+0xf9 ([kernel.kallsyms])
+	ffffffff8d2d4db3 schedule_hrtimeout_range+0x13 ([kernel.kallsyms])
+	ffffffff8cb34880 ep_poll+0x3d0 ([kernel.kallsyms])
+	ffffffff8cb34988 do_epoll_wait+0xb8 ([kernel.kallsyms])
+	ffffffff8cb349be __x64_sys_epoll_wait+0x1e ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f2a5f39a68e epoll_wait+0x5e (/usr/lib/x86_64-linux-gnu/libc-2.31.so)
+
+tokio-runtime-w 286310 5401564.881194:   13177481 cycles: 
+	ffffffff8ca073bf perf_event_update_time+0x6f ([kernel.kallsyms])
+	ffffffff8ca0b9dc event_sched_in.isra.0+0x4c ([kernel.kallsyms])
+	ffffffff8ca0bbee group_sched_in+0x5e ([kernel.kallsyms])
+	ffffffff8ca0d77c flexible_sched_in+0x11c ([kernel.kallsyms])
+	ffffffff8ca07e39 visit_groups_merge+0x129 ([kernel.kallsyms])
+	ffffffff8ca07f38 ctx_sched_in+0xb8 ([kernel.kallsyms])
+	ffffffff8ca08051 perf_event_sched_in+0x61 ([kernel.kallsyms])
+	ffffffff8ca10e5c __perf_event_task_sched_in+0x16c ([kernel.kallsyms])
+	ffffffff8c8d3e4d finish_task_switch+0xfd ([kernel.kallsyms])
+	ffffffff8d2d0b4b __schedule+0x2eb ([kernel.kallsyms])
+	ffffffff8d2d0fe2 schedule+0x42 ([kernel.kallsyms])
+	ffffffff8d2d4d89 schedule_hrtimeout_range_clock+0xf9 ([kernel.kallsyms])
+	ffffffff8d2d4db3 schedule_hrtimeout_range+0x13 ([kernel.kallsyms])
+	ffffffff8cb34880 ep_poll+0x3d0 ([kernel.kallsyms])
+	ffffffff8cb34988 do_epoll_wait+0xb8 ([kernel.kallsyms])
+	ffffffff8cb349be __x64_sys_epoll_wait+0x1e ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f2a5f39a68e epoll_wait+0x5e (/usr/lib/x86_64-linux-gnu/libc-2.31.so)
+
+tokio-runtime-w 286310 5401564.919811:   13806273 cycles: 
+	ffffffff8c902bf0 psi_task_change+0x180 ([kernel.kallsyms])
+	ffffffff8c8d8bcc deactivate_task+0x1cc ([kernel.kallsyms])
+	ffffffff8d2d0968 __schedule+0x108 ([kernel.kallsyms])
+	ffffffff8d2d0fe2 schedule+0x42 ([kernel.kallsyms])
+	ffffffff8d2d4d89 schedule_hrtimeout_range_clock+0xf9 ([kernel.kallsyms])
+	ffffffff8d2d4db3 schedule_hrtimeout_range+0x13 ([kernel.kallsyms])
+	ffffffff8cb34880 ep_poll+0x3d0 ([kernel.kallsyms])
+	ffffffff8cb34988 do_epoll_wait+0xb8 ([kernel.kallsyms])
+	ffffffff8cb349be __x64_sys_epoll_wait+0x1e ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f2a5f39a68e epoll_wait+0x5e (/usr/lib/x86_64-linux-gnu/libc-2.31.so)
+
+tokio-runtime-w 286310 5401564.960008:   13364566 cycles: 
+	ffffffffc03a2c93 nf_ct_get_tuple+0x133 ([kernel.kallsyms])
+	ffffffffc03a4dd7 nf_conntrack_in+0xe7 ([kernel.kallsyms])
+	ffffffffc03a8a78 connector_write+0xc5 ([kernel.kallsyms])
+	ffffffff8d1a5d25 nf_hook_slow+0x45 ([kernel.kallsyms])
+	ffffffff8d1b4c87 __ip_local_out+0xd7 ([kernel.kallsyms])
+	ffffffff8d1b4d0d ip_local_out+0x1d ([kernel.kallsyms])
+	ffffffff8d1b508a __ip_queue_xmit+0x17a ([kernel.kallsyms])
+	ffffffff8d1d8300 ip_queue_xmit+0x10 ([kernel.kallsyms])
+	ffffffff8d1d243c __tcp_transmit_skb+0x53c ([kernel.kallsyms])
+	ffffffff8d1d3ff2 tcp_write_xmit+0x3c2 ([kernel.kallsyms])
+	ffffffff8d1d4807 __tcp_push_pending_frames+0x37 ([kernel.kallsyms])
+	ffffffff8d1bdaad tcp_push+0xfd ([kernel.kallsyms])
+	ffffffff8d1c3685 tcp_sendmsg_locked+0xc75 ([kernel.kallsyms])
+	ffffffff8d1c381d tcp_sendmsg+0x2d ([kernel.kallsyms])
+	ffffffff8d1f66f3 inet_sendmsg+0x43 ([kernel.kallsyms])
+	ffffffff8d10eefe sock_sendmsg+0x5e ([kernel.kallsyms])
+	ffffffff8d110e93 __sys_sendto+0x113 ([kernel.kallsyms])
+	ffffffff8d110f39 __x64_sys_sendto+0x29 ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f2a5f5d77dc __libc_send+0x6c (/usr/lib/x86_64-linux-gnu/libpthread-2.31.so)
+
+tokio-runtime-w 286310 5401564.999010:   13184765 cycles: 
+	ffffffff8c8e041b update_min_vruntime+0x3b ([kernel.kallsyms])
+	ffffffff8c8e6928 dequeue_entity+0x118 ([kernel.kallsyms])
+	ffffffff8c8e6ef8 dequeue_task_fair+0x58 ([kernel.kallsyms])
+	ffffffff8c8d8b03 deactivate_task+0x103 ([kernel.kallsyms])
+	ffffffff8d2d0968 __schedule+0x108 ([kernel.kallsyms])
+	ffffffff8d2d0fe2 schedule+0x42 ([kernel.kallsyms])
+	ffffffff8d2d4d89 schedule_hrtimeout_range_clock+0xf9 ([kernel.kallsyms])
+	ffffffff8d2d4db3 schedule_hrtimeout_range+0x13 ([kernel.kallsyms])
+	ffffffff8cb34880 ep_poll+0x3d0 ([kernel.kallsyms])
+	ffffffff8cb34988 do_epoll_wait+0xb8 ([kernel.kallsyms])
+	ffffffff8cb349be __x64_sys_epoll_wait+0x1e ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f2a5f39a68e epoll_wait+0x5e (/usr/lib/x86_64-linux-gnu/libc-2.31.so)
+
+tokio-runtime-w 286310 5401565.037617:   13271040 cycles: 
+	ffffffffc02202ba tg3_start_xmit+0x2ba ([kernel.kallsyms])
+	ffffffff8d134291 dev_hard_start_xmit+0x91 ([kernel.kallsyms])
+	ffffffff8d18e8b3 sch_direct_xmit+0x113 ([kernel.kallsyms])
+	ffffffff8d134a1b __dev_queue_xmit+0x57b ([kernel.kallsyms])
+	ffffffff8d134d90 dev_queue_xmit+0x10 ([kernel.kallsyms])
+	ffffffff8d1b38de ip_finish_output2+0x2ce ([kernel.kallsyms])
+	ffffffff8d1b3c5f __ip_finish_output+0xbf ([kernel.kallsyms])
+	ffffffff8d1b3d9d ip_finish_output+0x2d ([kernel.kallsyms])
+	ffffffff8d1b5655 ip_output+0x75 ([kernel.kallsyms])
+	ffffffff8d1b4d2d ip_local_out+0x3d ([kernel.kallsyms])
+	ffffffff8d1b508a __ip_queue_xmit+0x17a ([kernel.kallsyms])
+	ffffffff8d1d8300 ip_queue_xmit+0x10 ([kernel.kallsyms])
+	ffffffff8d1d243c __tcp_transmit_skb+0x53c ([kernel.kallsyms])
+	ffffffff8d1d3ff2 tcp_write_xmit+0x3c2 ([kernel.kallsyms])
+	ffffffff8d1d4807 __tcp_push_pending_frames+0x37 ([kernel.kallsyms])
+	ffffffff8d1bdaad tcp_push+0xfd ([kernel.kallsyms])
+	ffffffff8d1c3685 tcp_sendmsg_locked+0xc75 ([kernel.kallsyms])
+	ffffffff8d1c381d tcp_sendmsg+0x2d ([kernel.kallsyms])
+	ffffffff8d1f66f3 inet_sendmsg+0x43 ([kernel.kallsyms])
+	ffffffff8d10eefe sock_sendmsg+0x5e ([kernel.kallsyms])
+	ffffffff8d110e93 __sys_sendto+0x113 ([kernel.kallsyms])
+	ffffffff8d110f39 __x64_sys_sendto+0x29 ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f2a5f5d77dc __libc_send+0x6c (/usr/lib/x86_64-linux-gnu/libpthread-2.31.so)
+
+tokio-runtime-w 286310 5401565.076254:   13420433 cycles: 
+	    55939f54f3c0 tokio::runtime::time::wheel::level::Level::next_expiration+0x0 (/users/dorlando/ons/websocket_rust/target/release/server)
+
+tokio-runtime-w 286310 5401565.096237:   15594691 cycles: 
+	    55939f548a13 tokio::runtime::time::wheel::Wheel::next_expiration+0xa3 (/users/dorlando/ons/websocket_rust/target/release/server)
+
+tokio-runtime-w 286310 5401565.134411:   12821456 cycles: 
+	    55939f54f3c7 tokio::runtime::time::wheel::level::Level::next_expiration+0x7 (/users/dorlando/ons/websocket_rust/target/release/server)
+
+tokio-runtime-w 286310 5401565.165149:   12287928 cycles: 
+	ffffffff8c804553 do_syscall_64+0xe3 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f2a5f5d765c __libc_recv+0x6c (/usr/lib/x86_64-linux-gnu/libpthread-2.31.so)
+
+tokio-runtime-w 286310 5401565.195799:   14016260 cycles: 
+	    55939f54f423 tokio::runtime::time::wheel::level::Level::next_expiration+0x63 (/users/dorlando/ons/websocket_rust/target/release/server)
+
+tokio-runtime-w 286310 5401565.230256:   13005630 cycles: 
+	ffffffff8cb34903 do_epoll_wait+0x33 ([kernel.kallsyms])
+	ffffffff8cb349be __x64_sys_epoll_wait+0x1e ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f2a5f39a68e epoll_wait+0x5e (/usr/lib/x86_64-linux-gnu/libc-2.31.so)
+
+tokio-runtime-w 286310 5401565.261959:   11879344 cycles: 
+	    55939f51e724 tungstenite::protocol::WebSocketContext::write_message+0x384 (/users/dorlando/ons/websocket_rust/target/release/server)
+	37317c3534343434 [unknown] ([unknown])
+
+tokio-runtime-w 286310 5401565.290277:   12050297 cycles: 
+	    7f2a5f312a8a [unknown] (/usr/lib/x86_64-linux-gnu/libc-2.31.so)
+
+tokio-runtime-w 286310 5401565.318827:   11814747 cycles: 
+	    55939f54d018 tokio::runtime::scheduler::multi_thread::worker::Context::park_timeout+0x148 (/users/dorlando/ons/websocket_rust/target/release/server)
+
+tokio-runtime-w 286310 5401565.347638:   12023790 cycles: 
+	    7f2a5f7a18a2 [unknown] (/usr/lib/x86_64-linux-gnu/libcrypto.so.1.1)
+	96f3326d223a7e7e [unknown] ([unknown])
+
+tokio-runtime-w 286310 5401565.376107:   13152970 cycles: 
+	    7f2a5f79e544 [unknown] (/usr/lib/x86_64-linux-gnu/libcrypto.so.1.1)
+	               0 [unknown] ([unknown])
+
+tokio-runtime-w 286310 5401565.407283:   13223991 cycles: 
+	    55939f51f034 tungstenite::protocol::WebSocketContext::send_one_frame+0x14 (/users/dorlando/ons/websocket_rust/target/release/server)
+	              1e [unknown] ([unknown])
+	37317c3437323534 [unknown] ([unknown])
+
+tokio-runtime-w 286310 5401565.439466:   14108054 cycles: 
+	    7f2a5f5d5580 __pthread_once+0x0 (/usr/lib/x86_64-linux-gnu/libpthread-2.31.so)
+
+tokio-runtime-w 286310 5401565.473343:   16567746 cycles: 
+	ffffffff8ca10d63 __perf_event_task_sched_in+0x73 ([kernel.kallsyms])
+	ffffffff8c8d3e4d finish_task_switch+0xfd ([kernel.kallsyms])
+	ffffffff8d2d0b4b __schedule+0x2eb ([kernel.kallsyms])
+	ffffffff8d2d0fe2 schedule+0x42 ([kernel.kallsyms])
+	ffffffff8d2d4d89 schedule_hrtimeout_range_clock+0xf9 ([kernel.kallsyms])
+	ffffffff8d2d4db3 schedule_hrtimeout_range+0x13 ([kernel.kallsyms])
+	ffffffff8cb34880 ep_poll+0x3d0 ([kernel.kallsyms])
+	ffffffff8cb34988 do_epoll_wait+0xb8 ([kernel.kallsyms])
+	ffffffff8cb349be __x64_sys_epoll_wait+0x1e ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f2a5f39a68e epoll_wait+0x5e (/usr/lib/x86_64-linux-gnu/libc-2.31.so)
+
+tokio-runtime-w 286310 5401565.513479:   15554513 cycles: 
+	ffffffff8c804553 do_syscall_64+0xe3 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f2a5f39a68e epoll_wait+0x5e (/usr/lib/x86_64-linux-gnu/libc-2.31.so)
+
+tokio-runtime-w 286310 5401565.550519:   14499627 cycles: 
+	ffffffff8d2d4db4 schedule_hrtimeout_range+0x14 ([kernel.kallsyms])
+	ffffffff8cb34988 do_epoll_wait+0xb8 ([kernel.kallsyms])
+	ffffffff8cb349be __x64_sys_epoll_wait+0x1e ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f2a5f39a68e epoll_wait+0x5e (/usr/lib/x86_64-linux-gnu/libc-2.31.so)
+
+tokio-runtime-w 286310 5401565.584835:   12400239 cycles: 
+	    55939f52e5d0 <tokio_tungstenite::compat::AllowStd<S> as std::io::Write>::flush+0x0 (/users/dorlando/ons/websocket_rust/target/release/server)
+	               0 [unknown] ([unknown])
+
+tokio-runtime-w 286310 5401565.614230:   13348745 cycles: 
+	ffffffff8cd26ed7 _copy_to_iter+0x27 ([kernel.kallsyms])
+	ffffffff8d1227b9 simple_copy_to_iter+0x39 ([kernel.kallsyms])
+	ffffffff8d1224a8 __skb_datagram_iter+0x68 ([kernel.kallsyms])
+	ffffffff8d122730 skb_copy_datagram_iter+0x40 ([kernel.kallsyms])
+	ffffffff8d1c1c03 tcp_recvmsg+0x6c3 ([kernel.kallsyms])
+	ffffffff8d1f69ce inet_recvmsg+0x5e ([kernel.kallsyms])
+	ffffffff8d10fd79 sock_recvmsg+0x69 ([kernel.kallsyms])
+	ffffffff8d1110b5 __sys_recvfrom+0xe5 ([kernel.kallsyms])
+	ffffffff8d1111c9 __x64_sys_recvfrom+0x29 ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f2a5f5d765c __libc_recv+0x6c (/usr/lib/x86_64-linux-gnu/libpthread-2.31.so)
+
+tokio-runtime-w 286310 5401565.646357:   13437228 cycles: 
+	    7f2a5f406910 [unknown] (/usr/lib/x86_64-linux-gnu/libc-2.31.so)
+	              1e [unknown] ([unknown])
+	    7f2a580008d0 [unknown] ([unknown])
+	    7f2a580008d0 [unknown] ([unknown])
+	    7f2a580008d0 [unknown] ([unknown])
+	    7f2a580008d0 [unknown] ([unknown])
+	    7f2a580008d0 [unknown] ([unknown])
+	    7f2a580008d0 [unknown] ([unknown])
+	    7f2a580008d0 [unknown] ([unknown])
+
+tokio-runtime-w 286310 5401565.679513:   12812273 cycles: 
+	ffffffff8d400030 entry_SYSCALL_64+0x20 ([kernel.kallsyms])
+	    7f2a5f5d77dc __libc_send+0x6c (/usr/lib/x86_64-linux-gnu/libpthread-2.31.so)
+
+tokio-runtime-w 286310 5401565.709527:   12812273 cycles: 
+	ffffffff8d400030 entry_SYSCALL_64+0x20 ([kernel.kallsyms])
+	    7f2a5f5d765c __libc_recv+0x6c (/usr/lib/x86_64-linux-gnu/libpthread-2.31.so)
+
+tokio-runtime-w 286310 5401565.739418:   18056129 cycles: 
+	    55939f54bb6d tokio::runtime::scheduler::multi_thread::worker::Context::run+0x6d (/users/dorlando/ons/websocket_rust/target/release/server)
+
+tokio-runtime-w 286310 5401565.781989:   22233730 cycles: 
+	    7f2a5f5d5584 __pthread_once+0x4 (/usr/lib/x86_64-linux-gnu/libpthread-2.31.so)
+
+tokio-runtime-w 286310 5401565.835280:   15987226 cycles: 
+	    55939f5489e3 tokio::runtime::time::wheel::Wheel::next_expiration+0x73 (/users/dorlando/ons/websocket_rust/target/release/server)
+
+tokio-runtime-w 286310 5401565.872707:   15642889 cycles: 
+	ffffffff8d1b4c48 __ip_local_out+0x98 ([kernel.kallsyms])
+	ffffffff8d1b4d0d ip_local_out+0x1d ([kernel.kallsyms])
+	ffffffff8d1b508a __ip_queue_xmit+0x17a ([kernel.kallsyms])
+	ffffffff8d1d8300 ip_queue_xmit+0x10 ([kernel.kallsyms])
+	ffffffff8d1d243c __tcp_transmit_skb+0x53c ([kernel.kallsyms])
+	ffffffff8d1d3ff2 tcp_write_xmit+0x3c2 ([kernel.kallsyms])
+	ffffffff8d1d4807 __tcp_push_pending_frames+0x37 ([kernel.kallsyms])
+	ffffffff8d1bdaad tcp_push+0xfd ([kernel.kallsyms])
+	ffffffff8d1c3685 tcp_sendmsg_locked+0xc75 ([kernel.kallsyms])
+	ffffffff8d1c381d tcp_sendmsg+0x2d ([kernel.kallsyms])
+	ffffffff8d1f66f3 inet_sendmsg+0x43 ([kernel.kallsyms])
+	ffffffff8d10eefe sock_sendmsg+0x5e ([kernel.kallsyms])
+	ffffffff8d110e93 __sys_sendto+0x113 ([kernel.kallsyms])
+	ffffffff8d110f39 __x64_sys_sendto+0x29 ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f2a5f5d77dc __libc_send+0x6c (/usr/lib/x86_64-linux-gnu/libpthread-2.31.so)
+
+tokio-runtime-w 286310 5401565.909958:   15324709 cycles: 
+	    55939f519f83 std::io::error::Error::kind+0x13 (/users/dorlando/ons/websocket_rust/target/release/server)
+	3022b1586f77e24e [unknown] ([unknown])
+
+tokio-runtime-w 286310 5401565.946651:   15499076 cycles: 
+	    7f2a5f312c52 [unknown] (/usr/lib/x86_64-linux-gnu/libc-2.31.so)
+
+tokio-runtime-w 286310 5401565.983714:   18135876 cycles: 
+	    55939f51fdb1 <futures_util::stream::stream::split::SplitSink<S,Item> as futures_sink::Sink<Item>>::poll_ready+0x1 (/users/dorlando/ons/websocket_rust/target/release/server)
+
+tokio-runtime-w 286310 5401566.026391:   13198756 cycles: 
+	ffffffff8caffba6 __fget+0x46 ([kernel.kallsyms])
+	ffffffff8caffea7 __fget_light+0x57 ([kernel.kallsyms])
+	ffffffff8caffed3 __fdget+0x13 ([kernel.kallsyms])
+	ffffffff8cb34927 do_epoll_wait+0x57 ([kernel.kallsyms])
+	ffffffff8cb349be __x64_sys_epoll_wait+0x1e ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f2a5f39a68e epoll_wait+0x5e (/usr/lib/x86_64-linux-gnu/libc-2.31.so)
+
+tokio-runtime-w 286310 5401566.058455:   13123782 cycles: 
+	ffffffff8c804553 do_syscall_64+0xe3 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f2a5f5d765c __libc_recv+0x6c (/usr/lib/x86_64-linux-gnu/libpthread-2.31.so)
+
+tokio-runtime-w 286310 5401566.089884:   14066491 cycles: 
+	ffffffff8d400109 syscall_return_via_sysret+0x18 ([kernel.kallsyms])
+	    7f2a5f5d765c __libc_recv+0x6c (/usr/lib/x86_64-linux-gnu/libpthread-2.31.so)
+
+tokio-runtime-w 286310 5401566.122961:   16040052 cycles: 
+	ffffffffc023b1ae ipt_do_table+0x18e ([kernel.kallsyms])
+	ffffffffc02de05f iptable_filter_hook+0x1f ([kernel.kallsyms])
+	ffffffff8d1a5d25 nf_hook_slow+0x45 ([kernel.kallsyms])
+	ffffffff8d1b4c87 __ip_local_out+0xd7 ([kernel.kallsyms])
+	ffffffff8d1b4d0d ip_local_out+0x1d ([kernel.kallsyms])
+	ffffffff8d1b508a __ip_queue_xmit+0x17a ([kernel.kallsyms])
+	ffffffff8d1d8300 ip_queue_xmit+0x10 ([kernel.kallsyms])
+	ffffffff8d1d243c __tcp_transmit_skb+0x53c ([kernel.kallsyms])
+	ffffffff8d1d3ff2 tcp_write_xmit+0x3c2 ([kernel.kallsyms])
+	ffffffff8d1d4807 __tcp_push_pending_frames+0x37 ([kernel.kallsyms])
+	ffffffff8d1bdaad tcp_push+0xfd ([kernel.kallsyms])
+	ffffffff8d1c3685 tcp_sendmsg_locked+0xc75 ([kernel.kallsyms])
+	ffffffff8d1c381d tcp_sendmsg+0x2d ([kernel.kallsyms])
+	ffffffff8d1f66f3 inet_sendmsg+0x43 ([kernel.kallsyms])
+	ffffffff8d10eefe sock_sendmsg+0x5e ([kernel.kallsyms])
+	ffffffff8d110e93 __sys_sendto+0x113 ([kernel.kallsyms])
+	ffffffff8d110f39 __x64_sys_sendto+0x29 ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f2a5f5d77dc __libc_send+0x6c (/usr/lib/x86_64-linux-gnu/libpthread-2.31.so)
+
+tokio-runtime-w 286310 5401566.160826:   13335944 cycles: 
+	ffffffff8d2d5bfb _raw_spin_lock_bh+0x1b ([kernel.kallsyms])
+	ffffffff8d1c179e tcp_recvmsg+0x25e ([kernel.kallsyms])
+	ffffffff8d1f69ce inet_recvmsg+0x5e ([kernel.kallsyms])
+	ffffffff8d10fd79 sock_recvmsg+0x69 ([kernel.kallsyms])
+	ffffffff8d1110b5 __sys_recvfrom+0xe5 ([kernel.kallsyms])
+	ffffffff8d1111c9 __x64_sys_recvfrom+0x29 ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f2a5f5d765c __libc_recv+0x6c (/usr/lib/x86_64-linux-gnu/libpthread-2.31.so)
+
+tokio-runtime-w 286310 5401566.195178:   13335944 cycles: 
+	ffffffff8c8e74eb put_prev_task_fair+0xb ([kernel.kallsyms])
+	ffffffff8d2d0edb __schedule+0x67b ([kernel.kallsyms])
+	ffffffff8d2d0fe2 schedule+0x42 ([kernel.kallsyms])
+	ffffffff8d2d4d89 schedule_hrtimeout_range_clock+0xf9 ([kernel.kallsyms])
+	ffffffff8d2d4db3 schedule_hrtimeout_range+0x13 ([kernel.kallsyms])
+	ffffffff8cb34880 ep_poll+0x3d0 ([kernel.kallsyms])
+	ffffffff8cb34988 do_epoll_wait+0xb8 ([kernel.kallsyms])
+	ffffffff8cb349be __x64_sys_epoll_wait+0x1e ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f2a5f39a68e epoll_wait+0x5e (/usr/lib/x86_64-linux-gnu/libc-2.31.so)
+
+tokio-runtime-w 286310 5401566.226002:   19953709 cycles: 
+	ffffffffc022007f tg3_start_xmit+0x7f ([kernel.kallsyms])
+	ffffffff8d134291 dev_hard_start_xmit+0x91 ([kernel.kallsyms])
+	ffffffff8d18e8b3 sch_direct_xmit+0x113 ([kernel.kallsyms])
+	ffffffff8d134a1b __dev_queue_xmit+0x57b ([kernel.kallsyms])
+	ffffffff8d134d90 dev_queue_xmit+0x10 ([kernel.kallsyms])
+	ffffffff8d1b38de ip_finish_output2+0x2ce ([kernel.kallsyms])
+	ffffffff8d1b3c5f __ip_finish_output+0xbf ([kernel.kallsyms])
+	ffffffff8d1b3d9d ip_finish_output+0x2d ([kernel.kallsyms])
+	ffffffff8d1b5655 ip_output+0x75 ([kernel.kallsyms])
+	ffffffff8d1b4d2d ip_local_out+0x3d ([kernel.kallsyms])
+	ffffffff8d1b508a __ip_queue_xmit+0x17a ([kernel.kallsyms])
+	ffffffff8d1d8300 ip_queue_xmit+0x10 ([kernel.kallsyms])
+	ffffffff8d1d243c __tcp_transmit_skb+0x53c ([kernel.kallsyms])
+	ffffffff8d1d3ff2 tcp_write_xmit+0x3c2 ([kernel.kallsyms])
+	ffffffff8d1d4807 __tcp_push_pending_frames+0x37 ([kernel.kallsyms])
+	ffffffff8d1bdaad tcp_push+0xfd ([kernel.kallsyms])
+	ffffffff8d1c3685 tcp_sendmsg_locked+0xc75 ([kernel.kallsyms])
+	ffffffff8d1c381d tcp_sendmsg+0x2d ([kernel.kallsyms])
+	ffffffff8d1f66f3 inet_sendmsg+0x43 ([kernel.kallsyms])
+	ffffffff8d10eefe sock_sendmsg+0x5e ([kernel.kallsyms])
+	ffffffff8d110e93 __sys_sendto+0x113 ([kernel.kallsyms])
+	ffffffff8d110f39 __x64_sys_sendto+0x29 ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f2a5f5d77dc __libc_send+0x6c (/usr/lib/x86_64-linux-gnu/libpthread-2.31.so)
+
+tokio-runtime-w 286310 5401566.273892:   17375545 cycles: 
+	ffffffff8d10d03d sock_poll+0x2d ([kernel.kallsyms])
+	ffffffff8cb33c53 ep_item_poll.isra.0+0x43 ([kernel.kallsyms])
+	ffffffff8cb33e84 ep_send_events_proc+0xe4 ([kernel.kallsyms])
+	ffffffff8cb33ac1 ep_scan_ready_list.constprop.0+0xb1 ([kernel.kallsyms])
+	ffffffff8cb34538 ep_poll+0x88 ([kernel.kallsyms])
+	ffffffff8cb34988 do_epoll_wait+0xb8 ([kernel.kallsyms])
+	ffffffff8cb349be __x64_sys_epoll_wait+0x1e ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f2a5f39a68e epoll_wait+0x5e (/usr/lib/x86_64-linux-gnu/libc-2.31.so)
+
+tokio-runtime-w 286310 5401566.315513:   18500326 cycles: 
+	    55939f5274a9 <futures_util::sink::send::Send<Si,Item> as core::future::future::Future>::poll+0xb9 (/users/dorlando/ons/websocket_rust/target/release/server)
+
+tokio-runtime-w 286310 5401566.359988:   17202553 cycles: 
+	ffffffff8c8e74e5 put_prev_task_fair+0x5 ([kernel.kallsyms])
+	ffffffff8d2d0edb __schedule+0x67b ([kernel.kallsyms])
+	ffffffff8d2d0fe2 schedule+0x42 ([kernel.kallsyms])
+	ffffffff8d2d4d89 schedule_hrtimeout_range_clock+0xf9 ([kernel.kallsyms])
+	ffffffff8d2d4db3 schedule_hrtimeout_range+0x13 ([kernel.kallsyms])
+	ffffffff8cb34880 ep_poll+0x3d0 ([kernel.kallsyms])
+	ffffffff8cb34988 do_epoll_wait+0xb8 ([kernel.kallsyms])
+	ffffffff8cb349be __x64_sys_epoll_wait+0x1e ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f2a5f39a68e epoll_wait+0x5e (/usr/lib/x86_64-linux-gnu/libc-2.31.so)
+
+tokio-runtime-w 286310 5401566.400910:   20880161 cycles: 
+	    7f2a5f8fdf6a [unknown] (/usr/lib/x86_64-linux-gnu/libssl.so.1.1)
+
+tokio-runtime-w 286310 5401566.451870:   15035326 cycles: 
+	    7f2a5f5da524 __errno_location+0x4 (/usr/lib/x86_64-linux-gnu/libpthread-2.31.so)
+	    7f2a5f9656a0 [unknown] ([unknown])
+
+tokio-runtime-w 286310 5401566.487990:   13133641 cycles: 
+	ffffffff8d119b58 __skb_clone+0xa8 ([kernel.kallsyms])
+	ffffffff8d11dc07 skb_clone+0x67 ([kernel.kallsyms])
+	ffffffff8d1d1fb1 __tcp_transmit_skb+0xb1 ([kernel.kallsyms])
+	ffffffff8d1d3ff2 tcp_write_xmit+0x3c2 ([kernel.kallsyms])
+	ffffffff8d1d4807 __tcp_push_pending_frames+0x37 ([kernel.kallsyms])
+	ffffffff8d1bdaad tcp_push+0xfd ([kernel.kallsyms])
+	ffffffff8d1c3685 tcp_sendmsg_locked+0xc75 ([kernel.kallsyms])
+	ffffffff8d1c381d tcp_sendmsg+0x2d ([kernel.kallsyms])
+	ffffffff8d1f66f3 inet_sendmsg+0x43 ([kernel.kallsyms])
+	ffffffff8d10eefe sock_sendmsg+0x5e ([kernel.kallsyms])
+	ffffffff8d110e93 __sys_sendto+0x113 ([kernel.kallsyms])
+	ffffffff8d110f39 __x64_sys_sendto+0x29 ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f2a5f5d77dc __libc_send+0x6c (/usr/lib/x86_64-linux-gnu/libpthread-2.31.so)
+
+tokio-runtime-w 286310 5401566.519734:   16712651 cycles: 
+	    7f2a5f8fe8a5 [unknown] (/usr/lib/x86_64-linux-gnu/libssl.so.1.1)
+	    7f2a5f9656a0 [unknown] ([unknown])
+
+tokio-runtime-w 286310 5401566.559823:   14451636 cycles: 
+	    55939f5335c4 <tungstenite::protocol::frame::coding::OpCode as core::convert::From<u8>>::from+0x4 (/users/dorlando/ons/websocket_rust/target/release/server)
+
+tokio-runtime-w 286310 5401566.594532:   14075571 cycles: 
+	    55939f52aad0 openssl::ssl::SslStream<S>::make_error+0x50 (/users/dorlando/ons/websocket_rust/target/release/server)
+
+tokio-runtime-w 286310 5401566.628755:   13659785 cycles: 
+	ffffffff8c8e4c04 update_curr+0x24 ([kernel.kallsyms])
+	ffffffff8c8e6833 dequeue_entity+0x23 ([kernel.kallsyms])
+	ffffffff8c8e6ef8 dequeue_task_fair+0x58 ([kernel.kallsyms])
+	ffffffff8c8d8b03 deactivate_task+0x103 ([kernel.kallsyms])
+	ffffffff8d2d0968 __schedule+0x108 ([kernel.kallsyms])
+	ffffffff8d2d0fe2 schedule+0x42 ([kernel.kallsyms])
+	ffffffff8d2d4d89 schedule_hrtimeout_range_clock+0xf9 ([kernel.kallsyms])
+	ffffffff8d2d4db3 schedule_hrtimeout_range+0x13 ([kernel.kallsyms])
+	ffffffff8cb34880 ep_poll+0x3d0 ([kernel.kallsyms])
+	ffffffff8cb34988 do_epoll_wait+0xb8 ([kernel.kallsyms])
+	ffffffff8cb349be __x64_sys_epoll_wait+0x1e ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f2a5f39a68e epoll_wait+0x5e (/usr/lib/x86_64-linux-gnu/libc-2.31.so)
+
+tokio-runtime-w 286310 5401566.661766:   13012069 cycles: 
+	    7f2a5f79e59d [unknown] (/usr/lib/x86_64-linux-gnu/libcrypto.so.1.1)
+
+tokio-runtime-w 286310 5401566.693888:   16620870 cycles: 
+	    55939f55af74 tokio::runtime::scheduler::multi_thread::worker::<impl tokio::runtime::task::Schedule for alloc::sync::Arc<tokio::runtime::scheduler::multi_thread::handle::Handle>>::schedule+0x4 (/users/dorlando/ons/websocket_rust/target/release/server)
+
+tokio-runtime-w 286310 5401566.734090:   11714879 cycles: 
+	ffffffff8cb3495c do_epoll_wait+0x8c ([kernel.kallsyms])
+	ffffffff8cb349be __x64_sys_epoll_wait+0x1e ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f2a5f39a68e epoll_wait+0x5e (/usr/lib/x86_64-linux-gnu/libc-2.31.so)
+
+tokio-runtime-w 286310 5401566.762037:   13895413 cycles: 
+	    55939f590010 __rdl_alloc+0x0 (/users/dorlando/ons/websocket_rust/target/release/server)
+	37317c3438393235 [unknown] ([unknown])
+
+tokio-runtime-w 286310 5401566.794963:   13269471 cycles: 
+	ffffffff8c83b9c3 read_tsc+0x3 ([kernel.kallsyms])
+	ffffffff8d1d1392 tcp_mstamp_refresh+0x12 ([kernel.kallsyms])
+	ffffffff8d1ca362 tcp_rcv_space_adjust+0x22 ([kernel.kallsyms])
+	ffffffff8d1c1877 tcp_recvmsg+0x337 ([kernel.kallsyms])
+	ffffffff8d1f69ce inet_recvmsg+0x5e ([kernel.kallsyms])
+	ffffffff8d10fd79 sock_recvmsg+0x69 ([kernel.kallsyms])
+	ffffffff8d1110b5 __sys_recvfrom+0xe5 ([kernel.kallsyms])
+	ffffffff8d1111c9 __x64_sys_recvfrom+0x29 ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f2a5f5d765c __libc_recv+0x6c (/usr/lib/x86_64-linux-gnu/libpthread-2.31.so)
+
+tokio-runtime-w 286310 5401566.826448:   13777325 cycles: 
+	    55939f512a51 server::main::_$u7b$$u7b$closure$u7d$$u7d$::_$u7b$$u7b$closure$u7d$$u7d$::h89e6eb4ed385d30b+0x1fa1 (/users/dorlando/ons/websocket_rust/target/release/server)
+
+tokio-runtime-w 286310 5401566.859013:   14694807 cycles: 
+	    55939f5497a1 tokio::runtime::task::state::State::transition_to_notified_by_val+0x1 (/users/dorlando/ons/websocket_rust/target/release/server)
+
+tokio-runtime-w 286310 5401566.893665:   13362792 cycles: 
+	ffffffff8d40015d syscall_return_via_sysret+0x6c ([kernel.kallsyms])
+	    7f2a5f5d765c __libc_recv+0x6c (/usr/lib/x86_64-linux-gnu/libpthread-2.31.so)
+
+tokio-runtime-w 286310 5401566.926655:   12756828 cycles: 
+	    55939f54c594 tokio::runtime::scheduler::multi_thread::worker::Context::run+0xa94 (/users/dorlando/ons/websocket_rust/target/release/server)
+
+tokio-runtime-w 286310 5401566.956730:   15510220 cycles: 
+	    55939f52b851 openssl::ssl::bio::bread+0xd1 (/users/dorlando/ons/websocket_rust/target/release/server)
+
+tokio-runtime-w 286310 5401566.993558:   12573962 cycles: 
+	    55939f553a65 tokio::runtime::time::<impl tokio::runtime::time::handle::Handle>::process_at_sharded_time+0x5 (/users/dorlando/ons/websocket_rust/target/release/server)
+
+tokio-runtime-w 286310 5401567.023513:   12102066 cycles: 
+	ffffffff8d2d5c56 _raw_spin_unlock_bh+0x6 ([kernel.kallsyms])
+	ffffffffc03a4ee6 nf_conntrack_in+0x1f6 ([kernel.kallsyms])
+	ffffffffc03a8a78 connector_write+0xc5 ([kernel.kallsyms])
+	ffffffff8d1a5d25 nf_hook_slow+0x45 ([kernel.kallsyms])
+	ffffffff8d1b4c87 __ip_local_out+0xd7 ([kernel.kallsyms])
+	ffffffff8d1b4d0d ip_local_out+0x1d ([kernel.kallsyms])
+	ffffffff8d1b508a __ip_queue_xmit+0x17a ([kernel.kallsyms])
+	ffffffff8d1d8300 ip_queue_xmit+0x10 ([kernel.kallsyms])
+	ffffffff8d1d243c __tcp_transmit_skb+0x53c ([kernel.kallsyms])
+	ffffffff8d1d3ff2 tcp_write_xmit+0x3c2 ([kernel.kallsyms])
+	ffffffff8d1d4807 __tcp_push_pending_frames+0x37 ([kernel.kallsyms])
+	ffffffff8d1bdaad tcp_push+0xfd ([kernel.kallsyms])
+	ffffffff8d1c3685 tcp_sendmsg_locked+0xc75 ([kernel.kallsyms])
+	ffffffff8d1c381d tcp_sendmsg+0x2d ([kernel.kallsyms])
+	ffffffff8d1f66f3 inet_sendmsg+0x43 ([kernel.kallsyms])
+	ffffffff8d10eefe sock_sendmsg+0x5e ([kernel.kallsyms])
+	ffffffff8d110e93 __sys_sendto+0x113 ([kernel.kallsyms])
+	ffffffff8d110f39 __x64_sys_sendto+0x29 ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f2a5f5d77dc __libc_send+0x6c (/usr/lib/x86_64-linux-gnu/libpthread-2.31.so)
+
+tokio-runtime-w 286310 5401567.052578:   12723162 cycles: 
+	    7f2a5f8fb3a0 [unknown] (/usr/lib/x86_64-linux-gnu/libssl.so.1.1)
+	    7f2a58008ea0 [unknown] ([unknown])
+
+tokio-runtime-w 286310 5401567.083073:   13354002 cycles: 
+	ffffffff8d11bf81 skb_release_all+0x21 ([kernel.kallsyms])
+	ffffffff8d11bfa3 __kfree_skb+0x13 ([kernel.kallsyms])
+	ffffffff8d1c1d8b tcp_recvmsg+0x84b ([kernel.kallsyms])
+	ffffffff8d1f69ce inet_recvmsg+0x5e ([kernel.kallsyms])
+	ffffffff8d10fd79 sock_recvmsg+0x69 ([kernel.kallsyms])
+	ffffffff8d1110b5 __sys_recvfrom+0xe5 ([kernel.kallsyms])
+	ffffffff8d1111c9 __x64_sys_recvfrom+0x29 ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f2a5f5d765c __libc_recv+0x6c (/usr/lib/x86_64-linux-gnu/libpthread-2.31.so)
+
+tokio-runtime-w 286310 5401567.114777:   11012471 cycles: 
+	    55939f529b5d futures_util::lock::bilock::BiLock<T>::poll_lock+0x2d (/users/dorlando/ons/websocket_rust/target/release/server)
+	               1 [unknown] ([unknown])
+
+tokio-runtime-w 286310 5401567.140657:   12246641 cycles: 
+	ffffffff8ca0d770 flexible_sched_in+0x110 ([kernel.kallsyms])
+	ffffffff8ca07e39 visit_groups_merge+0x129 ([kernel.kallsyms])
+	ffffffff8ca07f38 ctx_sched_in+0xb8 ([kernel.kallsyms])
+	ffffffff8ca08051 perf_event_sched_in+0x61 ([kernel.kallsyms])
+	ffffffff8ca10e5c __perf_event_task_sched_in+0x16c ([kernel.kallsyms])
+	ffffffff8c8d3e4d finish_task_switch+0xfd ([kernel.kallsyms])
+	ffffffff8d2d0b4b __schedule+0x2eb ([kernel.kallsyms])
+	ffffffff8d2d0fe2 schedule+0x42 ([kernel.kallsyms])
+	ffffffff8d2d4d89 schedule_hrtimeout_range_clock+0xf9 ([kernel.kallsyms])
+	ffffffff8d2d4db3 schedule_hrtimeout_range+0x13 ([kernel.kallsyms])
+	ffffffff8cb34880 ep_poll+0x3d0 ([kernel.kallsyms])
+	ffffffff8cb34988 do_epoll_wait+0xb8 ([kernel.kallsyms])
+	ffffffff8cb349be __x64_sys_epoll_wait+0x1e ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f2a5f39a68e epoll_wait+0x5e (/usr/lib/x86_64-linux-gnu/libc-2.31.so)
+
+tokio-runtime-w 286310 5401567.169847:   13831561 cycles: 
+	ffffffff8d400109 syscall_return_via_sysret+0x18 ([kernel.kallsyms])
+	    7f2a5f5d765c __libc_recv+0x6c (/usr/lib/x86_64-linux-gnu/libpthread-2.31.so)
+
+tokio-runtime-w 286310 5401567.205466:   14586105 cycles: 
+	    7f2a5f6aa988 BIO_get_data+0x8 (/usr/lib/x86_64-linux-gnu/libcrypto.so.1.1)
+	8f566bbbdd0238ad [unknown] ([unknown])
+
+tokio-runtime-w 286310 5401567.240570:   14201853 cycles: 
+	    7f2a5f6d243f [unknown] (/usr/lib/x86_64-linux-gnu/libcrypto.so.1.1)
+	7c33313735352065 [unknown] ([unknown])
+
+tokio-runtime-w 286310 5401567.274974:   11679602 cycles: 
+	    55939f51bc30 tungstenite::protocol::message::IncompleteMessage::extend+0x70 (/users/dorlando/ons/websocket_rust/target/release/server)
+
+tokio-runtime-w 286310 5401567.303259:   10363426 cycles: 
+	    55939f548a1e tokio::runtime::time::wheel::Wheel::next_expiration+0xae (/users/dorlando/ons/websocket_rust/target/release/server)
+
+tokio-runtime-w 286310 5401567.328205:   12723229 cycles: 
+	    55939f53a203 utf8::decode+0x73 (/users/dorlando/ons/websocket_rust/target/release/server)
+	8f01010100000000 [unknown] ([unknown])
+
+tokio-runtime-w 286310 5401567.358800:    8957239 cycles: 
+	ffffffffc03a288f get_l4proto+0x4f ([kernel.kallsyms])
+	ffffffffc03a4d7f nf_conntrack_in+0x8f ([kernel.kallsyms])
+	ffffffffc03a8a78 connector_write+0xc5 ([kernel.kallsyms])
+	ffffffff8d1a5d25 nf_hook_slow+0x45 ([kernel.kallsyms])
+	ffffffff8d1b4c87 __ip_local_out+0xd7 ([kernel.kallsyms])
+	ffffffff8d1b4d0d ip_local_out+0x1d ([kernel.kallsyms])
+	ffffffff8d1b508a __ip_queue_xmit+0x17a ([kernel.kallsyms])
+	ffffffff8d1d8300 ip_queue_xmit+0x10 ([kernel.kallsyms])
+	ffffffff8d1d243c __tcp_transmit_skb+0x53c ([kernel.kallsyms])
+	ffffffff8d1d3ff2 tcp_write_xmit+0x3c2 ([kernel.kallsyms])
+	ffffffff8d1d4807 __tcp_push_pending_frames+0x37 ([kernel.kallsyms])
+	ffffffff8d1bdaad tcp_push+0xfd ([kernel.kallsyms])
+	ffffffff8d1c3685 tcp_sendmsg_locked+0xc75 ([kernel.kallsyms])
+	ffffffff8d1c381d tcp_sendmsg+0x2d ([kernel.kallsyms])
+	ffffffff8d1f66f3 inet_sendmsg+0x43 ([kernel.kallsyms])
+	ffffffff8d10eefe sock_sendmsg+0x5e ([kernel.kallsyms])
+	ffffffff8d110e93 __sys_sendto+0x113 ([kernel.kallsyms])
+	ffffffff8d110f39 __x64_sys_sendto+0x29 ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f2a5f5d77dc __libc_send+0x6c (/usr/lib/x86_64-linux-gnu/libpthread-2.31.so)
+
+tokio-runtime-w 286310 5401567.380534:    8100902 cycles: 
+	    7f2a5f76fe27 EVP_CIPHER_CTX_cipher+0x7 (/usr/lib/x86_64-linux-gnu/libcrypto.so.1.1)
+	    7f2a5f9656a0 [unknown] ([unknown])
+
+tokio-runtime-w 286310 5401567.400264:    7608547 cycles: 
+	    7f2a5f8ff742 [unknown] (/usr/lib/x86_64-linux-gnu/libssl.so.1.1)
+	    7f2a5f9656a0 [unknown] ([unknown])
+
+tokio-runtime-w 286310 5401567.419174:    9619257 cycles: 
+	ffffffff8d400030 entry_SYSCALL_64+0x20 ([kernel.kallsyms])
+	    7f2a5f39a68e epoll_wait+0x5e (/usr/lib/x86_64-linux-gnu/libc-2.31.so)
+
+tokio-runtime-w 286310 5401567.442739:    8365096 cycles: 
+	ffffffff8c8ec67d newidle_balance+0x23d ([kernel.kallsyms])
+	ffffffff8c8ec891 pick_next_task_fair+0x41 ([kernel.kallsyms])
+	ffffffff8d2d09c7 __schedule+0x167 ([kernel.kallsyms])
+	ffffffff8d2d0fe2 schedule+0x42 ([kernel.kallsyms])
+	ffffffff8d2d4d89 schedule_hrtimeout_range_clock+0xf9 ([kernel.kallsyms])
+	ffffffff8d2d4db3 schedule_hrtimeout_range+0x13 ([kernel.kallsyms])
+	ffffffff8cb34880 ep_poll+0x3d0 ([kernel.kallsyms])
+	ffffffff8cb34988 do_epoll_wait+0xb8 ([kernel.kallsyms])
+	ffffffff8cb349be __x64_sys_epoll_wait+0x1e ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f2a5f39a68e epoll_wait+0x5e (/usr/lib/x86_64-linux-gnu/libc-2.31.so)
+
+tokio-runtime-w 286310 5401567.463250:    9910403 cycles: 
+	ffffffffc023b1f1 ipt_do_table+0x1d1 ([kernel.kallsyms])
+	ffffffffc02de05f iptable_filter_hook+0x1f ([kernel.kallsyms])
+	ffffffff8d1a5d25 nf_hook_slow+0x45 ([kernel.kallsyms])
+	ffffffff8d1b4c87 __ip_local_out+0xd7 ([kernel.kallsyms])
+	ffffffff8d1b4d0d ip_local_out+0x1d ([kernel.kallsyms])
+	ffffffff8d1b508a __ip_queue_xmit+0x17a ([kernel.kallsyms])
+	ffffffff8d1d8300 ip_queue_xmit+0x10 ([kernel.kallsyms])
+	ffffffff8d1d243c __tcp_transmit_skb+0x53c ([kernel.kallsyms])
+	ffffffff8d1d3ff2 tcp_write_xmit+0x3c2 ([kernel.kallsyms])
+	ffffffff8d1d4807 __tcp_push_pending_frames+0x37 ([kernel.kallsyms])
+	ffffffff8d1bdaad tcp_push+0xfd ([kernel.kallsyms])
+	ffffffff8d1c3685 tcp_sendmsg_locked+0xc75 ([kernel.kallsyms])
+	ffffffff8d1c381d tcp_sendmsg+0x2d ([kernel.kallsyms])
+	ffffffff8d1f66f3 inet_sendmsg+0x43 ([kernel.kallsyms])
+	ffffffff8d10eefe sock_sendmsg+0x5e ([kernel.kallsyms])
+	ffffffff8d110e93 __sys_sendto+0x113 ([kernel.kallsyms])
+	ffffffff8d110f39 __x64_sys_sendto+0x29 ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f2a5f5d77dc __libc_send+0x6c (/usr/lib/x86_64-linux-gnu/libpthread-2.31.so)
+
+tokio-runtime-w 286310 5401567.487053:    9910403 cycles: 
+	    55939f565432 tokio::runtime::io::scheduled_io::ScheduledIo::wake+0x292 (/users/dorlando/ons/websocket_rust/target/release/server)
+
+tokio-runtime-w 286310 5401567.510937:   11692893 cycles: 
+	ffffffff8ccb05c8 aa_sk_perm+0x48 ([kernel.kallsyms])
+	ffffffff8cca55c9 apparmor_socket_recvmsg+0x29 ([kernel.kallsyms])
+	ffffffff8cc596fd security_socket_recvmsg+0x3d ([kernel.kallsyms])
+	ffffffff8d10fd32 sock_recvmsg+0x22 ([kernel.kallsyms])
+	ffffffff8d1110b5 __sys_recvfrom+0xe5 ([kernel.kallsyms])
+	ffffffff8d1111c9 __x64_sys_recvfrom+0x29 ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f2a5f5d765c __libc_recv+0x6c (/usr/lib/x86_64-linux-gnu/libpthread-2.31.so)
+
+tokio-runtime-w 286310 5401567.539297:   10530785 cycles: 
+	    55939f55796e tokio::runtime::scheduler::multi_thread::park::Parker::park+0x13e (/users/dorlando/ons/websocket_rust/target/release/server)
+
+tokio-runtime-w 286310 5401567.564735:   11414008 cycles: 
+	ffffffff8c8e4f80 reweight_entity+0x1a0 ([kernel.kallsyms])
+	ffffffff8c8e511a update_cfs_group+0xea ([kernel.kallsyms])
+	ffffffff8c8e691b dequeue_entity+0x10b ([kernel.kallsyms])
+	ffffffff8c8e6ef8 dequeue_task_fair+0x58 ([kernel.kallsyms])
+	ffffffff8c8d8b03 deactivate_task+0x103 ([kernel.kallsyms])
+	ffffffff8d2d0968 __schedule+0x108 ([kernel.kallsyms])
+	ffffffff8d2d0fe2 schedule+0x42 ([kernel.kallsyms])
+	ffffffff8d2d4d89 schedule_hrtimeout_range_clock+0xf9 ([kernel.kallsyms])
+	ffffffff8d2d4db3 schedule_hrtimeout_range+0x13 ([kernel.kallsyms])
+	ffffffff8cb34880 ep_poll+0x3d0 ([kernel.kallsyms])
+	ffffffff8cb34988 do_epoll_wait+0xb8 ([kernel.kallsyms])
+	ffffffff8cb349be __x64_sys_epoll_wait+0x1e ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f2a5f39a68e epoll_wait+0x5e (/usr/lib/x86_64-linux-gnu/libc-2.31.so)
+
+tokio-runtime-w 286310 5401567.592208:    9608298 cycles: 
+	    55939f5070dc alloc::raw_vec::RawVecInner<A>::reserve::do_reserve_and_handle+0x4c (/users/dorlando/ons/websocket_rust/target/release/server)
+	37317c3831373735 [unknown] ([unknown])
+
+tokio-runtime-w 286310 5401567.615313:    9254099 cycles: 
+	    7f2a5f7a1954 [unknown] (/usr/lib/x86_64-linux-gnu/libcrypto.so.1.1)
+	87f9f645d7ada553 [unknown] ([unknown])
+
+tokio-runtime-w 286310 5401567.637909:    9054908 cycles: 
+	ffffffffc023b1f1 ipt_do_table+0x1d1 ([kernel.kallsyms])
+	ffffffffc02de05f iptable_filter_hook+0x1f ([kernel.kallsyms])
+	ffffffff8d1a5d25 nf_hook_slow+0x45 ([kernel.kallsyms])
+	ffffffff8d1b4c87 __ip_local_out+0xd7 ([kernel.kallsyms])
+	ffffffff8d1b4d0d ip_local_out+0x1d ([kernel.kallsyms])
+	ffffffff8d1b508a __ip_queue_xmit+0x17a ([kernel.kallsyms])
+	ffffffff8d1d8300 ip_queue_xmit+0x10 ([kernel.kallsyms])
+	ffffffff8d1d243c __tcp_transmit_skb+0x53c ([kernel.kallsyms])
+	ffffffff8d1d3ff2 tcp_write_xmit+0x3c2 ([kernel.kallsyms])
+	ffffffff8d1d4807 __tcp_push_pending_frames+0x37 ([kernel.kallsyms])
+	ffffffff8d1bdaad tcp_push+0xfd ([kernel.kallsyms])
+	ffffffff8d1c3685 tcp_sendmsg_locked+0xc75 ([kernel.kallsyms])
+	ffffffff8d1c381d tcp_sendmsg+0x2d ([kernel.kallsyms])
+	ffffffff8d1f66f3 inet_sendmsg+0x43 ([kernel.kallsyms])
+	ffffffff8d10eefe sock_sendmsg+0x5e ([kernel.kallsyms])
+	ffffffff8d110e93 __sys_sendto+0x113 ([kernel.kallsyms])
+	ffffffff8d110f39 __x64_sys_sendto+0x29 ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f2a5f5d77dc __libc_send+0x6c (/usr/lib/x86_64-linux-gnu/libpthread-2.31.so)
+
+tokio-runtime-w 286310 5401567.659980:    9054908 cycles: 
+	ffffffff8c804553 do_syscall_64+0xe3 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f2a5f5d765c __libc_recv+0x6c (/usr/lib/x86_64-linux-gnu/libpthread-2.31.so)
+
+tokio-runtime-w 286310 5401567.682702:   13076995 cycles: 
+	ffffffff8d1d1aae tcp_chrono_start+0x1e ([kernel.kallsyms])
+	ffffffff8d1bdbc2 skb_entail+0x112 ([kernel.kallsyms])
+	ffffffff8d1c2dec tcp_sendmsg_locked+0x3dc ([kernel.kallsyms])
+	ffffffff8d1c381d tcp_sendmsg+0x2d ([kernel.kallsyms])
+	ffffffff8d1f66f3 inet_sendmsg+0x43 ([kernel.kallsyms])
+	ffffffff8d10eefe sock_sendmsg+0x5e ([kernel.kallsyms])
+	ffffffff8d110e93 __sys_sendto+0x113 ([kernel.kallsyms])
+	ffffffff8d110f39 __x64_sys_sendto+0x29 ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f2a5f5d77dc __libc_send+0x6c (/usr/lib/x86_64-linux-gnu/libpthread-2.31.so)
+
+tokio-runtime-w 286310 5401567.713677:    7995537 cycles: 
+	ffffffff8cd25d32 _copy_from_iter_full+0x32 ([kernel.kallsyms])
+	ffffffff8d1c2f7d tcp_sendmsg_locked+0x56d ([kernel.kallsyms])
+	ffffffff8d1c381d tcp_sendmsg+0x2d ([kernel.kallsyms])
+	ffffffff8d1f66f3 inet_sendmsg+0x43 ([kernel.kallsyms])
+	ffffffff8d10eefe sock_sendmsg+0x5e ([kernel.kallsyms])
+	ffffffff8d110e93 __sys_sendto+0x113 ([kernel.kallsyms])
+	ffffffff8d110f39 __x64_sys_sendto+0x29 ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f2a5f5d77dc __libc_send+0x6c (/usr/lib/x86_64-linux-gnu/libpthread-2.31.so)
+
+tokio-runtime-w 286310 5401567.733089:    8596498 cycles: 
+	    7f2a5f8fdf54 [unknown] (/usr/lib/x86_64-linux-gnu/libssl.so.1.1)
+
+tokio-runtime-w 286310 5401567.753698:    8573636 cycles: 
+	ffffffff8d40015d syscall_return_via_sysret+0x6c ([kernel.kallsyms])
+	    7f2a5f5d765c __libc_recv+0x6c (/usr/lib/x86_64-linux-gnu/libpthread-2.31.so)
+
+tokio-runtime-w 286310 5401567.774486:    8573636 cycles: 
+	ffffffff8d18ecde __qdisc_run+0x1fe ([kernel.kallsyms])
+	ffffffff8d134a31 __dev_queue_xmit+0x591 ([kernel.kallsyms])
+	ffffffff8d134d90 dev_queue_xmit+0x10 ([kernel.kallsyms])
+	ffffffff8d1b38de ip_finish_output2+0x2ce ([kernel.kallsyms])
+	ffffffff8d1b3c5f __ip_finish_output+0xbf ([kernel.kallsyms])
+	ffffffff8d1b3d9d ip_finish_output+0x2d ([kernel.kallsyms])
+	ffffffff8d1b5655 ip_output+0x75 ([kernel.kallsyms])
+	ffffffff8d1b4d2d ip_local_out+0x3d ([kernel.kallsyms])
+	ffffffff8d1b508a __ip_queue_xmit+0x17a ([kernel.kallsyms])
+	ffffffff8d1d8300 ip_queue_xmit+0x10 ([kernel.kallsyms])
+	ffffffff8d1d243c __tcp_transmit_skb+0x53c ([kernel.kallsyms])
+	ffffffff8d1d3ff2 tcp_write_xmit+0x3c2 ([kernel.kallsyms])
+	ffffffff8d1d4807 __tcp_push_pending_frames+0x37 ([kernel.kallsyms])
+	ffffffff8d1bdaad tcp_push+0xfd ([kernel.kallsyms])
+	ffffffff8d1c3685 tcp_sendmsg_locked+0xc75 ([kernel.kallsyms])
+	ffffffff8d1c381d tcp_sendmsg+0x2d ([kernel.kallsyms])
+	ffffffff8d1f66f3 inet_sendmsg+0x43 ([kernel.kallsyms])
+	ffffffff8d10eefe sock_sendmsg+0x5e ([kernel.kallsyms])
+	ffffffff8d110e93 __sys_sendto+0x113 ([kernel.kallsyms])
+	ffffffff8d110f39 __x64_sys_sendto+0x29 ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f2a5f5d77dc __libc_send+0x6c (/usr/lib/x86_64-linux-gnu/libpthread-2.31.so)
+
+tokio-runtime-w 286310 5401567.795106:   10338110 cycles: 
+	    55939f51af12 <tokio_native_tls::TlsStream<S> as tokio::io::async_write::AsyncWrite>::poll_flush+0x2 (/users/dorlando/ons/websocket_rust/target/release/server)
+	              41 [unknown] ([unknown])
+
+tokio-runtime-w 286310 5401567.820133:   12720086 cycles: 
+	    7f2a5f5d769b __libc_recv+0xab (/usr/lib/x86_64-linux-gnu/libpthread-2.31.so)
+
+tokio-runtime-w 286310 5401567.851226:   12720086 cycles: 
+	ffffffff8d400047 entry_SYSCALL_64+0x37 ([kernel.kallsyms])
+	    7f2a5f39a68e epoll_wait+0x5e (/usr/lib/x86_64-linux-gnu/libc-2.31.so)
+
+tokio-runtime-w 286310 5401567.882011:   16280613 cycles: 
+	ffffffff8cb33e92 ep_send_events_proc+0xf2 ([kernel.kallsyms])
+	ffffffff8cb33ac1 ep_scan_ready_list.constprop.0+0xb1 ([kernel.kallsyms])
+	ffffffff8cb34538 ep_poll+0x88 ([kernel.kallsyms])
+	ffffffff8cb34988 do_epoll_wait+0xb8 ([kernel.kallsyms])
+	ffffffff8cb349be __x64_sys_epoll_wait+0x1e ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f2a5f39a68e epoll_wait+0x5e (/usr/lib/x86_64-linux-gnu/libc-2.31.so)
+
+tokio-runtime-w 286310 5401567.922438:   18246176 cycles: 
+	    55939f54f423 tokio::runtime::time::wheel::level::Level::next_expiration+0x63 (/users/dorlando/ons/websocket_rust/target/release/server)
+
+tokio-runtime-w 286310 5401567.965831:   15845662 cycles: 
+	ffffffff8d133bec netif_skb_features+0x22c ([kernel.kallsyms])
+	ffffffff8d133ca4 validate_xmit_skb+0x24 ([kernel.kallsyms])
+	ffffffff8d13400d validate_xmit_skb_list+0x4d ([kernel.kallsyms])
+	ffffffff8d18e8f0 sch_direct_xmit+0x150 ([kernel.kallsyms])
+	ffffffff8d134a1b __dev_queue_xmit+0x57b ([kernel.kallsyms])
+	ffffffff8d134d90 dev_queue_xmit+0x10 ([kernel.kallsyms])
+	ffffffff8d1b38de ip_finish_output2+0x2ce ([kernel.kallsyms])
+	ffffffff8d1b3c5f __ip_finish_output+0xbf ([kernel.kallsyms])
+	ffffffff8d1b3d9d ip_finish_output+0x2d ([kernel.kallsyms])
+	ffffffff8d1b5655 ip_output+0x75 ([kernel.kallsyms])
+	ffffffff8d1b4d2d ip_local_out+0x3d ([kernel.kallsyms])
+	ffffffff8d1b508a __ip_queue_xmit+0x17a ([kernel.kallsyms])
+	ffffffff8d1d8300 ip_queue_xmit+0x10 ([kernel.kallsyms])
+	ffffffff8d1d243c __tcp_transmit_skb+0x53c ([kernel.kallsyms])
+	ffffffff8d1d3ff2 tcp_write_xmit+0x3c2 ([kernel.kallsyms])
+	ffffffff8d1d4807 __tcp_push_pending_frames+0x37 ([kernel.kallsyms])
+	ffffffff8d1bdaad tcp_push+0xfd ([kernel.kallsyms])
+	ffffffff8d1c3685 tcp_sendmsg_locked+0xc75 ([kernel.kallsyms])
+	ffffffff8d1c381d tcp_sendmsg+0x2d ([kernel.kallsyms])
+	ffffffff8d1f66f3 inet_sendmsg+0x43 ([kernel.kallsyms])
+	ffffffff8d10eefe sock_sendmsg+0x5e ([kernel.kallsyms])
+	ffffffff8d110e93 __sys_sendto+0x113 ([kernel.kallsyms])
+	ffffffff8d110f39 __x64_sys_sendto+0x29 ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f2a5f5d77dc __libc_send+0x6c (/usr/lib/x86_64-linux-gnu/libpthread-2.31.so)
+
+tokio-runtime-w 286310 5401568.003741:   15228840 cycles: 
+	    7f2a5f8fdade [unknown] (/usr/lib/x86_64-linux-gnu/libssl.so.1.1)
+
+tokio-runtime-w 286310 5401568.040737:   13766116 cycles: 
+	    7f2a5f8fb330 [unknown] (/usr/lib/x86_64-linux-gnu/libssl.so.1.1)
+	    7f2a58008ea0 [unknown] ([unknown])
+
+tokio-runtime-w 286310 5401568.074260:   13766116 cycles: 
+	ffffffff8d1c205f sk_stream_alloc_skb+0x1f ([kernel.kallsyms])
+	ffffffff8d1c2dce tcp_sendmsg_locked+0x3be ([kernel.kallsyms])
+	ffffffff8d1c381d tcp_sendmsg+0x2d ([kernel.kallsyms])
+	ffffffff8d1f66f3 inet_sendmsg+0x43 ([kernel.kallsyms])
+	ffffffff8d10eefe sock_sendmsg+0x5e ([kernel.kallsyms])
+	ffffffff8d110e93 __sys_sendto+0x113 ([kernel.kallsyms])
+	ffffffff8d110f39 __x64_sys_sendto+0x29 ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f2a5f5d77dc __libc_send+0x6c (/usr/lib/x86_64-linux-gnu/libpthread-2.31.so)
+
+tokio-runtime-w 286310 5401568.107193:   17236420 cycles: 
+	    7f2a5f815778 OPENSSL_cleanse+0x38 (/usr/lib/x86_64-linux-gnu/libcrypto.so.1.1)
+	d7672aa35750fc08 [unknown] ([unknown])
+
+tokio-runtime-w 286310 5401568.148626:   16749034 cycles: 
+	    55939f5b2111 core::str::converts::from_utf8+0x1 (/users/dorlando/ons/websocket_rust/target/release/server)
+	6801010100000000 [unknown] ([unknown])
+
+tokio-runtime-w 286310 5401568.187635:   11224713 cycles: 
+	ffffffffc02109df tg3_tx_frag_set+0x4f ([kernel.kallsyms])
+	ffffffffc0220251 tg3_start_xmit+0x251 ([kernel.kallsyms])
+	ffffffff8d134291 dev_hard_start_xmit+0x91 ([kernel.kallsyms])
+	ffffffff8d18e8b3 sch_direct_xmit+0x113 ([kernel.kallsyms])
+	ffffffff8d134a1b __dev_queue_xmit+0x57b ([kernel.kallsyms])
+	ffffffff8d134d90 dev_queue_xmit+0x10 ([kernel.kallsyms])
+	ffffffff8d1b38de ip_finish_output2+0x2ce ([kernel.kallsyms])
+	ffffffff8d1b3c5f __ip_finish_output+0xbf ([kernel.kallsyms])
+	ffffffff8d1b3d9d ip_finish_output+0x2d ([kernel.kallsyms])
+	ffffffff8d1b5655 ip_output+0x75 ([kernel.kallsyms])
+	ffffffff8d1b4d2d ip_local_out+0x3d ([kernel.kallsyms])
+	ffffffff8d1b508a __ip_queue_xmit+0x17a ([kernel.kallsyms])
+	ffffffff8d1d8300 ip_queue_xmit+0x10 ([kernel.kallsyms])
+	ffffffff8d1d243c __tcp_transmit_skb+0x53c ([kernel.kallsyms])
+	ffffffff8d1d3ff2 tcp_write_xmit+0x3c2 ([kernel.kallsyms])
+	ffffffff8d1d4807 __tcp_push_pending_frames+0x37 ([kernel.kallsyms])
+	ffffffff8d1bdaad tcp_push+0xfd ([kernel.kallsyms])
+	ffffffff8d1c3685 tcp_sendmsg_locked+0xc75 ([kernel.kallsyms])
+	ffffffff8d1c381d tcp_sendmsg+0x2d ([kernel.kallsyms])
+	ffffffff8d1f66f3 inet_sendmsg+0x43 ([kernel.kallsyms])
+	ffffffff8d10eefe sock_sendmsg+0x5e ([kernel.kallsyms])
+	ffffffff8d110e93 __sys_sendto+0x113 ([kernel.kallsyms])
+	ffffffff8d110f39 __x64_sys_sendto+0x29 ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f2a5f5d77dc __libc_send+0x6c (/usr/lib/x86_64-linux-gnu/libpthread-2.31.so)
+
+tokio-runtime-w 286310 5401568.214316:   10737932 cycles: 
+	ffffffff8c804553 do_syscall_64+0xe3 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f2a5f5d765c __libc_recv+0x6c (/usr/lib/x86_64-linux-gnu/libpthread-2.31.so)
+
+tokio-runtime-w 286310 5401568.239742:   10991173 cycles: 
+	    7f2a5f932fd0 [unknown] (/usr/lib/x86_64-linux-gnu/libssl.so.1.1)
+	    7f2a5f9656a0 [unknown] ([unknown])
+
+tokio-runtime-w 286310 5401568.266783:   11011797 cycles: 
+	    7f2a5f8f7cb0 [unknown] (/usr/lib/x86_64-linux-gnu/libssl.so.1.1)
+	    7f2a5f9656a0 [unknown] ([unknown])
+
+tokio-runtime-w 286310 5401568.293080:   12603849 cycles: 
+	    7f2a5f76fe24 EVP_CIPHER_CTX_cipher+0x4 (/usr/lib/x86_64-linux-gnu/libcrypto.so.1.1)
+	    7f2a5f9656a0 [unknown] ([unknown])
+
+tokio-runtime-w 286310 5401568.323089:   12603849 cycles: 
+	    7f2a5f932fd4 [unknown] (/usr/lib/x86_64-linux-gnu/libssl.so.1.1)
+	    7f2a5f9656a0 [unknown] ([unknown])
+
+tokio-runtime-w 286310 5401568.353711:   15856680 cycles: 
+	    55939f51fdb1 <futures_util::stream::stream::split::SplitSink<S,Item> as futures_sink::Sink<Item>>::poll_ready+0x1 (/users/dorlando/ons/websocket_rust/target/release/server)
+
+tokio-runtime-w 286310 5401568.391938:   17636569 cycles: 
+	    55939f51bb9e tungstenite::protocol::frame::FrameCodec::write_pending+0xce (/users/dorlando/ons/websocket_rust/target/release/server)
+
+tokio-runtime-w 286310 5401568.435332:   15888466 cycles: 
+	    7f2a5f770754 EVP_MD_CTX_md+0x4 (/usr/lib/x86_64-linux-gnu/libcrypto.so.1.1)
+	    7f2a5f9656a0 [unknown] ([unknown])
+
+tokio-runtime-w 286310 5401568.474168:   17956257 cycles: 
+	    55939f512e43 server::main::_$u7b$$u7b$closure$u7d$$u7d$::_$u7b$$u7b$closure$u7d$$u7d$::h89e6eb4ed385d30b+0x2393 (/users/dorlando/ons/websocket_rust/target/release/server)
+
+tokio-runtime-w 286310 5401568.517730:   18955997 cycles: 
+	ffffffff8d40015d syscall_return_via_sysret+0x6c ([kernel.kallsyms])
+	    7f2a5f5d765c __libc_recv+0x6c (/usr/lib/x86_64-linux-gnu/libpthread-2.31.so)
+
+tokio-runtime-w 286310 5401568.563779:   12790697 cycles: 
+	    7f2a5f5d5584 __pthread_once+0x4 (/usr/lib/x86_64-linux-gnu/libpthread-2.31.so)
+
+tokio-runtime-w 286310 5401568.594741:   11261398 cycles: 
+	    7f2a5f8ff5f4 [unknown] (/usr/lib/x86_64-linux-gnu/libssl.so.1.1)
+	    7f2a5f9656a0 [unknown] ([unknown])
+
+tokio-runtime-w 286310 5401568.622306:   16082272 cycles: 
+	    55939f51077c tokio::runtime::task::core::Core<T,S>::poll+0x2c (/users/dorlando/ons/websocket_rust/target/release/server)
+
+tokio-runtime-w 286310 5401568.661148:   17713933 cycles: 
+	ffffffff8ca07d5d visit_groups_merge+0x4d ([kernel.kallsyms])
+	ffffffff8ca07f38 ctx_sched_in+0xb8 ([kernel.kallsyms])
+	ffffffff8ca08051 perf_event_sched_in+0x61 ([kernel.kallsyms])
+	ffffffff8ca10e5c __perf_event_task_sched_in+0x16c ([kernel.kallsyms])
+	ffffffff8c8d3e4d finish_task_switch+0xfd ([kernel.kallsyms])
+	ffffffff8d2d0b4b __schedule+0x2eb ([kernel.kallsyms])
+	ffffffff8d2d0fe2 schedule+0x42 ([kernel.kallsyms])
+	ffffffff8d2d4d89 schedule_hrtimeout_range_clock+0xf9 ([kernel.kallsyms])
+	ffffffff8d2d4db3 schedule_hrtimeout_range+0x13 ([kernel.kallsyms])
+	ffffffff8cb34880 ep_poll+0x3d0 ([kernel.kallsyms])
+	ffffffff8cb34988 do_epoll_wait+0xb8 ([kernel.kallsyms])
+	ffffffff8cb349be __x64_sys_epoll_wait+0x1e ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f2a5f39a68e epoll_wait+0x5e (/usr/lib/x86_64-linux-gnu/libc-2.31.so)
+
+tokio-runtime-w 286310 5401568.706983:   14369369 cycles: 
+	    55939f56c697 futures_core::task::__internal::atomic_waker::AtomicWaker::register+0x47 (/users/dorlando/ons/websocket_rust/target/release/server)
+
+tokio-runtime-w 286310 5401568.742310:   10612085 cycles: 
+	    55939f553ad6 tokio::runtime::time::<impl tokio::runtime::time::handle::Handle>::process_at_sharded_time+0x76 (/users/dorlando/ons/websocket_rust/target/release/server)
+
+tokio-runtime-w 286310 5401568.767802:   11374148 cycles: 
+	    7f2a5f4f625a [unknown] (/usr/lib/x86_64-linux-gnu/libm-2.31.so)
+
+tokio-runtime-w 286310 5401568.795545:   12557230 cycles: 
+	ffffffff8caab087 __kmalloc_node_track_caller+0xf7 ([kernel.kallsyms])
+	ffffffff8d119dc1 __kmalloc_reserve.isra.0+0x31 ([kernel.kallsyms])
+	ffffffff8d119ea4 __alloc_skb+0x84 ([kernel.kallsyms])
+	ffffffff8d1c20ab sk_stream_alloc_skb+0x6b ([kernel.kallsyms])
+	ffffffff8d1c2dce tcp_sendmsg_locked+0x3be ([kernel.kallsyms])
+	ffffffff8d1c381d tcp_sendmsg+0x2d ([kernel.kallsyms])
+	ffffffff8d1f66f3 inet_sendmsg+0x43 ([kernel.kallsyms])
+	ffffffff8d10eefe sock_sendmsg+0x5e ([kernel.kallsyms])
+	ffffffff8d110e93 __sys_sendto+0x113 ([kernel.kallsyms])
+	ffffffff8d110f39 __x64_sys_sendto+0x29 ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f2a5f5d77dc __libc_send+0x6c (/usr/lib/x86_64-linux-gnu/libpthread-2.31.so)
+
+tokio-runtime-w 286310 5401568.825987:    9056394 cycles: 
+	    7f2a5f8fb5c2 [unknown] (/usr/lib/x86_64-linux-gnu/libssl.so.1.1)
+	    7f2a58008ea0 [unknown] ([unknown])
+
+tokio-runtime-w 286310 5401568.847811:   10523148 cycles: 
+	ffffffff8c804553 do_syscall_64+0xe3 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f2a5f5d77dc __libc_send+0x6c (/usr/lib/x86_64-linux-gnu/libpthread-2.31.so)
+
+tokio-runtime-w 286310 5401568.872842:   10948064 cycles: 
+	ffffffff8d1b39dd ip_finish_output2+0x3cd ([kernel.kallsyms])
+	ffffffff8d1b3c5f __ip_finish_output+0xbf ([kernel.kallsyms])
+	ffffffff8d1b3d9d ip_finish_output+0x2d ([kernel.kallsyms])
+	ffffffff8d1b5655 ip_output+0x75 ([kernel.kallsyms])
+	ffffffff8d1b4d2d ip_local_out+0x3d ([kernel.kallsyms])
+	ffffffff8d1b508a __ip_queue_xmit+0x17a ([kernel.kallsyms])
+	ffffffff8d1d8300 ip_queue_xmit+0x10 ([kernel.kallsyms])
+	ffffffff8d1d243c __tcp_transmit_skb+0x53c ([kernel.kallsyms])
+	ffffffff8d1d3ff2 tcp_write_xmit+0x3c2 ([kernel.kallsyms])
+	ffffffff8d1d4807 __tcp_push_pending_frames+0x37 ([kernel.kallsyms])
+	ffffffff8d1bdaad tcp_push+0xfd ([kernel.kallsyms])
+	ffffffff8d1c3685 tcp_sendmsg_locked+0xc75 ([kernel.kallsyms])
+	ffffffff8d1c381d tcp_sendmsg+0x2d ([kernel.kallsyms])
+	ffffffff8d1f66f3 inet_sendmsg+0x43 ([kernel.kallsyms])
+	ffffffff8d10eefe sock_sendmsg+0x5e ([kernel.kallsyms])
+	ffffffff8d110e93 __sys_sendto+0x113 ([kernel.kallsyms])
+	ffffffff8d110f39 __x64_sys_sendto+0x29 ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f2a5f5d77dc __libc_send+0x6c (/usr/lib/x86_64-linux-gnu/libpthread-2.31.so)
+
+tokio-runtime-w 286310 5401568.899459:   11882494 cycles: 
+	    55939f5431e0 openssl::ssl::SslRef::get_raw_rbio+0x0 (/users/dorlando/ons/websocket_rust/target/release/server)
+	1bfdbeee49aaedf8 [unknown] ([unknown])
+
+tokio-runtime-w 286310 5401568.928795:   11882494 cycles: 
+	ffffffff8ca0d770 flexible_sched_in+0x110 ([kernel.kallsyms])
+	ffffffff8ca07e39 visit_groups_merge+0x129 ([kernel.kallsyms])
+	ffffffff8ca07f38 ctx_sched_in+0xb8 ([kernel.kallsyms])
+	ffffffff8ca08051 perf_event_sched_in+0x61 ([kernel.kallsyms])
+	ffffffff8ca10e5c __perf_event_task_sched_in+0x16c ([kernel.kallsyms])
+	ffffffff8c8d3e4d finish_task_switch+0xfd ([kernel.kallsyms])
+	ffffffff8d2d0b4b __schedule+0x2eb ([kernel.kallsyms])
+	ffffffff8d2d0fe2 schedule+0x42 ([kernel.kallsyms])
+	ffffffff8d2d4d89 schedule_hrtimeout_range_clock+0xf9 ([kernel.kallsyms])
+	ffffffff8d2d4db3 schedule_hrtimeout_range+0x13 ([kernel.kallsyms])
+	ffffffff8cb34880 ep_poll+0x3d0 ([kernel.kallsyms])
+	ffffffff8cb34988 do_epoll_wait+0xb8 ([kernel.kallsyms])
+	ffffffff8cb349be __x64_sys_epoll_wait+0x1e ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f2a5f39a68e epoll_wait+0x5e (/usr/lib/x86_64-linux-gnu/libc-2.31.so)
+
+tokio-runtime-w 286310 5401568.957989:   12587566 cycles: 
+	ffffffff8d1127eb __sk_dst_check+0xb ([kernel.kallsyms])
+	ffffffff8d1b519b __ip_queue_xmit+0x28b ([kernel.kallsyms])
+	ffffffff8d1d8300 ip_queue_xmit+0x10 ([kernel.kallsyms])
+	ffffffff8d1d243c __tcp_transmit_skb+0x53c ([kernel.kallsyms])
+	ffffffff8d1d3ff2 tcp_write_xmit+0x3c2 ([kernel.kallsyms])
+	ffffffff8d1d4807 __tcp_push_pending_frames+0x37 ([kernel.kallsyms])
+	ffffffff8d1bdaad tcp_push+0xfd ([kernel.kallsyms])
+	ffffffff8d1c3685 tcp_sendmsg_locked+0xc75 ([kernel.kallsyms])
+	ffffffff8d1c381d tcp_sendmsg+0x2d ([kernel.kallsyms])
+	ffffffff8d1f66f3 inet_sendmsg+0x43 ([kernel.kallsyms])
+	ffffffff8d10eefe sock_sendmsg+0x5e ([kernel.kallsyms])
+	ffffffff8d110e93 __sys_sendto+0x113 ([kernel.kallsyms])
+	ffffffff8d110f39 __x64_sys_sendto+0x29 ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f2a5f5d77dc __libc_send+0x6c (/usr/lib/x86_64-linux-gnu/libpthread-2.31.so)
+
+tokio-runtime-w 286310 5401568.988451:   12452324 cycles: 
+	ffffffff8ccb05be aa_sk_perm+0x3e ([kernel.kallsyms])
+	ffffffff8cca57b9 apparmor_socket_sendmsg+0x29 ([kernel.kallsyms])
+	ffffffff8cc596a5 security_socket_sendmsg+0x35 ([kernel.kallsyms])
+	ffffffff8d10eebb sock_sendmsg+0x1b ([kernel.kallsyms])
+	ffffffff8d110e93 __sys_sendto+0x113 ([kernel.kallsyms])
+	ffffffff8d110f39 __x64_sys_sendto+0x29 ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f2a5f5d77dc __libc_send+0x6c (/usr/lib/x86_64-linux-gnu/libpthread-2.31.so)
+
+tokio-runtime-w 286310 5401569.018197:   12488523 cycles: 
+	ffffffff8c804553 do_syscall_64+0xe3 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f2a5f39a68e epoll_wait+0x5e (/usr/lib/x86_64-linux-gnu/libc-2.31.so)
+
+tokio-runtime-w 286310 5401569.047809:   13054217 cycles: 
+	    7f2a5f312e1d [unknown] (/usr/lib/x86_64-linux-gnu/libc-2.31.so)
+
+tokio-runtime-w 286310 5401569.079283:   11111235 cycles: 
+	ffffffff8c804553 do_syscall_64+0xe3 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f2a5f5d765c __libc_recv+0x6c (/usr/lib/x86_64-linux-gnu/libpthread-2.31.so)
+
+tokio-runtime-w 286310 5401569.106578:   11111235 cycles: 
+	    55939f548a24 tokio::runtime::time::wheel::Wheel::next_expiration+0xb4 (/users/dorlando/ons/websocket_rust/target/release/server)
+
+tokio-runtime-w 286310 5401569.133068:   17036610 cycles: 
+	    7f2a5f8f6e24 [unknown] (/usr/lib/x86_64-linux-gnu/libssl.so.1.1)
+	    7f2a5f9656a0 [unknown] ([unknown])
+
+tokio-runtime-w 286310 5401569.174145:   12631616 cycles: 
+	ffffffffc023b22e ipt_do_table+0x20e ([kernel.kallsyms])
+	ffffffffc02de05f iptable_filter_hook+0x1f ([kernel.kallsyms])
+	ffffffff8d1a5d25 nf_hook_slow+0x45 ([kernel.kallsyms])
+	ffffffff8d1b4c87 __ip_local_out+0xd7 ([kernel.kallsyms])
+	ffffffff8d1b4d0d ip_local_out+0x1d ([kernel.kallsyms])
+	ffffffff8d1b508a __ip_queue_xmit+0x17a ([kernel.kallsyms])
+	ffffffff8d1d8300 ip_queue_xmit+0x10 ([kernel.kallsyms])
+	ffffffff8d1d243c __tcp_transmit_skb+0x53c ([kernel.kallsyms])
+	ffffffff8d1d3ff2 tcp_write_xmit+0x3c2 ([kernel.kallsyms])
+	ffffffff8d1d4807 __tcp_push_pending_frames+0x37 ([kernel.kallsyms])
+	ffffffff8d1bdaad tcp_push+0xfd ([kernel.kallsyms])
+	ffffffff8d1c3685 tcp_sendmsg_locked+0xc75 ([kernel.kallsyms])
+	ffffffff8d1c381d tcp_sendmsg+0x2d ([kernel.kallsyms])
+	ffffffff8d1f66f3 inet_sendmsg+0x43 ([kernel.kallsyms])
+	ffffffff8d10eefe sock_sendmsg+0x5e ([kernel.kallsyms])
+	ffffffff8d110e93 __sys_sendto+0x113 ([kernel.kallsyms])
+	ffffffff8d110f39 __x64_sys_sendto+0x29 ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f2a5f5d77dc __libc_send+0x6c (/usr/lib/x86_64-linux-gnu/libpthread-2.31.so)
+
+tokio-runtime-w 286310 5401569.203590:   12612257 cycles: 
+	ffffffff8d119edd __alloc_skb+0xbd ([kernel.kallsyms])
+	ffffffff8d1c20ab sk_stream_alloc_skb+0x6b ([kernel.kallsyms])
+	ffffffff8d1c2dce tcp_sendmsg_locked+0x3be ([kernel.kallsyms])
+	ffffffff8d1c381d tcp_sendmsg+0x2d ([kernel.kallsyms])
+	ffffffff8d1f66f3 inet_sendmsg+0x43 ([kernel.kallsyms])
+	ffffffff8d10eefe sock_sendmsg+0x5e ([kernel.kallsyms])
+	ffffffff8d110e93 __sys_sendto+0x113 ([kernel.kallsyms])
+	ffffffff8d110f39 __x64_sys_sendto+0x29 ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f2a5f5d77dc __libc_send+0x6c (/usr/lib/x86_64-linux-gnu/libpthread-2.31.so)
+
+tokio-runtime-w 286310 5401569.234386:   16096439 cycles: 
+	ffffffff8d1b567e ip_output+0x9e ([kernel.kallsyms])
+	ffffffff8d1b4d2d ip_local_out+0x3d ([kernel.kallsyms])
+	ffffffff8d1b508a __ip_queue_xmit+0x17a ([kernel.kallsyms])
+	ffffffff8d1d8300 ip_queue_xmit+0x10 ([kernel.kallsyms])
+	ffffffff8d1d243c __tcp_transmit_skb+0x53c ([kernel.kallsyms])
+	ffffffff8d1d3ff2 tcp_write_xmit+0x3c2 ([kernel.kallsyms])
+	ffffffff8d1d4807 __tcp_push_pending_frames+0x37 ([kernel.kallsyms])
+	ffffffff8d1bdaad tcp_push+0xfd ([kernel.kallsyms])
+	ffffffff8d1c3685 tcp_sendmsg_locked+0xc75 ([kernel.kallsyms])
+	ffffffff8d1c381d tcp_sendmsg+0x2d ([kernel.kallsyms])
+	ffffffff8d1f66f3 inet_sendmsg+0x43 ([kernel.kallsyms])
+	ffffffff8d10eefe sock_sendmsg+0x5e ([kernel.kallsyms])
+	ffffffff8d110e93 __sys_sendto+0x113 ([kernel.kallsyms])
+	ffffffff8d110f39 __x64_sys_sendto+0x29 ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f2a5f5d77dc __libc_send+0x6c (/usr/lib/x86_64-linux-gnu/libpthread-2.31.so)
+
+tokio-runtime-w 286310 5401569.273993:   14207092 cycles: 
+	    55939f51b7c0 tungstenite::protocol::frame::FrameCodec::read_frame+0x3d0 (/users/dorlando/ons/websocket_rust/target/release/server)
+	        9cb06348 [unknown] ([unknown])
+
+tokio-runtime-w 286310 5401569.308162:   17018676 cycles: 
+	ffffffff8d40003b entry_SYSCALL_64+0x2b ([kernel.kallsyms])
+	    7f2a5f5d765c __libc_recv+0x6c (/usr/lib/x86_64-linux-gnu/libpthread-2.31.so)
+
+tokio-runtime-w 286310 5401569.349600:   18170515 cycles: 
+	    7f2a5f8fe2c8 [unknown] (/usr/lib/x86_64-linux-gnu/libssl.so.1.1)
+	    7f2a5f9656a0 [unknown] ([unknown])
+
+tokio-runtime-w 286310 5401569.393315:   14098837 cycles: 
+	ffffffff8d1d578a tcp_release_cb+0xa ([kernel.kallsyms])
+	ffffffff8d115fe8 release_sock+0x48 ([kernel.kallsyms])
+	ffffffff8d1c179e tcp_recvmsg+0x25e ([kernel.kallsyms])
+	ffffffff8d1f69ce inet_recvmsg+0x5e ([kernel.kallsyms])
+	ffffffff8d10fd79 sock_recvmsg+0x69 ([kernel.kallsyms])
+	ffffffff8d1110b5 __sys_recvfrom+0xe5 ([kernel.kallsyms])
+	ffffffff8d1111c9 __x64_sys_recvfrom+0x29 ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f2a5f5d765c __libc_recv+0x6c (/usr/lib/x86_64-linux-gnu/libpthread-2.31.so)
+
+tokio-runtime-w 286310 5401569.428571:    9152712 cycles: 
+	    55939f553a95 tokio::runtime::time::<impl tokio::runtime::time::handle::Handle>::process_at_sharded_time+0x35 (/users/dorlando/ons/websocket_rust/target/release/server)
+
+tokio-runtime-w 286310 5401569.451134:   10329845 cycles: 
+	    7f2a5f79e5bb [unknown] (/usr/lib/x86_64-linux-gnu/libcrypto.so.1.1)
+
+tokio-runtime-w 286310 5401569.476178:   11647371 cycles: 
+	    7f2a5f5d75f0 __libc_recv+0x0 (/usr/lib/x86_64-linux-gnu/libpthread-2.31.so)
+	    55939f569e11 <&mio::net::tcp::stream::TcpStream as std::io::Read>::read+0x11 (/users/dorlando/ons/websocket_rust/target/release/server)
+	               5 [unknown] ([unknown])
+	 7aaa57627f00065 [unknown] ([unknown])
+
+tokio-runtime-w 286310 5401569.504581:   11647371 cycles: 
+	ffffffff8cd27028 _copy_to_iter+0x178 ([kernel.kallsyms])
+	ffffffff8d1227b9 simple_copy_to_iter+0x39 ([kernel.kallsyms])
+	ffffffff8d1224a8 __skb_datagram_iter+0x68 ([kernel.kallsyms])
+	ffffffff8d122730 skb_copy_datagram_iter+0x40 ([kernel.kallsyms])
+	ffffffff8d1c1c03 tcp_recvmsg+0x6c3 ([kernel.kallsyms])
+	ffffffff8d1f69ce inet_recvmsg+0x5e ([kernel.kallsyms])
+	ffffffff8d10fd79 sock_recvmsg+0x69 ([kernel.kallsyms])
+	ffffffff8d1110b5 __sys_recvfrom+0xe5 ([kernel.kallsyms])
+	ffffffff8d1111c9 __x64_sys_recvfrom+0x29 ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f2a5f5d765c __libc_recv+0x6c (/usr/lib/x86_64-linux-gnu/libpthread-2.31.so)
+
+tokio-runtime-w 286310 5401569.532763:   13859397 cycles: 
+	    7f2a5f9016d0 [unknown] (/usr/lib/x86_64-linux-gnu/libssl.so.1.1)
+	    7f2a5f9656a0 [unknown] ([unknown])
+
+tokio-runtime-w 286310 5401569.566600:   13859397 cycles: 
+	ffffffffc03ab037 lockd_unregister_notifiers+0x38 ([kernel.kallsyms])
+	ffffffffc03a4ee6 nf_conntrack_in+0x1f6 ([kernel.kallsyms])
+	ffffffffc03a8a78 connector_write+0xc5 ([kernel.kallsyms])
+	ffffffff8d1a5d25 nf_hook_slow+0x45 ([kernel.kallsyms])
+	ffffffff8d1b4c87 __ip_local_out+0xd7 ([kernel.kallsyms])
+	ffffffff8d1b4d0d ip_local_out+0x1d ([kernel.kallsyms])
+	ffffffff8d1b508a __ip_queue_xmit+0x17a ([kernel.kallsyms])
+	ffffffff8d1d8300 ip_queue_xmit+0x10 ([kernel.kallsyms])
+	ffffffff8d1d243c __tcp_transmit_skb+0x53c ([kernel.kallsyms])
+	ffffffff8d1d3ff2 tcp_write_xmit+0x3c2 ([kernel.kallsyms])
+	ffffffff8d1d4807 __tcp_push_pending_frames+0x37 ([kernel.kallsyms])
+	ffffffff8d1bdaad tcp_push+0xfd ([kernel.kallsyms])
+	ffffffff8d1c3685 tcp_sendmsg_locked+0xc75 ([kernel.kallsyms])
+	ffffffff8d1c381d tcp_sendmsg+0x2d ([kernel.kallsyms])
+	ffffffff8d1f66f3 inet_sendmsg+0x43 ([kernel.kallsyms])
+	ffffffff8d10eefe sock_sendmsg+0x5e ([kernel.kallsyms])
+	ffffffff8d110e93 __sys_sendto+0x113 ([kernel.kallsyms])
+	ffffffff8d110f39 __x64_sys_sendto+0x29 ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f2a5f5d77dc __libc_send+0x6c (/usr/lib/x86_64-linux-gnu/libpthread-2.31.so)
+
+tokio-runtime-w 286310 5401569.600357:   17058043 cycles: 
+	ffffffff8c804553 do_syscall_64+0xe3 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f2a5f5d77dc __libc_send+0x6c (/usr/lib/x86_64-linux-gnu/libpthread-2.31.so)
+
+tokio-runtime-w 286310 5401569.642470:   17825534 cycles: 
+	ffffffff8d10d03d sock_poll+0x2d ([kernel.kallsyms])
+	ffffffff8cb33c53 ep_item_poll.isra.0+0x43 ([kernel.kallsyms])
+	ffffffff8cb33e84 ep_send_events_proc+0xe4 ([kernel.kallsyms])
+	ffffffff8cb33ac1 ep_scan_ready_list.constprop.0+0xb1 ([kernel.kallsyms])
+	ffffffff8cb34538 ep_poll+0x88 ([kernel.kallsyms])
+	ffffffff8cb34988 do_epoll_wait+0xb8 ([kernel.kallsyms])
+	ffffffff8cb349be __x64_sys_epoll_wait+0x1e ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f2a5f39a68e epoll_wait+0x5e (/usr/lib/x86_64-linux-gnu/libc-2.31.so)
+
+tokio-runtime-w 286310 5401569.687533:   22603652 cycles: 
+	    55939f519ce5 <tokio_tungstenite::WebSocketStream<T> as futures_sink::Sink<tungstenite::protocol::message::Message>>::poll_flush+0xc5 (/users/dorlando/ons/websocket_rust/target/release/server)
+
+tokio-runtime-w 286310 5401569.741689:   18353071 cycles: 
+	ffffffff8d2d09e3 __schedule+0x183 ([kernel.kallsyms])
+	ffffffff8d2d0fe2 schedule+0x42 ([kernel.kallsyms])
+	ffffffff8d2d4d89 schedule_hrtimeout_range_clock+0xf9 ([kernel.kallsyms])
+	ffffffff8d2d4db3 schedule_hrtimeout_range+0x13 ([kernel.kallsyms])
+	ffffffff8cb34880 ep_poll+0x3d0 ([kernel.kallsyms])
+	ffffffff8cb34988 do_epoll_wait+0xb8 ([kernel.kallsyms])
+	ffffffff8cb349be __x64_sys_epoll_wait+0x1e ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f2a5f39a68e epoll_wait+0x5e (/usr/lib/x86_64-linux-gnu/libc-2.31.so)
+
+tokio-runtime-w 286310 5401569.785851:   18353071 cycles: 
+	    55939f55b151 tokio::runtime::time::Driver::park_internal+0x1 (/users/dorlando/ons/websocket_rust/target/release/server)
+
+tokio-runtime-w 286310 5401569.829998:   24126946 cycles: 
+	ffffffff8caffe50 __fget_light+0x0 ([kernel.kallsyms])
+	ffffffff8d10dc07 sockfd_lookup_light+0x17 ([kernel.kallsyms])
+	ffffffff8d11103d __sys_recvfrom+0x6d ([kernel.kallsyms])
+	ffffffff8d1111c9 __x64_sys_recvfrom+0x29 ([kernel.kallsyms])
+	ffffffff8c8044c7 do_syscall_64+0x57 ([kernel.kallsyms])
+	ffffffff8d40008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+	    7f2a5f5d765c __libc_recv+0x6c (/usr/lib/x86_64-linux-gnu/libpthread-2.31.so)
+
+tokio-runtime-w 286310 5401569.895199:   14567283 cycles: 
+	    55939f54f3c0 tokio::runtime::time::wheel::level::Level::next_expiration+0x0 (/users/dorlando/ons/websocket_rust/target/release/server)
+

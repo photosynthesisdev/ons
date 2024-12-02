@@ -1,6 +1,20 @@
 use std::time::Instant;
 use wtransport::{ClientConfig, Endpoint};
 use anyhow::Result;
+use csv::Writer;
+
+fn save_measurements(rtt_samples: &[u128]) -> Result<(), Box<dyn std::error::Error>> {
+    // Save raw RTT measurements to a CSV file
+    let mut writer = Writer::from_path("webtransport_measurements.csv")?;
+    writer.write_record(&["rtt"])?;
+
+    for rtt in rtt_samples {
+        writer.write_record(&[rtt.to_string()])?;
+    }
+
+    writer.flush()?;
+    Ok(())
+}
 
 #[tokio::main]
 async fn main() -> Result<()> {
@@ -15,8 +29,8 @@ async fn main() -> Result<()> {
         .await
         .unwrap();
 
-    const NUM_MESSAGES: usize = 10000000000;
-    let mut total_rtt = 0;
+    const NUM_MESSAGES: usize = 100000;
+    let mut rtt_samples = Vec::new();
 
     for i in 0..NUM_MESSAGES {
         let message = format!("Hello from client, message {}", i);
@@ -28,12 +42,9 @@ async fn main() -> Result<()> {
 
         // Wait for the echo response from the server
         match connection.receive_datagram().await {
-            Ok(datagram) => {
-                let payload = datagram.payload().to_vec();
-                let received_data = String::from_utf8_lossy(&payload);
+            Ok(_) => {
                 let rtt = start_time.elapsed().as_micros();
-                total_rtt += rtt;
-                println!("Received echo: '{}', RTT: {} µs", received_data, rtt);
+                rtt_samples.push(rtt);
             }
             Err(e) => {
                 println!("Error receiving datagram: {:?}", e);
@@ -42,14 +53,17 @@ async fn main() -> Result<()> {
         }
     }
 
-    // Calculate and print average RTT
-    if NUM_MESSAGES > 0 {
-        let average_rtt = total_rtt as f64 / NUM_MESSAGES as f64;
-        println!("Total messages sent: {}", NUM_MESSAGES);
-        println!("Total RTT: {} µs", total_rtt);
+    // Save RTT measurements to a CSV file
+    if !rtt_samples.is_empty() {
+        println!("Saving RTT data...");
+        save_measurements(&rtt_samples).expect("Failed to save measurements");
+
+        let total_rtt: u128 = rtt_samples.iter().sum();
+        let average_rtt = total_rtt as f64 / rtt_samples.len() as f64;
+        println!("Total messages sent: {}", rtt_samples.len());
         println!("Average RTT: {:.2} µs", average_rtt);
     } else {
-        println!("No messages sent.");
+        println!("No RTT data collected.");
     }
 
     println!("Client done.");
