@@ -1,0 +1,12 @@
+[package]
+name = "webtransport-sync-rust"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+web-transport-proto = "0.2.4"
+tokio = { version = "1", features = ["full"] }
+url = "2"
+bytes = "1"
+serde_json = "1"
+csv = "1"

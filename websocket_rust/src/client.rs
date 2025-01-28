@@ -57,18 +57,21 @@ fn save_summary(rtt_samples: &[u128]) -> Result<(), Box<dyn std::error::Error>> 
 #[tokio::main]
 async fn main() {
     let url = Url::parse("wss://spock.cs.colgate.edu:4043").unwrap();
+    //let url = Url::parse("wss://signallite.io:4043").unwrap();
     println!("Connecting to {}", url);
 
+    //let mut cert_file = File::open("/users/dorlando/ons/websocket_rust/signallite_cert.pem").unwrap();
     let mut cert_file = File::open("/users/dorlando/ons/certs/cert1.pem").unwrap();
     let mut cert = vec![];
     cert_file.read_to_end(&mut cert).unwrap();
-
     let mut builder = NativeTlsConnector::builder();
     builder.danger_accept_invalid_certs(true); // Disable cert validation (not for production!)
     builder.add_root_certificate(tokio_native_tls::native_tls::Certificate::from_pem(&cert).unwrap());
     let tls_connector = TlsConnector::from(builder.build().unwrap());
 
     let domain = url.host_str().expect("No host found in URL");
+    let connection_start = Instant::now();
+
     let tcp_stream = TcpStream::connect(format!("{}:{}", domain, url.port_or_known_default().unwrap()))
         .await
         .expect("Failed to connect to TCP");
@@ -81,11 +84,20 @@ async fn main() {
         .await
         .expect("Failed to establish WebSocket connection");
 
+    let connection_end = Instant::now();
+
+    // Calculate connection establishment time
+    let connection_duration = connection_end.duration_since(connection_start);
+    println!(
+        "Connection established in {} ms",
+        connection_duration.as_millis()
+    );
+
     println!("Connected to the server");
 
     let (mut write, mut read) = ws_stream.split();
     let mut rtt_samples = Vec::new();
-    let message_limit = 100000;
+    let message_limit = 10000;
 
     for i in 0..message_limit {
         let timestamp = SystemTime::now().duration_since(SystemTime::UNIX_EPOCH).unwrap().as_micros();

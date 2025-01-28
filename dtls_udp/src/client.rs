@@ -49,9 +49,10 @@ fn save_summary(rtt_samples: &[u128]) -> Result<(), Box<dyn std::error::Error>> 
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     // Load root CA certificate
-    let root_ca_data = fs::read("/users/dorlando/ons/certs/fullchain1.pem")?;
+    //let root_ca_data = fs::read("/users/dorlando/ons/certs/cert1.pem")?;
+    let root_ca_data = fs::read("/users/dorlando/ons/dtls_udp/signallite.io.pem")?;
     let root_ca = Certificate::from_pem(&root_ca_data)?;
-
+    let connection_start = Instant::now();
     // Set up the DTLS connector
     let connector = DtlsConnector::builder()
         .add_root_certificate(root_ca)
@@ -61,9 +62,10 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 
     // Set up client socket
     let socket = UdpSocket::bind("0.0.0.0:0")?;
-    socket.connect("149.43.80.144:4444")?;
+    //socket.connect("149.43.80.144:4444")?;
+    socket.connect("204.48.31.168:4444")?;
     socket.set_read_timeout(Some(Duration::from_secs(2)))?;
-    println!("Connected to server at 149.43.80.144:4444");
+    println!("Connected to server at port 4444");
 
     let client_channel = UdpChannel {
         socket: socket.try_clone().expect("Failed to clone socket"),
@@ -71,11 +73,14 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     };
 
     let mut dtls_client = connector
-        .connect("spock.cs.colgate.edu", client_channel)
+        .connect("signallite.io", client_channel)
         .expect("Failed to connect DTLS");
 
+    let connection_end = Instant::now();
+    let connection_duration = connection_end.duration_since(connection_start);
+    println!("Connection established in {} ms", connection_duration.as_millis());
     // Number of messages to send
-    const NUM_MESSAGES: usize = 100000;
+    const NUM_MESSAGES: usize = 10000;
     let mut rtt_samples = Vec::new();
 
     for i in 0..NUM_MESSAGES {

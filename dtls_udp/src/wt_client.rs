@@ -18,6 +18,7 @@ fn save_measurements(rtt_samples: &[u128]) -> Result<(), Box<dyn std::error::Err
 
 #[tokio::main]
 async fn main() -> Result<()> {
+    let connection_start = Instant::now();
     let config = ClientConfig::builder()
         .with_bind_default()
         .with_no_cert_validation()
@@ -25,11 +26,13 @@ async fn main() -> Result<()> {
 
     let connection = Endpoint::client(config)
         .unwrap()
-        .connect("https://spock.cs.colgate.edu:4433")
+        .connect("https://149.43.80.144:4433")
         .await
         .unwrap();
-
-    const NUM_MESSAGES: usize = 100000;
+    let connection_end = Instant::now();
+    let connection_duration = connection_end.duration_since(connection_start);
+    println!("Connection established in {} ms", connection_duration.as_millis());
+    const NUM_MESSAGES: usize = 10000;
     let mut rtt_samples = Vec::new();
 
     for i in 0..NUM_MESSAGES {
