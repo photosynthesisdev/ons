@@ -13,7 +13,7 @@ use rustls;
 #[derive(Parser, Debug)]
 #[command(author, version, about, long_about = None)]
 struct Args {
-    #[arg(short, long, default_value = "https://spock.cs.colgate.edu:4433")]
+    #[arg(short, long, default_value = "https://signallite.io:4433")]
     url: Url,
 
     /// Accept the certificates at this path, encoded as PEM.

@@ -119,7 +119,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let mut rtt_samples = Vec::with_capacity(100000);
     let mut send_to_network_times = Vec::with_capacity(100000);
     let mut channel_times = Vec::with_capacity(100000);
-    let message_limit = 100000;
+    let message_limit = 10000;
     
     let message = Bytes::from_static(&[1u8; 8]);
 
