@@ -24,10 +24,12 @@ type WsStream = WebSocketStream<TlsStream<TcpStream>>;
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let addr = "0.0.0.0:4043".to_string();
-    let mut cert_file = File::open("/users/dorlando/ons/certs/cert1.pem")?;
+    //let mut cert_file = File::open("/users/dorlando/ons/certs/cert1.pem")?;
+    let mut cert_file = File::open("/etc/haproxy/certs/signallite_cert.pem");
     let mut cert = vec![];
     cert_file.read_to_end(&mut cert)?;
-    let mut key_file = File::open("/users/dorlando/ons/certs/privkey1.pem")?;
+    //let mut key_file = File::open("/users/dorlando/ons/certs/privkey1.pem")?;
+    let mut key_file = File::open("/etc/haproxy/certs/signallite_key.pem")?;
     let mut key = vec![];
     key_file.read_to_end(&mut key)?;
     
