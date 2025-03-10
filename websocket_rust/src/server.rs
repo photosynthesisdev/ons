@@ -83,11 +83,47 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 }
 
 async fn handle_client(ws_stream: WsStream, peer: SocketAddr) {
-    // Create a channel for message processing
-    let (tx, mut rx) = mpsc::channel::<String>(100);
-    
     // Split the WebSocket stream
     let (mut ws_sender, mut ws_receiver) = ws_stream.split();
+    
+    // Wait for the first message before starting the tick loop
+    println!("Waiting for first message from client {}", peer);
+    let first_message = match ws_receiver.next().await {
+        Some(Ok(message)) => {
+            if let Ok(text) = message.into_text() {
+                // Try to parse the message as JSON to get the tick number for logging
+                if let Ok(parsed) = from_str::<Value>(&text) {
+                    if let Some(tick) = parsed.get("tick").and_then(|t| t.as_u64()) {
+                        println!("Received first message (tick {}) from {}, starting tick loop", tick, peer);
+                    }
+                } else {
+                    println!("Received first message from {}, starting tick loop", peer);
+                }
+                
+                // Echo the first message back immediately
+                if let Err(e) = ws_sender.send(Message::Text(text.clone())).await {
+                    eprintln!("Error sending first message to {}: {}", peer, e);
+                    return;
+                }
+                
+                Some(text)
+            } else {
+                eprintln!("First message from {} is not text", peer);
+                return;
+            }
+        },
+        Some(Err(e)) => {
+            eprintln!("Error receiving first message from {}: {}", peer, e);
+            return;
+        },
+        None => {
+            println!("Client {} disconnected before sending first message", peer);
+            return;
+        }
+    };
+    
+    // After receiving the first message, set up the message processing channel
+    let (tx, mut rx) = mpsc::channel::<String>(100);
     
     // Shared message queue for tick processing
     let message_queue = Arc::new(Mutex::new(Vec::<String>::new()));
