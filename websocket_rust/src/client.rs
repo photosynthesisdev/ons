@@ -4,12 +4,18 @@ use tokio_tungstenite::{client_async, tungstenite::protocol::Message};
 use tokio_native_tls::native_tls::{TlsConnector as NativeTlsConnector};
 use tokio_native_tls::TlsConnector;
 use url::Url;
-use std::time::{Instant, SystemTime};
-use tokio::task;
+use std::time::{Instant, Duration};
+use std::collections::HashMap;
+use tokio::time::interval;
 use std::fs::File;
 use std::io::{Write, Read};
 use csv::Writer;
-use serde_json::json;
+use serde_json::{json, Value};
+
+// Define tick rate constants
+const TICK_RATE: u32 = 120; // ticks per second
+const TICK_DURATION_MICROS: u64 = 1_000_000 / TICK_RATE as u64;
+const SIMULATION_DURATION_SECS: u64 = 180; // 3 minutes
 
 fn save_measurements(rtt_samples: &[u128]) -> Result<(), Box<dyn std::error::Error>> {
     // Save raw measurements in CSV format
@@ -55,7 +61,7 @@ fn save_summary(rtt_samples: &[u128]) -> Result<(), Box<dyn std::error::Error>> 
 }
 
 #[tokio::main]
-async fn main() {
+async fn main() -> Result<(), Box<dyn std::error::Error>> {
     //let url = Url::parse("wss://spock.cs.colgate.edu:4043").unwrap();
     let url = Url::parse("wss://signallite.io:4043").unwrap();
     println!("Connecting to {}", url);
@@ -95,45 +101,89 @@ async fn main() {
 
     println!("Connected to the server");
 
+    // Create a tick interval
+    let tick_duration = Duration::from_micros(TICK_DURATION_MICROS);
+    println!("Tick duration: {} µs", TICK_DURATION_MICROS);
+    let mut tick_interval = interval(tick_duration);
+
+    // Split WebSocket stream for concurrent reading and writing
     let (mut write, mut read) = ws_stream.split();
-    let mut rtt_samples = Vec::new();
-    let message_limit = 10000;
+    
+    // Setup simulation state tracking
+    let simulation_start = Instant::now();
+    let simulation_end = simulation_start + Duration::from_secs(SIMULATION_DURATION_SECS);
+    let mut tick_count: u64 = 0;
+    let mut sent_timestamps: HashMap<u64, Instant> = HashMap::new();
+    let mut rtt_samples: Vec<u128> = Vec::new();
 
-    for i in 0..message_limit {
-        let timestamp = SystemTime::now().duration_since(SystemTime::UNIX_EPOCH).unwrap().as_micros();
-        let message = format!("Message {}|{}", i, timestamp);
-
-        let start_time = Instant::now();
-        if write.send(Message::Text(message)).await.is_err() {
-            println!("Error sending message");
-            break;
-        }
-
-        if let Some(Ok(response)) = read.next().await {
-            if response.is_text() {
-                let end_time = Instant::now();
-                let rtt = end_time.duration_since(start_time).as_micros();
-                rtt_samples.push(rtt);
+    // Start the simulation tick loop
+    println!("Starting tick-based simulation for {} seconds", SIMULATION_DURATION_SECS);
+    
+    while Instant::now() < simulation_end {
+        // Wait for the next tick interval
+        tick_interval.tick().await;
+        
+        // Prepare the tick message with the tick number and a precise timestamp
+        let timestamp = simulation_start.elapsed().as_micros();
+        let message = format!(r#"{{"tick":{},"timestamp":{}}}"#, tick_count, timestamp);
+        sent_timestamps.insert(tick_count, Instant::now());
+        
+        // Send the tick message
+        match write.send(Message::Text(message)).await {
+            Ok(_) => println!("Sent tick {} at {} µs", tick_count, timestamp),
+            Err(e) => {
+                eprintln!("Error sending tick message: {:?}", e);
+                break;
             }
         }
-
-        if i % 500 == 0 {
-            task::yield_now().await; // Prevents task starvation
+        tick_count += 1;
+        
+        // Process any incoming responses (using a timeout to avoid blocking)
+        while let Ok(Some(message)) = tokio::time::timeout(
+            Duration::from_millis(1), 
+            read.next()
+        ).await {
+            match message {
+                Ok(msg) if msg.is_text() => {
+                    let received_str = msg.into_text()?;
+                    // Parse the JSON message to extract the tick number
+                    if let Ok(parsed) = serde_json::from_str::<Value>(&received_str) {
+                        if let Some(tick_val) = parsed.get("tick") {
+                            if let Some(tick) = tick_val.as_u64() {
+                                if let Some(sent_time) = sent_timestamps.remove(&tick) {
+                                    let rtt = Instant::now().duration_since(sent_time);
+                                    rtt_samples.push(rtt.as_micros());
+                                    println!("Tick {}: Received echo, RTT: {} µs", tick, rtt.as_micros());
+                                }
+                            }
+                        }
+                    }
+                },
+                Ok(_) => continue, // Ignore non-text messages
+                Err(e) => {
+                    eprintln!("Error reading from WebSocket: {:?}", e);
+                    break;
+                }
+            }
         }
     }
 
+    println!("Simulation complete after {} seconds", SIMULATION_DURATION_SECS);
+
+    // After simulation, save and summarize the RTT data
     if !rtt_samples.is_empty() {
         println!("Saving RTT data...");
-        save_measurements(&rtt_samples).expect("Failed to save measurements");
-        save_summary(&rtt_samples).expect("Failed to save summary");
+        save_measurements(&rtt_samples)?;
+        save_summary(&rtt_samples)?;
 
         let total_rtt: u128 = rtt_samples.iter().sum();
         let average_rtt = total_rtt as f64 / rtt_samples.len() as f64;
-        println!("Total messages sent: {}", rtt_samples.len());
-        println!("Average RTT: {} µs", average_rtt);
+        println!("Total ticks sent (with RTT measured): {}", rtt_samples.len());
+        println!("Average RTT: {:.2} µs", average_rtt);
     } else {
         println!("No RTT data collected.");
     }
 
     println!("Client disconnected.");
+    Ok(())
 }
