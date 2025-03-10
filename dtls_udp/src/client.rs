@@ -45,7 +45,8 @@ fn save_summary(rtt_samples: &[u128]) -> Result<(), Box<dyn std::error::Error>> 
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     // Load the root CA certificate.
-    let root_ca_data = fs::read("/users/dorlando/ons/certs/fullchain1.pem")?;
+    let root_ca_data = fs::read("/users/dorlando/ons/dtls_udp/signallite.io.pem")?;
+    //let root_ca_data = fs::read("/users/dorlando/ons/certs/fullchain1.pem")?;
     let root_ca = match Certificate::from_pem(&root_ca_data) {
         Ok(cert) => cert,
         Err(e) => {
@@ -71,7 +72,8 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 
     // Set up the client socket in blocking mode for the handshake
     let socket = UdpSocket::bind("0.0.0.0:0")?;
-    socket.connect("149.43.80.144:4444")?;
+    socket.connect("204.48.31.168:4444")?;
+    //socket.connect("149.43.80.144:4444")?;
     socket.set_read_timeout(Some(Duration::from_secs(2)))?;
     println!("Connecting to server at port 4444");
 
@@ -81,7 +83,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     };
 
     // Perform DTLS handshake with blocking socket
-    let mut dtls_client = match connector.connect("spock.cs.colgate.edu", client_channel) {
+    let mut dtls_client = match connector.connect("signallite.io", client_channel) {
         Ok(client) => client,
         Err(e) => {
             eprintln!("DTLS connection error: {:?}", e);

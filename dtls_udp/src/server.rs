@@ -10,7 +10,7 @@ const TICK_DURATION: Duration = Duration::from_micros(1_000_000u64 / TICK_RATE a
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     // Load PKCS#12 identity from the generated `identity.p12` file
-    let pkcs12_data = fs::read("identity.p12")?;
+    let pkcs12_data = fs::read("identity_backup.p12")?;
     let identity = Identity::from_pkcs12(&pkcs12_data, "")?;
 
     // Create the DTLS acceptor
