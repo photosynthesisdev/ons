@@ -9,6 +9,7 @@ use csv::Writer;
 use std::io::Write;
 use web_transport_quinn;
 use rustls;
+use bytes::Bytes;
 
 #[derive(Parser, Debug)]
 #[command(author, version, about, long_about = None)]
@@ -22,9 +23,13 @@ struct Args {
 
     #[arg(long, default_value = "180")]
     simulation_duration_secs: u64,
+    
+    /// Whether to use datagrams instead of streams
+    #[arg(long)]
+    use_datagrams: bool,
 }
 
-fn save_measurements(rtt_samples: &[u128]) -> Result<(), Box<dyn std::error::Error>> {
+fn save_measurements(rtt_samples: &[u128], dropped_ticks: u64, total_ticks: u64) -> Result<(), Box<dyn std::error::Error>> {
     let mut writer = Writer::from_path("webtransport_measurements.csv")?;
     writer.write_record(&["rtt"])?;
     
@@ -32,6 +37,22 @@ fn save_measurements(rtt_samples: &[u128]) -> Result<(), Box<dyn std::error::Err
         writer.write_record(&[rtt.to_string()])?;
     }
     writer.flush()?;
+    
+    // Save dropped packet stats if using datagrams
+    if dropped_ticks > 0 {
+        let drop_rate = (dropped_ticks as f64 / total_ticks as f64) * 100.0;
+        log::info!("Packet drop rate: {:.2}% ({} dropped out of {})", drop_rate, dropped_ticks, total_ticks);
+        
+        // Write to a separate file for packet loss statistics
+        let mut file = fs::File::create("webtransport_packet_loss.json")?;
+        let packet_stats = json!({
+            "total_packets": total_ticks,
+            "dropped_packets": dropped_ticks,
+            "drop_rate_percent": drop_rate
+        });
+        file.write_all(serde_json::to_string_pretty(&packet_stats)?.as_bytes())?;
+    }
+    
     Ok(())
 }
 
@@ -100,78 +121,155 @@ async fn main() -> anyhow::Result<()> {
     let mut tick_count: u64 = 0;
     let mut sent_timestamps: HashMap<u64, Instant> = HashMap::new();
     let mut rtt_samples: Vec<u128> = Vec::new();
-
-    // Open a single bidirectional stream for all messages
-    let (mut send, mut recv) = session.open_bi().await?;
-    let mut buf = vec![0u8; 1024];
     
-    // Run the simulation tick loop
-    while Instant::now() < simulation_end {
-        let tick_start = Instant::now();
+    if args.use_datagrams {
+        // Using datagram extension
+        let max_datagram_size = session.max_datagram_size();
+        log::info!("Using WebTransport datagrams (max size: {} bytes)", max_datagram_size);
         
-        // Process any incoming echoed messages (non-blocking)
-        loop {
-            match tokio::time::timeout(Duration::from_millis(1), recv.read(&mut buf)).await {
-                Ok(Ok(Some(size))) => {
-                    if let Ok(received_str) = std::str::from_utf8(&buf[..size]) {
-                        if let Ok(parsed) = serde_json::from_str::<serde_json::Value>(received_str) {
-                            if let Some(tick_val) = parsed.get("tick") {
-                                if let Some(tick) = tick_val.as_u64() {
-                                    if let Some(sent_time) = sent_timestamps.remove(&tick) {
-                                        let rtt = Instant::now().duration_since(sent_time);
-                                        rtt_samples.push(rtt.as_micros());
-                                        log::info!("Tick {}: Received echo, RTT: {} µs", tick, rtt.as_micros());
+        // Run the simulation tick loop with datagrams
+        while Instant::now() < simulation_end {
+            let tick_start = Instant::now();
+            
+            // Process any incoming echoed datagram messages (non-blocking)
+            loop {
+                match tokio::time::timeout(Duration::from_millis(1), session.read_datagram()).await {
+                    Ok(Ok(datagram)) => {
+                        if let Ok(received_str) = std::str::from_utf8(&datagram) {
+                            if let Ok(parsed) = serde_json::from_str::<serde_json::Value>(received_str) {
+                                if let Some(tick_val) = parsed.get("tick") {
+                                    if let Some(tick) = tick_val.as_u64() {
+                                        if let Some(sent_time) = sent_timestamps.remove(&tick) {
+                                            let rtt = Instant::now().duration_since(sent_time);
+                                            rtt_samples.push(rtt.as_micros());
+                                            log::info!("Tick {}: Received datagram echo, RTT: {} µs", tick, rtt.as_micros());
+                                        }
                                     }
                                 }
                             }
                         }
-                    }
-                },
-                // Break on timeout or no more data
-                Ok(Ok(None)) => break,
-                Ok(Err(e)) => {
-                    log::error!("Error reading from stream: {:?}", e);
-                    break;
-                },
-                Err(_) => break, // Timeout occurred
+                    },
+                    // Break on timeout, error, or no more data
+                    Ok(Err(e)) => {
+                        log::debug!("No more datagrams or error: {:?}", e);
+                        break;
+                    },
+                    Err(_) => break, // Timeout occurred
+                }
+            }
+            
+            // Prepare the tick message with the tick number and precise timestamp
+            let timestamp = Instant::now().duration_since(simulation_start).as_micros();
+            let message = format!(r#"{{"tick":{},"timestamp":{}}}"#, tick_count, timestamp);
+            sent_timestamps.insert(tick_count, Instant::now());
+            
+            // Send the tick message as a datagram
+            match session.send_datagram(Bytes::from(message)) {
+                Ok(_) => log::info!("Sent tick {} datagram at {} µs", tick_count, timestamp),
+                Err(e) => {
+                    log::error!("Error sending datagram: {:?}", e);
+                    // Unlike streams, we continue even if a datagram send fails
+                }
+            }
+            tick_count += 1;
+            
+            // Sleep until the next tick boundary
+            let elapsed = tick_start.elapsed();
+            if elapsed < tick_duration {
+                sleep(tick_duration - elapsed).await;
             }
         }
         
-        // Prepare the tick message with the tick number and precise timestamp
-        let timestamp = Instant::now().duration_since(simulation_start).as_micros();
-        let message = format!(r#"{{"tick":{},"timestamp":{}}}"#, tick_count, timestamp);
-        sent_timestamps.insert(tick_count, Instant::now());
+        // Calculate and report dropped packets (ticks without responses)
+        let dropped_ticks = tick_count - rtt_samples.len() as u64;
         
-        // Send the tick message
-        match send.write_all(message.as_bytes()).await {
-            Ok(_) => log::info!("Sent tick {} at {} µs", tick_count, timestamp),
-            Err(e) => {
-                log::error!("Error sending tick message: {:?}", e);
-                break;
-            }
+        if !rtt_samples.is_empty() {
+            log::info!("Saving RTT data...");
+            save_measurements(&rtt_samples, dropped_ticks, tick_count).expect("Failed to save measurements");
+            save_summary(&rtt_samples).expect("Failed to save summary");
+
+            let average_rtt = rtt_samples.iter().sum::<u128>() as f64 / rtt_samples.len() as f64;
+            log::info!("Total ticks sent: {}, received responses: {}", tick_count, rtt_samples.len());
+            log::info!("Average RTT: {:.2} µs", average_rtt);
+        } else {
+            log::info!("No RTT data collected.");
         }
-        tick_count += 1;
-        
-        // Sleep until the next tick boundary
-        let elapsed = tick_start.elapsed();
-        if elapsed < tick_duration {
-            sleep(tick_duration - elapsed).await;
-        }
-    }
-
-    // Close the stream after all messages are sent
-    send.finish()?;
-
-    if !rtt_samples.is_empty() {
-        log::info!("Saving RTT data...");
-        save_measurements(&rtt_samples).expect("Failed to save measurements");
-        save_summary(&rtt_samples).expect("Failed to save summary");
-
-        let average_rtt = rtt_samples.iter().sum::<u128>() as f64 / rtt_samples.len() as f64;
-        log::info!("Total ticks sent (with RTT measured): {}", rtt_samples.len());
-        log::info!("Average RTT: {:.2} µs", average_rtt);
     } else {
-        log::info!("No RTT data collected.");
+        // Using bidirectional streams (original implementation)
+        log::info!("Using WebTransport bidirectional streams");
+        
+        // Open a single bidirectional stream for all messages
+        let (mut send, mut recv) = session.open_bi().await?;
+        let mut buf = vec![0u8; 1024];
+        
+        // Run the simulation tick loop
+        while Instant::now() < simulation_end {
+            let tick_start = Instant::now();
+            
+            // Process any incoming echoed messages (non-blocking)
+            loop {
+                match tokio::time::timeout(Duration::from_millis(1), recv.read(&mut buf)).await {
+                    Ok(Ok(Some(size))) => {
+                        if let Ok(received_str) = std::str::from_utf8(&buf[..size]) {
+                            if let Ok(parsed) = serde_json::from_str::<serde_json::Value>(received_str) {
+                                if let Some(tick_val) = parsed.get("tick") {
+                                    if let Some(tick) = tick_val.as_u64() {
+                                        if let Some(sent_time) = sent_timestamps.remove(&tick) {
+                                            let rtt = Instant::now().duration_since(sent_time);
+                                            rtt_samples.push(rtt.as_micros());
+                                            log::info!("Tick {}: Received echo, RTT: {} µs", tick, rtt.as_micros());
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    // Break on timeout or no more data
+                    Ok(Ok(None)) => break,
+                    Ok(Err(e)) => {
+                        log::error!("Error reading from stream: {:?}", e);
+                        break;
+                    },
+                    Err(_) => break, // Timeout occurred
+                }
+            }
+            
+            // Prepare the tick message with the tick number and precise timestamp
+            let timestamp = Instant::now().duration_since(simulation_start).as_micros();
+            let message = format!(r#"{{"tick":{},"timestamp":{}}}"#, tick_count, timestamp);
+            sent_timestamps.insert(tick_count, Instant::now());
+            
+            // Send the tick message
+            match send.write_all(message.as_bytes()).await {
+                Ok(_) => log::info!("Sent tick {} at {} µs", tick_count, timestamp),
+                Err(e) => {
+                    log::error!("Error sending tick message: {:?}", e);
+                    break;
+                }
+            }
+            tick_count += 1;
+            
+            // Sleep until the next tick boundary
+            let elapsed = tick_start.elapsed();
+            if elapsed < tick_duration {
+                sleep(tick_duration - elapsed).await;
+            }
+        }
+
+        // Close the stream after all messages are sent
+        send.finish()?;
+
+        if !rtt_samples.is_empty() {
+            log::info!("Saving RTT data...");
+            save_measurements(&rtt_samples, 0, tick_count).expect("Failed to save measurements");
+            save_summary(&rtt_samples).expect("Failed to save summary");
+
+            let average_rtt = rtt_samples.iter().sum::<u128>() as f64 / rtt_samples.len() as f64;
+            log::info!("Total ticks sent (with RTT measured): {}", rtt_samples.len());
+            log::info!("Average RTT: {:.2} µs", average_rtt);
+        } else {
+            log::info!("No RTT data collected.");
+        }
     }
 
     log::info!("Client simulation complete after {} seconds.", args.simulation_duration_secs);
