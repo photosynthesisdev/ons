@@ -40,6 +40,10 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
         Some(Duration::from_secs(2))   // keep_alive_interval
     );
     
+    // Note: We would use setters for fixed ports if they were available
+    // For now, we'll use what's available in WebRTC v0.11.0
+    // The XDP filter should look for all UDP traffic on ports used by WebRTC
+    
     let registry = Registry::new();
     let registry = register_default_interceptors(registry, &mut m)?;
 
@@ -150,6 +154,18 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
                 monitor_tick_flag.store(false, Ordering::SeqCst);
                 println!("Connection failed. Will wait for new message to restart tick simulation.");
             }
+
+            // If connected, log ICE transport information for XDP filtering
+            if state == webrtc::peer_connection::peer_connection_state::RTCPeerConnectionState::Connected {
+                // Log local candidates for XDP filtering
+                let stats = pc_monitor.get_stats().await;
+                println!("WebRTC LOCAL CONNECTION INFO FOR XDP FILTERING:");
+                println!("Stats: {:?}", stats);
+                
+                // When you see this output, look for port numbers in the stats
+                // that you can target with your XDP filter
+            }
+            
             sleep(Duration::from_millis(1000)).await;
         }
     });
