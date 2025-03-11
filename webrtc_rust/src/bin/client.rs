@@ -21,8 +21,8 @@ use csv::Writer;
 use std::collections::HashMap;
 
 // Constants for tick simulation
-const CLIENT_TICK_RATE: u64 = 60; // Reduced to 60 Hz to prevent connection overload
-const SIMULATION_DURATION_SECS: u64 = 180; // 3 minutes
+const CLIENT_TICK_RATE: u64 = 120; // Reduced to 60 Hz to prevent connection overload
+const SIMULATION_DURATION_SECS: u64 = 60; // 3 minutes
 const BUFFER_SIZE: usize = 10000; // Buffer size for data channels
 
 fn save_measurements(

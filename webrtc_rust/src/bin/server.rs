@@ -21,7 +21,7 @@ use std::collections::VecDeque;
 use std::sync::atomic::{AtomicBool, Ordering};
 
 // Constants for tick simulation
-const SERVER_TICK_RATE: u64 = 60; // Ticks per second - reduced to prevent connection overload
+const SERVER_TICK_RATE: u64 = 120; // Ticks per second - reduced to prevent connection overload
 const BUFFER_SIZE: usize = 10000; // Buffer size for data channels
 
 #[tokio::main(flavor = "current_thread")]
