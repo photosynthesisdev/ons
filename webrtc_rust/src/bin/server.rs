@@ -32,9 +32,13 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let mut s = SettingEngine::default();
     s.set_lite(true);
     s.disable_media_engine_copy(true);
-    s.set_answering_dtls_role(DTLSRole::Server);
-    s.set_ice_timeout_duration(Duration::from_secs(10)); // Increase ICE timeout
-    s.set_disconnected_timeout(Duration::from_secs(10)); // Increase disconnected timeout
+    let _ = s.set_answering_dtls_role(DTLSRole::Server);
+    // Set ICE timeouts for better reliability
+    s.set_ice_timeouts(
+        Some(Duration::from_secs(10)), // disconnected_timeout
+        Some(Duration::from_secs(20)), // failed_timeout
+        Some(Duration::from_secs(2))   // keep_alive_interval
+    );
     
     let registry = Registry::new();
     let registry = register_default_interceptors(registry, &mut m)?;
@@ -67,7 +71,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 
     let dc = Arc::clone(&data_channel);
     dc.on_open(Box::new(move || {
-        println\!("Data channel opened");
+        println!("Data channel opened");
         Box::pin(async {})
     }));
 
@@ -82,7 +86,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     }));
 
     peer_connection.on_ice_connection_state_change(Box::new(|s| {
-        println\!("ICE Connection State has changed: {}", s);
+        println!("ICE Connection State has changed: {}", s);
         Box::pin(async {})
     }));
 
@@ -97,15 +101,15 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
         .await
         .ok_or(Error::new("Failed to get local description".to_string()))?;
     let sdp = serde_json::to_string(&local_desc)?;
-    println\!("Paste this SDP offer to the client:\n{}", sdp);
+    println!("Paste this SDP offer to the client:\n{}", sdp);
 
-    println\!("Enter the SDP answer from the client:");
+    println!("Enter the SDP answer from the client:");
     let mut remote_sdp = String::new();
     stdin().read_line(&mut remote_sdp)?;
     let remote_desc: RTCSessionDescription = serde_json::from_str(&remote_sdp.trim())?;
     peer_connection.set_remote_description(remote_desc).await?;
 
-    println\!("Server running, waiting for first message to start tick simulation...");
+    println!("Server running, waiting for first message to start tick simulation...");
 
     // Create queue for storing incoming messages
     let msg_queue = Arc::clone(&message_queue);
@@ -118,9 +122,9 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
             queue.push_back(data);
             
             // Set start_ticking to true after receiving first message
-            if \!tick_flag.load(Ordering::SeqCst) {
+            if !tick_flag.load(Ordering::SeqCst) {
                 tick_flag.store(true, Ordering::SeqCst);
-                println\!("First message received, starting tick simulation\!");
+                println!("First message received, starting tick simulation!");
             }
         }
     });
@@ -134,18 +138,17 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let monitor_tick_flag = Arc::clone(&start_ticking);
     tokio::spawn(async move {
         loop {
-            if let Some(state) = pc_monitor.connection_state().await {
-                if state == webrtc::peer_connection::peer_connection_state::RTCPeerConnectionState::Failed ||
-                   state == webrtc::peer_connection::peer_connection_state::RTCPeerConnectionState::Disconnected {
-                    println\!("Connection state changed to: {}", state);
-                    println\!("NOTE: WebRTC connection may have failed/disconnected. Will continue when reconnected.");
-                }
-                
-                // Reset start_ticking if connection is closed/failed
-                if state == webrtc::peer_connection::peer_connection_state::RTCPeerConnectionState::Failed {
-                    monitor_tick_flag.store(false, Ordering::SeqCst);
-                    println\!("Connection failed. Will wait for new message to restart tick simulation.");
-                }
+            let state = pc_monitor.connection_state();
+            if state == webrtc::peer_connection::peer_connection_state::RTCPeerConnectionState::Failed ||
+               state == webrtc::peer_connection::peer_connection_state::RTCPeerConnectionState::Disconnected {
+                println!("Connection state changed to: {}", state);
+                println!("NOTE: WebRTC connection may have failed/disconnected. Will continue when reconnected.");
+            }
+            
+            // Reset start_ticking if connection is closed/failed
+            if state == webrtc::peer_connection::peer_connection_state::RTCPeerConnectionState::Failed {
+                monitor_tick_flag.store(false, Ordering::SeqCst);
+                println!("Connection failed. Will wait for new message to restart tick simulation.");
             }
             sleep(Duration::from_millis(1000)).await;
         }
@@ -155,11 +158,11 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let tick_dc = Arc::clone(&data_channel);
     
     // Wait for first message before starting tick simulation
-    while \!start_ticking.load(Ordering::SeqCst) {
+    while !start_ticking.load(Ordering::SeqCst) {
         sleep(Duration::from_millis(10)).await;
     }
     
-    println\!("Tick simulation started at {} ticks/sec", SERVER_TICK_RATE);
+    println!("Tick simulation started at {} ticks/sec", SERVER_TICK_RATE);
     
     let mut consecutive_empty_ticks = 0;
     
@@ -168,18 +171,18 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
         let tick_start = Instant::now();
         
         // Check if we should still be ticking
-        if \!start_ticking.load(Ordering::SeqCst) {
+        if !start_ticking.load(Ordering::SeqCst) {
             // Wait for first message again
-            println\!("Waiting for client to reconnect and send first message...");
-            while \!start_ticking.load(Ordering::SeqCst) {
+            println!("Waiting for client to reconnect and send first message...");
+            while !start_ticking.load(Ordering::SeqCst) {
                 sleep(Duration::from_millis(100)).await;
             }
-            println\!("Client reconnected\! Resuming tick simulation.");
+            println!("Client reconnected! Resuming tick simulation.");
             consecutive_empty_ticks = 0;
         }
         
         // Process all queued messages
-        let mut messages_to_process = {
+        let messages_to_process = {
             let mut queue = message_queue.lock().await;
             let msgs = queue.drain(..).collect::<Vec<_>>();
             msgs
@@ -191,7 +194,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
             
             // If we haven't received anything for a while, log it (but keep going)
             if consecutive_empty_ticks % 100 == 0 {
-                println\!("No messages received for {} consecutive ticks", consecutive_empty_ticks);
+                println!("No messages received for {} consecutive ticks", consecutive_empty_ticks);
             }
         } else {
             consecutive_empty_ticks = 0;
@@ -202,10 +205,10 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
             if let Ok(value) = serde_json::from_slice::<Value>(&data) {
                 if let (Some(tick), Some(timestamp)) = (value["tick"].as_u64(), value["timestamp"].as_u64()) {
                     // Print received tick
-                    println\!("Server received tick {} with timestamp {}", tick, timestamp);
+                    println!("Server received tick {} with timestamp {}", tick, timestamp);
                     
                     // Echo the message back with the same tick number and timestamp
-                    let response = json\!({
+                    let response = json!({
                         "tick": tick,
                         "timestamp": timestamp
                     }).to_string();
@@ -215,12 +218,12 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
                     // Check data channel state before sending
                     if data_channel.ready_state() == webrtc::data_channel::data_channel_state::RTCDataChannelState::Open {
                         if let Err(e) = tick_dc.send(&response_bytes).await {
-                            println\!("Error sending response for tick {}: {}", tick, e);
+                            println!("Error sending response for tick {}: {}", tick, e);
                         } else {
-                            println\!("Server sent response for tick {}", tick);
+                            println!("Server sent response for tick {}", tick);
                         }
                     } else {
-                        println\!("Data channel not open, state: {}", data_channel.ready_state());
+                        println!("Data channel not open, state: {}", data_channel.ready_state());
                     }
                 }
             }
@@ -232,7 +235,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
             sleep(tick_duration - elapsed).await;
         } else {
             // If processing took longer than the tick duration, log a warning
-            println\!("Warning: Tick processing took longer than tick duration: {:?}", elapsed);
+            println!("Warning: Tick processing took longer than tick duration: {:?}", elapsed);
         }
         
         // Yield periodically to prevent blocking

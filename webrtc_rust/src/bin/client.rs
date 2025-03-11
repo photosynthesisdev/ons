@@ -16,8 +16,7 @@ use webrtc::api::setting_engine::SettingEngine;
 use bytes::Bytes;
 use webrtc::dtls_transport::dtls_role::DTLSRole;
 use serde_json::{json, Value};
-use std::fs::File;
-use std::io::Write;
+// Remove unused import
 use csv::Writer;
 use std::collections::HashMap;
 
@@ -56,9 +55,13 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let mut s = SettingEngine::default();
     s.set_lite(true);
     s.disable_media_engine_copy(true);
-    s.set_answering_dtls_role(DTLSRole::Client);
-    s.set_ice_timeout_duration(Duration::from_secs(10)); // Increase ICE timeout
-    s.set_disconnected_timeout(Duration::from_secs(10)); // Increase disconnected timeout
+    let _ = s.set_answering_dtls_role(DTLSRole::Client);
+    // Set ICE timeouts for better reliability
+    s.set_ice_timeouts(
+        Some(Duration::from_secs(10)), // disconnected_timeout
+        Some(Duration::from_secs(20)), // failed_timeout
+        Some(Duration::from_secs(2))   // keep_alive_interval
+    );
     
     let registry = Registry::new();
     let registry = register_default_interceptors(registry, &mut m)?;
@@ -145,12 +148,11 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let pc_monitor = Arc::clone(&peer_connection);
     tokio::spawn(async move {
         loop {
-            if let Some(state) = pc_monitor.connection_state().await {
-                if state == webrtc::peer_connection::peer_connection_state::RTCPeerConnectionState::Failed ||
-                   state == webrtc::peer_connection::peer_connection_state::RTCPeerConnectionState::Disconnected {
-                    println!("Connection state changed to: {}", state);
-                    println!("NOTE: WebRTC connection may have failed/disconnected. Data will resume when reconnected.");
-                }
+            let state = pc_monitor.connection_state();
+            if state == webrtc::peer_connection::peer_connection_state::RTCPeerConnectionState::Failed ||
+               state == webrtc::peer_connection::peer_connection_state::RTCPeerConnectionState::Disconnected {
+                println!("Connection state changed to: {}", state);
+                println!("NOTE: WebRTC connection may have failed/disconnected. Data will resume when reconnected.");
             }
             sleep(Duration::from_millis(1000)).await;
         }
