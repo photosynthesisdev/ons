@@ -145,23 +145,32 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
         // Process incoming messages
         while let Ok(data) = rx.try_recv() {
             if let Ok(value) = serde_json::from_slice::<Value>(&data) {
-                if let (Some(tick), Some(timestamp)) = (value["tick"].as_u64(), value["timestamp"].as_u64()) {
+                if let (Some(tick), Some(_timestamp)) = (value["tick"].as_u64(), value["timestamp"].as_u64()) {
                     if let Some(&sent_time) = sent_ticks.get(&tick) {
-                        let now = Instant::now().elapsed().as_micros() as u128;
+                        // Get current time in microseconds since program start
+                        let now = std::time::SystemTime::now()
+                            .duration_since(std::time::UNIX_EPOCH)
+                            .unwrap()
+                            .as_micros();
+                        
                         let rtt = now - sent_time;
                         rtt_samples.push(rtt);
                         recorded_ticks.push(tick);
                         
-                        if rtt_samples.len() % 100 == 0 {
-                            println!("Received tick {}, RTT: {} μs", tick, rtt);
-                        }
+                        // Print RTT for every tick
+                        println!("Received tick {}, RTT: {} μs", tick, rtt);
                     }
                 }
             }
         }
         
         // Send current tick
-        let now = Instant::now().elapsed().as_micros() as u128;
+        // Use system time for consistent timestamp handling
+        let now = std::time::SystemTime::now()
+            .duration_since(std::time::UNIX_EPOCH)
+            .unwrap()
+            .as_micros();
+            
         let message = json!({
             "tick": current_tick,
             "timestamp": now

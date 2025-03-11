@@ -21,7 +21,7 @@ use std::collections::VecDeque;
 use std::sync::atomic::{AtomicBool, Ordering};
 
 // Constants for tick simulation
-const SERVER_TICK_RATE: u64 = 30; // 30 Hz
+const SERVER_TICK_RATE: u64 = 120; // 30 Hz
 
 #[tokio::main(flavor = "current_thread")]
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
@@ -148,9 +148,13 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
         };
         
         // Process each message
+        // Process each message
         for data in messages_to_process {
             if let Ok(value) = serde_json::from_slice::<Value>(&data) {
                 if let (Some(tick), Some(timestamp)) = (value["tick"].as_u64(), value["timestamp"].as_u64()) {
+                    // Print received tick
+                    println!("Server received tick {} with timestamp {}", tick, timestamp);
+                    
                     // Echo the message back with the same tick number and timestamp
                     let response = json!({
                         "tick": tick,
@@ -160,6 +164,8 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
                     let response_bytes = Bytes::from(response.into_bytes());
                     if let Err(e) = tick_dc.send(&response_bytes).await {
                         println!("Error sending response for tick {}: {}", tick, e);
+                    } else {
+                        println!("Server sent response for tick {}", tick);
                     }
                 }
             }
