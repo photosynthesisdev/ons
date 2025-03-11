@@ -22,8 +22,9 @@ use csv::Writer;
 use std::collections::HashMap;
 
 // Constants for tick simulation
-const CLIENT_TICK_RATE: u64 = 120; // 120 Hz
+const CLIENT_TICK_RATE: u64 = 60; // Reduced to 60 Hz to prevent connection overload
 const SIMULATION_DURATION_SECS: u64 = 180; // 3 minutes
+const BUFFER_SIZE: usize = 10000; // Buffer size for data channels
 
 fn save_measurements(
     rtt_samples: &[u128],
@@ -56,6 +57,8 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     s.set_lite(true);
     s.disable_media_engine_copy(true);
     s.set_answering_dtls_role(DTLSRole::Client);
+    s.set_ice_timeout_duration(Duration::from_secs(10)); // Increase ICE timeout
+    s.set_disconnected_timeout(Duration::from_secs(10)); // Increase disconnected timeout
     
     let registry = Registry::new();
     let registry = register_default_interceptors(registry, &mut m)?;
@@ -110,7 +113,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let dc_option = data_channel_mutex.lock().await;
     let dc = dc_option.as_ref().unwrap().clone();
 
-    let (tx, mut rx) = mpsc::channel::<Bytes>(100000);
+    let (tx, mut rx) = mpsc::channel::<Bytes>(BUFFER_SIZE);
 
     let tx_clone = tx.clone();
     dc.on_message(Box::new(move |msg: DataChannelMessage| {
@@ -137,6 +140,21 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     
     println!("Starting tick-based simulation at {} ticks/sec for {} seconds...", 
         CLIENT_TICK_RATE, SIMULATION_DURATION_SECS);
+
+    // Monitor the connection state
+    let pc_monitor = Arc::clone(&peer_connection);
+    tokio::spawn(async move {
+        loop {
+            if let Some(state) = pc_monitor.connection_state().await {
+                if state == webrtc::peer_connection::peer_connection_state::RTCPeerConnectionState::Failed ||
+                   state == webrtc::peer_connection::peer_connection_state::RTCPeerConnectionState::Disconnected {
+                    println!("Connection state changed to: {}", state);
+                    println!("NOTE: WebRTC connection may have failed/disconnected. Data will resume when reconnected.");
+                }
+            }
+            sleep(Duration::from_millis(1000)).await;
+        }
+    });
 
     // Simulation loop
     while Instant::now() < simulation_end_time {
@@ -177,18 +195,28 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
         }).to_string();
         
         let message_bytes = Bytes::from(message.into_bytes());
-        if let Err(e) = dc.send(&message_bytes).await {
-            println!("Error sending tick {}: {}", current_tick, e);
+        
+        // Check data channel state before sending
+        if dc.ready_state() == webrtc::data_channel::data_channel_state::RTCDataChannelState::Open {
+            if let Err(e) = dc.send(&message_bytes).await {
+                println!("Error sending tick {}: {}", current_tick, e);
+            } else {
+                // Store sent tick time
+                sent_ticks.insert(current_tick, now);
+            }
         } else {
-            // Store sent tick time
-            sent_ticks.insert(current_tick, now);
+            // Don't increment tick counter when connection is down
+            println!("Data channel not open, state: {}", dc.ready_state());
+            // Give a bit more time for reconnection
+            sleep(Duration::from_millis(100)).await;
+            continue;
         }
         
         // Increment tick counter
         current_tick += 1;
         
-        // Yield every 100 ticks to prevent blocking
-        if current_tick % 100 == 0 {
+        // Yield more frequently to prevent network congestion
+        if current_tick % 50 == 0 {
             tokio::task::yield_now().await;
         }
         
