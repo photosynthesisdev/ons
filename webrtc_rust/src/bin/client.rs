@@ -7,35 +7,39 @@ use webrtc::peer_connection::configuration::RTCConfiguration;
 use webrtc::peer_connection::sdp::session_description::RTCSessionDescription;
 use webrtc::Error;
 use std::io::stdin;
-use std::time::Instant;
+use std::time::{Instant, Duration};
 use tokio::sync::{Mutex, Notify, mpsc};
+use tokio::time::sleep;
 use webrtc::data_channel::data_channel_message::DataChannelMessage;
 use webrtc::data_channel::RTCDataChannel;
 use webrtc::api::setting_engine::SettingEngine;
 use bytes::Bytes;
 use webrtc::dtls_transport::dtls_role::DTLSRole;
-use serde_json::json;
+use serde_json::{json, Value};
 use std::fs::File;
 use std::io::Write;
 use csv::Writer;
+use std::collections::HashMap;
+
+// Constants for tick simulation
+const CLIENT_TICK_RATE: u64 = 120; // 120 Hz
+const SIMULATION_DURATION_SECS: u64 = 180; // 3 minutes
 
 fn save_measurements(
     rtt_samples: &[u128],
-    send_times: &[u128],
-    channel_times: &[u128],
+    ticks: &[u64],
 ) -> Result<(), Box<dyn std::error::Error>> {
     // Save raw measurements in CSV format
     let mut writer = Writer::from_path("webrtc_measurements.csv")?;
     
     // Write headers
-    writer.write_record(&["rtt", "send_time", "channel_time"])?;
+    writer.write_record(&["tick", "rtt"])?;
     
     // Write the data rows
     for i in 0..rtt_samples.len() {
         writer.write_record(&[
+            ticks[i].to_string(),
             rtt_samples[i].to_string(),
-            send_times[i].to_string(),
-            channel_times[i].to_string(),
         ])?;
     }
     
@@ -116,84 +120,124 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
         })
     }));
 
-    let mut rtt_samples = Vec::with_capacity(100000);
-    let mut send_to_network_times = Vec::with_capacity(100000);
-    let mut channel_times = Vec::with_capacity(100000);
-    let message_limit = 10000;
+    // Calculate tick duration in microseconds
+    let tick_duration_micros = 1_000_000 / CLIENT_TICK_RATE;
+    let tick_duration = Duration::from_micros(tick_duration_micros);
     
-    let message = Bytes::from_static(&[1u8; 8]);
-
-    // Warmup phase
-    println!("Starting warmup...");
-    for _ in 0..100 {
-        dc.send(&message).await?;
-        let _ = rx.recv().await;
-    }
-
-    println!("Starting RTT measurements with timing breakdown...");
+    // Store sent tick timestamps
+    let mut sent_ticks = HashMap::new();
+    let mut rtt_samples = Vec::with_capacity(SIMULATION_DURATION_SECS as usize * CLIENT_TICK_RATE as usize);
+    let mut recorded_ticks = Vec::with_capacity(SIMULATION_DURATION_SECS as usize * CLIENT_TICK_RATE as usize);
     
-    for i in 0..message_limit {
-        let start_time = Instant::now();
+    // Initialize current tick counter
+    let mut current_tick: u64 = 0;
+    
+    // Calculate end time
+    let simulation_end_time = Instant::now() + Duration::from_secs(SIMULATION_DURATION_SECS);
+    
+    println!("Starting tick-based simulation at {} ticks/sec for {} seconds...", 
+        CLIENT_TICK_RATE, SIMULATION_DURATION_SECS);
+
+    // Simulation loop
+    while Instant::now() < simulation_end_time {
+        let tick_start = Instant::now();
         
-        // Measure time to send
-        let send_start = Instant::now();
-        dc.send(&message).await?;
-        let send_time = send_start.elapsed().as_micros();
-        send_to_network_times.push(send_time);
-
-        if let Some(_) = rx.recv().await {
-            let total_rtt = start_time.elapsed().as_micros();
-            let channel_time = total_rtt - send_time;
-            
-            rtt_samples.push(total_rtt);
-            channel_times.push(channel_time);
+        // Process incoming messages
+        while let Ok(data) = rx.try_recv() {
+            if let Ok(value) = serde_json::from_slice::<Value>(&data) {
+                if let (Some(tick), Some(timestamp)) = (value["tick"].as_u64(), value["timestamp"].as_u64()) {
+                    if let Some(&sent_time) = sent_ticks.get(&tick) {
+                        let now = Instant::now().elapsed().as_micros() as u128;
+                        let rtt = now - sent_time;
+                        rtt_samples.push(rtt);
+                        recorded_ticks.push(tick);
+                        
+                        if rtt_samples.len() % 100 == 0 {
+                            println!("Received tick {}, RTT: {} μs", tick, rtt);
+                        }
+                    }
+                }
+            }
         }
-
-        if i % 5000 == 0 {
+        
+        // Send current tick
+        let now = Instant::now().elapsed().as_micros() as u128;
+        let message = json!({
+            "tick": current_tick,
+            "timestamp": now
+        }).to_string();
+        
+        let message_bytes = Bytes::from(message.into_bytes());
+        if let Err(e) = dc.send(&message_bytes).await {
+            println!("Error sending tick {}: {}", current_tick, e);
+        } else {
+            // Store sent tick time
+            sent_ticks.insert(current_tick, now);
+        }
+        
+        // Increment tick counter
+        current_tick += 1;
+        
+        // Yield every 100 ticks to prevent blocking
+        if current_tick % 100 == 0 {
             tokio::task::yield_now().await;
         }
+        
+        // Sleep until next tick
+        let elapsed = tick_start.elapsed();
+        if elapsed < tick_duration {
+            sleep(tick_duration - elapsed).await;
+        } else {
+            println!("Warning: Tick {} processing took longer than tick duration: {:?}", 
+                current_tick - 1, elapsed);
+        }
     }
 
+    println!("\nSimulation completed!");
+    
     if !rtt_samples.is_empty() {
-        // Calculate statistics for each timing component
+        // Calculate statistics
         let calculate_stats = |times: &Vec<u128>| {
             let mut sorted = times.clone();
             sorted.sort_unstable();
+            let min = sorted[0];
+            let max = sorted[sorted.len() - 1];
             let avg = times.iter().sum::<u128>() as f64 / times.len() as f64;
             let p50 = sorted[times.len() / 2];
             let p95 = sorted[(times.len() as f64 * 0.95) as usize];
             let p99 = sorted[(times.len() as f64 * 0.99) as usize];
-            (avg, p50, p95, p99)
+            (min, max, avg, p50, p95, p99)
         };
 
-        println!("\nTiming Breakdown:");
+        let (min_rtt, max_rtt, avg_rtt, p50_rtt, p95_rtt, p99_rtt) = calculate_stats(&rtt_samples);
         
-        let (send_avg, send_p50, send_p95, send_p99) = calculate_stats(&send_to_network_times);
-        println!("\nTime to send to network:");
-        println!("  Average: {:.2} µs", send_avg);
-        println!("  50th percentile: {} µs", send_p50);
-        println!("  95th percentile: {} µs", send_p95);
-        println!("  99th percentile: {} µs", send_p99);
+        println!("\nRTT Statistics:");
+        println!("  Total samples: {}", rtt_samples.len());
+        println!("  Min: {} µs", min_rtt);
+        println!("  Max: {} µs", max_rtt);
+        println!("  Average: {:.2} µs", avg_rtt);
+        println!("  50th percentile: {} µs", p50_rtt);
+        println!("  95th percentile: {} µs", p95_rtt);
+        println!("  99th percentile: {} µs", p99_rtt);
 
-        let (channel_avg, channel_p50, channel_p95, channel_p99) = calculate_stats(&channel_times);
-        println!("\nTime in network/processing:");
-        println!("  Average: {:.2} µs", channel_avg);
-        println!("  50th percentile: {} µs", channel_p50);
-        println!("  95th percentile: {} µs", channel_p95);
-        println!("  99th percentile: {} µs", channel_p99);
+        // Calculate message loss
+        let expected_messages = current_tick;
+        let received_messages = rtt_samples.len() as u64;
+        let loss_rate = if expected_messages > 0 {
+            (expected_messages - received_messages) as f64 / expected_messages as f64 * 100.0
+        } else {
+            0.0
+        };
+        
+        println!("  Messages sent: {}", expected_messages);
+        println!("  Messages received: {}", received_messages);
+        println!("  Message loss rate: {:.2}%", loss_rate);
 
-        let (total_avg, total_p50, total_p95, total_p99) = calculate_stats(&rtt_samples);
-        println!("\nTotal RTT:");
-        println!("  Average: {:.2} µs", total_avg);
-        println!("  50th percentile: {} µs", total_p50);
-        println!("  95th percentile: {} µs", total_p95);
-        println!("  99th percentile: {} µs", total_p99);
-
-        // Print distribution of RTTs in smaller buckets for more detail
-        println!("\nRTT Distribution (100µs buckets):");
-        let mut buckets = vec![0; 50]; // 0-5000µs in 100µs increments
+        // Print distribution of RTTs in millisecond buckets
+        println!("\nRTT Distribution (1ms buckets):");
+        let mut buckets = vec![0; 100]; // 0-100ms in 1ms increments
         for &rtt in &rtt_samples {
-            let bucket = (rtt / 100) as usize;
+            let bucket = (rtt / 1000) as usize; // Convert to milliseconds
             if bucket < buckets.len() {
                 buckets[bucket] += 1;
             }
@@ -201,44 +245,36 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
         
         for (i, count) in buckets.iter().enumerate() {
             if *count > 0 {  // Only print non-empty buckets
-                println!("{}-{}µs: {} samples", i*100, (i+1)*100, count);
+                println!("{}-{}ms: {} samples", i, i+1, count);
             }
         }
 
         // Save raw data to CSV
-        save_measurements(&rtt_samples, &send_to_network_times, &channel_times)?;
+        save_measurements(&rtt_samples, &recorded_ticks)?;
 
         // Save summary statistics to JSON
         let summary = json!({
+            "tick_rate": CLIENT_TICK_RATE,
             "sample_count": rtt_samples.len(),
-            "distribution": buckets.iter().enumerate()
+            "messages_sent": expected_messages,
+            "messages_received": received_messages,
+            "loss_rate_percent": loss_rate,
+            "distribution_ms": buckets.iter().enumerate()
                 .filter(|(_, &count)| count > 0)
                 .map(|(i, &count)| {
                     json!({
-                        "bucket": format!("{}-{}", i*100, (i+1)*100),
+                        "bucket": format!("{}-{}", i, i+1),
                         "count": count
                     })
                 })
                 .collect::<Vec<_>>(),
-            "metrics": {
-                "total_rtt": {
-                    "avg": total_avg,
-                    "p50": total_p50,
-                    "p95": total_p95,
-                    "p99": total_p99
-                },
-                "send_time": {
-                    "avg": send_avg,
-                    "p50": send_p50,
-                    "p95": send_p95,
-                    "p99": send_p99
-                },
-                "channel_time": {
-                    "avg": channel_avg,
-                    "p50": channel_p50,
-                    "p95": channel_p95,
-                    "p99": channel_p99
-                }
+            "rtt_micros": {
+                "min": min_rtt,
+                "max": max_rtt,
+                "avg": avg_rtt,
+                "p50": p50_rtt,
+                "p95": p95_rtt,
+                "p99": p99_rtt
             }
         });
 
@@ -246,6 +282,11 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
             "webrtc_summary.json",
             serde_json::to_string_pretty(&summary)?
         )?;
+        
+        println!("\nMeasurements saved to webrtc_measurements.csv");
+        println!("Summary saved to webrtc_summary.json");
+    } else {
+        println!("No RTT samples collected during simulation!");
     }
 
     println!("Client disconnected.");

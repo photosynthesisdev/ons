@@ -5,7 +5,7 @@ use std::fs;
 use std::time::{Duration, Instant};
 use std::thread;
 
-const TICK_RATE: u32 = 120; // ticks per second; change as needed
+const TICK_RATE: u32 = 30; // ticks per second; change as needed
 const TICK_DURATION: Duration = Duration::from_micros(1_000_000u64 / TICK_RATE as u64); 
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {

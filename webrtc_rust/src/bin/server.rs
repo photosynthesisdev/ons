@@ -8,11 +8,20 @@ use webrtc::peer_connection::configuration::RTCConfiguration;
 use webrtc::peer_connection::sdp::session_description::RTCSessionDescription;
 use webrtc::Error;
 use std::io::stdin;
-use tokio::time::{sleep, Duration};
+use std::time::{Instant, Duration};
+use tokio::time::sleep;
 use webrtc::data_channel::data_channel_message::DataChannelMessage;
 use webrtc::api::setting_engine::SettingEngine;
 use webrtc::data_channel::data_channel_init::RTCDataChannelInit;
 use webrtc::dtls_transport::dtls_role::DTLSRole;
+use tokio::sync::{mpsc, Mutex};
+use bytes::Bytes;
+use serde_json::{json, Value};
+use std::collections::VecDeque;
+use std::sync::atomic::{AtomicBool, Ordering};
+
+// Constants for tick simulation
+const SERVER_TICK_RATE: u64 = 30; // 30 Hz
 
 #[tokio::main(flavor = "current_thread")]
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
@@ -43,6 +52,15 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     data_channel_init.protocol = Some("binary".to_string());
 
     let data_channel = peer_connection.create_data_channel("data", Some(data_channel_init)).await?;
+    
+    // Create a message queue to store incoming messages
+    let message_queue = Arc::new(Mutex::new(VecDeque::new()));
+    
+    // Flag to indicate if the server should start ticking (set to true after first message)
+    let start_ticking = Arc::new(AtomicBool::new(false));
+    
+    // Create channels for message passing
+    let (tx, mut rx) = mpsc::channel::<Bytes>(100000);
 
     let dc = Arc::clone(&data_channel);
     dc.on_open(Box::new(move || {
@@ -50,11 +68,13 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
         Box::pin(async {})
     }));
 
-    let dc_clone = Arc::clone(&dc);
-    dc.on_message(Box::new(move |msg: DataChannelMessage| {
-        let dc_inner = Arc::clone(&dc_clone);
+    // Handle incoming messages
+    let tx_clone = tx.clone();
+    let dc_for_message = Arc::clone(&data_channel);
+    dc_for_message.on_message(Box::new(move |msg: DataChannelMessage| {
+        let tx_inner = tx_clone.clone();
         Box::pin(async move {
-            let _ = dc_inner.send(&msg.data).await;
+            let _ = tx_inner.try_send(msg.data);  // Non-blocking send
         })
     }));
 
@@ -82,9 +102,79 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let remote_desc: RTCSessionDescription = serde_json::from_str(&remote_sdp.trim())?;
     peer_connection.set_remote_description(remote_desc).await?;
 
-    println!("Server running, ready to handle data...");
+    println!("Server running, waiting for first message to start tick simulation...");
 
+    // Create queue for storing incoming messages
+    let msg_queue = Arc::clone(&message_queue);
+    let tick_flag = Arc::clone(&start_ticking);
+    
+    // Message processor task
+    tokio::spawn(async move {
+        while let Some(data) = rx.recv().await {
+            let mut queue = msg_queue.lock().await;
+            queue.push_back(data);
+            
+            // Set start_ticking to true after receiving first message
+            if !tick_flag.load(Ordering::SeqCst) {
+                tick_flag.store(true, Ordering::SeqCst);
+                println!("First message received, starting tick simulation!");
+            }
+        }
+    });
+
+    // Calculate tick duration in microseconds
+    let tick_duration_micros = 1_000_000 / SERVER_TICK_RATE;
+    let tick_duration = Duration::from_micros(tick_duration_micros);
+    
+    // Data channel for the tick loop
+    let tick_dc = Arc::clone(&data_channel);
+    
+    // Wait for first message before starting tick simulation
+    while !start_ticking.load(Ordering::SeqCst) {
+        sleep(Duration::from_millis(10)).await;
+    }
+    
+    println!("Tick simulation started at {} ticks/sec", SERVER_TICK_RATE);
+    
+    // Tick loop
     loop {
-        sleep(Duration::from_secs(1)).await;
+        let tick_start = Instant::now();
+        
+        // Process all queued messages
+        let mut messages_to_process = {
+            let mut queue = message_queue.lock().await;
+            let msgs = queue.drain(..).collect::<Vec<_>>();
+            msgs
+        };
+        
+        // Process each message
+        for data in messages_to_process {
+            if let Ok(value) = serde_json::from_slice::<Value>(&data) {
+                if let (Some(tick), Some(timestamp)) = (value["tick"].as_u64(), value["timestamp"].as_u64()) {
+                    // Echo the message back with the same tick number and timestamp
+                    let response = json!({
+                        "tick": tick,
+                        "timestamp": timestamp
+                    }).to_string();
+                    
+                    let response_bytes = Bytes::from(response.into_bytes());
+                    if let Err(e) = tick_dc.send(&response_bytes).await {
+                        println!("Error sending response for tick {}: {}", tick, e);
+                    }
+                }
+            }
+        }
+        
+        // Calculate time to sleep until next tick
+        let elapsed = tick_start.elapsed();
+        if elapsed < tick_duration {
+            sleep(tick_duration - elapsed).await;
+        } else {
+            // If processing took longer than the tick duration, log a warning
+            println!("Warning: Tick processing took longer than tick duration: {:?}", elapsed);
+        }
+        
+        // Yield periodically to prevent blocking
+        tokio::task::yield_now().await;
     }
 }
