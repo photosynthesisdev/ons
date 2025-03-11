@@ -1,4 +1,4 @@
-use std::{fs, io, path, time::Instant};
+use std::{fs, io, path};
 use tokio::fs::OpenOptions;
 use tokio::io::AsyncWriteExt;
 use anyhow::Context;
@@ -98,6 +98,35 @@ async fn run_session(session: Session, output_file: String) -> anyhow::Result<()
     log::info!("accepted stream");
 
     let mut buf = vec![0u8; 1024];
+    
+    // Wait for the first simulation message to synchronize tick timing
+    log::info!("waiting for first tick message from client...");
+    match recv.read(&mut buf).await? {
+        Some(size) => {
+            log::info!("received first tick message, starting tick loop");
+            // Echo back the first message immediately
+            let first_msg = &buf[..size];
+            send.write_all(first_msg).await?;
+            
+            // If message is JSON, try to extract tick number for logging
+            if let Ok(text) = std::str::from_utf8(first_msg) {
+                if let Ok(json) = serde_json::from_str::<serde_json::Value>(text) {
+                    if let Some(tick) = json.get("tick") {
+                        log::info!("first message is tick {}", tick);
+                    }
+                }
+            }
+            
+            // Log the first measurement
+            let timestamp = chrono::Utc::now().timestamp();
+            let measurement = format!("{},0\n", timestamp);
+            file.write_all(measurement.as_bytes()).await?;
+        },
+        None => {
+            log::info!("client closed connection before sending first message");
+            return Ok(());
+        }
+    };
     
     // Continue reading messages on the same stream
     while let Some(size) = recv.read(&mut buf).await? {

@@ -13,7 +13,7 @@ use csv::Writer;
 use serde_json::{json, Value};
 
 // Define tick rate constants
-const TICK_RATE: u32 = 30; // ticks per second
+const TICK_RATE: u32 = 120; // ticks per second
 const TICK_DURATION_MICROS: u64 = 1_000_000 / TICK_RATE as u64;
 const SIMULATION_DURATION_SECS: u64 = 180; // 3 minutes
 
