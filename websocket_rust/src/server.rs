@@ -15,7 +15,7 @@ use tokio_native_tls::TlsStream;
 use tokio::net::TcpStream;
 
 // Define tick rate constants
-const TICK_RATE: u32 = 128; // ticks per second
+const TICK_RATE: u32 = 32; // ticks per second
 const TICK_DURATION_MICROS: u64 = 1_000_000 / TICK_RATE as u64;
 
 // Type alias for WebSocket stream
