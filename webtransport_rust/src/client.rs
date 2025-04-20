@@ -25,7 +25,7 @@ struct Args {
     simulation_duration_secs: u64,
     
     /// Whether to use datagrams instead of streams
-    #[arg(long)]
+    #[arg(long, default_value = "true")]
     use_datagrams: bool,
 }
 

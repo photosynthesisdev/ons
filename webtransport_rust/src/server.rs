@@ -34,7 +34,7 @@ struct Args {
     pub output_file: String,
     
     /// Use datagram extension instead of streams
-    #[arg(long)]
+    #[arg(long, default_value = "true")]
     use_datagrams: bool,
 }
 
