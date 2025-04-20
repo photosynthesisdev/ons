@@ -109,7 +109,7 @@ async fn main() -> anyhow::Result<()> {
     log::info!("connected in {} ms", connection_duration.as_millis());
 
     // Define tick rate and compute tick duration with microsecond precision
-    const TICK_RATE: u32 = 120; // 120 ticks per second
+    const TICK_RATE: u32 = 128; // 120 ticks per second
     let tick_duration = Duration::from_micros(1_000_000 / TICK_RATE as u64);
     log::info!("Tick duration: {} µs", tick_duration.as_micros());
 
