@@ -14,7 +14,7 @@ use bytes::Bytes;
 #[derive(Parser, Debug)]
 #[command(author, version, about, long_about = None)]
 struct Args {
-    #[arg(short, long, default_value = "https://sculpter.dev:4433")]
+    #[arg(short, long, default_value = "https://143.244.178.124:4433")]
     url: Url,
 
     /// Accept the certificates at this path, encoded as PEM.
