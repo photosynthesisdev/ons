@@ -99,7 +99,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     println!("Connection established in {} ms", connection_end.duration_since(connection_start).as_millis());
 
     // Define tick rate and compute tick duration with microsecond precision.
-    const TICK_RATE: u32 = 120;
+    const TICK_RATE: u32 = 128;
     let tick_duration = Duration::from_micros(1_000_000 / TICK_RATE as u64);
     println!("Tick duration: {} µs", tick_duration.as_micros());
 
