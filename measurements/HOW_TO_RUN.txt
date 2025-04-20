@@ -1,0 +1,161 @@
+NETWORK PROTOCOL MEASUREMENTS GUIDE
+==========================================
+
+This guide provides instructions for running all four network protocol benchmarks under various conditions.
+All measurements will be stored in subfolders:
+
+/users/dorlando/ons/measurements/
+├── baseline/           # Colgate to NYC, 128hz, 0% loss
+├── loss_vary/          # Colgate to NYC, 128hz, 0.1% loss
+├── tickrate_vary/      # Colgate to NYC, 32hz, 0% loss
+├── latency_vary_sf/    # Colgate to SF, 128hz, 0% loss
+├── latency_vary_residential/ # Hamilton NY Residential to NYC, 128hz, 0% loss
+
+For each scenario, make sure to update the output file paths in the respective client code to point to the correct subfolder.
+
+BASELINE: Colgate to NYC, 128hz simulation, 0% loss
+--------------------------------------------------
+### 1. WebSockets
+Server (on NYC):
+  cd /path/to/websocket_rust
+  cargo run --bin server
+
+Client (on Colgate):
+  cd /users/dorlando/ons/websocket_rust
+  cargo run --bin client -- --output-file /users/dorlando/ons/measurements/baseline/websocket_rtt.csv
+
+### 2. WebRTC
+Server (on NYC):
+  cd /path/to/webrtc_rust
+  RUST_LOG=info cargo run --bin server
+
+Client (on Colgate):
+  cd /users/dorlando/ons/webrtc_rust
+  RUST_LOG=info cargo run --bin client -- --output-file /users/dorlando/ons/measurements/baseline/webrtc_rtt.csv
+
+### 3. WebTransport
+Server (on NYC):
+  cd /path/to/webtransport_rust
+  cargo run --release --bin server -- --tls-cert /etc/haproxy/certs/signallite_cert.pem --tls-key /etc/haproxy/certs/signallite_key.pem
+
+Client (on Colgate):
+  cd /users/dorlando/ons/webtransport_rust
+  CC=clang cargo run --release --bin client -- --tls-cert /users/dorlando/ons/webtransport_rust/signallite_cert.pem --output-file /users/dorlando/ons/measurements/baseline/webtransport_rtt.csv
+
+### 4. Raw UDP
+Server (on NYC):
+  cd /path/to/dtls_udp
+  cargo run --bin server
+
+Client (on Colgate):
+  cd /users/dorlando/ons/dtls_udp
+  cargo run --bin client -- --output-file /users/dorlando/ons/measurements/baseline/udp_rtt.csv
+
+
+LOSS VARY: Colgate to NYC, 128hz simulation, 0.1% loss
+------------------------------------------------------
+# First, set up packet loss on the NYC server using XDP:
+cd /path/to/xdpapp
+./rebuild_ebpf.sh
+# Configure 0.1% loss rate in the XDP application
+
+# Then run the same commands as baseline but direct output to the loss_vary folder:
+### 1. WebSockets
+Client (on Colgate):
+  cd /users/dorlando/ons/websocket_rust
+  cargo run --bin client -- --output-file /users/dorlando/ons/measurements/loss_vary/websocket_rtt.csv
+
+### 2. WebRTC
+Client (on Colgate):
+  cd /users/dorlando/ons/webrtc_rust
+  RUST_LOG=info cargo run --bin client -- --output-file /users/dorlando/ons/measurements/loss_vary/webrtc_rtt.csv
+
+### 3. WebTransport
+Client (on Colgate):
+  cd /users/dorlando/ons/webtransport_rust
+  CC=clang cargo run --release --bin client -- --tls-cert /users/dorlando/ons/webtransport_rust/signallite_cert.pem --output-file /users/dorlando/ons/measurements/loss_vary/webtransport_rtt.csv
+
+### 4. Raw UDP
+Client (on Colgate):
+  cd /users/dorlando/ons/dtls_udp
+  cargo run --bin client -- --output-file /users/dorlando/ons/measurements/loss_vary/udp_rtt.csv
+
+
+TICKRATE VARY: Colgate to NYC, 32hz simulation, 0% loss
+------------------------------------------------------
+# First, reset packet loss to 0% on NYC server
+cd /path/to/xdpapp
+./rebuild_ebpf.sh  # Configure 0% loss rate
+
+# Then modify the tick rate in each client/server to 32Hz before running:
+### 1. WebSockets
+Client (on Colgate):
+  cd /users/dorlando/ons/websocket_rust
+  cargo run --bin client -- --tick-rate 32 --output-file /users/dorlando/ons/measurements/tickrate_vary/websocket_rtt.csv
+
+### 2. WebRTC
+Client (on Colgate):
+  cd /users/dorlando/ons/webrtc_rust
+  RUST_LOG=info cargo run --bin client -- --tick-rate 32 --output-file /users/dorlando/ons/measurements/tickrate_vary/webrtc_rtt.csv
+
+### 3. WebTransport
+Client (on Colgate):
+  cd /users/dorlando/ons/webtransport_rust
+  CC=clang cargo run --release --bin client -- --tick-rate 32 --tls-cert /users/dorlando/ons/webtransport_rust/signallite_cert.pem --output-file /users/dorlando/ons/measurements/tickrate_vary/webtransport_rtt.csv
+
+### 4. Raw UDP
+Client (on Colgate):
+  cd /users/dorlando/ons/dtls_udp
+  cargo run --bin client -- --tick-rate 32 --output-file /users/dorlando/ons/measurements/tickrate_vary/udp_rtt.csv
+
+
+LATENCY VARY (SF): Colgate to SF, 128hz simulation, 0% loss
+------------------------------------------------------
+# Run the server in SF, client in Colgate
+# Same command structure as baseline but point to a different output folder:
+
+### 1. WebSockets
+Client (on Colgate):
+  cd /users/dorlando/ons/websocket_rust
+  cargo run --bin client -- --url wss://sf-server-address:4043 --output-file /users/dorlando/ons/measurements/latency_vary_sf/websocket_rtt.csv
+
+### 2. WebRTC
+Client (on Colgate):
+  cd /users/dorlando/ons/webrtc_rust
+  RUST_LOG=info cargo run --bin client -- --output-file /users/dorlando/ons/measurements/latency_vary_sf/webrtc_rtt.csv
+
+### 3. WebTransport
+Client (on Colgate):
+  cd /users/dorlando/ons/webtransport_rust
+  CC=clang cargo run --release --bin client -- --url https://sf-server-address:4433 --tls-cert /path/to/sf_cert.pem --output-file /users/dorlando/ons/measurements/latency_vary_sf/webtransport_rtt.csv
+
+### 4. Raw UDP
+Client (on Colgate):
+  cd /users/dorlando/ons/dtls_udp
+  cargo run --bin client -- --server sf-server-address:4444 --output-file /users/dorlando/ons/measurements/latency_vary_sf/udp_rtt.csv
+
+
+LATENCY VARY (RESIDENTIAL): Hamilton NY Residential to NYC, 128hz simulation, 0% loss
+-----------------------------------------------------------------------------------
+# Run client from Hamilton NY residential connection, server in NYC
+# Same command structure as baseline but on a different client machine:
+
+### 1. WebSockets
+Client (on Residential):
+  cd /path/to/websocket_rust
+  cargo run --bin client -- --output-file /path/to/measurements/latency_vary_residential/websocket_rtt.csv
+
+### 2. WebRTC
+Client (on Residential):
+  cd /path/to/webrtc_rust
+  RUST_LOG=info cargo run --bin client -- --output-file /path/to/measurements/latency_vary_residential/webrtc_rtt.csv
+
+### 3. WebTransport
+Client (on Residential):
+  cd /path/to/webtransport_rust
+  CC=clang cargo run --release --bin client -- --tls-cert /path/to/signallite_cert.pem --output-file /path/to/measurements/latency_vary_residential/webtransport_rtt.csv
+
+### 4. Raw UDP
+Client (on Residential):
+  cd /path/to/dtls_udp
+  cargo run --bin client -- --output-file /path/to/measurements/latency_vary_residential/udp_rtt.csv
