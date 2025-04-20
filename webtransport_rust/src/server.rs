@@ -12,7 +12,7 @@ use serde_json::Value;
 use bytes::Bytes;
 
 // Define tick rate constants
-const TICK_RATE: u32 = 32; // ticks per second, matching client
+const TICK_RATE: u32 = 128; // ticks per second, matching client
 const TICK_DURATION_MICROS: u64 = 1_000_000 / TICK_RATE as u64;
 const MAX_DATAGRAMS_PER_TICK: usize = 10; // Limit datagrams processed per tick to avoid overload
 
