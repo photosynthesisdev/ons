@@ -65,8 +65,8 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     //let url = Url::parse("wss://spock.cs.colgate.edu:4043").unwrap();
     let url = Url::parse("wss://signallite.io:4043").unwrap();
     println!("Connecting to {}", url);
-
-    let mut cert_file = File::open("/users/dorlando/ons/websocket_rust/signallite_cert.pem").unwrap();
+    let mut cert_file = File::open("/users/dorlando/ons/websocket_rust/sculpter_cert.pem").unwrap();
+    //let mut cert_file = File::open("/users/dorlando/ons/websocket_rust/signallite_cert.pem").unwrap();
     //let mut cert_file = File::open("/users/dorlando/ons/certs/cert1.pem").unwrap();
     let mut cert = vec![];
     cert_file.read_to_end(&mut cert).unwrap();

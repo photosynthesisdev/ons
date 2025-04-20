@@ -25,11 +25,13 @@ type WsStream = WebSocketStream<TlsStream<TcpStream>>;
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let addr = "0.0.0.0:4043".to_string();
     //let mut cert_file = File::open("/users/dorlando/ons/certs/cert1.pem")?;
-    let mut cert_file = File::open("/etc/haproxy/certs/signallite_cert.pem").unwrap();
+    // let mut cert_file = File::open("/etc/haproxy/certs/signallite_cert.pem").unwrap();
+    let mut cert_file = File::open("/etc/letsencrypt/live/sculpter.dev/cert.pem").unwrap();
     let mut cert = vec![];
     cert_file.read_to_end(&mut cert).unwrap();
     //let mut key_file = File::open("/users/dorlando/ons/certs/privkey1.pem")?;
-    let mut key_file = File::open("/etc/haproxy/certs/signallite_key.pem").unwrap();
+    // let mut key_file = File::open("/etc/haproxy/certs/signallite_key.pem").unwrap();
+    let mut key_file = File::open("/etc/letsencrypt/live/sculpter.dev/privkey.pem").unwrap();
     let mut key = vec![];
     key_file.read_to_end(&mut key).unwrap();
     
