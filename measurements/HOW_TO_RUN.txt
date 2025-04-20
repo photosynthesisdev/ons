@@ -18,13 +18,13 @@ BASELINE: Colgate to NYC, 128hz simulation, 0% loss
 ### 1. WebSockets
 Server (on NYC):
   cd /path/to/websocket_rust
-  cargo run --bin server
+  cargo run --bin server 
 
 Client (on Colgate):
   cd /users/dorlando/ons/websocket_rust
   cargo run --bin client -- --output-file /users/dorlando/ons/measurements/baseline/websocket_rtt.csv
 
-### 2. WebRTC
+### 2. WebRTC 
 Server (on NYC):
   cd /path/to/webrtc_rust
   RUST_LOG=info cargo run --bin server
